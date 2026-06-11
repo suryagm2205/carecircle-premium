@@ -176,62 +176,6 @@
             </div>
           </div>
 
-          <!-- Morning Joy Interest Feed Card -->
-          <div id="morningJoyFeedCard" class="dashboard-card border-gold mb-20" style="background: linear-gradient(135deg, var(--color-gold-soft), #fef3c7); padding: 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-gold); box-shadow: var(--shadow-md);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 1px;">🌅 Morning Joy Feed</span>
-              <button type="button" id="closeJoyFeedBtn" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-gold); line-height:1;">✕</button>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <!-- Spiritual -->
-              <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #7c3aed;">
-                <span style="font-size:var(--font-xs); font-weight:700; color:#7c3aed; display:block; margin-bottom:3px;">🕉️ Daily Spiritual Nudge</span>
-                <p style="font-size:var(--font-sm); margin:0; font-style:italic; font-weight:500;">"పరమాత్మను ధ్యానించడం వలన మనస్సు ప్రశాంతంగా ఉంటుంది. ఈ రోజును చిరునవ్వుతో ప్రారంభించండి."<br><span style="font-size:var(--font-xs); color:var(--text-muted); font-style:normal;">(Meditation brings peace to the mind. Start your day with a smile.)</span></p>
-              </div>
-              <div style="display:flex; gap:10px;">
-                <!-- Cricket -->
-                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #ea580c; flex:1;">
-                  <span style="font-size:var(--font-xs); font-weight:700; color:#ea580c; display:block; margin-bottom:3px;">🏏 Cricket Score</span>
-                  <p style="font-size:var(--font-sm); margin:0; font-weight:700;">IND vs AUS: IND 342/5</p>
-                  <span style="font-size:var(--font-xs); color:var(--text-muted);">IND needs 3 runs off 4 balls! (Live)</span>
-                </div>
-                <!-- Cinema -->
-                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #0d9488; flex:1;">
-                  <span style="font-size:var(--font-xs); font-weight:700; color:#0d9488; display:block; margin-bottom:3px;">🎬 Telugu Film News</span>
-                  <p style="font-size:var(--font-sm); margin:0; font-weight:600; line-height:1.2;">NTR's new teaser hits 50M views!</p>
-                  <span style="font-size:var(--font-xs); color:var(--text-muted);">Grand release scheduled next month.</span>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="primary-action-btn w-100 mt-15" id="startMyDayBtn" style="background: var(--color-gold); border:none; color:white; min-height:40px; font-size:var(--font-xs);">
-              Start My Day & View Health Reminders
-            </button>
-          </div>
-
-          <!-- Personal connection / Milestone Nudges Card -->
-          <div class="dashboard-card border-purple mb-20" style="padding: 15px 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-purple);">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-purple); text-transform: uppercase; letter-spacing: 1px;">💝 Personal Connections</span>
-              <span style="font-size: var(--font-xs); color: var(--text-muted);">2 Reminders</span>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
-                <div>
-                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Grandson Manoj's Exam</strong>
-                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Class 12 Board Exams start next month (June 23)</span>
-                </div>
-                <button type="button" class="primary-btn-mini dial-grandson-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Wish Luck</button>
-              </div>
-              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
-                <div>
-                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Friend Reconnection Nudge</strong>
-                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Call college friend Saraswathi (Not spoken in 4 years)</span>
-                </div>
-                <button type="button" class="primary-btn-mini dial-friend-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Call Her</button>
-              </div>
-            </div>
-          </div>
-
           <div class="dashboard-hero">
             <div class="hero-welcome">
               <span class="badge-eyebrow">DAILY CONFIDENCE ASSISTANT</span>
@@ -293,6 +237,62 @@
               <button class="primary-action-btn speech-readout-btn" id="speakGreetingBtn">
                 <span data-icon="volume"></span> Speak to me
               </button>
+            </div>
+          </div>
+
+          <!-- Morning Joy Interest Feed Card -->
+          <div id="morningJoyFeedCard" class="dashboard-card border-gold mb-20" style="background: linear-gradient(135deg, var(--color-gold-soft), #fef3c7); padding: 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-gold); box-shadow: var(--shadow-md);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 1px;">🌅 Morning Joy Feed</span>
+              <button type="button" id="closeJoyFeedBtn" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-gold); line-height:1;">✕</button>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <!-- Spiritual -->
+              <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #7c3aed;">
+                <span style="font-size:var(--font-xs); font-weight:700; color:#7c3aed; display:block; margin-bottom:3px;">🕉️ Daily Spiritual Nudge</span>
+                <p style="font-size:var(--font-sm); margin:0; font-style:italic; font-weight:500;">"పరమాత్మను ధ్యానించడం వలన మనస్సు ప్రశాంతంగా ఉంటుంది. ఈ రోజును చిరునవ్వుతో ప్రారంభించండి."<br><span style="font-size:var(--font-xs); color:var(--text-muted); font-style:normal;">(Meditation brings peace to the mind. Start your day with a smile.)</span></p>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <!-- Cricket -->
+                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #ea580c; flex:1;">
+                  <span style="font-size:var(--font-xs); font-weight:700; color:#ea580c; display:block; margin-bottom:3px;">🏏 Cricket Score</span>
+                  <p style="font-size:var(--font-sm); margin:0; font-weight:700;">IND vs AUS: IND 342/5</p>
+                  <span style="font-size:var(--font-xs); color:var(--text-muted);">IND needs 3 runs off 4 balls! (Live)</span>
+                </div>
+                <!-- Cinema -->
+                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #0d9488; flex:1;">
+                  <span style="font-size:var(--font-xs); font-weight:700; color:#0d9488; display:block; margin-bottom:3px;">🎬 Telugu Film News</span>
+                  <p style="font-size:var(--font-sm); margin:0; font-weight:600; line-height:1.2;">NTR's new teaser hits 50M views!</p>
+                  <span style="font-size:var(--font-xs); color:var(--text-muted);">Grand release scheduled next month.</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="primary-action-btn w-100 mt-15" id="startMyDayBtn" style="background: var(--color-gold); border:none; color:white; min-height:40px; font-size:var(--font-xs);">
+              Start My Day & View Health Reminders
+            </button>
+          </div>
+
+          <!-- Personal connection / Milestone Nudges Card -->
+          <div class="dashboard-card border-purple mb-20" style="padding: 15px 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-purple);">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-purple); text-transform: uppercase; letter-spacing: 1px;">💝 Personal Connections</span>
+              <span style="font-size: var(--font-xs); color: var(--text-muted);">2 Reminders</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
+                <div>
+                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Grandson Manoj's Exam</strong>
+                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Class 12 Board Exams start next month (June 23)</span>
+                </div>
+                <button type="button" class="primary-btn-mini dial-grandson-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Wish Luck</button>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
+                <div>
+                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Friend Reconnection Nudge</strong>
+                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Call college friend Saraswathi (Not spoken in 4 years)</span>
+                </div>
+                <button type="button" class="primary-btn-mini dial-friend-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Call Her</button>
+              </div>
             </div>
           </div>
 
