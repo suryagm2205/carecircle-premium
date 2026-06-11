@@ -1,0 +1,13 @@
+{
+  "name": "carecircle-elite",
+  "version": "1.0.0",
+  "description": "Premium Senior-First Daily Confidence Companion Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

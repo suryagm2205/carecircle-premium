@@ -1,0 +1,2734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareCircle Elite - Senior Daily Companion</title>
+  <!-- Google Fonts for premium modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-india">
+
+  <!-- Main Grid Layout -->
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation (Responsive) -->
+    <aside class="app-sidebar" id="appSidebar" aria-label="Main Navigation">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">C</div>
+        <div>
+          <h2 class="brand-name" data-i18n="brand_name">CareCircle Elite</h2>
+          <p class="brand-motto" data-i18n="brand_motto">Don't worry. I am here.</p>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-view="home">
+          <span class="nav-icon" data-icon="home"></span>
+          <span class="nav-label" data-i18n="nav_home">Today's Hub</span>
+        </button>
+        <button class="nav-btn" data-view="culture">
+          <span class="nav-icon" data-icon="globe"></span>
+          <span class="nav-label" data-i18n="nav_culture">Culture Engine</span>
+        </button>
+        <button class="nav-btn" data-view="family">
+          <span class="nav-icon" data-icon="users"></span>
+          <span class="nav-label" data-i18n="nav_family">Family Circle</span>
+        </button>
+        <button class="nav-btn" data-view="companion">
+          <span class="nav-icon" data-icon="smile"></span>
+          <span class="nav-label" data-i18n="nav_companion">AI Companion</span>
+        </button>
+        <button class="nav-btn" data-view="services">
+          <span class="nav-icon" data-icon="briefcase"></span>
+          <span class="nav-label" data-i18n="nav_services">Local Helpers</span>
+        </button>
+        <button class="nav-btn" data-view="earn">
+          <span class="nav-icon" data-icon="coins"></span>
+          <span class="nav-label" data-i18n="nav_earn">Wisdom Income</span>
+        </button>
+        <button class="nav-btn" data-view="safety">
+          <span class="nav-icon" data-icon="shield"></span>
+          <span class="nav-label" data-i18n="nav_safety">Safety Guardian</span>
+        </button>
+        <button class="nav-btn" data-view="health">
+          <span class="nav-icon" data-icon="stethoscope"></span>
+          <span class="nav-label" data-i18n="nav_health">Health & Mood</span>
+        </button>
+        <button class="nav-btn" data-view="docs">
+          <span class="nav-icon" data-icon="file"></span>
+          <span class="nav-label" data-i18n="nav_docs">Secure Vault</span>
+        </button>
+        <button class="nav-btn" data-view="legacy">
+          <span class="nav-icon" data-icon="book"></span>
+          <span class="nav-label" data-i18n="nav_legacy">Memory Stories</span>
+        </button>
+        <button class="nav-btn" data-view="planner">
+          <span class="nav-icon" data-icon="brain"></span>
+          <span class="nav-label" data-i18n="nav_planner">Care Planner</span>
+        </button>
+        <button class="nav-btn" data-view="business">
+          <span class="nav-icon" data-icon="chart"></span>
+          <span class="nav-label" data-i18n="nav_business">Revenue Stack</span>
+        </button>
+        <button class="nav-btn" data-view="strategy">
+          <span class="nav-icon" data-icon="target"></span>
+          <span class="nav-label" data-i18n="nav_strategy">Competitor Matrix</span>
+        </button>
+        <button class="nav-btn" data-view="innovation">
+          <span class="nav-icon" data-icon="sparkles"></span>
+          <span class="nav-label" data-i18n="nav_innovation">Platform Moat</span>
+        </button>
+      </nav>
+
+      <!-- Sidebar SOS Quick Button -->
+      <button class="sidebar-sos-btn" id="sidebarSos" aria-label="Trigger Emergency Alarm">
+        <span class="sos-icon" data-icon="siren"></span>
+        <span data-i18n="btn_sos">EMERGENCY SOS</span>
+      </button>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-panel">
+      
+      <!-- Sticky Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Navigation Menu">
+            <span data-icon="menu"></span>
+          </button>
+          
+          <div class="senior-avatar-card">
+            <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=160&q=80" alt="Senior Profile Pic" class="avatar-image">
+            <div>
+              <p class="avatar-role" data-i18n="header_role">Senior Companion</p>
+              <h3 class="avatar-name" id="seniorName">Lakshmi Raman</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-center">
+          <div class="status-badge stable">
+            <span class="pulse-dot"></span>
+            <span id="headerStatusText" data-i18n="header_status">Status: Stable & Active</span>
+          </div>
+          <div class="status-badge info" id="headerLocationBadge">
+            <span data-icon="map-pin"></span>
+            <span>Chennai, India</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Voice Floating Trigger -->
+          <button class="header-action-btn voice-trigger" id="voiceAssistantBtn" aria-label="Open Voice Assistant Interface">
+            <span data-icon="mic" class="animated-mic"></span>
+            <span class="btn-text">Voice Help</span>
+          </button>
+
+          <!-- A11y Toggles directly accessible -->
+          <div class="a11y-quick-bar">
+            <button class="a11y-toggle-btn" id="toggleGlobalEnglish" title="Switch to English" aria-label="Switch to English" style="font-weight: 800; font-size: 0.85rem; color: var(--color-primary-dark); background: var(--color-primary-soft); display: flex; align-items: center; justify-content: center;">
+              EN
+            </button>
+            <button class="a11y-toggle-btn" id="toggleContrast" title="Toggle High Contrast Mode" aria-label="Toggle High Contrast">
+              <span data-icon="contrast"></span>
+            </button>
+            <button class="a11y-toggle-btn" id="toggleTextSize" title="Toggle Font Size Mode" aria-label="Toggle Large Text Size">
+              <span data-icon="type"></span>
+            </button>
+            <button class="a11y-toggle-btn" id="toggleMuteSpeech" title="Toggle Voice Reader Output" aria-label="Toggle Voice Reader Output">
+              <span data-icon="volume"></span>
+            </button>
+          </div>
+
+          <!-- Giant Lockscreen Offline Medical Card trigger -->
+          <button class="header-emergency-card-btn" id="emergencyCardTrigger" aria-label="View Offline Emergency Card QR">
+            <span data-icon="lock"></span>
+            <span>QR Medical Info</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- View Containers -->
+      <div class="view-content-wrapper">
+
+        <!-- 1. Home View (Today's Hub) -->
+        <section class="view-panel active" id="home-view">
+          <!-- Dynamic Extreme Weather Alert Banner -->
+          <div id="weatherAlertBanner" class="weather-alert-banner d-none" style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; box-shadow: var(--shadow-md);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 2rem; animation: pulse 1s infinite;">🔥</span>
+              <div>
+                <strong style="display: block; font-size: var(--font-md);">EXTREME HEAT ALERT (Hyderabad Heatwave)</strong>
+                <span id="weatherAlertMessage" style="font-size: var(--font-sm);">Today is dangerously hot. Please stay indoors, keep hydrated, and check in every 2 hours.</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="primary-action-btn" id="weatherCheckInBtn" style="background: white; color: #b91c1c; border: none; min-height: 40px; padding: 0 15px; font-size: var(--font-xs); font-weight: 700; border-radius: 8px; cursor: pointer;">
+                Confirm Check-in
+              </button>
+              <button type="button" class="primary-action-btn" id="simulateWeatherCheckinOverdueBtn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); min-height: 40px; padding: 0 10px; font-size: var(--font-xs); border-radius: 8px;" title="Simulate missing 2-hour check-in">
+                ⚡ Overdue
+              </button>
+            </div>
+          </div>
+
+            </div>
+          </div>
+
+          <!-- Morning Joy Interest Feed Card -->
+          <div id="morningJoyFeedCard" class="dashboard-card border-gold mb-20" style="background: linear-gradient(135deg, var(--color-gold-soft), #fef3c7); padding: 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-gold); box-shadow: var(--shadow-md);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 1px;">🌅 Morning Joy Feed</span>
+              <button type="button" id="closeJoyFeedBtn" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-gold); line-height:1;">✕</button>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <!-- Spiritual -->
+              <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #7c3aed;">
+                <span style="font-size:var(--font-xs); font-weight:700; color:#7c3aed; display:block; margin-bottom:3px;">🕉️ Daily Spiritual Nudge</span>
+                <p style="font-size:var(--font-sm); margin:0; font-style:italic; font-weight:500;">"పరమాత్మను ధ్యానించడం వలన మనస్సు ప్రశాంతంగా ఉంటుంది. ఈ రోజును చిరునవ్వుతో ప్రారంభించండి."<br><span style="font-size:var(--font-xs); color:var(--text-muted); font-style:normal;">(Meditation brings peace to the mind. Start your day with a smile.)</span></p>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <!-- Cricket -->
+                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #ea580c; flex:1;">
+                  <span style="font-size:var(--font-xs); font-weight:700; color:#ea580c; display:block; margin-bottom:3px;">🏏 Cricket Score</span>
+                  <p style="font-size:var(--font-sm); margin:0; font-weight:700;">IND vs AUS: IND 342/5</p>
+                  <span style="font-size:var(--font-xs); color:var(--text-muted);">IND needs 3 runs off 4 balls! (Live)</span>
+                </div>
+                <!-- Cinema -->
+                <div style="background:white; padding:10px 12px; border-radius:10px; border-left:4px solid #0d9488; flex:1;">
+                  <span style="font-size:var(--font-xs); font-weight:700; color:#0d9488; display:block; margin-bottom:3px;">🎬 Telugu Film News</span>
+                  <p style="font-size:var(--font-sm); margin:0; font-weight:600; line-height:1.2;">NTR's new teaser hits 50M views!</p>
+                  <span style="font-size:var(--font-xs); color:var(--text-muted);">Grand release scheduled next month.</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="primary-action-btn w-100 mt-15" id="startMyDayBtn" style="background: var(--color-gold); border:none; color:white; min-height:40px; font-size:var(--font-xs);">
+              Start My Day & View Health Reminders
+            </button>
+          </div>
+
+          <!-- Personal connection / Milestone Nudges Card -->
+          <div class="dashboard-card border-purple mb-20" style="padding: 15px 20px; border-radius: var(--radius-card); border-left: 5px solid var(--color-purple);">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <span style="font-size: var(--font-xs); font-weight: 700; color: var(--color-purple); text-transform: uppercase; letter-spacing: 1px;">💝 Personal Connections</span>
+              <span style="font-size: var(--font-xs); color: var(--text-muted);">2 Reminders</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
+                <div>
+                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Grandson Manoj's Exam</strong>
+                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Class 12 Board Exams start next month (June 23)</span>
+                </div>
+                <button type="button" class="primary-btn-mini dial-grandson-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Wish Luck</button>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-purple-soft); padding:10px; border-radius:8px;">
+                <div>
+                  <strong style="font-size:var(--font-sm); color:var(--text-main);">Friend Reconnection Nudge</strong>
+                  <span style="display:block; font-size:var(--font-xs); color:var(--text-muted);">Call college friend Saraswathi (Not spoken in 4 years)</span>
+                </div>
+                <button type="button" class="primary-btn-mini dial-friend-btn" style="background:var(--color-purple); border:none; min-height:30px; font-size:var(--font-xs); padding:0 12px; color:white; border-radius:6px;">Call Her</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-hero">
+            <div class="hero-welcome">
+              <span class="badge-eyebrow">DAILY CONFIDENCE ASSISTANT</span>
+              <h1 class="welcome-heading" id="companionGreeting">Good morning, Lakshmi ji.</h1>
+              <p class="welcome-sub" id="companionStatusText">Your 8:00 AM Metformin medicine is scheduled. I recommend a glass of warm water before breakfast.</p>
+              
+              <div class="quick-family-hub">
+                <h3 class="section-sub-title">Quick Call Family</h3>
+                <div class="family-quick-grid">
+                  <button class="family-quick-card dial-family" data-contact="Meera">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Meera">
+                    <strong>Meera (Daughter)</strong>
+                    <span class="safe-call-badge" id="meeraSafeCallBadge">🟢 Checking time...</span>
+                  </button>
+                  <button class="family-quick-card dial-family" data-contact="Arun">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Arun">
+                    <strong>Arun (Son)</strong>
+                    <span class="safe-call-badge" id="arunSafeCallBadge">🟢 Checking time...</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- "I'm Going Out" Quick Tracker Panel -->
+              <div class="going-out-quick-hub" style="margin-top: 15px; background: rgba(255, 255, 255, 0.08); padding: 12px 15px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.15);">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                  <h3 class="section-sub-title" style="margin:0; font-size:var(--font-sm); color:inherit;">"I'm Going Out" Tracker</h3>
+                  <span id="goingOutHeaderStatus" style="font-size:var(--font-xs); font-weight:700; color:#4ade80;">🟢 Safe At Home</span>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <select id="goingOutDuration" class="form-select-box" style="flex:1; margin:0; height:38px; min-height:38px; font-size:var(--font-xs); background:var(--surface); color:var(--text-main); border:1px solid var(--border-color); border-radius:8px; padding:0 8px;">
+                    <option value="30">30 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="120" selected>2 hours</option>
+                  </select>
+                  <button type="button" class="primary-action-btn" id="goingOutBtn" style="flex:1.5; min-height:38px; padding:0 12px; font-size:var(--font-xs); font-weight:700; border-radius:8px;">
+                    🚶 Check Out (I'm Going Out)
+                  </button>
+                  <button type="button" class="secondary-action-btn d-none" id="goingOutBackBtn" style="flex:1.5; min-height:38px; padding:0 12px; font-size:var(--font-xs); font-weight:700; border-radius:8px; background:#22c55e; border:none; color:white;">
+                    🟢 I'm Back Safely
+                  </button>
+                  <button type="button" class="primary-btn-mini d-none" id="simulateGoingOutTimeoutBtn" style="min-height:38px; width:44px; padding:0; background:var(--color-red); border:none; border-radius:8px;" title="Simulate Overdue Timeout">
+                    ⚡
+                  </button>
+                </div>
+                <div id="goingOutCountdownText" class="mt-5 d-none" style="font-size:var(--font-xs); color:var(--color-primary-soft); font-weight:600; text-align:center;"></div>
+              </div>
+            </div>
+
+            <!-- Pulsing Ambient Companion Orb -->
+            <div class="hero-companion-orb">
+              <div class="orb-container">
+                <div class="orb-pulse-outer" id="orbPulseOuter"></div>
+                <div class="orb-pulse-mid" id="orbPulseMid"></div>
+                <div class="companion-core" id="companionOrbCore">
+                  <span data-icon="heart"></span>
+                </div>
+              </div>
+              <p class="orb-caption" id="orbStatusMessage">Pulsing: Listening for your presence</p>
+              <button class="primary-action-btn speech-readout-btn" id="speakGreetingBtn">
+                <span data-icon="volume"></span> Speak to me
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Home Dashboard Widgets Grid -->
+          <div class="widgets-grid" id="homeWidgetsGrid">
+            
+            <!-- Widget: Pending Bill Alert Card (d-none by default) -->
+            <article class="dashboard-card card-alert-left border-orange d-none" id="dashboardBillAlertCard">
+              <div class="card-header">
+                <span class="card-icon color-orange" data-icon="wallet"></span>
+                <h2 class="card-title">Pending Bill Reminder</h2>
+              </div>
+              <div style="padding: 10px 0;">
+                <p id="dashboardBillAlertText" style="font-size: var(--font-sm); font-weight: 600; color: var(--color-orange); margin-bottom: 12px;"></p>
+                <div style="display:flex; gap:8px;">
+                  <button type="button" class="primary-action-btn flex-1" id="dashboardPayBillBtn" style="min-height: 40px; font-size: var(--font-xs);">Pay Bill Now</button>
+                  <button type="button" class="secondary-action-btn flex-1" id="dashboardSnoozeBillBtn" style="min-height: 40px; font-size: var(--font-xs);">Remind Me Later</button>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Widget 1: Interactive Pillbox -->
+            <article class="dashboard-card card-alert-left border-red">
+              <div class="card-header">
+                <span class="card-icon color-red" data-icon="pill"></span>
+                <h2 class="card-title">Daily Pillbox</h2>
+              </div>
+              <div class="pillbox-container">
+                <div class="pill-scheduled-item" id="activePillItem">
+                  <div class="pill-info-block">
+                    <div class="pill-visual-icon shape-capsule color-orange"></div>
+                    <div>
+                      <h3 class="pill-item-name">Metformin (500mg)</h3>
+                      <p class="pill-time">8:00 AM · After Breakfast</p>
+                    </div>
+                  </div>
+                  <div class="pill-actions-grid">
+                    <button class="pill-btn take-btn" id="markPillTaken">Mark Taken</button>
+                    <button class="pill-btn snooze-btn" id="snoozePill">Snooze 15m</button>
+                    <button class="pill-btn verify-btn" id="triggerPillScanner" style="background:var(--color-primary-soft); color:var(--color-primary-dark); border:1px solid var(--border-color); grid-column:1 / -1; display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:10px; font-weight:700;">
+                      <span>🔍</span> Verify Pill with Camera
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="pill-adherence-log">
+                  <span class="log-indicator" id="adherenceIndicator">Adherence for today: 0/1 Taken</span>
+                  <div class="adherence-bar-bg"><div class="adherence-bar-fill" id="adherenceProgress" style="width: 0%;"></div></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 2: Today's Routine Schedule Checklist -->
+            <article class="dashboard-card">
+              <div class="card-header">
+                <span class="card-icon color-teal" data-icon="calendar"></span>
+                <h2 class="card-title">Today's Schedule</h2>
+              </div>
+              <ul class="routine-checklist" id="routineChecklist">
+                <li class="checklist-item">
+                  <label class="check-label">
+                    <input type="checkbox" class="large-checkbox" id="chkMeds">
+                    <span class="chk-custom"></span>
+                    <div>
+                      <strong>8:00 AM - Morning Medicine</strong>
+                      <p>Metformin & BP pill</p>
+                    </div>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="check-label">
+                    <input type="checkbox" class="large-checkbox" id="chkWalk">
+                    <span class="chk-custom"></span>
+                    <div>
+                      <strong>9:30 AM - Community Park Walk</strong>
+                      <p>Aim for 2,000 steps</p>
+                    </div>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="check-label">
+                    <input type="checkbox" class="large-checkbox" id="chkFamily">
+                    <span class="chk-custom"></span>
+                    <div>
+                      <strong>12:00 PM - Call Daughter Meera</strong>
+                      <p>Weekly check-in</p>
+                    </div>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="check-label">
+                    <input type="checkbox" class="large-checkbox" id="chkPrayer">
+                    <span class="chk-custom"></span>
+                    <div>
+                      <strong>6:00 PM - Evening Prayer/Bhajan</strong>
+                      <p>Spiritual relaxation time</p>
+                    </div>
+                  </label>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Widget 3: Circle of Gratitude Loop -->
+            <article class="dashboard-card border-gold">
+              <div class="card-header">
+                <span class="card-icon color-gold" data-icon="smile"></span>
+                <h2 class="card-title">Circle of Gratitude</h2>
+              </div>
+              <div class="gratitude-loop-wrapper">
+                <div class="send-blessing-section">
+                  <textarea id="blessingText" class="custom-input-box" placeholder="Type or speak a daily blessing to your family..."></textarea>
+                  <button class="primary-action-btn w-100" id="sendBlessingBtn">
+                    <span data-icon="wand"></span> Send Blessing & Voice Card
+                  </button>
+                </div>
+                
+                <hr class="card-divider">
+
+                <div class="gratitude-feed">
+                  <h3 class="feed-title">Latest family greetings</h3>
+                  <div class="feed-messages" id="gratitudeFeedMessages">
+                    <div class="feed-item">
+                      <strong class="feed-sender">Meera (Daughter)</strong>
+                      <p class="feed-text">"Thinking of you Mum, hope your morning walk went well! ❤️ Here's a quick message of love."</p>
+                      <span class="feed-time">1 hour ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 5: AI Care Confidence Score Ring -->
+            <article class="dashboard-card border-gold">
+              <div class="card-header">
+                <span class="card-icon color-gold" data-icon="brain"></span>
+                <h2 class="card-title">Care Confidence Tracker</h2>
+              </div>
+              <div class="care-score-tracker-body">
+                <div class="score-display-row">
+                  <div class="score-ring-visual" id="dashboardScoreRing">
+                    <svg viewBox="0 0 36 36" class="circular-chart gold">
+                      <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                      <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="percentage-label">
+                      <strong id="dashboardScoreVal">92</strong>
+                      <span>Care Score</span>
+                    </div>
+                  </div>
+                  <div class="score-explanation-block">
+                    <strong>Stable Confidence</strong>
+                    <p id="scoreExplanationText">Your medication is taken, family logged contact today, and trusted helpers are active in your area.</p>
+                  </div>
+                </div>
+                <hr class="card-divider">
+                <div class="score-dimensions-progress">
+                  <div class="dimension-progress-item">
+                    <span>Health & Vitals: 95%</span>
+                    <div class="progress-bar-xs"><div class="progress-bar-fill bg-teal" style="width: 95%;"></div></div>
+                  </div>
+                  <div class="dimension-progress-item">
+                    <span>Safety Protection: 90%</span>
+                    <div class="progress-bar-xs"><div class="progress-bar-fill bg-teal" style="width: 90%;"></div></div>
+                  </div>
+                  <div class="dimension-progress-item">
+                    <span>Family Connectivity: 85%</span>
+                    <div class="progress-bar-xs"><div class="progress-bar-fill bg-gold" style="width: 85%;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 4: Offline Emergency Care Card Summary -->
+            <article class="dashboard-card">
+              <div class="card-header">
+                <span class="card-icon color-orange" data-icon="lock"></span>
+                <h2 class="card-title">First-Responder Summary</h2>
+              </div>
+              <div class="first-responder-mini">
+                <ul class="mini-medical-info">
+                  <li><strong>Blood Type:</strong> B Positive</li>
+                  <li><strong>Conditions:</strong> Type-2 Diabetes, Hypertension</li>
+                  <li><strong>Core Medications:</strong> Metformin, Amlodipine</li>
+                  <li><strong>Primary Contact:</strong> Meera (+91 99999 99999)</li>
+                </ul>
+                <button class="secondary-action-btn w-100" id="triggerQRModalMini">
+                  <span data-icon="lock"></span> Show Medical QR Code
+                </button>
+              </div>
+            </article>
+
+            <!-- Widget 6: Side-Effect Diary -->
+            <article class="dashboard-card border-red">
+              <div class="card-header">
+                <span class="card-icon color-red" data-icon="activity"></span>
+                <h2 class="card-title">Side-Effect Diary</h2>
+              </div>
+              <div class="side-effect-container" style="padding: 10px 0;">
+                <p style="font-size: var(--font-sm); color: var(--text-muted); margin-bottom: 12px;">Track dizzy spells or symptoms after your blood pressure medicine.</p>
+                <button class="primary-action-btn w-100" id="logDizzyBtn" style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; display: flex; align-items: center; justify-content: center; gap: 8px; border: none;">
+                  <span>😵</span> Feeling Dizzy Today
+                </button>
+                <div id="dizzyStatusBlock" class="mt-10 d-none" style="background: var(--color-primary-soft); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <p id="dizzyStatusText" style="font-size: var(--font-sm); font-weight: 500; color: var(--color-primary-dark); margin: 0;"></p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 7: Water Hydration Tracker -->
+            <article class="dashboard-card border-teal">
+              <div class="card-header">
+                <span class="card-icon color-teal" data-icon="heart"></span>
+                <h2 class="card-title">Water Hydration</h2>
+              </div>
+              <div class="water-container" style="padding: 10px 0;">
+                <p id="waterReminderText" style="font-size: var(--font-sm); font-weight: 600; color: var(--color-primary-dark); margin-bottom: 10px; background: var(--color-primary-soft); padding: 8px; border-radius: 8px; border-left: 4px solid var(--color-primary);"></p>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <span style="font-size: var(--font-sm); color: var(--text-muted);">Glasses drank today:</span>
+                  <strong id="waterCountVal" style="font-size: var(--font-md); color: var(--color-primary-dark);">0 / 8</strong>
+                </div>
+                <div class="water-cups-row" style="display: flex; gap: 6px; margin-bottom: 12px; justify-content: center;">
+                  <span class="water-cup-icon" data-index="0" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="1" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="2" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="3" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="4" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="5" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="6" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                  <span class="water-cup-icon" data-index="7" style="cursor: pointer; font-size: var(--font-lg); opacity: 0.3; transition: all 0.2s;">🥛</span>
+                </div>
+                <button class="secondary-action-btn w-100" id="logWaterBtn" style="min-height: 40px;">
+                  ➕ Log 1 Glass (250ml)
+                </button>
+              </div>
+            </article>
+
+            <!-- Widget 8: Sleep Journal -->
+            <article class="dashboard-card border-gold">
+              <div class="card-header">
+                <span class="card-icon color-gold" data-icon="calendar"></span>
+                <h2 class="card-title">Sleep Journal</h2>
+              </div>
+              <div class="sleep-container" style="padding: 10px 0;">
+                <p style="font-size: var(--font-sm); color: var(--text-muted); margin-bottom: 12px;">How did you sleep last night?</p>
+                <div class="sleep-buttons-row" style="display: flex; gap: 8px; justify-content: space-between; margin-bottom: 12px;">
+                  <button type="button" class="secondary-action-btn sleep-opt-btn" data-quality="good" style="flex: 1; min-height: 40px; padding: 0 4px; font-size: var(--font-xs);">🟢 Good</button>
+                  <button type="button" class="secondary-action-btn sleep-opt-btn" data-quality="average" style="flex: 1; min-height: 40px; padding: 0 4px; font-size: var(--font-xs);">🟡 Average</button>
+                  <button type="button" class="secondary-action-btn sleep-opt-btn" data-quality="bad" style="flex: 1; min-height: 40px; padding: 0 4px; font-size: var(--font-xs);">🔴 Bad</button>
+                </div>
+                <p id="sleepStatusText" style="font-size: var(--font-xs); color: var(--text-muted); text-align: center; margin: 0;"></p>
+                
+                <!-- Wearable Sleep Sync Section -->
+                <div class="sleep-wearable-sync" style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed var(--border-color);">
+                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                    <span style="font-size: var(--font-xs); color: var(--text-muted); font-weight: 500;">Wearable Device:</span>
+                    <span id="wearableStatusBadge" style="font-size: var(--font-xs); font-weight:700; color: var(--text-muted);">Disconnected</span>
+                  </div>
+                  <button type="button" class="secondary-action-btn w-100" id="syncWearableBtn" style="min-height:36px; font-size: var(--font-xs); display:flex; align-items:center; justify-content:center; gap:6px;">
+                    <span>⌚</span> Sync Watch / Fitbit
+                  </button>
+                  <button type="button" class="primary-btn-mini w-100 mt-5 d-none" id="simulateBadSleepSeriesBtn" style="min-height:30px; font-size: var(--font-xs); background:var(--color-orange); border:none; color:white; border-radius:8px;">
+                    ⚡ Simulate 3 Bad Nights (Test Alert)
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 9: Symptom Translator & Risk Triage -->
+            <article class="dashboard-card border-red" style="grid-column: 1 / -1;">
+              <div class="card-header">
+                <span class="card-icon color-red" data-icon="stethoscope"></span>
+                <h2 class="card-title">Symptom Translator & Risk Triage</h2>
+              </div>
+              <div class="symptom-translator-container" style="padding: 10px 0;">
+                <p style="font-size: var(--font-sm); color: var(--text-muted); margin-bottom: 12px;">Describe your symptom in your native language (e.g. Telugu, Hindi, Tamil) for instant translation and immediate safety risk triage.</p>
+                <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                  <input type="text" id="symptomInputText" class="custom-input-box" placeholder="Describe how you feel (e.g., నాకు ఛాతీలో బిగుతుగా ఉంది / chest tightness)..." style="flex: 1; margin: 0;">
+                  <button type="button" class="primary-action-btn" id="symptomVoiceBtn" style="min-height:48px; width:48px; padding:0; display:flex; align-items:center; justify-content:center; background:var(--color-primary-soft); color:var(--color-primary-dark); border:1px solid var(--border-color);" title="Speak Symptom">
+                    <span data-icon="mic"></span>
+                  </button>
+                </div>
+                <button type="button" class="primary-action-btn w-100" id="triageSymptomBtn" style="min-height: 44px;">
+                  🔍 Translate & Analyze Symptoms
+                </button>
+                <div id="triageResultBlock" class="mt-12 d-none" style="background: var(--color-primary-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <strong style="display:block; font-size: var(--font-sm); margin-bottom: 4px; color: var(--text-color);">Analysis & Triage Result:</strong>
+                  <p id="triageTranslationText" style="font-size: var(--font-sm); font-style: italic; color: var(--text-muted); margin: 0 0 6px 0;"></p>
+                  <p id="triageRiskAssessment" style="font-size: var(--font-sm); font-weight: 700; margin: 0;"></p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget: Household Rituals Checklist -->
+            <article class="dashboard-card border-teal">
+              <div class="card-header">
+                <span class="card-icon color-teal" data-icon="shield"></span>
+                <h2 class="card-title">My Safety Rituals</h2>
+              </div>
+              <div class="rituals-container" style="padding: 10px 0;">
+                <div class="ritual-tabs" style="display:flex; gap:8px; margin-bottom:10px;">
+                  <button type="button" class="filter-tab-btn active" id="ritualTabMorning" style="flex:1; padding:4px; font-size:var(--font-xs);">🌅 Morning</button>
+                  <button type="button" class="filter-tab-btn" id="ritualTabEvening" style="flex:1; padding:4px; font-size:var(--font-xs);">🌙 Evening</button>
+                </div>
+                
+                <div id="morningRitualsList">
+                  <ul class="routine-checklist" style="margin:0; padding:0; list-style:none;">
+                    <li class="checklist-item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_geyser" style="width:20px; height:20px; margin:0;">
+                        <span>Switch off bathroom geyser</span>
+                      </label>
+                    </li>
+                    <li class="checklist-item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_backdoor" style="width:20px; height:20px; margin:0;">
+                        <span>Lock back balcony door</span>
+                      </label>
+                    </li>
+                    <li class="checklist-item" style="padding:8px 0;">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_umbrella" style="width:20px; height:20px; margin:0;">
+                        <span>Take keys & umbrella if leaving</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div id="eveningRitualsList" class="d-none">
+                  <ul class="routine-checklist" style="margin:0; padding:0; list-style:none;">
+                    <li class="checklist-item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_maingate" style="width:20px; height:20px; margin:0;">
+                        <span>Lock main entrance gate</span>
+                      </label>
+                    </li>
+                    <li class="checklist-item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_kitchenwindow" style="width:20px; height:20px; margin:0;">
+                        <span>Latch kitchen ventilation window</span>
+                      </label>
+                    </li>
+                    <li class="checklist-item" style="padding:8px 0;">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_torch" style="width:20px; height:20px; margin:0;">
+                        <span>Keep emergency torch by bedside table</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 2. Culture Engine View -->
+        <section class="view-panel" id="culture-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">GLOBAL LOCALIZATION PLATFORM</span>
+            <h1 class="view-title">Country & Culture Personalization Engine</h1>
+            <p class="view-description">CareCircle adapts its visual skin, voice speech synthesis dialect, lifestyle schedules, emergency local numbers, and family roles depending on country selection.</p>
+          </div>
+
+          <div class="culture-split-grid">
+            <!-- Left Form Configuration -->
+            <form class="custom-form-card" id="cultureConfigForm">
+              <div class="form-group">
+                <label for="countrySelect" class="form-label">Country Profile</label>
+                <select id="countrySelect" class="form-select-box">
+                  <option value="India">India (Spiritual & Family-focused)</option>
+                  <option value="Japan">Japan (Zen Minimalist & Independent)</option>
+                  <option value="United States">United States (Active Aging & Self-reliant)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (Hospitable & Climate Alert)</option>
+                  <option value="Brazil">Brazil (Vibrant & Socially Connected)</option>
+                </select>
+              </div>
+
+              <!-- Indian State Dropdown (Shown only when India is selected) -->
+              <div class="form-group d-none" id="indianStateContainer">
+                <label for="stateSelect" class="form-label" data-i18n="form_indian_state">Indian State (For Localized Services & Language)</label>
+                <select id="stateSelect" class="form-select-box">
+                  <option value="Tamil Nadu">Tamil Nadu (Tamil / English)</option>
+                  <option value="Maharashtra">Maharashtra (Hindi / English)</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh / Telangana (Telugu / English)</option>
+                  <option value="Delhi">Delhi / North India (Hindi / English)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="seniorNameInput" class="form-label">Your Name (For personalization)</label>
+                <input type="text" id="seniorNameInput" class="form-text-input" value="Lakshmi Raman">
+              </div>
+
+              <div class="form-group">
+                <label for="companionNameInput" class="form-label">Name your AI Companion (e.g. Sathi, Zen, Buddy)</label>
+                <input type="text" id="companionNameInput" class="form-text-input" value="Sathi">
+              </div>
+
+              <div class="form-group">
+                <label for="cityInput" class="form-label">City Location</label>
+                <input type="text" id="cityInput" class="form-text-input" value="Chennai">
+              </div>
+
+              <div class="form-group">
+                <label for="geminiApiKeyInput" class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Gemini API Key (Optional)</span>
+                  <a href="https://aistudio.google.com/" target="_blank" style="font-size: var(--font-xs); color: var(--color-primary); text-decoration: underline;">Get free key from AI Studio</a>
+                </label>
+                <input type="password" id="geminiApiKeyInput" class="form-text-input" placeholder="Enter your Gemini API key for dynamic conversations..." value="">
+              </div>
+
+              <div class="form-group">
+                <label for="languageSelect" class="form-label">Voice & Display Language</label>
+                <select id="languageSelect" class="form-select-box">
+                  <!-- Will be populated dynamically by script based on country -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="spiritualPreference" class="form-label">Spiritual/Meditation Alignment</label>
+                <select id="spiritualPreference" class="form-select-box">
+                  <option value="festivals_prayers">Festival & Daily Prayer Reminders</option>
+                  <option value="meditation_ambient">Mindfulness & Meditation Guidance</option>
+                  <option value="community_only">Social Community Gathering Updates</option>
+                  <option value="none">No Spiritual Reminders</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="dietPreference" class="form-label">Food & Diet Habit</label>
+                <select id="dietPreference" class="form-select-box">
+                  <option value="veg_diabetic">Vegetarian (Diabetic Friendly)</option>
+                  <option value="low_sodium">Low-Salt (Heart Friendly)</option>
+                  <option value="balanced_diet">Standard Balanced Non-Veg Diet</option>
+                  <option value="fasting_support">Religious Fasting Coordination</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="livingSituationSelect" class="form-label">Living Arrangement</label>
+                <select id="livingSituationSelect" class="form-select-box">
+                  <option value="living_alone">Living Alone (Neighbor Backup Active)</option>
+                  <option value="with_spouse">Living with Spouse</option>
+                  <option value="with_children">Living with Family/Children</option>
+                  <option value="retirement_community">Retirement Community Center</option>
+                  <option value="professional_caregiver">Professional Home Nurse Care</option>
+                </select>
+              </div>
+
+              <!-- Hyderabad Heatwave simulation input -->
+              <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                <input type="checkbox" id="simulateHeatwave" class="large-checkbox" style="width:24px; height:24px; margin:0;">
+                <label for="simulateHeatwave" class="form-label" style="margin:0; cursor:pointer; font-weight: 600;">Simulate Hyderabad Summer (45°C) Alert</label>
+              </div>
+
+              <button type="submit" class="primary-action-btn w-100 mt-10" id="saveCultureSettings">
+                <span data-icon="wand"></span> Re-Calibrate Companion Engine
+              </button>
+            </form>
+
+            <!-- Right Localized Output Details Card -->
+            <div class="culture-outputs-column">
+              <!-- Culture Twin Profile Snapshot -->
+              <article class="custom-form-card border-gold mb-20">
+                <div class="localized-card-header">
+                  <h3 class="card-inner-title">Culture Twin Active Model</h3>
+                  <span class="active-badge">TWIN ALIGNED</span>
+                </div>
+                <ul class="mini-medical-info" id="cultureTwinSnapshot">
+                  <li><strong>Theme Template:</strong> India</li>
+                  <li><strong>Local Scams Vetted:</strong> Aadhaar KYC scam, electricity cut threats</li>
+                  <li><strong>Document Rules:</strong> Aadhaar, PAN Card, Life Proof Certificate</li>
+                  <li><strong>Family Norms:</strong> Joint family, children abroad, neighbor support</li>
+                </ul>
+              </article>
+
+              <article class="localized-details-card" id="localizedDetailPanel">
+                <div class="localized-card-header">
+                  <h2 class="localized-card-title" id="localizedCountryHeader">India Care Customizations</h2>
+                  <span class="active-badge">PLAYBOOK ACTIVE</span>
+                </div>
+                
+                <div class="localized-features-list" id="localizedFeaturesList">
+                  <!-- Populated dynamically by script -->
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Family Circle View -->
+        <section class="view-panel" id="family-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">FAMILY CONFIDENCE CONTROLS</span>
+            <h1 class="view-title">Family Circle & Consent Passport</h1>
+            <p class="view-description">Configure specific permissions for each family member. You control exactly what they see—maintaining your independent dignity while keeping them informed.</p>
+          </div>
+
+          <div class="family-dashboard-layout">
+            <!-- Family Members Grid -->
+            <div class="family-members-panel">
+              <h2 class="sub-header-title">Active Contacts</h2>
+              <div class="family-contacts-grid" id="familyContactsGrid">
+                <!-- Populated dynamically -->
+              </div>
+
+              <!-- Consent Passport Manager Card -->
+              <div class="family-permissions-card mt-20">
+                <div class="localized-card-header" style="margin-bottom:10px;">
+                  <h3 class="card-inner-title">Consent Passport Settings</h3>
+                  <span class="threat-badge bg-teal" id="consentExpiryLabel">1 Active Temporary Session</span>
+                </div>
+                <p class="perm-desc">Grant temporary, security-vetted data permissions to doctors or relatives that auto-expire.</p>
+                
+                <div class="form-group">
+                  <label for="consentGrantee" class="form-label">Grantee Contact</label>
+                  <select id="consentGrantee" class="form-select-box">
+                    <option value="Meera">Meera (Daughter)</option>
+                    <option value="Arun">Arun (Son)</option>
+                    <option value="Ravi">Ravi (Pharmacist)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="consentDuration" class="form-label">Permission Access Duration</label>
+                  <select id="consentDuration" class="form-select-box">
+                    <option value="3600">Expires in 1 Hour</option>
+                    <option value="86400">Expires in 24 Hours</option>
+                    <option value="604800">Expires in 7 Days</option>
+                    <option value="always">Always Allowed (Permanent Link)</option>
+                  </select>
+                </div>
+
+                <div class="permission-item-row">
+                  <div>
+                    <strong>Medication Compliance Visibility</strong>
+                    <p class="sub-text">Check if daily pillbox was taken</p>
+                  </div>
+                  <label class="switch-toggle-wrapper">
+                    <input type="checkbox" id="permMeds" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div class="permission-item-row">
+                  <div>
+                    <strong>Emergency Location & SOS Tracking</strong>
+                    <p class="sub-text">Show current GPS location during emergencies</p>
+                  </div>
+                  <label class="switch-toggle-wrapper">
+                    <input type="checkbox" id="permLocation" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div class="permission-item-row">
+                  <div>
+                    <strong>Emotional Mood Journal</strong>
+                    <p class="sub-text">Share mood logs and loneliness checks</p>
+                  </div>
+                  <label class="switch-toggle-wrapper">
+                    <input type="checkbox" id="permMood">
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div class="permission-item-row">
+                  <div>
+                    <strong>Legal & Document Vault</strong>
+                    <p class="sub-text">Permit viewing of stored passport/will files</p>
+                  </div>
+                  <label class="switch-toggle-wrapper">
+                    <input type="checkbox" id="permDocs">
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <button class="primary-action-btn w-100 mt-15" id="saveConsentPassportBtn">
+                  Update Consent Access Credentials
+                </button>
+              </div>
+            </div>
+
+            <!-- Family Circle Chat & Activity Log Feed -->
+            <div class="family-feed-panel">
+              <!-- Family Repair Nudges Card -->
+              <div class="dashboard-card border-gold mb-20">
+                <div class="card-header" style="margin-bottom: 10px;">
+                  <span class="card-icon color-gold" data-icon="smile"></span>
+                  <h3 class="card-inner-title">Family Repair Nudge Engine</h3>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Generate simple, guilt-free call suggestions. Tapping sends reconnection logs directly to family chat.</p>
+                
+                <div class="nudge-prompt-box" id="nudgePromptDisplay">
+                  <strong>Reconnection Script:</strong>
+                  <p class="nudge-script-text" id="nudgeScriptText">"Hi Meera, I tried a new recipe today and was thinking of you. Call me when you get a minute!"</p>
+                  <div class="nudge-actions-row mt-10">
+                    <button class="primary-btn-mini log-metric-btn" id="sendNudgeToChatBtn">Send to Chat</button>
+                    <button class="secondary-action-btn" id="cycleNudgePromptBtn" style="min-height:40px; padding:0 12px;">Next Script</button>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Family Role descriptions card -->
+            <div class="family-permissions-card mt-20" style="grid-column: 1 / -1; margin-bottom: 20px;">
+              <h3 class="card-inner-title">CareCircle Role Assignment Matrix</h3>
+              <p class="perm-desc">Platform-enforced separation of duties to ensure elder dignity and support efficiency.</p>
+              
+              <div class="role-grid-matrix">
+                <div class="role-matrix-item">
+                  <strong>Emergency Contact</strong>
+                  <p>Highest routing priority during SOS countdowns, direct access to GPS and first responder QR packs.</p>
+                </div>
+                <div class="role-matrix-item">
+                  <strong>Medicine Monitor</strong>
+                  <p>Grants visibility to pill compliance logs without allowing access to private thoughts or chat journals.</p>
+                </div>
+                <div class="role-matrix-item">
+                  <strong>Payment Sponsor</strong>
+                  <p>Handles monthly plans and approves large requests (e.g. nurse hires or handyman bills).</p>
+                </div>
+                <div class="role-matrix-item">
+                  <strong>Appointment Manager</strong>
+                  <p>Coordinates clinic taxi rides, medical checkups, and logs doctor prescriptions in the care planner.</p>
+                </div>
+              </div>
+            </div>
+
+              <h2 class="sub-header-title">Live Family Feed & Chat Simulator</h2>
+              <div class="family-chat-card">
+                
+                <!-- Chat Message Logs -->
+                <div class="chat-logs-container" id="familyChatLogs">
+                  <div class="chat-system-message">Chat established. (Simulated Circle Connection)</div>
+                  
+                  <div class="chat-bubble received">
+                    <div class="chat-bubble-header">
+                      <div class="sender-meta">Meera · 12:00 PM</div>
+                      <button class="chat-listen-btn" aria-label="Listen back to message" title="Listen back">
+                        <span data-icon="volume"></span>
+                      </button>
+                    </div>
+                    <p class="chat-text">Hi Lakshmi ji! Did you complete your morning walk yet?</p>
+                  </div>
+
+                  <div class="chat-log-event">
+                    <span class="event-icon" data-icon="pill"></span>
+                    <span class="event-desc">Lakshmi ji marked morning Metformin as Taken</span>
+                    <span class="event-time">8:05 AM</span>
+                  </div>
+                </div>
+
+                <!-- Quick Phrases Bar -->
+                <div class="chat-quick-phrases-bar d-none" id="chatQuickPhrasesBar">
+                  <!-- Dynamically populated buttons -->
+                </div>
+
+                <!-- Chat Input Controls -->
+                <div class="chat-input-bar">
+                  <!-- Normal Input Mode -->
+                  <div class="chat-input-row" id="chatInputRow">
+                    <button class="chat-voice-btn" id="chatVoiceTypingBtn" title="Speak to Type" aria-label="Speak to Type">
+                      <span data-icon="mic"></span>
+                    </button>
+                    <button class="chat-voice-btn" id="chatVoiceNoteBtn" title="Record Voice Note" aria-label="Record Voice Note">
+                      <span class="voice-note-inner-icon"></span>
+                    </button>
+                    <input type="text" id="familyChatInput" placeholder="Type a message to Meera & Arun..." class="chat-text-box">
+                    <button class="primary-action-btn chat-send-btn" id="sendFamilyChatMessage" aria-label="Send message to family chat">
+                      Send
+                    </button>
+                  </div>
+                  
+                  <!-- Recording Voice Note Mode -->
+                  <div class="chat-recording-row d-none" id="chatRecordingRow">
+                    <div class="recording-status-box">
+                      <span class="recording-dot-pulse"></span>
+                      <span id="recordingTimeDisplay">0:00</span>
+                      <span id="recordingStatusLabel">Recording voice note...</span>
+                    </div>
+                    <div class="recording-actions-box">
+                      <button class="btn-secondary-mini chat-record-cancel-btn" id="cancelVoiceRecordBtn">Cancel</button>
+                      <button class="primary-btn-mini chat-record-send-btn" id="stopAndSendVoiceRecordBtn">Stop & Send</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Local Helpers View -->
+        <section class="view-panel" id="services-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">COMMUNITY SERVICE INTEGRATION</span>
+            <h1 class="view-title">Trusted Local Helpers & Partners</h1>
+            <p class="view-description">Book verified assistants in your city for pharmacy refills, grocery escorts, taxi clinic transport, home repairs, or government paperwork support.</p>
+          </div>
+
+          <div class="services-filter-bar">
+            <strong>Categories:</strong>
+            <div class="filter-buttons-scroll">
+              <button class="filter-tab-btn active" data-filter="all">All Services</button>
+              <button class="filter-tab-btn" data-filter="medical">Medical & Health</button>
+              <button class="filter-tab-btn" data-filter="errand">Errands & Groceries</button>
+              <button class="filter-tab-btn" data-filter="assisted">Assisted Visits</button>
+              <button class="filter-tab-btn" data-filter="repair">Home Repair</button>
+            </div>
+          </div>
+
+          <div class="services-grid-list" id="servicesMarketplaceGrid">
+            <!-- Services populated dynamically based on country selection -->
+          </div>
+        </section>
+
+        <!-- 5. Wisdom Earning Marketplace View -->
+        <section class="view-panel" id="earn-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">SENIOR EMPOWERMENT MARKETPLACE</span>
+            <h1 class="view-title">Wisdom Income & Royalties</h1>
+            <p class="view-description">Age is wisdom. Monetize your knowledge of cooking, traditional crafts, language tutoring, or history storytelling. We manage booking schedules, payments, and safety.</p>
+          </div>
+
+          <div class="wisdom-marketplace-layout">
+            <!-- Left Side: Offer Creator Wizard -->
+            <div class="wisdom-creator-card">
+              <h2 class="creator-title">Publish Your Session Listing</h2>
+              <p class="creator-desc">Create a listing for buyers to book audio, video, or in-person mentoring.</p>
+
+              <div class="form-group">
+                <label for="wisdomSkillTitle" class="form-label">What can you offer/teach?</label>
+                <input type="text" id="wisdomSkillTitle" class="form-text-input" value="Traditional South Indian Vegetarian Cooking">
+              </div>
+
+              <div class="form-group">
+                <label for="wisdomSessionType" class="form-label">Format of Session</label>
+                <select id="wisdomSessionType" class="form-select-box">
+                  <option value="video_class">Video Consultation (Google Meet/Zoom)</option>
+                  <option value="audio_call">1-on-1 Audio Mentoring</option>
+                  <option value="recorded_story">Recorded Wisdom Story Pack</option>
+                  <option value="local_workshop">Local Neighborhood Workshop</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="wisdomPrice" class="form-label">Session Pricing (Per Session)</label>
+                <input type="text" id="wisdomPrice" class="form-text-input" value="₹499">
+              </div>
+
+              <div class="form-group">
+                <label for="wisdomCardCover" class="form-label">Cover Accent Style</label>
+                <select id="wisdomCardCover" class="form-select-box">
+                  <option value="theme-gold">Elegant Golden Accent</option>
+                  <option value="theme-teal">Professional Teal Accent</option>
+                  <option value="theme-purple">Royal Lavender Accent</option>
+                </select>
+              </div>
+
+              <button class="primary-action-btn w-100 mt-15" id="publishWisdomOfferBtn">
+                <span data-icon="plus"></span> Publish to Public Marketplace
+              </button>
+            </div>
+
+            <!-- Right Side: Real-time Buyer's Feed Preview & Royalties Wallet -->
+            <div class="wisdom-preview-panel">
+              <!-- Wisdom Royalties Ledger Tracker -->
+              <article class="custom-form-card border-gold mb-20">
+                <h3 class="card-inner-title">Wisdom Royalties Wallet</h3>
+                <p class="perm-desc" style="margin-bottom:12px;">Track recurring sales and commissions from your published wisdom assets.</p>
+                <div class="royalties-wallet-metrics">
+                  <div class="wallet-balance-row">
+                    <div>
+                      <span>Pending Payout</span>
+                      <strong id="royaltiesBalance">₹1,996</strong>
+                    </div>
+                    <button class="primary-btn-mini" id="withdrawRoyaltiesBtn" style="padding:0 15px; min-height:44px;">Claim Payout</button>
+                  </div>
+                  <div class="wallet-payout-details mt-10">
+                    <p class="sub-text">Asset: <strong>Traditional Sambar Recipe Book</strong> · 4 copies sold (10% platform fee applied)</p>
+                  </div>
+                </div>
+              </article>
+
+              <h2 class="sub-header-title">Live Preview (How buyers see your card)</h2>
+              <div class="wisdom-preview-card" id="wisdomListingPreview">
+                <span class="preview-badge">Active Listing Preview</span>
+                <div class="preview-cover-graphic" id="previewCoverBackground">
+                  <span data-icon="book" class="cover-icon"></span>
+                </div>
+                <div class="preview-info-block">
+                  <h3 class="preview-offer-title" id="previewOfferTitle">Traditional South Indian Vegetarian Cooking</h3>
+                  <div class="preview-meta-row">
+                    <span class="meta-tag" id="previewOfferFormat">Video Consultation</span>
+                    <strong class="preview-price" id="previewOfferPrice">₹499</strong>
+                  </div>
+                  <p class="preview-blurb">CareCircle guarantees payment delivery to senior bank accounts. Family approval tracks large commissions.</p>
+                </div>
+              </div>
+
+              <h2 class="sub-header-title mt-25">Your Published Listings</h2>
+              <div class="published-listings-list" id="publishedListingsList">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Safety Guardian View -->
+        <section class="view-panel" id="safety-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">ANTI-FRAUD & EMERGENCY SYSTEM</span>
+            <h1 class="view-title">Safety Guardian & Scam Shield</h1>
+            <p class="view-description">Protection from daily digital scams and emergency physical hazards. Scan suspicious SMS messages, view registered neighborhood emergency networks, and trigger alarms.</p>
+          </div>
+
+          <div class="safety-grid-layout">
+            <!-- Widget: "I'm Going Out" Safety Tracker -->
+            <article class="safety-panel-card border-teal" id="safetyGoingOutCard">
+              <h2 class="safety-card-title text-teal">"I'm Going Out" Safety Check</h2>
+              <p class="safety-card-subtitle">Tell CareCircle before you leave for a walk or the market. If you don't return by the time you promised, your family will be alerted.</p>
+              
+              <div class="going-out-body" style="margin-top: 15px;">
+                <div id="safetyGoingOutStateHome">
+                  <div class="form-group">
+                    <label for="safetyGoingOutDuration" class="form-label">How long will you be out?</label>
+                    <select id="safetyGoingOutDuration" class="form-select-box">
+                      <option value="15">15 minutes (Quick walk)</option>
+                      <option value="30">30 minutes</option>
+                      <option value="60">1 hour</option>
+                      <option value="120" selected>2 hours (Market/Visit)</option>
+                    </select>
+                  </div>
+                  <button type="button" class="primary-action-btn w-100" id="safetyGoingOutStartBtn" style="min-height: 48px;">
+                    🚶 Check Out (I'm Going Out)
+                  </button>
+                </div>
+                
+                <div id="safetyGoingOutStateActive" class="d-none">
+                  <div style="text-align: center; padding: 15px; background: var(--color-primary-soft); border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 15px;">
+                    <span style="font-size: var(--font-xs); color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Return Deadline Countdown</span>
+                    <strong id="safetyGoingOutTimer" style="font-size: var(--font-3xl); font-family: monospace; color: var(--color-primary-dark); display: block; margin: 5px 0;">02:00:00</strong>
+                    <span style="font-size: var(--font-xs); color: var(--text-muted);">Please return and check in before timer hits zero!</span>
+                  </div>
+                  <div style="display: flex; gap: 8px;">
+                    <button type="button" class="primary-action-btn flex-1" id="safetyGoingOutEndBtn" style="background: #22c55e; border-color: #22c55e; color: white; min-height: 48px; font-weight: 700;">
+                      🟢 I'm Back Safely
+                    </button>
+                    <button type="button" class="secondary-action-btn" id="safetyGoingOutForceTimeoutBtn" style="border-color: var(--color-red); color: var(--color-red); min-height: 48px; padding: 0 15px;" title="Simulate missing your return deadline">
+                      ⚡ Force Timeout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 1: Emergency SOS Big Panel -->
+            <article class="safety-panel-card border-red">
+              <h2 class="safety-card-title text-red">Emergency SOS Center</h2>
+              <p class="safety-card-subtitle">Click the button below to sound local alarms, broadcast emergency coordinates, and page family contacts immediately.</p>
+              
+              <button class="emergency-trigger-giant-btn" id="sosGiantButton" aria-label="Trigger Large Emergency SOS">
+                <span data-icon="siren"></span>
+                <span>ACTIVATE SOS</span>
+              </button>
+              
+              <div class="emergency-numbers-info mt-15">
+                <strong class="info-line-header">Local Routed Services:</strong>
+                <p id="localServicesDisplay">Ambulance: 108 · National Helpline: 112</p>
+              </div>
+            </article>
+
+            <!-- Widget 2: Interactive Anti-Scam check -->
+            <article class="safety-panel-card">
+              <h2 class="safety-card-title">"Ask Family to Verify" Scam Shield</h2>
+              <p class="safety-card-subtitle">Received a suspicious text message or email about bank card closures, urgent money transfers, or lottery wins? Paste it here to scan for threats.</p>
+              
+              <div class="scam-checker-input-wrapper">
+                <textarea id="scamMessageInput" class="custom-input-box font-medium" placeholder="Paste the suspicious text message here... Example: 'Your bank card is locked. Click here to confirm details immediately.'"></textarea>
+                <div class="scam-actions-row">
+                  <button class="secondary-action-btn font-medium flex-1" id="scanScamTextBtn">Scan Message</button>
+                  <button class="primary-action-btn font-medium flex-1 d-none" id="forwardScamToFamilyBtn">
+                    <span data-icon="users"></span> Forward to Family
+                  </button>
+                </div>
+              </div>
+
+              <!-- Scam Output Result -->
+              <div class="scam-scan-result-card d-none" id="scamResultCard">
+                <div class="scam-result-header">
+                  <span class="threat-badge" id="scamThreatBadge">CRITICAL THREAT</span>
+                  <div class="scam-risk-score">Threat Score: <strong id="scamScore">90/100</strong></div>
+                </div>
+                <div class="adherence-bar-bg"><div class="adherence-bar-fill bg-red" id="scamRiskBar" style="width: 90%;"></div></div>
+                <p class="scam-result-explanation" id="scamResultExplanation">This message requests urgent credentials and features classic phishing phrasing.</p>
+              </div>
+            </article>
+
+            <!-- Widget: Home Visit Safety Verification -->
+            <article class="safety-panel-card border-gold" id="safetyHomeVisitCard">
+              <h2 class="safety-card-title text-gold">Home Visit Scam Shield</h2>
+              <p class="safety-card-subtitle">Did a stranger, repair person, or inspector arrive at your door? Use this tool to verify their authenticity and avoid common door-to-door scams.</p>
+              
+              <div class="home-visit-body" style="margin-top: 15px;">
+                <div class="scam-verification-steps" style="background: var(--color-gold-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 15px;">
+                  <strong style="display: block; font-size: var(--font-sm); color: var(--color-gold); margin-bottom: 8px;">⚠️ Doorbell Verification Checklist:</strong>
+                  <ul class="mini-medical-info" style="font-size: var(--font-xs); list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
+                    <li><input type="checkbox" id="checkIdBadge"> <label for="checkIdBadge">Ask for official ID badge through safety latch</label></li>
+                    <li><input type="checkbox" id="checkPayment"> <label for="checkPayment">Are they asking for cash/payment at door? (Real inspectors NEVER ask for cash)</label></li>
+                    <li><input type="checkbox" id="checkVerification"> <label for="checkVerification">Call official company helpline to verify service ticket</label></li>
+                    <li><input type="checkbox" id="checkNeighbor"> <label for="checkNeighbor">Alert a neighbor or building guard that a worker is visiting</label></li>
+                  </ul>
+                </div>
+
+                <div class="scam-database-accordion" style="margin-bottom: 15px;">
+                  <strong style="display: block; font-size: var(--font-xs); color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">⚠️ Common Local Doorway Scams:</strong>
+                  <select id="doorwayScamSelect" class="form-select-box" style="margin-bottom: 8px; height: 36px; min-height: 36px; font-size: var(--font-xs);">
+                    <option value="gas">Fake Gas Cylinder Inspector (demands fee)</option>
+                    <option value="electric">Fake Electricity Cutoff Threat (demands immediate QR code payment)</option>
+                    <option value="biometric">Aadhaar/Pension KYC Verification Doorstep Scam</option>
+                    <option value="fan">"Neighbor's Son" Fan/AC Repair scam</option>
+                  </select>
+                  <p id="doorwayScamAdvice" style="font-size: var(--font-xs); background: var(--surface-soft); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-muted); margin: 0; font-style: italic;"></p>
+                </div>
+
+                <!-- Mock ID Badge Scanner -->
+                <div class="scanner-block" style="text-align: center;">
+                  <button type="button" class="secondary-action-btn w-100" id="scanWorkerBadgeBtn" style="min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>📷</span> Scan Worker ID Badge
+                  </button>
+                  
+                  <div id="mockScannerOverlay" class="d-none" style="margin-top: 15px; padding: 20px; background: #000; border-radius: 12px; position: relative; overflow: hidden; box-shadow: inset 0 0 20px rgba(255,255,255,0.2);">
+                    <div style="width: 100%; height: 120px; border: 2px dashed #4ade80; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-family: monospace; font-size: var(--font-xs);">
+                      [ CAMERA FEED ACTIVE ]
+                    </div>
+                    <div class="scan-laser-line" style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #22c55e; box-shadow: 0 0 10px #22c55e; animation: scanLaser 2s linear infinite;"></div>
+                    <p style="color: #94a3b8; font-size: var(--font-xs); margin-top: 8px; margin-bottom: 0;">Align ID card inside target frame</p>
+                  </div>
+                  
+                  <div id="mockScannerResult" class="d-none" style="margin-top: 15px; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); font-size: var(--font-sm); font-weight: 700; text-align: center;"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Human Backup Card -->
+            <article class="safety-panel-card border-gold">
+              <h2 class="safety-card-title">24/7 Human Backup Escalation</h2>
+              <p class="safety-card-subtitle">If AI agents or family cannot handle a physical issue, CareCircle routes help requests to certified local care coordinators.</p>
+              <div class="human-backup-box mt-15">
+                <span class="verified-tag" style="background:var(--color-primary-soft); color:var(--color-primary-dark); font-weight:700;">LOCAL RESPONSE OPERATIVE ONLINE</span>
+                <button class="secondary-action-btn w-100 mt-15" id="requestHumanBackupBtn">
+                  Request Physical Care Representative
+                </button>
+              </div>
+            </article>
+
+              <!-- Widget: "Do Not Disturb" Prayer Hours -->
+              <article class="safety-panel-card border-purple" id="safetyDndCard">
+                <h2 class="safety-card-title text-purple">"Do Not Disturb" Prayer Hours</h2>
+                <p class="safety-card-subtitle">Set sacred quiet times (e.g. morning prayers). All non-emergency notifications and alerts will be strictly silenced during this window.</p>
+                
+                <div class="dnd-body" style="margin-top:15px; display:flex; flex-direction:column; gap:10px;">
+                  <div style="display:flex; gap:10px; align-items:center;">
+                    <div style="flex:1;">
+                      <label for="dndStart" class="form-label" style="font-size:var(--font-xs); margin-bottom:4px; display:block;">Start Time</label>
+                      <input type="time" id="dndStart" class="form-text-input" value="06:00" style="height:36px; min-height:36px;">
+                    </div>
+                    <div style="flex:1;">
+                      <label for="dndEnd" class="form-label" style="font-size:var(--font-xs); margin-bottom:4px; display:block;">End Time</label>
+                      <input type="time" id="dndEnd" class="form-text-input" value="07:00" style="height:36px; min-height:36px;">
+                    </div>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <input type="checkbox" id="dndEnabled" class="large-checkbox" style="width:20px; height:20px; margin:0;" checked>
+                    <label for="dndEnabled" class="form-label" style="margin:0; font-size:var(--font-xs); cursor:pointer; font-weight:700;">Enable Sacred Silence Mode</label>
+                  </div>
+                  <div id="dndStatusIndicator" style="font-size:var(--font-xs); font-weight:700; text-align:center; padding:6px; border-radius:6px; background:var(--surface-soft); border:1px solid var(--border-color);">
+                    DND Status: Inactive
+                  </div>
+                </div>
+              </article>
+
+              <!-- Widget: Official Letter Translator -->
+              <article class="safety-panel-card border-gold" id="safetyLetterTranslatorCard">
+                <h2 class="safety-card-title text-gold">Official Letter Translator</h2>
+                <p class="safety-card-subtitle">Confused by bank notices, insurance terms, or tax letters in English? Scan the letter to receive a simplified summary in Telugu instantly.</p>
+                
+                <div class="letter-translator-body" style="margin-top: 15px;">
+                  <button type="button" class="secondary-action-btn w-100" id="scanLetterBtn" style="min-height:44px; display:flex; align-items:center; justify-content:center; gap:8px; border-color:var(--color-gold); color:var(--color-gold);">
+                    <span>📷</span> Scan / Translate Official Letter
+                  </button>
+                  
+                  <div id="letterScannerOverlay" class="d-none" style="margin-top:15px; padding:20px; background:#000; border-radius:12px; position:relative; overflow:hidden;">
+                    <div style="width:100%; height:120px; border:2px dashed var(--color-gold); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--color-gold); font-family:monospace; font-size:var(--font-xs);">
+                      [ SCANNING DOCUMENT FEED ]
+                    </div>
+                    <div class="scan-laser-line" style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--color-gold); box-shadow: 0 0 10px var(--color-gold); animation: scanLaser 2s linear infinite;"></div>
+                  </div>
+                  
+                  <div id="letterTranslationResult" class="d-none" style="margin-top:15px; padding:12px; border-radius:8px; border:1px solid var(--border-color); background:var(--color-gold-soft); font-size:var(--font-sm);">
+                    <!-- Populated dynamically -->
+                  </div>
+                </div>
+              </article>
+
+              <!-- Accessibility AAA Feature overview -->
+            <article class="safety-panel-card" style="grid-column: 1 / -1;">
+              <h2 class="safety-card-title">Senior AAA Accessibility Suite</h2>
+              <p class="safety-card-subtitle">The CareCircle application is optimized for older adults experiencing visual, motor, or cognitive challenges.</p>
+              <div class="a11y-grid-overview mt-15">
+                <div class="a11y-overview-item">
+                  <strong>Voice-First UI</strong>
+                  <p>Full voice-command compatibility in local regional dialects.</p>
+                </div>
+                <div class="a11y-overview-item">
+                  <strong>Big Text Scaling</strong>
+                  <p>Text sizes dynamically scale up for weak eyesight.</p>
+                </div>
+                <div class="a11y-overview-item">
+                  <strong>High Contrast Mode</strong>
+                  <p>High-contrast visual colors meeting WCAG AAA targets.</p>
+                </div>
+                <div class="a11y-overview-item">
+                  <strong>Vibration Alerts</strong>
+                  <p>Haptic confirmations for shaky hands or hearing loss.</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 3: Micro-Circle Trusted Neighbors Network -->
+            <article class="safety-panel-card">
+              <div class="localized-card-header" style="margin-bottom: 5px;">
+                <h2 class="safety-card-title">Trusted Micro-Circle</h2>
+                <button class="primary-btn-mini" id="triggerSilentCheckinBtn" style="padding:0 12px; min-height:36px;">Silent Check-in</button>
+              </div>
+              <p class="safety-card-subtitle">Local verify neighbors or neighborhood pharmacists who can check on you physically if you do not answer companion notifications.</p>
+              
+              <div class="micro-circle-list" id="microCircleList">
+                <div class="micro-circle-item">
+                  <div>
+                    <strong>Ravi (Neighborhood Pharmacist)</strong>
+                    <p class="sub-text">Chennai Pharmacy · Allowed Emergency Dispatch</p>
+                  </div>
+                  <span class="verified-tag">VERIFIED PARTNER</span>
+                </div>
+                <div class="micro-circle-item">
+                  <div>
+                    <strong>Vikram (Building Guard)</strong>
+                    <p class="sub-text">Security Gate · Allowed Location View</p>
+                  </div>
+                  <span class="verified-tag">VERIFIED NEIGHBOR</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget 4: Dignity and Privacy Controls -->
+            <article class="safety-panel-card">
+              <h2 class="safety-card-title">Elder Dignity & Transparency Settings</h2>
+              <p class="safety-card-subtitle">Ensure your children do not access personal thoughts, private memories, or active bank statements without authorization. Audit active logs.</p>
+              
+              <div class="privacy-audits-list">
+                <div class="audit-item">
+                  <span class="audit-time">10:00 AM</span>
+                  <span class="audit-desc">Daughter Meera viewed medication compliance log.</span>
+                </div>
+                <div class="audit-item">
+                  <span class="audit-time">Yesterday</span>
+                  <span class="audit-desc">System auto-expired temporary document viewing permissions.</span>
+                </div>
+              </div>
+              <button class="secondary-action-btn w-100 mt-15" id="saveDignityPreferences">
+                <span data-icon="lock"></span> Update Security Preferences
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <!-- 7. Health & Mood View -->
+        <section class="view-panel" id="health-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">HEALTH SIGNAL MONITORING</span>
+            <h1 class="view-title">Health Intelligence & Life Pattern Drift</h1>
+            <p class="view-description">Log daily health signals to see trends. Our AI tracks subtle behavioral changes (fewer calls, lower steps, sleep changes) to detect care risks early.</p>
+          </div>
+
+          <div class="health-split-dashboard">
+            <!-- Left Side: Metric Loggers and Graphic Chart -->
+            <div class="health-metrics-loggers">
+              <!-- Life Pattern Drift Diagnostic widget -->
+              <article class="custom-form-card border-gold mb-20">
+                <h3 class="card-inner-title">AI Life Pattern Drift Diagnostics</h3>
+                <p class="perm-desc" style="margin-bottom:15px;">Calculates behavioral deviations from your monthly baseline parameters.</p>
+                <div class="drift-diagnostics-grid">
+                  <div class="drift-item-row">
+                    <span>Steps Trend (Daily):</span>
+                    <strong class="drift-alert-label text-red" id="driftSteps">-65% (Drift Alert)</strong>
+                  </div>
+                  <div class="drift-item-row">
+                    <span>Family Call Gap:</span>
+                    <strong class="drift-alert-label text-red" id="driftCalls">10 Days (Drift Alert)</strong>
+                  </div>
+                  <div class="drift-item-row">
+                    <span>Sleep Quality:</span>
+                    <strong class="drift-alert-label text-green" id="driftSleep">Normal (7h 10m)</strong>
+                  </div>
+                </div>
+              </article>
+
+              <div class="metrics-grid">
+                
+                <div class="metric-card-interactive">
+                  <div class="metric-info">
+                    <span data-icon="heart" class="color-red"></span>
+                    <strong>Heart Rate</strong>
+                    <p id="txtHeartRate">72 BPM</p>
+                  </div>
+                  <input type="number" id="inputHeartRate" class="metric-quick-input" placeholder="Value...">
+                  <button class="primary-btn-mini log-metric-btn" data-metric="heartRate">Log</button>
+                </div>
+
+                <div class="metric-card-interactive">
+                  <div class="metric-info">
+                    <span data-icon="activity" class="color-teal"></span>
+                    <strong>Blood Pressure</strong>
+                    <p id="txtBP">120/80</p>
+                  </div>
+                  <input type="text" id="inputBP" class="metric-quick-input" placeholder="120/80">
+                  <button class="primary-btn-mini log-metric-btn" data-metric="bp">Log</button>
+                </div>
+
+                <div class="metric-card-interactive">
+                  <div class="metric-info">
+                    <span data-icon="walk" class="color-purple"></span>
+                    <strong>Step Count</strong>
+                    <p id="txtSteps">1,450</p>
+                  </div>
+                  <input type="number" id="inputSteps" class="metric-quick-input" placeholder="Steps...">
+                  <button class="primary-btn-mini log-metric-btn" data-metric="steps">Log</button>
+                </div>
+
+                <div class="metric-card-interactive">
+                  <div class="metric-info">
+                    <span data-icon="volume" class="color-blue"></span>
+                    <strong>Water Intake</strong>
+                    <p id="txtWater">3 Glasses</p>
+                  </div>
+                  <input type="number" id="inputWater" class="metric-quick-input" placeholder="Glasses...">
+                  <button class="primary-btn-mini log-metric-btn" data-metric="water">Log</button>
+                </div>
+
+              </div>
+
+              <!-- Animated SVG Health Chart widget -->
+              <div class="health-chart-widget mt-20">
+                <h3 class="card-inner-title">Weekly Signal Trend</h3>
+                <div class="chart-svg-container" id="healthChartContainer">
+                  <!-- Generated dynamically via script -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional health intelligence cards -->
+            <div class="health-metrics-loggers" style="margin-top: 20px; grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+              <article class="custom-form-card">
+                <h3 class="card-inner-title">Cultural Food & Nutrition</h3>
+                <p class="perm-desc" style="margin-bottom:10px;">Adapted meal suggestions and fasting support from your Culture Twin profile.</p>
+                <p class="sub-text" style="line-height:1.4; font-size:var(--font-sm);">Active: <strong>Millet Dosa, Sambar (Low Salt), Curd Rice</strong> portion guides aligned with Type-2 Diabetes management.</p>
+              </article>
+
+              <article class="custom-form-card">
+                <h3 class="card-inner-title">Early Warning AI Alerts</h3>
+                <p class="perm-desc" style="margin-bottom:10px;">Correlates vital drift and checklist compliance to flag early decline risks.</p>
+                <p class="sub-text" style="line-height:1.4; font-size:var(--font-sm);">Status: <strong>No major cognitive or physical warning markers detected.</strong> Vitals stable.</p>
+              </article>
+
+              <article class="custom-form-card" id="wearableSyncCard">
+                <h3 class="card-inner-title" data-i18n="card_wearable_link">Fall Sensor & Wearables Link</h3>
+                <p class="perm-desc" style="margin-bottom:10px;" data-i18n="wearable_link_desc">Connect your smartwatch, smart pillbox, or home movement sensors for automated alerts.</p>
+                
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label for="wearableBrandSelect" class="form-label" style="font-size: var(--font-xs); margin-bottom: 4px; display: block;" data-i18n="label_select_watch">Select Smartwatch / Tracker</label>
+                  <select id="wearableBrandSelect" class="form-select-box" style="padding: 8px; font-size: var(--font-sm);">
+                    <option value="Fitbit">Fitbit (Inspire / Charge / Sense)</option>
+                    <option value="Samsung">Samsung Galaxy Watch</option>
+                    <option value="Apple">Apple Watch (Series / SE)</option>
+                    <option value="Garmin">Garmin Vivosmart / Venu</option>
+                  </select>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                  <span style="font-size: var(--font-sm); font-weight: 600;" data-i18n="label_auto_sync">Auto-Sync Wearable Vitals</span>
+                  <label class="switch-toggle-wrapper">
+                    <input type="checkbox" id="wearableAutoSyncToggle">
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div id="syncStatusIndicator" class="status-badge stable d-none" style="margin-bottom: 12px; font-size: var(--font-xs); width: fit-content;">
+                  <span class="pulse-dot"></span> <span id="syncStatusIndicatorText" data-i18n="wearable_syncing">Syncing wearable signals...</span>
+                </div>
+
+                <button class="secondary-action-btn w-100" id="pairSensorBtn" style="min-height:44px;" data-i18n="btn_pair_device">Pair Care Device</button>
+              </article>
+
+              <!-- Private Diary Card -->
+              <article class="custom-form-card border-red" id="privateDiaryCard">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                  <h3 class="card-inner-title text-red">🔒 My Private Diary</h3>
+                  <span class="verified-tag" style="background:var(--color-red-soft); color:var(--color-red); font-size:10px; font-weight:700;">LOCAL & PRIVATE</span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:10px; font-size:var(--font-xs);">Write your private thoughts here. This journal is encrypted locally and is **never** shared with children or logged in the family feed.</p>
+                <textarea id="privateDiaryInput" class="custom-input-box" placeholder="Write how you truly feel today..." style="min-height:80px; font-size:var(--font-sm); margin-bottom:10px;"></textarea>
+                <button type="button" class="primary-action-btn w-100" id="savePrivateDiaryBtn" style="background:var(--color-red); border-color:var(--color-red); color:white; min-height:38px; font-size:var(--font-xs);">Save Secret Note</button>
+                <div id="privateDiaryLogs" style="margin-top:10px; max-height:80px; overflow-y:auto; font-size:var(--font-xs); color:var(--text-muted); display:flex; flex-direction:column; gap:4px;">
+                  <!-- Populated dynamically -->
+                </div>
+              </article>
+
+              <!-- Gratitude & Good Day Log Card -->
+              <article class="custom-form-card border-gold" id="gratitudeLogCard">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                  <h3 class="card-inner-title text-gold" style="color:var(--color-gold);">🌸 Gratitude & Good Day Log</h3>
+                  <span class="active-badge" style="background:var(--color-gold-soft); color:var(--color-gold); font-size: 10px; font-weight: 700; padding: 2px 6px;">JOY FEED</span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:10px; font-size:var(--font-xs);">Record beautiful moments today. Life is more than just medicines and health checks!</p>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
+                  <button type="button" class="secondary-action-btn gratitude-quick-btn" data-moment="Mango trees in the garden bloomed today! 🥭" style="padding:4px 8px; font-size:10px; min-height:28px;">🥭 Mango Trees Bloomed</button>
+                  <button type="button" class="secondary-action-btn gratitude-quick-btn" data-moment="Neighbour brought over hot homemade food! 😋" style="padding:4px 8px; font-size:10px; min-height:28px;">😋 Neighbour Brought Food</button>
+                  <button type="button" class="secondary-action-btn gratitude-quick-btn" data-moment="Heard birds singing in the balcony this morning! 🐦" style="padding:4px 8px; font-size:10px; min-height:28px;">🐦 Birds Singing</button>
+                </div>
+                
+                <div style="display:flex; gap:6px;">
+                  <input type="text" id="customGratitudeInput" class="custom-input-box" placeholder="Other happy moment..." style="margin:0; font-size:var(--font-xs); height:32px; min-height:32px; flex:1;">
+                  <button type="button" class="primary-btn-mini" id="addGratitudeBtn" style="min-height:32px; background:var(--color-gold); border:none; color:white; padding:0 12px; border-radius:8px;">Add</button>
+                </div>
+                
+                <div id="gratitudeLogHistory" style="margin-top:12px; max-height:80px; overflow-y:auto; font-size:var(--font-xs); color:var(--text-main); display:flex; flex-direction:column; gap:4px; background:var(--surface-soft); padding:6px; border-radius:6px; border:1px solid var(--border-color);">
+                  <!-- Populated dynamically -->
+                </div>
+              </article>
+            </div>
+
+            <!-- Right Side: Mood Checkin and Cognitive Relaxation -->
+            <div class="health-mood-panel">
+              <div class="mood-checkin-card">
+                <h3 class="card-inner-title">How are you feeling right now?</h3>
+                <p class="sub-text">Logging logs updates automatically to family portals, triggering call nudges if needed.</p>
+                
+                <div class="mood-buttons-row">
+                  <button class="mood-selector-btn" data-mood="Happy" data-score="5">😊 Happy</button>
+                  <button class="mood-selector-btn" data-mood="Stable" data-score="4">😐 Good</button>
+                  <button class="mood-selector-btn" data-mood="Tired" data-score="3">😴 Tired</button>
+                  <button class="mood-selector-btn" data-mood="Anxious" data-score="2">😰 Anxious</button>
+                  <button class="mood-selector-btn" data-mood="Lonely" data-score="1">😔 Lonely</button>
+                </div>
+
+                <div class="mood-notes-input-wrapper mt-15">
+                  <textarea id="moodJournalNote" class="custom-input-box" placeholder="Add private journal thoughts... (Hidden from family unless checked)"></textarea>
+                  <button class="primary-action-btn w-100 mt-10" id="saveMoodCheckinBtn">Log Mood Checkin</button>
+                </div>
+              </div>
+
+              <!-- Cognitive Relaxation Music Player (Reveals if mood is lonely/anxious) -->
+            <!-- Widget: Nostalgia Therapy Radio Player -->
+            <div class="mood-relaxation-card mt-20" id="nostalgiaPlayerCard">
+              <div class="card-header" style="margin-bottom: 10px;">
+                <span class="card-icon color-gold" data-icon="volume">📻</span>
+                <h3 class="card-inner-title color-gold">Nostalgia Therapy Radio</h3>
+              </div>
+              <p class="sub-text" style="margin-bottom:12px;">Tune into the sounds of your youth. Reconnecting with familiar memories reduces cognitive stress and loneliness.</p>
+              
+              <div class="audio-track-status mt-10" style="background:var(--surface-soft); padding:15px; border-radius:12px; border:1px solid var(--border-color); display:flex; align-items:center; gap:15px; min-height:80px;">
+                <div class="retro-eq-bars" id="retroEqBars" style="display:flex; gap:3px; height:30px; align-items:flex-end; width:30px; flex-shrink:0;">
+                  <span class="eq-bar" style="background:var(--color-gold); width:4px; height:10px;"></span>
+                  <span class="eq-bar" style="background:var(--color-gold); width:4px; height:15px;"></span>
+                  <span class="eq-bar" style="background:var(--color-gold); width:4px; height:8px;"></span>
+                  <span class="eq-bar" style="background:var(--color-gold); width:4px; height:20px;"></span>
+                </div>
+                <div class="current-track-info" style="flex:1;">
+                  <strong id="nostalgiaTrackTitle" style="font-size:var(--font-sm); display:block; color:var(--text-main); line-height:1.2;">1970s Gold: Kishore Kumar Classics</strong>
+                  <span id="nostalgiaStationLabel" style="font-size:var(--font-xs); color:var(--text-muted); display:block; margin-top:2px;">India Pack Radio (Dial: 1970s)</span>
+                </div>
+              </div>
+              
+              <div class="audio-controls-row mt-15" style="display:flex; gap:10px; align-items:center;">
+                <button class="audio-control-btn" id="playNostalgiaBtn" style="min-height:48px; font-weight:700; flex:1;">Tune In</button>
+                <button class="audio-control-btn d-none" id="pauseNostalgiaBtn" style="min-height:48px; font-weight:700; flex:1;">Mute Radio</button>
+                <button class="secondary-action-btn" id="cycleNostalgiaEraBtn" style="min-height:48px; font-weight:700; flex:1; padding:0;">Cycle Era (1970s)</button>
+              </div>
+            </div>
+
+              <div class="mood-relaxation-card mt-20 d-none" id="relaxationAudioCard">
+                <h3 class="card-inner-title color-gold">Soothing Cognitive Soundscape</h3>
+                <p class="sub-text">I noticed you feel a bit isolated today. Let's listen to calming waves and relaxing traditional classical notes.</p>
+                
+                <div class="mini-audio-player">
+                  <div class="audio-track-info">
+                    <strong>Calming Ocean Waves & Sitar</strong>
+                    <p>Track Length: 15 mins</p>
+                  </div>
+                  <div class="audio-controls-row">
+                    <button class="audio-control-btn" id="playRelaxationSound">Play Sound</button>
+                    <button class="audio-control-btn d-none" id="pauseRelaxationSound">Pause</button>
+                    <span class="audio-duration-display" id="audioTime">00:00 / 15:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Document Vault View -->
+        <section class="view-panel" id="docs-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">SECURE DIGITAL LOCKER</span>
+            <h1 class="view-title">Secure Elder Document Vault</h1>
+            <p class="view-description">Safekeep medical reports, life insurance, government pension certifications, and Aadhaar/ID records. Restrict viewing permissions per file for absolute safety.</p>
+          </div>
+
+          <div class="document-vault-layout">
+            <!-- Left Upload Interface -->
+            <div class="document-upload-panel">
+              <!-- End-of-Life Organizer Vault Trigger -->
+              <article class="custom-form-card border-red mb-20" style="padding:15px;" id="eolVaultCard">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px;">
+                  <h3 class="card-inner-title text-red">Sensitive After-Me Organizer</h3>
+                  <span class="card-icon color-red" data-icon="lock" style="width:30px; height:30px;" id="eolVaultHeaderIcon"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Lock critical care wishes, locker keys, will location, and bank credentials. Access requires verification passcode.</p>
+                
+                <!-- Lockscreen State -->
+                <div id="eolLockScreenState">
+                  <div class="form-group" style="margin-bottom:10px;">
+                    <label for="eolPasscode" class="form-label" style="font-size: var(--font-xs);">Enter Vault Passcode (Default: 1234)</label>
+                    <input type="password" id="eolPasscode" class="form-text-input" placeholder="••••" style="text-align: center; letter-spacing: 5px; font-size: var(--font-md); max-width: 150px; margin: 0 auto 10px auto; display: block;">
+                  </div>
+                  <button type="button" class="secondary-action-btn w-100" id="openEolVaultBtn" style="border-color:var(--color-red); color:var(--color-red); min-height:44px; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <span data-icon="lock"></span> Unlock Sensitive Organizer
+                  </button>
+                  <p id="eolErrorMsg" class="d-none" style="color:var(--color-red); font-size:var(--font-xs); font-weight:700; text-align:center; margin-top:5px; margin-bottom:0;"></p>
+                </div>
+                
+                <!-- Unlocked Form State (Hidden by default) -->
+                <div id="eolUnlockedState" class="d-none">
+                  <hr class="card-divider" style="margin: 12px 0;">
+                  <div class="form-group">
+                    <label for="eolWillLoc" class="form-label" style="font-size: var(--font-xs);">Where is my Will kept?</label>
+                    <input type="text" id="eolWillLoc" class="form-text-input" placeholder="e.g. Bed drawer locker key #3">
+                  </div>
+                  <div class="form-group">
+                    <label for="eolLockerKeys" class="form-label" style="font-size: var(--font-xs);">Locker Key custodian details</label>
+                    <input type="text" id="eolLockerKeys" class="form-text-input" placeholder="e.g. Locker 302 key in gold jewelry box">
+                  </div>
+                  <div class="form-group">
+                    <label for="eolBankAccounts" class="form-label" style="font-size: var(--font-xs);">Bank Account Details & Nominees</label>
+                    <textarea id="eolBankAccounts" class="custom-input-box" placeholder="e.g. SBI A/c 2083928192 - Nominee: Meera" style="font-size: var(--font-xs); min-height: 50px;"></textarea>
+                  </div>
+                  <div class="form-group" style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                    <input type="checkbox" id="eolSharePermission" class="large-checkbox" style="width:20px; height:20px; margin:0;" checked>
+                    <label for="eolSharePermission" class="form-label" style="margin:0; font-size:var(--font-xs); cursor:pointer;">Allow verified family (Meera) to retrieve in emergencies</label>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button type="button" class="primary-action-btn flex-1" id="saveEolDetailsBtn" style="background:var(--color-red); border-color:var(--color-red); color:white; min-height:40px; font-size:var(--font-xs);">Lock & Save</button>
+                    <button type="button" class="secondary-action-btn" id="lockEolVaultBtn" style="min-height:40px; font-size:var(--font-xs);">Lock Vault</button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card: Medical Values & Preferences Directive -->
+              <article class="custom-form-card border-purple mb-20" style="padding:15px;" id="vaultMedicalDirectiveCard">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px; border-bottom:1px solid var(--border-color);">
+                  <h3 class="card-inner-title text-purple" style="color:var(--color-purple);">Medical Values & Preferences</h3>
+                  <span class="card-icon color-purple" data-icon="stethoscope" style="width:30px; height:30px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Record your treatment values and medical preferences in your own words, so your family knows exactly what care you want in emergencies.</p>
+                
+                <div class="form-group">
+                  <label for="medicalDirectiveInput" class="form-label" style="font-size: var(--font-xs);">My Care & Treatment Instructions (Telugu/English)</label>
+                  <textarea id="medicalDirectiveInput" class="custom-input-box" placeholder="e.g. నన్ను ఆసుపత్రిలో చేర్చినప్పుడు, దయచేసి మొదట మీరాకు తెలియజేయండి. నేను ప్రశాంతమైన మరియు నొప్పి లేని చికిత్సను కోరుకుంటున్నాను..." style="font-size: var(--font-xs); min-height: 100px; line-height: 1.4;"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="directiveContact" class="form-label" style="font-size: var(--font-xs);">Primary Emergency Medical Proxy</label>
+                  <input type="text" id="directiveContact" class="form-text-input" value="Meera (Daughter) - +91 99999 99999" style="font-size: var(--font-xs); height:32px; min-height:32px;">
+                </div>
+                
+                <button type="button" class="primary-action-btn w-100" id="saveDirectiveBtn" style="background:var(--color-purple); border-color:var(--color-purple); color:white; min-height:40px; font-size:var(--font-xs);">
+                  Save Medical Preferences Directive
+                </button>
+              </article>
+
+              <!-- Government Document Helper Dispatch -->
+              <article class="custom-form-card border-gold mb-20" style="padding:15px;" id="docHelperDispatchCard">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px;">
+                  <h3 class="card-inner-title text-gold" style="color:var(--color-gold);">In-Person Document Helper</h3>
+                  <span class="card-icon color-gold" data-icon="users" style="width:30px; height:30px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Confused about government websites or lines? Tap to dispatch a background-checked helper to your house to assist with forms, photo-taking, and local office submissions.</p>
+                <button class="primary-action-btn w-100" id="dispatchDocHelperBtn" style="background:var(--color-gold); border-color:var(--color-gold); min-height:44px;">
+                  Dispatch Home Helper
+                </button>
+              </article>
+
+              <!-- Government Benefit Program Matcher -->
+              <article class="custom-form-card border-gold mb-20" style="padding:15px;">
+                <h3 class="card-inner-title">Entitled Benefit Finder</h3>
+                <p class="perm-desc" style="margin-bottom:10px;">Scans government directories based on your age, location, and health conditions.</p>
+                <div class="benefits-matcher-box">
+                  <strong style="font-size:var(--font-sm); display:block; margin-bottom:5px;">3 Matches Found:</strong>
+                  <ul class="mini-medical-info" style="font-size:var(--font-xs); background:var(--surface-soft); padding:8px; border-radius:8px; margin-bottom:10px;">
+                    <li><strong>Ayushman Bharat Card:</strong> Eligible (Low Income)</li>
+                    <li><strong>Senior Citizens Savings:</strong> Eligible (Age 60+)</li>
+                    <li><strong>EPFO Pension Scheme:</strong> Eligible</li>
+                  </ul>
+                  <button class="primary-btn-mini" id="findBenefitsBtn" style="width:100%; min-height:40px;">Open Eligibility Wizard</button>
+                </div>
+              </article>
+
+              <h3 class="card-inner-title">Upload New Document</h3>
+              
+              <div class="drag-drop-simulated-box" id="dragDropArea">
+                <span data-icon="file" class="large-upload-icon"></span>
+                <p class="upload-headline">Drag & Drop document files here</p>
+                <p class="sub-text">Supports PDF, PNG, JPG files</p>
+                <input type="file" id="fileInputSelect" class="d-none">
+                <button class="secondary-action-btn mt-10" id="fileSelectBtn">Browse Local Files</button>
+              </div>
+
+              <div class="form-group mt-15">
+                <label for="docUploadTitle" class="form-label">Document Title</label>
+                <input type="text" id="docUploadTitle" class="form-text-input" placeholder="e.g. Health Insurance Policy 2026">
+              </div>
+
+              <div class="form-group">
+                <label for="docCategory" class="form-label">Locker Category</label>
+                <select id="docCategory" class="form-select-box">
+                  <option value="Medical">Medical Records & Prescriptions</option>
+                  <option value="Personal">Identity Documents (ID, Passport)</option>
+                  <option value="Financial">Pension & Health Insurance</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="docExpiry" class="form-label">Expiry / Renewal Deadline Date</label>
+                <input type="date" id="docExpiry" class="form-text-input">
+              </div>
+
+              <button class="primary-action-btn w-100 mt-15" id="confirmUploadDocBtn">
+                Secure Document to Vault
+              </button>
+
+              <div class="upload-progress-card mt-15 d-none" id="uploadProgressCard">
+                <div class="progress-details">
+                  <strong id="uploadStatusLabel">Encrypting & Uploading...</strong>
+                  <span id="uploadPercentage">0%</span>
+                </div>
+                <div class="adherence-bar-bg"><div class="adherence-bar-fill" id="uploadProgressBar" style="width: 0%;"></div></div>
+              </div>
+            </div>
+
+            <!-- Right Documents Log list -->
+            <div class="documents-log-panel">
+              <h3 class="card-inner-title">Secure Document Locker Registry</h3>
+              
+              <div class="vault-filters-row">
+                <button class="filter-tab-btn active" data-doc-filter="all">All Files</button>
+                <button class="filter-tab-btn" data-doc-filter="Medical">Medical</button>
+                <button class="filter-tab-btn" data-doc-filter="Personal">Identity</button>
+                <button class="filter-tab-btn" data-doc-filter="Financial">Finance</button>
+              </div>
+
+              <!-- Document & Renewal Deadlines -->
+              <article class="custom-form-card mb-20" style="margin-top: 20px;">
+                <h3 class="card-inner-title">Renewal & Expiry Deadlines</h3>
+                <p class="perm-desc" style="margin-bottom:12px;">Proactive tracking of insurance renewals and certificate deadlines.</p>
+                <div class="renewals-deadlines-list">
+                  <div class="audit-item" style="border-left: 4px solid var(--color-orange); padding-left: 10px; margin-bottom: 10px;">
+                    <span class="audit-time" style="font-weight: 700; color: var(--color-orange);">12 Days Left</span>
+                    <span class="audit-desc" style="display:block; font-size:var(--font-xs);">Central Health Insurance Premium Due</span>
+                  </div>
+                  <div class="audit-item" style="border-left: 4px solid var(--color-red); padding-left: 10px;">
+                    <span class="audit-time" style="font-weight: 700; color: var(--color-red);">28 Days Left</span>
+                    <span class="audit-desc" style="display:block; font-size:var(--font-xs);">Pension Life Certificate Submission (Jeevan Pramaan)</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card: Bill Payment Guardian -->
+              <article class="custom-form-card mb-20 border-orange" id="vaultBillGuardianCard" style="margin-top: 20px;">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px;">
+                  <h3 class="card-inner-title text-orange" style="color:var(--color-orange);">Bill Payment Guardian</h3>
+                  <span class="card-icon color-orange" data-icon="wallet" style="width:28px; height:28px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Track utility bills automatically to prevent sudden utility disconnection.</p>
+                
+                <div class="bills-list-ledger" id="billsListLedger" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                  <!-- Populated dynamically -->
+                </div>
+
+                <div class="add-custom-bill-section" style="background: var(--surface-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <strong style="display: block; font-size: var(--font-xs); margin-bottom: 8px; color: var(--text-color);">➕ Schedule Custom Bill Reminder:</strong>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <input type="text" id="billNameInput" class="form-text-input" placeholder="Bill Name (e.g. Broadband WiFi)" style="font-size: var(--font-xs); height:32px; min-height:32px;">
+                    <div style="display:flex; gap:8px;">
+                      <input type="number" id="billAmountInput" class="form-text-input" placeholder="Amount (₹)" style="flex:1; font-size: var(--font-xs); height:32px; min-height:32px;">
+                      <input type="date" id="billDueDateInput" class="form-text-input" style="flex:1.5; font-size: var(--font-xs); height:32px; min-height:32px;">
+                    </div>
+                    <button type="button" class="primary-btn-mini w-100" id="addCustomBillBtn" style="min-height:36px; background: var(--color-orange); border:none; color:white; border-radius:8px;">
+                      Add Bill Reminder
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card: Fixed Deposit Tracker -->
+              <article class="custom-form-card mb-20 border-gold" id="vaultFdTrackerCard">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px;">
+                  <h3 class="card-inner-title text-gold" style="color:var(--color-gold);">Fixed Deposit (FD) Tracker</h3>
+                  <span class="card-icon color-gold" data-icon="briefcase" style="width:28px; height:28px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Track FD maturity dates across multiple banks and receive alerts to avoid missing renewal interest.</p>
+                
+                <div class="fd-list-ledger" id="fdListLedger" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                  <!-- Populated dynamically -->
+                </div>
+
+                <div class="add-custom-fd-section" style="background: var(--surface-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <strong style="display: block; font-size: var(--font-xs); margin-bottom: 8px; color: var(--text-color);">➕ Track New Fixed Deposit:</strong>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <input type="text" id="fdBankInput" class="form-text-input" placeholder="Bank Name (e.g. HDFC Bank)" style="font-size: var(--font-xs); height:32px; min-height:32px;">
+                    <div style="display:flex; gap:8px;">
+                      <input type="number" id="fdAmountInput" class="form-text-input" placeholder="Principal (₹)" style="flex:1; font-size: var(--font-xs); height:32px; min-height:32px;">
+                      <input type="number" step="0.01" id="fdInterestInput" class="form-text-input" placeholder="Interest %" style="flex:1; font-size: var(--font-xs); height:32px; min-height:32px;">
+                    </div>
+                    <input type="date" id="fdMaturityInput" class="form-text-input" style="font-size: var(--font-xs); height:32px; min-height:32px;">
+                    <button type="button" class="primary-btn-mini w-100" id="addCustomFdBtn" style="min-height:36px; background: var(--color-gold); border:none; color:white; border-radius:8px;">
+                      Track Fixed Deposit
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card: Trusted Vendors Directory -->
+              <article class="custom-form-card mb-20 border-teal" id="vaultVendorsCard" style="margin-top: 20px;">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px; border-bottom:1px solid var(--border-color);">
+                  <h3 class="card-inner-title text-teal" style="color:var(--color-teal);">Trusted Vendor Directory</h3>
+                  <span class="card-icon color-teal" data-icon="users" style="width:28px; height:28px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Keep your verified plumbers, electricians, and grocers handy, with weekly reminders for recurring orders.</p>
+                
+                <div class="vendors-list-ledger" id="vendorsListLedger" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                  <!-- Populated dynamically -->
+                </div>
+
+                <div class="add-vendor-section" style="background: var(--surface-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                  <strong style="display: block; font-size: var(--font-xs); margin-bottom: 8px; color: var(--text-color);">➕ Register Trusted Vendor:</strong>
+                  <div style="display:flex; flex-direction:column; gap:8px;">
+                    <input type="text" id="vendorNameInput" class="form-text-input" placeholder="Vendor Name (e.g. Rama Rao)" style="font-size: var(--font-xs); height:32px; min-height:32px;">
+                    <div style="display:flex; gap:8px;">
+                      <input type="text" id="vendorRoleInput" class="form-text-input" placeholder="Role (e.g. Grocer)" style="flex:1; font-size: var(--font-xs); height:32px; min-height:32px;">
+                      <input type="text" id="vendorPhoneInput" class="form-text-input" placeholder="Phone Number" style="flex:1.5; font-size: var(--font-xs); height:32px; min-height:32px;">
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <input type="checkbox" id="vendorReminderCheck" class="large-checkbox" style="width:20px; height:20px; margin:0;" checked>
+                      <label for="vendorReminderCheck" class="form-label" style="margin:0; font-size:var(--font-xs); cursor:pointer;">Remind me Monday evenings</label>
+                    </div>
+                    <button type="button" class="primary-btn-mini w-100" id="addVendorBtn" style="min-height:36px; background: var(--color-teal); border:none; color:white; border-radius:8px;">
+                      Add Vendor Contact
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card: Property Tax & Insurance Renewal Tracker -->
+              <article class="custom-form-card mb-20 border-teal" id="vaultPropertyAlertsCard">
+                <div class="localized-card-header" style="margin-bottom: 10px; padding-bottom:5px;">
+                  <h3 class="card-inner-title text-teal" style="color:var(--color-teal);">Property Tax & Insurance Guardian</h3>
+                  <span class="card-icon color-teal" data-icon="calendar" style="width:28px; height:28px;"></span>
+                </div>
+                <p class="perm-desc" style="margin-bottom:12px;">Automated 30-day early warnings for annual property taxes, vehicle, and home insurance renewals.</p>
+                
+                <div class="property-alerts-ledger" id="propertyAlertsLedger" style="display: flex; flex-direction: column; gap: 8px;">
+                  <!-- Populated dynamically -->
+                </div>
+              </article>
+
+              <div class="documents-vault-list" id="documentsVaultList">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Memory Stories View -->
+        <section class="view-panel" id="legacy-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">MEMORY LEGACY PRESERVATION</span>
+            <h1 class="view-title">Memory Legacy Vault</h1>
+            <p class="view-description">Preserve your life story, values, recipes, and blessings for future generations. Speak your thoughts aloud, and CareCircle will record, transcribe, and compile them into your private family legacy book.</p>
+          </div>
+
+          <div class="legacy-layout-split">
+            <!-- Record and Story Prompter -->
+            <div class="legacy-story-prompter-card">
+              <div class="prompt-header-block">
+                <span class="prompt-badge">DAILY JOURNAL PROMPT</span>
+                <h2 class="prompt-heading" id="storyPromptTitle">"What was the house you lived in as a child like?"</h2>
+                <button class="text-link-action-btn" id="nextPromptBtn">Give me another prompt</button>
+              </div>
+
+              <hr class="card-divider">
+
+              <!-- Audio Recorder Mock Console -->
+              <div class="audio-record-box">
+                <div class="mic-pulsing-trigger-btn" id="micRecordBtn" aria-label="Start Voice Recording">
+                  <span data-icon="mic"></span>
+                </div>
+                <strong class="mic-status-label" id="micRecordLabel">Tap mic to speak your story</strong>
+                <p class="sub-text">We will record and automatically transcribe into your legacy book.</p>
+                
+                <!-- HTML Canvas Audio Visualizer -->
+                <div class="canvas-visualizer-container mt-15">
+                  <canvas id="waveformCanvas" class="waveform-canvas" width="300" height="60"></canvas>
+                </div>
+
+                <div class="story-actions-row mt-15">
+                  <button class="primary-action-btn flex-1" id="saveStoryBtn">Save & Transcribe</button>
+                  <button class="secondary-action-btn flex-1" id="cancelStoryBtn">Clear</button>
+                </div>
+              </div>
+
+              <div class="form-group mt-20">
+                <label for="writtenStoryText" class="form-label">Or type your memory text here:</label>
+                <textarea id="writtenStoryText" class="custom-input-box font-medium" placeholder="Start writing your stories here..."></textarea>
+              </div>
+            </div>
+
+            <!-- Legacy Sub-Vaults Grid -->
+            <div class="legacy-story-prompter-card" style="margin-top: 20px;">
+              <h3 class="card-inner-title">Legacy Sub-Vaults</h3>
+              <p class="perm-desc" style="margin-bottom:15px;">Distill different aspects of your memory journal into structured formats.</p>
+              
+              <div class="legacy-sub-vaults-grid">
+                <div class="sub-vault-card">
+                  <span data-icon="utensils" class="color-gold">🍳</span>
+                  <strong>Recipe Book</strong>
+                  <p>Save family kitchen formulas with healthy variants.</p>
+                </div>
+                <div class="sub-vault-card">
+                  <span data-icon="heart" class="color-red">❤️</span>
+                  <strong>Voice Blessings</strong>
+                  <p>Schedule greetings for birthdays and major festivals.</p>
+                </div>
+                <div class="sub-vault-card">
+                  <span data-icon="book" class="color-teal">📖</span>
+                  <strong>Life Lessons</strong>
+                  <p>Distill wisdom into paid mentoring listings.</p>
+                </div>
+                <div class="sub-vault-card">
+                  <span data-icon="globe" class="color-blue">🌐</span>
+                  <strong>Auto-Translation</strong>
+                  <p>Share stories across languages for global families.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legacy Archives list -->
+            <div class="legacy-archives-vault">
+              <h2 class="sub-header-title">Your Stored Life Memories</h2>
+              <div class="legacy-stories-list" id="legacyStoriesList">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Widget: My Achievements & Pride Wall -->
+            <article class="custom-form-card border-gold mb-20" style="margin-top:20px; flex: 1; min-width: 300px;">
+              <div class="localized-card-header" style="margin-bottom:10px; padding-bottom:5px; border-bottom:1px solid var(--border-color);">
+                <h3 class="card-inner-title text-gold" style="color:var(--color-gold);">My Pride & Achievements Wall</h3>
+                <span class="card-icon color-gold" data-icon="smile" style="width:28px; height:28px;"></span>
+              </div>
+              <p class="perm-desc" style="margin-bottom:15px;">A celebration of your life, achievements, and wisdom. You are a person, not a patient.</p>
+              
+              <div class="achievements-grid" id="achievementsGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:12px; margin-bottom:15px;">
+                <!-- Populated dynamically -->
+              </div>
+
+              <div class="add-achievement-box" style="background:var(--surface-soft); padding:12px; border-radius:8px; border:1px solid var(--border-color);">
+                <strong style="display:block; font-size:var(--font-xs); margin-bottom:8px; color:var(--text-main);">Add New Achievement or Pride Card:</strong>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                  <input type="text" id="achievementTitleInput" class="form-text-input" placeholder="Achievement (e.g. Taught Sanskrit classes)" style="font-size:var(--font-xs); height:32px; min-height:32px;">
+                  <input type="text" id="achievementYearInput" class="form-text-input" placeholder="Time period / Year (e.g. 1995 - 2005)" style="font-size:var(--font-xs); height:32px; min-height:32px;">
+                  <button type="button" class="primary-btn-mini w-100" id="addAchievementBtn" style="min-height:36px; background:var(--color-gold); border:none; color:white; border-radius:8px;">
+                    Add to Pride Wall
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. Care Planner View -->
+        <section class="view-panel" id="planner-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">INTELLIGENT PREVENTIVE PLANNING</span>
+            <h1 class="view-title">AI Personal Care Planner</h1>
+            <p class="view-description">CareCircle quietly reviews signals (activity steps, medicine routines, dates, renewals) and constructs a simple, interactive timeline for you and your family.</p>
+          </div>
+
+          <div class="planner-wrapper-grid">
+            <!-- Timeline details -->
+            <div class="planner-timeline-panel">
+              <h2 class="sub-header-title">Active Daily Checklist Calendar</h2>
+              
+              <div class="planner-calendar-strip" id="calendarDayStrip">
+                <!-- Populated dynamically with active week days -->
+              </div>
+
+              <div class="planner-timeline-events mt-20" id="plannerEventsTimeline">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Planner intelligence highlights -->
+            <article class="custom-form-card" style="margin-bottom: 20px;">
+              <h3 class="card-inner-title">AI Planner Core Capabilities</h3>
+              <p class="perm-desc" style="margin-bottom:10px;">The care planner organizes your days to ensure safety, connection, and health compliance.</p>
+              <ul class="mini-medical-info" style="font-size:var(--font-xs); background:var(--surface-soft); padding:8px; border-radius:8px; list-style:none;">
+                <li style="margin-bottom:8px; border-bottom:1px solid var(--border-color); padding-bottom:4px;">
+                  <strong>Refill Predictor:</strong> Predicts medicine depletion using logging habits.
+                </li>
+                <li style="margin-bottom:8px; border-bottom:1px solid var(--border-color); padding-bottom:4px;">
+                  <strong>Family Gap Alerts:</strong> Automatically alerts children when contact gaps occur.
+                </li>
+                <li>
+                  <strong>Country Rules:</strong> Localizes emergency lines and medical insurance rules.
+                </li>
+              </ul>
+            </article>
+
+            <!-- Voice-Activated Task Scheduler Card -->
+            <div class="planner-quick-add-card border-gold" id="voiceSchedulerCard" style="margin-bottom: 20px;">
+              <h3 class="card-inner-title color-gold" data-i18n="card_voice_scheduler">Voice Schedule Assistant</h3>
+              <p class="perm-desc" style="margin-bottom:12px;" data-i18n="voice_scheduler_desc">Tap the microphone and say what to schedule, e.g. "Remind me to take Vitamin C at 2:00 PM" or "Schedule clinic visit at 11:30 AM".</p>
+              
+              <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:15px; background:var(--surface-soft); border-radius:12px; border:1px solid var(--border-color); gap:10px;">
+                <button class="header-action-btn voice-trigger" id="voicePlannerMicBtn" style="height:54px; width:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--color-primary-soft); color:var(--color-primary-dark); border:none; cursor:pointer;" aria-label="Start Voice Scheduler">
+                  <span data-icon="mic" class="animated-mic"></span>
+                </button>
+                <div id="voicePlannerStatus" style="font-size:var(--font-xs); font-weight:700; color:var(--text-muted);" data-i18n="voice_planner_ready">Ready to listen...</div>
+                <div id="voicePlannerTranscript" style="font-size:var(--font-sm); font-style:italic; color:var(--text-main); text-align:center; min-height:20px; line-height:1.3; margin-top:5px;"></div>
+              </div>
+            </div>
+
+            <!-- Card: Hospital Pre-Visit Organizer -->
+            <article class="planner-quick-add-card border-purple" id="hospitalOrganizerCard" style="margin-bottom: 20px;">
+              <h3 class="card-inner-title color-purple">Hospital Pre-Visit Organizer</h3>
+              <p class="perm-desc" style="margin-bottom:12px;">Prepare for your next doctor checkup. Collect vital statistics and prepare questions to ask your doctor.</p>
+              
+              <div style="background: var(--surface-soft); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 12px;">
+                <strong style="display: block; font-size: var(--font-xs); color: var(--color-purple); margin-bottom: 6px;">📋 Next Appointment Details:</strong>
+                <span style="font-size: var(--font-sm); font-weight:700; display:block;">Cardiology Checkup - Dr. Srinivas</span>
+                <span style="font-size: var(--font-xs); color: var(--text-muted); display:block; margin-bottom:8px;">Tomorrow at 10:30 AM</span>
+                
+                <strong style="display: block; font-size: var(--font-xs); color: var(--text-muted); margin-bottom: 4px;">📈 Recent BP Readings:</strong>
+                <div id="previsitBpList" style="font-size: var(--font-xs); font-family: monospace; display:flex; flex-direction:column; gap:2px; margin-bottom:8px;">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+
+              <div class="prepared-questions-section" style="margin-bottom: 12px;">
+                <strong style="display: block; font-size: var(--font-xs); color: var(--text-color); margin-bottom: 6px;">❓ Prepared Questions for Doctor:</strong>
+                <div id="previsitQuestionsList" style="display:flex; flex-direction:column; gap:4px; margin-bottom:8px; font-size:var(--font-xs); color:var(--text-muted); font-style:italic;">
+                  <!-- Populated dynamically -->
+                </div>
+                
+                <div style="display:flex; gap:6px;">
+                  <input type="text" id="previsitQuestionInput" class="custom-input-box" placeholder="Ask doctor about..." style="margin:0; font-size:var(--font-xs); height:32px; min-height:32px; flex:1;">
+                  <button type="button" class="primary-btn-mini" id="addPrevisitQuestionBtn" style="min-height:32px; background:var(--color-purple); border:none; color:white; padding:0 12px; border-radius:8px;">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Add custom reminder module -->
+            <div class="planner-quick-add-card">
+              <h3 class="card-inner-title">Schedule Custom Event</h3>
+              
+              <div class="form-group">
+                <label for="reminderTitle" class="form-label">Reminder Name</label>
+                <input type="text" id="reminderTitle" class="form-text-input" placeholder="e.g. Eye Clinic Appointment">
+              </div>
+
+              <div class="form-group">
+                <label for="reminderTime" class="form-label">Schedule Time</label>
+                <input type="time" id="reminderTime" class="form-text-input" value="10:00">
+              </div>
+
+              <div class="form-group">
+                <label for="reminderCategory" class="form-label">Reminder Category</label>
+                <select id="reminderCategory" class="form-select-box">
+                  <option value="medicine">Medicine Intake</option>
+                  <option value="appointment">Doctor / Health Consultation</option>
+                  <option value="social">Social Gathering / Call Family</option>
+                  <option value="spiritual">Spiritual Prayer / Meditation</option>
+                </select>
+              </div>
+
+              <button class="primary-action-btn w-100 mt-15" id="addCustomReminderBtn">
+                Add Event to Daily Schedule
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11. Business View (Revenue Stack) -->
+        <section class="view-panel" id="business-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">REVENUE STACK & OPERATING SYSTEM</span>
+            <h1 class="view-title">Revenue & Partner Business Model</h1>
+            <p class="view-description">Review CareCircle's monetization engines across family subscriptions, service commissions, marketplace transaction fees, and enterprise partnerships.</p>
+          </div>
+
+          <div class="business-metrics-row" style="display:grid; grid-template-columns:repeat(5, 1fr); gap:15px;">
+            <div class="business-metric-card">
+              <span>Family Base Sub</span>
+              <strong>$9.99/mo</strong>
+              <p>Peace of mind notifications, scam scanners, and roles.</p>
+            </div>
+            <div class="business-metric-card">
+              <span>Local Help Payouts</span>
+              <strong>15% Fee</strong>
+              <p>Platform commissions from clinic, transport, and errand bookings.</p>
+            </div>
+            <div class="business-metric-card">
+              <span>Senior Marketplace</span>
+              <strong>10% Fee</strong>
+              <p>Transaction fees from senior cooking classes & mentoring calls.</p>
+            </div>
+            <div class="business-metric-card">
+              <span>B2B Partnerships</span>
+              <strong>Active Rails</strong>
+              <p>White-label licensing for clinics and retirement community portals.</p>
+            </div>
+            <div class="business-metric-card">
+              <span>Device Plans</span>
+              <strong>+ Subscription</strong>
+              <p>Optional smart pillbox or fall-alert hardware integration support.</p>
+            </div>
+          </div>
+
+          <div class="partner-flow-section mt-25" style="background:var(--surface); border:1px solid var(--border-color); border-radius:var(--radius-card); padding:24px;">
+            <h3 class="card-inner-title">Interconnected Platform Flow</h3>
+            <p class="perm-desc" style="margin-bottom:15px;">How value flows across stakeholders, driving trust and retention.</p>
+            
+            <div class="partner-flow">
+              <div class="partner-flow-step">
+                <div class="step-num">1</div>
+                <span class="step-icon" data-icon="users"></span>
+                <strong>Senior + Family</strong>
+                <p>Daily check-ins, emotional blessings, and dashboard tracking.</p>
+              </div>
+              <div class="partner-flow-step">
+                <div class="step-num">2</div>
+                <span class="step-icon" data-icon="globe"></span>
+                <strong>Culture Engine</strong>
+                <p>Adapting interface and guidelines per country profile.</p>
+              </div>
+              <div class="partner-flow-step">
+                <div class="step-num">3</div>
+                <span class="step-icon" data-icon="briefcase"></span>
+                <strong>Local Partners</strong>
+                <p>Executing home visits, pharmacy runs, and transport.</p>
+              </div>
+              <div class="partner-flow-step">
+                <div class="step-num">4</div>
+                <span class="step-icon" data-icon="chart"></span>
+                <strong>Revenue Layer</strong>
+                <p>Processing fees, commissions, and B2B contract payouts.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Strategy View -->
+        <section class="view-panel" id="strategy-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">COMPETITOR POSITIONING MATRIX</span>
+            <h1 class="view-title">Competitor Benchmarking & Advantage</h1>
+            <p class="view-description">Compare CareCircle with existing single-feature applications and see how our integrated approach protects senior confidence.</p>
+          </div>
+
+          <div class="strategy-details-grid">
+            <!-- Competitor matrix table -->
+            <article class="strategy-details-card">
+              <h3 class="card-inner-title">Competitor Analysis</h3>
+              <div class="table-container mt-15">
+                <table class="competitor-table-view">
+                  <thead>
+                    <tr>
+                      <th>Product Class</th>
+                      <th>Typical Offerings</th>
+                      <th>CareCircle Advantages</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Medisafe</strong></td>
+                      <td>Pill trackers, refill reminders</td>
+                      <td>Culture Twin adaptation, family emotional gratitude network.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Life Alert</strong></td>
+                      <td>Physical SOS alarm pendants</td>
+                      <td>Active preventative countdown alarms, offline local emergency routing.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>ElliQ</strong></td>
+                      <td>Expensive robotic tabletop devices</td>
+                      <td>Low-cost mobile app architecture, Senior wisdom monetization.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>GrandPad</strong></td>
+                      <td>Closed tablet device packages</td>
+                      <td>Zero hardware locks, secure dynamic permission settings.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Papa</strong></td>
+                      <td>Companion care home visits</td>
+                      <td>AI-first daily companion with automated local partner booking system.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <!-- Strategy Cards -->
+            <article class="strategy-details-card">
+              <h3 class="card-inner-title">Core Strategic Pillars</h3>
+              <div class="strategy-pillars-list mt-15">
+                <div class="pillar-item">
+                  <span class="pillar-icon" data-icon="coins"></span>
+                  <div>
+                    <strong>Revenue Stack</strong>
+                    <p>Diversified flows: Family subscriptions, service commissions, and device integrations.</p>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-icon" data-icon="sparkles"></span>
+                  <div>
+                    <strong>Innovation Moat</strong>
+                    <p>Category-defining features like Consent Passport, Culture Twin, and Wisdom Income.</p>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-icon" data-icon="briefcase"></span>
+                  <div>
+                    <strong>Partner Layer</strong>
+                    <p>Connecting verified pharmacies, clinics, transport auto/cabs, and handymen.</p>
+                  </div>
+                </div>
+                <div class="pillar-item">
+                  <span class="pillar-icon" data-icon="target"></span>
+                  <div>
+                    <strong>Value Positioning</strong>
+                    <p>Dignity-first senior confidence companion rather than invasive clinical monitoring.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 13. Innovation View -->
+        <section class="view-panel" id="innovation-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">UNIQUE PRODUCT MOAT</span>
+            <h1 class="view-title">9 Category-Defining Innovations</h1>
+            <p class="view-description">These unique features protect dignity, foster intergenerational trust, and build an copying barrier against typical competitors.</p>
+          </div>
+
+          <div class="innovation-grid-layout">
+            <article class="innovation-feature-card border-teal">
+              <span class="feat-icon" data-icon="shield"></span>
+              <strong>Consent Passport</strong>
+              <p>A senior-controlled permission layer deciding what family or doctors see. Includes auto-expiring temporary sessions.</p>
+              <button class="primary-btn-mini nav-link" data-view="family" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Review Consent</button>
+            </article>
+
+            <article class="innovation-feature-card border-gold">
+              <span class="feat-icon" data-icon="globe"></span>
+              <strong>Culture Twin</strong>
+              <p>A living cultural profile adapting visually, linguistically, and schedule-wise to the senior's region, food, and rituals.</p>
+              <button class="primary-btn-mini nav-link" data-view="culture" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Configure Twin</button>
+            </article>
+
+            <article class="innovation-feature-card">
+              <span class="feat-icon" data-icon="users"></span>
+              <strong>Trusted Micro-Circle</strong>
+              <p>Creates a small, verified backup network of neighbors and pharmacists who can check on the senior physically.</p>
+              <button class="primary-btn-mini nav-link" data-view="safety" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Check Circle</button>
+            </article>
+
+            <article class="innovation-feature-card border-orange">
+              <span class="feat-icon" data-icon="wifi-off"></span>
+              <strong>Offline Safety Trail</strong>
+              <p>Critical medical summaries and emergency contacts displayed offline on the lockscreen via generated QR codes.</p>
+              <button class="primary-btn-mini nav-link" data-view="home" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">View QR Info</button>
+            </article>
+
+            <article class="innovation-feature-card">
+              <span class="feat-icon" data-icon="brain"></span>
+              <strong>Life Pattern Drift</strong>
+              <p>AI heuristics monitoring daily deviations in steps, sleep quality, and family calling gaps to detect early care risks.</p>
+              <button class="primary-btn-mini nav-link" data-view="health" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Scan Vitals</button>
+            </article>
+
+            <article class="innovation-feature-card border-gold">
+              <span class="feat-icon" data-icon="coins"></span>
+              <strong>Wisdom Royalties</strong>
+              <p>Empowering seniors to monetize traditional knowledge, recipes, or oral history audiobooks for recurring income.</p>
+              <button class="primary-btn-mini nav-link" data-view="earn" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Marketplace</button>
+            </article>
+
+            <article class="innovation-feature-card">
+              <span class="feat-icon" data-icon="heart"></span>
+              <strong>Family Repair Nudges</strong>
+              <p>Gentle, guilt-free call suggestions sent to busy children to facilitate regular intergenerational reconnection.</p>
+              <button class="primary-btn-mini nav-link" data-view="family" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Draft Nudge</button>
+            </article>
+
+            <article class="innovation-feature-card border-red">
+              <span class="feat-icon" data-icon="lock"></span>
+              <strong>End-of-Life Organizer</strong>
+              <p>A sensitive private vault for care wishes, life logs, lockbox locations, and legacy files, locked via companion PIN.</p>
+              <button class="primary-btn-mini nav-link" data-view="docs" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">Unlock Vault</button>
+            </article>
+
+            <article class="innovation-feature-card">
+              <span class="feat-icon" data-icon="target"></span>
+              <strong>Country Launch Playbooks</strong>
+              <p>Every country gets its own operating pack defining local legal compliance, regional payment APIs, local emergency lines, and regional scams.</p>
+              <button class="primary-btn-mini nav-link" data-view="culture" style="min-height:36px; padding:0 12px; margin-top:10px; border-radius:8px; border:none; background:var(--color-primary); color:white; font-weight:700;">View Playbook</button>
+            </article>
+          </div>
+        </section>
+
+        <!-- 14. AI Companion View -->
+        <section class="view-panel" id="companion-view">
+          <div class="section-header-banner">
+            <span class="badge-eyebrow">YOUR PERSONAL COMPANION</span>
+            <h1 class="view-title" id="companionPanelTitle">AI Friend & Companion</h1>
+            <p class="view-description">Talk about your memories, check daily greetings, get simple tips, or just have a friendly, open-ended conversation with your personalized assistant.</p>
+          </div>
+
+          <div class="companion-layout-container">
+            <!-- Left Side: Interactive Avatar & Quick Controls -->
+            <div class="custom-form-card border-teal companion-avatar-card">
+              <h3 class="card-inner-title" id="companionAvatarName">Sathi</h3>
+              
+              <!-- Pulse Orb Avatar -->
+              <div class="companion-avatar-orb" id="companionAvatarOrb">
+                <!-- Will load dynamic animated mascot SVG -->
+              </div>
+              
+              <p class="sub-text" id="companionAvatarDesc">Warm & attentive companion. Address it using natural speech or typing.</p>
+              
+              <div class="companion-status-indicator">
+                <span class="companion-status-dot"></span>
+                <span id="companionStatusText">Active & Listening</span>
+              </div>
+            </div>
+
+            <!-- Right Side: AI Chat Simulator -->
+            <div class="family-chat-card" style="height: 520px;">
+              <!-- Chat Message Logs -->
+              <div class="chat-logs-container" id="companionChatLogs" style="height: 380px;">
+                <div class="chat-system-message" id="companionChatSystemMsg">AI Conversation established. Warm companion tone active.</div>
+                
+                <div class="chat-bubble received">
+                  <div class="chat-bubble-header">
+                    <div class="sender-meta" id="companionSenderMeta">Sathi · Now</div>
+                    <button class="chat-listen-btn" aria-label="Listen back" title="Listen back">
+                      <span data-icon="volume"></span>
+                    </button>
+                  </div>
+                  <p class="chat-text" id="companionInitialGreeting">Hello Lakshmi ji! I am Sathi, your daily companion. How are you feeling today?</p>
+                </div>
+              </div>
+
+              <!-- Quick Phrases Bar for Companion -->
+              <div class="chat-quick-phrases-bar d-none" id="companionQuickPhrasesBar">
+                <!-- Dynamically populated buttons -->
+              </div>
+
+              <!-- Chat Input Controls -->
+              <div class="chat-input-bar">
+                <!-- Normal Input Mode -->
+                <div class="chat-input-row" id="companionInputRow">
+                  <button class="chat-voice-btn" id="companionVoiceTypingBtn" title="Speak to Type" aria-label="Speak to Type">
+                    <span data-icon="mic"></span>
+                  </button>
+                  <button class="chat-voice-btn" id="companionVoiceNoteBtn" title="Record Voice Note" aria-label="Record Voice Note">
+                    <span class="voice-note-inner-icon"></span>
+                  </button>
+                  <input type="text" id="companionChatInput" placeholder="Type a message to your companion..." class="chat-text-box">
+                  <button class="primary-action-btn chat-send-btn" id="sendCompanionChatMessage" aria-label="Send message to AI companion">
+                    Send
+                  </button>
+                </div>
+                
+                <!-- Recording Voice Note Mode -->
+                <div class="chat-recording-row d-none" id="companionRecordingRow">
+                  <div class="recording-status-box">
+                    <span class="recording-dot-pulse"></span>
+                    <span id="companionRecordingTimeDisplay">0:00</span>
+                    <span id="companionRecordingStatusLabel">Recording... Speak now.</span>
+                  </div>
+                  <div class="recording-actions-box">
+                    <button class="btn-secondary-mini chat-record-cancel-btn" id="cancelCompanionVoiceRecordBtn">Cancel</button>
+                    <button class="primary-btn-mini chat-record-send-btn" id="stopAndSendCompanionVoiceRecordBtn">Stop & Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- VOICE ASSISTANT CENTERED MODAL -->
+  <dialog class="voice-assistant-modal" id="voiceDrawer">
+    <div class="voice-modal-content">
+      <div class="voice-drawer-header">
+        <h2 class="voice-drawer-title">Voice Assistant</h2>
+        <button class="voice-modal-close-top" id="closeVoiceDrawerTop" aria-label="Close voice assistant">Close ×</button>
+      </div>
+      
+      <div class="voice-drawer-body">
+        <div class="speech-orb-indicator" id="speechOrb">
+          <span data-icon="mic" class="speech-mic-icon"></span>
+        </div>
+        <strong class="voice-sys-prompt" id="voiceAssistantStatus">Listening for your command...</strong>
+        
+        <div class="transcription-output-card" style="margin-bottom: 20px;">
+          <span class="card-label">YOUR SPOKEN WORDS:</span>
+          <p class="transcription-text" id="voiceTranscriptionText">"..."</p>
+        </div>
+
+        <div class="voice-quick-prompts">
+          <p class="quick-prompt-tip">You can speak commands like:</p>
+          <div class="quick-commands-list">
+            <button class="voice-sample-cmd" data-cmd="Trigger Emergency SOS">"SOS / Help"</button>
+            <button class="voice-sample-cmd" data-cmd="Call Daughter Meera">"Call Family"</button>
+            <button class="voice-sample-cmd" data-cmd="Log feeling happy">"Log Mood Good"</button>
+            <button class="voice-sample-cmd" data-cmd="Mark morning medicine as taken">"Medicine Taken"</button>
+          </div>
+        </div>
+
+        <button class="voice-modal-close-btn" id="closeVoiceDrawer" aria-label="Close Voice Help">
+          Go Back to Dashboard
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- EMERGENCY SOS COUNTDOWN SCREEN OVERLAY -->
+  <div class="emergency-overlay d-none" id="emergencyOverlay">
+    <div class="sos-countdown-box" id="sosCountdownBox">
+      <span class="warning-icon-siren" data-icon="siren"></span>
+      <h1 class="emergency-title">EMERGENCY SOS ACTIVATING</h1>
+      <p class="emergency-subtitle">Alerting Meera, Arun, and routing local responders in <span id="sosCountdownSeconds">5</span>...</p>
+      <button class="cancel-sos-btn" id="cancelSosButton">CANCEL EMERGENCY ALARM</button>
+    </div>
+
+    <!-- Active SOS Broadcast Console -->
+    <div class="sos-broadcast-box d-none" id="sosBroadcastBox">
+      <span class="active-siren-flasher" data-icon="siren"></span>
+      <h1 class="emergency-title text-red animate-flash">SOS BROADCASTING</h1>
+      <p class="emergency-subtitle">Your coordinates and medical profile have been sent. Family is notified.</p>
+      
+      <div class="sos-details-card">
+        <p><strong>GPS Coordinates:</strong> 13.0827° N, 80.2707° E</p>
+        <p><strong>Emergency Contacts Alerted:</strong> Meera, Arun, Ravi (Pharmacist)</p>
+        <p><strong>Local Ambulance Call Route:</strong> 108</p>
+      </div>
+
+      <button class="terminate-sos-btn" id="terminateSosButton">CLOSE ALARM & STATE STABLE</button>
+    </div>
+  </div>
+
+  <!-- OFFLINE EMERGENCY MEDICAL CARD MODAL -->
+  <dialog class="emergency-card-dialog" id="emergencyCardModal">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title">Offline Emergency Medical Info</h2>
+      <button class="close-voice-btn" id="closeEmergencyCardModal" aria-label="Close emergency card">×</button>
+    </div>
+    <div class="emergency-modal-body">
+      <div class="offline-qr-card-container">
+        <!-- SVG Generated QR placeholder -->
+        <div class="qr-code-svg-wrapper" id="emergencyQRWrapper">
+          <svg viewBox="0 0 100 100" class="qr-vector" width="160" height="160">
+            <!-- Outer Border and corner anchor boxes -->
+            <rect x="0" y="0" width="100" height="100" fill="#ffffff" />
+            <rect x="5" y="5" width="20" height="20" fill="#111827" />
+            <rect x="9" y="9" width="12" height="12" fill="#ffffff" />
+            <rect x="12" y="12" width="6" height="6" fill="#111827" />
+            
+            <rect x="75" y="5" width="20" height="20" fill="#111827" />
+            <rect x="79" y="9" width="12" height="12" fill="#ffffff" />
+            <rect x="82" y="12" width="6" height="6" fill="#111827" />
+            
+            <rect x="5" y="75" width="20" height="20" fill="#111827" />
+            <rect x="9" y="79" width="12" height="12" fill="#ffffff" />
+            <rect x="12" y="82" width="6" height="6" fill="#111827" />
+            
+            <!-- Custom stylized center heart cross pattern -->
+            <path d="M 45 40 H 55 V 50 H 45 Z" fill="#b42318" />
+            <path d="M 40 45 H 60 V 55 H 40 Z" fill="#b42318" />
+
+            <!-- Random QR dot matrices representing compressed medical details -->
+            <rect x="35" y="15" width="4" height="4" fill="#111827" />
+            <rect x="45" y="25" width="8" height="4" fill="#111827" />
+            <rect x="60" y="15" width="4" height="8" fill="#111827" />
+            <rect x="75" y="35" width="4" height="4" fill="#111827" />
+            <rect x="85" y="45" width="8" height="4" fill="#111827" />
+            
+            <rect x="15" y="35" width="4" height="8" fill="#111827" />
+            <rect x="25" y="45" width="8" height="4" fill="#111827" />
+            
+            <rect x="35" y="75" width="8" height="4" fill="#111827" />
+            <rect x="55" y="80" width="4" height="8" fill="#111827" />
+            <rect x="65" y="75" width="8" height="4" fill="#111827" />
+          </svg>
+        </div>
+        
+        <div class="qr-details-block">
+          <h3 class="medical-senior-name" id="modalMedicalName">Lakshmi Raman · Age 72</h3>
+          <p class="medical-disclaimer">First-responders scan QR code above with any mobile camera to fetch offline insurance, active medicines, drug warnings, and blood bank profiles.</p>
+          
+          <ul class="medical-specs-list" id="modalMedicalDetailsList">
+            <li><strong>Blood Group:</strong> B Positive</li>
+            <li><strong>Chronic Conditions:</strong> Diabetes Type-2, Hypertension</li>
+            <li><strong>Active Medications:</strong> Metformin 500mg, Amlodipine 5mg</li>
+            <li><strong>Allergies:</strong> Penicillin (Severe)</li>
+            <li><strong>Emergency Doctor:</strong> Dr. G. Vasudev (+91 44 2490 1234)</li>
+            <li><strong>Primary Family Contact:</strong> Meera (Daughter) · +91 99999 99999</li>
+            <li><strong>Second Family Contact:</strong> Arun (Son) · +91 98888 88888</li>
+          </ul>
+
+          <div class="offline-safety-trail-section mt-15" style="border-top:1px dashed var(--border-color); padding-top:10px;">
+            <strong class="info-line-header" style="font-size:var(--font-sm); display:block; margin-bottom:5px;">Offline Safety Trail Status:</strong>
+            <ul class="mini-medical-info" style="font-size:var(--font-xs); background:var(--surface-soft); padding:8px; border-radius:8px;">
+              <li><strong>Local Cache Generation:</strong> Up-to-date (6 seconds ago)</li>
+              <li><strong>SOS Queue:</strong> 0 Pending alerts</li>
+              <li><strong>Last GPS Coordinates:</strong> 13.0827° N, 80.2707° E</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- HIGH SECURITY SENSITIVE END-OF-LIFE ORGANIZER DIALOG -->
+  <dialog class="emergency-card-dialog" id="eolOrganizerModal">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title text-red">Sensitive End-of-Life Organizer</h2>
+      <button class="close-voice-btn" id="closeEolModal" aria-label="Close sensitive vault">×</button>
+    </div>
+    <div class="emergency-modal-body">
+      <div class="secure-auth-block" id="eolAuthSection">
+        <p class="perm-desc">This is a highly restricted, encrypted private vault. Enter your companion PIN to unlock.</p>
+        <div class="form-group mt-10" style="display:flex; gap:10px; justify-content:center;">
+          <input type="password" id="eolPasscode" class="form-text-input" style="max-width:180px; text-align:center;" placeholder="Enter PIN (e.g. 1234)">
+          <button class="primary-action-btn" id="verifyEolPinBtn" style="min-height:52px;">Unlock</button>
+        </div>
+      </div>
+
+      <div class="secure-vault-contents d-none" id="eolVaultContents">
+        <div class="permission-item-row">
+          <div>
+            <strong>Private Palliative Care Wishes</strong>
+            <p class="sub-text">"Keep me comfortable at home, no mechanical life extensions."</p>
+          </div>
+          <span class="verified-tag" style="background:var(--color-red-soft); color:var(--color-red);">ENCRYPTED</span>
+        </div>
+        <div class="permission-item-row">
+          <div>
+            <strong>Critical Folder Locations</strong>
+            <p class="sub-text">"Pensions folder & physical will are in the blue metal safe in my study room closet."</p>
+          </div>
+          <span class="verified-tag" style="background:var(--color-red-soft); color:var(--color-red);">ENCRYPTED</span>
+        </div>
+        <div class="permission-item-row">
+          <div>
+            <strong>Legacy Message (Locked until emergency)</strong>
+            <p class="sub-text">Personal written letter and blessings recording for Meera, Arun, and grandkids.</p>
+          </div>
+          <button class="primary-btn-mini" id="playEolVoiceLetterBtn" style="padding:0 12px; min-height:36px;">Record Note</button>
+        </div>
+
+        <hr class="card-divider">
+        <div class="form-group">
+          <label class="form-label">Emergency Unlock Trust Rule</label>
+          <select class="form-select-box">
+            <option>Requires both Meera & Arun keys (Two-Party Consensus)</option>
+            <option>Unlock automatically if SOS is broadcasted and active</option>
+            <option>Unlock only by court-registered legal advisor</option>
+          </select>
+        </div>
+        <button class="primary-action-btn w-100" id="lockEolVaultBtn">Lock & Encrypt Organizer</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ENTITLED BENEFITS ELIGIBILITY WIZARD DIALOG -->
+  <dialog class="emergency-card-dialog" id="benefitsWizardModal">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title" style="color:var(--color-primary-dark);">Benefits Eligibility Wizard</h2>
+      <button class="close-voice-btn" id="closeBenefitsModal" aria-label="Close benefits modal">×</button>
+    </div>
+    <div class="emergency-modal-body">
+      <p class="perm-desc">Answer a few questions to scan for eligible central/state pension and medical benefit programs.</p>
+      
+      <div id="benefitsWizardStep1">
+        <div class="form-group mt-15">
+          <label class="form-label" style="font-weight:700;">Select Your Age Group:</label>
+          <select class="form-select-box" id="wizardAgeSelect" style="min-height:48px;">
+            <option value="60">60 - 69 Years</option>
+            <option value="70" selected>70 - 79 Years</option>
+            <option value="80">80+ Years (Super Senior)</option>
+          </select>
+        </div>
+        <div class="form-group mt-15">
+          <label class="form-label" style="font-weight:700;">Monthly Household Income:</label>
+          <select class="form-select-box" id="wizardIncomeSelect" style="min-height:48px;">
+            <option value="low">Below ₹15,000 / month (Low Income BPL)</option>
+            <option value="med">₹15,000 - ₹50,000 / month</option>
+            <option value="high">Above ₹50,000 / month</option>
+          </select>
+        </div>
+        <div class="form-group mt-15">
+          <label class="form-label" style="font-weight:700;">Aadhaar Verification Status:</label>
+          <select class="form-select-box" id="wizardAadhaarSelect" style="min-height:48px;">
+            <option value="yes">Aadhaar Linked with Mobile Number</option>
+            <option value="no">Not Linked / No Aadhaar</option>
+          </select>
+        </div>
+        <button class="primary-action-btn w-100 mt-20" id="wizardNextBtn" style="min-height:52px;">Find My Matching Benefits</button>
+      </div>
+
+      <div id="benefitsWizardResults" class="d-none">
+        <h3 class="card-inner-title mt-10">Your Eligible Programs:</h3>
+        <div class="secure-vault-contents mt-10" style="max-height:220px; overflow-y:auto; margin-bottom:15px; display:flex; flex-direction:column; gap:10px;" id="wizardResultsList">
+          <!-- Results populated dynamically -->
+        </div>
+        <button class="primary-action-btn w-100" id="submitAllBenefitsBtn" style="min-height:52px;">Apply For Matched Programs</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- VISUAL PILL IDENTIFIER MODAL -->
+  <dialog class="emergency-card-dialog" id="pillScannerModal">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title" style="color:var(--color-primary-dark);">Visual Pill Scanner</h2>
+      <button class="close-voice-btn" id="closePillScannerModal" aria-label="Close scanner">×</button>
+    </div>
+    <div class="emergency-modal-body">
+      <p class="perm-desc">Hold your pill in front of your camera to scan and identify it.</p>
+      
+      <div class="pill-scanner-viewport mt-15">
+        <div class="camera-lens-sim">
+          <div class="scanning-beam" id="scannerBeam"></div>
+          <!-- Mock image representation of a hand holding a pill -->
+          <div class="mock-pill-image" id="mockPillImage"></div>
+        </div>
+      </div>
+
+      <div class="form-group mt-15">
+        <label class="form-label" style="font-weight:700;">Simulate Handing Pill:</label>
+        <select class="form-select-box" id="simPillType" style="min-height:48px;">
+          <option value="metformin">White Oval (Metformin 500mg) - Scheduled Now</option>
+          <option value="amlodipine">Small Yellow Round (Amlodipine 5mg) - Scheduled Later</option>
+          <option value="unknown">Blue Hexagonal - Unrecognized / Not Prescribed</option>
+        </select>
+      </div>
+
+      <button class="primary-action-btn w-100 mt-15" id="runPillScanBtn" style="min-height:52px;">Capture & Analyze</button>
+
+      <div class="scanner-results-card d-none mt-20" id="pillScannerResultBox">
+        <div class="permission-item-row" style="border: 2px solid var(--border-color); border-radius:12px; padding:15px; background:var(--surface-soft);" id="pillScannerBadgeRow">
+          <div>
+            <strong id="pillScannerMatchName" style="font-size:var(--font-base); display:block; margin-bottom:4px;">Metformin (500mg)</strong>
+            <p class="sub-text" id="pillScannerMatchStatus">Matches your 8:00 AM Morning Medicine schedule.</p>
+          </div>
+          <span class="verified-tag" id="pillScannerMatchLabel" style="background:var(--color-primary-soft); color:var(--color-primary);">98% MATCH</span>
+        </div>
+        
+        <button class="primary-action-btn w-100 mt-15" id="confirmPillTakenBtn" style="min-height:52px;">Confirm & Take Pill</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- TIMEZONE CALL WARNING MODAL -->
+  <dialog class="emergency-card-dialog" id="timezoneCallWarningModal" style="max-width: 450px;">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title" style="color:var(--color-red); font-size: 1.2rem;" id="timezoneWarningTitle">⚠️ Timezone Warning</h2>
+      <button class="close-voice-btn" id="closeTimezoneWarningBtn" aria-label="Close dialog">×</button>
+    </div>
+    <div class="emergency-modal-body" style="text-align: center; padding-top: 10px;">
+      <p id="timezoneWarningText" class="perm-desc" style="line-height: 1.5; margin-bottom: 20px; font-size: var(--font-sm);"></p>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 20px;">
+        <button class="primary-action-btn" id="confirmTimezoneCallBtn" style="background: var(--color-red); border-color: var(--color-red); min-height: 48px; flex: 1;">Call Anyway</button>
+        <button class="secondary-action-btn" id="timezoneRecordVoiceBtn" style="min-height: 48px; flex: 1;">Send Voice Note</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DOCUMENT HELPER DISPATCH MODAL -->
+  <dialog class="emergency-card-dialog" id="docHelperDispatchModal" style="max-width: 450px;">
+    <div class="emergency-modal-header">
+      <h2 class="emergency-modal-title" style="color:var(--color-gold); font-size: 1.2rem;">📋 Document Helper Dispatch</h2>
+      <button class="close-voice-btn" id="closeDocHelperModalBtn" aria-label="Close dialog">×</button>
+    </div>
+    <div class="emergency-modal-body" style="text-align: center; padding-top: 10px;" id="docHelperStatusContainer">
+      <div id="docHelperLoader" class="loader-spinner" style="margin: 25px auto; width: 50px; height: 50px;"></div>
+      <p id="docHelperStatusText" class="perm-desc" style="line-height: 1.5; margin-bottom: 20px; font-size: var(--font-sm);">Finding a verified, background-checked local document helper near you...</p>
+      <button class="secondary-action-btn w-100" id="cancelDocHelperBtn" style="min-height: 48px; margin-top: 15px;">Cancel Request</button>
+    </div>
+  </dialog>
+
+  <!-- Global toast notifications -->
+  <div class="toast-popup" id="globalToast" role="status">Notification alert message</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
