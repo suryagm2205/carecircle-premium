@@ -785,6 +785,9 @@
                 <button class="primary-action-btn w-100 mt-15" id="saveConsentPassportBtn">
                   Update Consent Access Credentials
                 </button>
+                <button class="secondary-action-btn w-100 mt-10" id="generateCaregiverLinkBtn" style="border:1px solid var(--border-color); background:none; color:var(--text-main); height:45px; border-radius:8px; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;">
+                  <span data-icon="link"></span> Generate Caregiver Shared View Link
+                </button>
               </div>
             </div>
 
@@ -2824,6 +2827,14 @@
           <select id="languageSelect" class="form-select-box" style="height:40px; min-height:40px; font-size:var(--font-sm); border:1px solid var(--border-color); padding:0 12px; border-radius:8px;">
             <!-- Populated dynamically -->
           </select>
+        </div>
+
+        <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+          <label for="voiceSpeedInput" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Voice Reading Speed (Slower is better for hearing aids)</label>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <input type="range" id="voiceSpeedInput" min="0.7" max="1.3" step="0.05" value="1.0" style="flex:1; accent-color:var(--color-primary); cursor:pointer;">
+            <span id="voiceSpeedValue" style="font-weight:700; font-size:var(--font-sm); color:var(--text-main); min-width:40px;">1.0x</span>
+          </div>
         </div>
 
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">

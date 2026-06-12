@@ -4557,3 +4557,51 @@ body.dark-mode .sos-broadcast-box {
   padding-right: 5px;
 }
 
+/* ==========================================================================
+   ELDERACCESSIBILITY USABILITY & TACTILE ENHANCEMENTS
+   ========================================================================== */
+
+/* Tactile mimicry click feedback */
+.primary-action-btn:active,
+.secondary-action-btn:active,
+.family-quick-card:active,
+.service-card-tile:active,
+.a11y-toggle-btn:active,
+.header-emergency-card-btn:active,
+.dial-family:active {
+  transform: scale(0.96);
+  transition: transform 0.05s ease;
+}
+
+/* Press-and-Hold Emergency SOS trigger styling */
+.emergency-trigger-giant-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.emergency-trigger-giant-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(239, 68, 68, 0.4);
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 1.5s linear;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.emergency-trigger-giant-btn.sos-pressing {
+  transform: scale(0.95) !important;
+  box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.4) !important;
+}
+
+.emergency-trigger-giant-btn.sos-pressing::after {
+  transform: scale(1.2);
+}
+
+

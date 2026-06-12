@@ -17,6 +17,8 @@ const icons = {
   contrast: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/></svg>',
   type: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>',
   volume: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>',
+  volumeX: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>',
+  link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
   lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
   book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
   chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>',
@@ -1157,6 +1159,8 @@ function speakText(text, context = 'advice') {
   }
 
   const utterance = new SpeechSynthesisUtterance(translatedText);
+  const savedRate = parseFloat(localStorage.getItem('voice_speed') || '1.0');
+  utterance.rate = savedRate;
   const voices = synthesisEngine.getVoices();
   
   function getNaturalFemaleVoice(langTag) {
@@ -2425,10 +2429,29 @@ window.addEventListener('DOMContentLoaded', () => {
     showToast(isActive ? "Extra Large font scaling active" : "Standard font size active");
   });
 
-  document.getElementById('toggleMuteSpeech').addEventListener('click', () => {
-    speechMuted = !speechMuted;
-    showToast(speechMuted ? "Voice synthesis muted" : "Voice synthesis active");
-  });
+  const speechMuteBtn = document.getElementById('toggleMuteSpeech');
+  if (speechMuteBtn) {
+    // Setup initial mute icon state
+    const updateMuteIconState = () => {
+      const volumeIcon = speechMuted ? icons['volumeX'] : icons['volume'];
+      const iconWrapper = speechMuteBtn.querySelector('[data-icon]');
+      if (iconWrapper) iconWrapper.innerHTML = volumeIcon || '';
+    };
+    
+    // Initial icon populate on page load
+    setTimeout(updateMuteIconState, 100);
+    
+    speechMuteBtn.addEventListener('click', () => {
+      speechMuted = !speechMuted;
+      updateMuteIconState();
+      showToast(speechMuted ? "Voice assistant muted." : "Voice assistant active.");
+      if (!speechMuted) {
+        speakText("Voice assistant active.");
+      } else {
+        if (synthesisEngine) synthesisEngine.cancel();
+      }
+    });
+  }
 
   // Offline medical card modals
   const emergencyCardModalEl = document.getElementById('emergencyCardModal');
@@ -4363,6 +4386,10 @@ Crucially:
         `;
       }
       
+      // Save Voice Speed setting
+      const voiceSpeedVal = document.getElementById('voiceSpeedInput').value;
+      localStorage.setItem('voice_speed', voiceSpeedVal);
+
       // Save Gemini API Key
       const apiKeyVal = document.getElementById('geminiApiKeyInput').value.trim();
       localStorage.setItem('gemini_api_key', apiKeyVal);
@@ -4398,12 +4425,42 @@ Crucially:
     });
   }
 
-  // D. Giant SOS Button in Safety Guardian
+  // D. Giant SOS Button in Safety Guardian with Press-and-Hold Trigger
   const sosGiantButton = document.getElementById('sosGiantButton');
   if (sosGiantButton) {
-    sosGiantButton.addEventListener('click', () => {
-      triggerEmergencySos();
-    });
+    let sosHoldTimer = null;
+    const holdDurationMs = 1500; // 1.5 seconds hold duration
+
+    const startSosHold = (e) => {
+      e.preventDefault();
+      sosGiantButton.classList.add('sos-pressing');
+      speakText("Hold down to trigger emergency.");
+      
+      if (sosHoldTimer) clearTimeout(sosHoldTimer);
+      sosHoldTimer = setTimeout(() => {
+        sosGiantButton.classList.remove('sos-pressing');
+        triggerEmergencySos();
+      }, holdDurationMs);
+    };
+
+    const cancelSosHold = () => {
+      if (sosHoldTimer) {
+        clearTimeout(sosHoldTimer);
+        sosHoldTimer = null;
+      }
+      if (sosGiantButton.classList.contains('sos-pressing')) {
+        sosGiantButton.classList.remove('sos-pressing');
+        showToast("SOS emergency call canceled.");
+        speakText("Canceled.");
+      }
+    };
+
+    sosGiantButton.addEventListener('mousedown', startSosHold);
+    sosGiantButton.addEventListener('touchstart', startSosHold, { passive: false });
+    
+    window.addEventListener('mouseup', cancelSosHold);
+    window.addEventListener('touchend', cancelSosHold);
+    sosGiantButton.addEventListener('mouseleave', cancelSosHold);
   }
 
   // E. Request Human Backup
@@ -7897,6 +7954,11 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
       document.getElementById('dietPreference').value = localStorage.getItem('diet_preference') || "veg_diabetic";
       document.getElementById('livingSituationSelect').value = localStorage.getItem('living_arrangement') || "living_alone";
+      
+      // Load voice speed settings
+      const voiceSpeedVal = localStorage.getItem('voice_speed') || "1.0";
+      document.getElementById('voiceSpeedInput').value = voiceSpeedVal;
+      document.getElementById('voiceSpeedValue').textContent = voiceSpeedVal + "x";
       document.getElementById('spiritualPreference').value = localStorage.getItem('spiritual_alignment') || "festivals_prayers";
 
       // Switches
@@ -8616,6 +8678,33 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     renderFamilyCirclePage();
   }
 
+  // Voice Speed slider value live updating
+  const voiceSpeedInput = document.getElementById('voiceSpeedInput');
+  if (voiceSpeedInput) {
+    voiceSpeedInput.addEventListener('input', (e) => {
+      const valEl = document.getElementById('voiceSpeedValue');
+      if (valEl) valEl.textContent = e.target.value + "x";
+    });
+  }
+
+  // Caregiver view passport link generator
+  const generateCaregiverLinkBtn = document.getElementById('generateCaregiverLinkBtn');
+  if (generateCaregiverLinkBtn) {
+    generateCaregiverLinkBtn.addEventListener('click', () => {
+      const activeSenior = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      const randomToken = 'pass_' + Math.random().toString(36).substring(2, 12);
+      const localUrl = window.location.origin + '/?passport=' + randomToken;
+      
+      navigator.clipboard.writeText(localUrl).then(() => {
+        showToast("Passport shared view link copied to clipboard!");
+        speakText("Shared caregiver passport view link copied to clipboard. You can paste it to send to your family.");
+      }).catch(err => {
+        console.error("Failed to copy caregiver link", err);
+        showToast("Error: Could not copy link to clipboard.");
+      });
+    });
+  }
+
   // Add Contact button click listener in Family tab
   const circleOpenAddContactBtn = document.getElementById('circleOpenAddContactBtn');
   if (circleOpenAddContactBtn && addFamilyContactModal) {
@@ -8732,12 +8821,13 @@ function renderCertaintyReceipts() {
   }
   
   container.innerHTML = receipts.map(r => `
-    <div class="receipt-item-card" style="background:var(--surface-soft); border:1px solid var(--border-color); border-radius:10px; padding:10px; display:flex; flex-direction:column; gap:4px; margin-bottom: 4px;">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <strong style="font-size:var(--font-xs); color:var(--color-indigo);">${r.taskName}</strong>
-        <span style="font-size:10px; color:var(--text-muted);">${r.timestamp}</span>
+    <div class="receipt-item-card" style="background:#fffdec; border:1px dashed #d9d6be; border-radius:4px; padding:12px; display:flex; flex-direction:column; gap:4px; margin-bottom: 8px; position:relative; box-shadow:0 2px 5px rgba(0,0,0,0.05); font-family:Courier, monospace; color:#2c2b20;">
+      <div style="border-bottom:1px dotted #b3af93; padding-bottom:4px; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center;">
+        <strong style="font-size:var(--font-xs); color:#1e1b4b; font-family:inherit;">\${r.taskName.toUpperCase()}</strong>
+        <span style="font-size:9px; color:#6b6957; font-family:inherit;">\${r.timestamp}</span>
       </div>
-      <p style="margin:0; font-size:11px; color:var(--text-color); font-style:italic;">✓ ${r.notes}</p>
+      <p style="margin:0; font-size:10px; color:#403e31; line-height:1.3; font-style:italic; font-family:inherit;">>>> \${r.notes}</p>
+      <div style="position:absolute; right:15px; bottom:8px; border:2px double #10b981; color:#10b981; font-size:9px; font-weight:800; padding:2px 6px; transform:rotate(-8deg); border-radius:4px; letter-spacing:1px; pointer-events:none; opacity:0.8; font-family:sans-serif;">CONFIRMED</div>
     </div>
   `).join('');
 }
