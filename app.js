@@ -5744,17 +5744,17 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   // Helpers to get current active settings
   function getActiveSeniorName() {
     const nameInput = document.getElementById('seniorNameInput');
-    return (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
+    return localStorage.getItem('senior_name') || (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
   }
 
   function getActiveCompanionName() {
     const compInput = document.getElementById('companionNameInput');
-    return (compInput && compInput.value.trim()) || "Sathi";
+    return localStorage.getItem('companion_name') || (compInput && compInput.value.trim()) || "Sathi";
   }
 
   function getActiveCity() {
     const cityInput = document.getElementById('cityInput');
-    return (cityInput && cityInput.value.trim()) || "Chennai";
+    return localStorage.getItem('city_location') || (cityInput && cityInput.value.trim()) || "Chennai";
   }
 
   function getActiveLanguage() {

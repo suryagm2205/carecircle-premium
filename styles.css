@@ -2049,9 +2049,14 @@ input:checked + .switch-slider:before {
   align-self: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
   box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
   margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .emergency-trigger-giant-btn:hover {
@@ -2059,13 +2064,16 @@ input:checked + .switch-slider:before {
   transform: scale(1.05);
 }
 
-.emergency-trigger-giant-btn span {
+.emergency-trigger-giant-btn span[data-icon] {
   font-size: var(--font-3xl);
+  display: inline-flex;
 }
 
 .emergency-trigger-giant-btn strong {
   font-size: var(--font-xs);
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .emergency-numbers-info {
