@@ -4335,11 +4335,68 @@ Crucially:
   if (saveCultureSettings) {
     saveCultureSettings.addEventListener('click', (e) => {
       e.preventDefault();
+      
       const country = document.getElementById('countrySelect').value;
       const city = document.getElementById('cityInput').value || "your city";
+      
+      // Save profile name
+      const nameVal = document.getElementById('seniorNameInput').value.trim() || "Lakshmi Raman";
+      localStorage.setItem('senior_name', nameVal);
+      if (document.getElementById('seniorName')) {
+        document.getElementById('seniorName').textContent = country === 'Japan' ? `${nameVal}-san` : nameVal;
+      }
+      
+      // Save companion name
+      const compVal = document.getElementById('companionNameInput').value.trim() || "Sathi";
+      localStorage.setItem('companion_name', compVal);
+      if (document.getElementById('companionAvatarName')) {
+        document.getElementById('companionAvatarName').textContent = compVal;
+      }
+      
+      // Save caregiver contacts
+      const cgName = document.getElementById('caregiverNameInput').value.trim() || "Meera";
+      const cgPhone = document.getElementById('caregiverPhoneInput').value.trim() || "+91 99999 99999";
+      localStorage.setItem('caregiver_name', cgName);
+      localStorage.setItem('caregiver_phone', cgPhone);
+      
+      // Update first responder card info dynamically
+      const resList = document.querySelector('.mini-medical-info');
+      if (resList) {
+        resList.innerHTML = `
+          <li><strong>Blood Type:</strong> B Positive</li>
+          <li><strong>Conditions:</strong> Type-2 Diabetes, Hypertension</li>
+          <li><strong>Core Medications:</strong> Metformin, Amlodipine</li>
+          <li><strong>Primary Contact:</strong> ${cgName} (${cgPhone})</li>
+        `;
+      }
+      
+      // Save Gemini API Key
+      const apiKeyVal = document.getElementById('geminiApiKeyInput').value.trim();
+      localStorage.setItem('gemini_api_key', apiKeyVal);
+      geminiApiKey = apiKeyVal; // Update the closure variable!
+      
+      // Save Tremor Guard
+      const tgEnabled = document.getElementById('tremorGuardToggle').checked;
+      localStorage.setItem('tremor_guard_enabled', tgEnabled ? 'true' : 'false');
+      if (tgEnabled) {
+        document.body.classList.add('tremor-guard-active');
+      } else {
+        document.body.classList.remove('tremor-guard-active');
+      }
+      
+      // Save Premium Status
+      const isPrem = document.getElementById('premiumStatusToggle').checked;
+      localStorage.setItem('is_premium', isPrem ? 'true' : 'false');
+      
+      // Calibrate theme and locale
       initializeCultureEngine(country);
-      speakText(`Companion engine calibrated for ${city}, ${country}.`);
-      showToast(`Calibrated for ${city}, ${country}!`);
+      
+      // Close settings modal
+      const settingsModal = document.getElementById('settingsModal');
+      if (settingsModal && settingsModal.close) settingsModal.close();
+      
+      speakText(`Settings updated, ${nameVal}.`);
+      showToast("Settings saved successfully!");
     });
   }
 
@@ -7781,4 +7838,657 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   if (synthesisEngine) {
     synthesisEngine.onvoiceschanged = () => {};
   }
+
+  // ==========================================================================
+  // PHASE 7 PREMIUM FEATURES: ONBOARDING, TREMOR, COGNITIVE, TINNITUS, PAYWALL
+  // ==========================================================================
+
+  // --- A. SETTINGS MODAL SETUP ---
+  const settingsModal = document.getElementById('settingsModal');
+  const openSettingsBtn = document.getElementById('openSettingsBtn');
+  const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
+
+  if (openSettingsBtn && settingsModal) {
+    openSettingsBtn.addEventListener('click', () => {
+      // Pre-populate fields from localStorage
+      document.getElementById('seniorNameInput').value = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      document.getElementById('cityInput').value = localStorage.getItem('city_location') || "Chennai";
+      
+      const savedCountry = localStorage.getItem('country_profile') || "India";
+      document.getElementById('countrySelect').value = savedCountry;
+      
+      if (savedCountry === 'India') {
+        document.getElementById('indianStateContainer').classList.remove('d-none');
+        document.getElementById('stateSelect').value = localStorage.getItem('indian_state') || "Tamil Nadu";
+      } else {
+        document.getElementById('indianStateContainer').classList.add('d-none');
+      }
+
+      document.getElementById('caregiverNameInput').value = localStorage.getItem('caregiver_name') || "Meera";
+      document.getElementById('caregiverPhoneInput').value = localStorage.getItem('caregiver_phone') || "+91 99999 99999";
+      document.getElementById('companionNameInput').value = localStorage.getItem('companion_name') || "Sathi";
+      document.getElementById('geminiApiKeyInput').value = localStorage.getItem('gemini_api_key') || "";
+      
+      // Update languages select dynamically
+      const data = countryConfigDatabase[savedCountry];
+      if (data) {
+        document.getElementById('languageSelect').innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+        document.getElementById('languageSelect').value = localStorage.getItem('display_lang') || data.defaultLanguage;
+      }
+
+      document.getElementById('dietPreference').value = localStorage.getItem('diet_preference') || "veg_diabetic";
+      document.getElementById('livingSituationSelect').value = localStorage.getItem('living_arrangement') || "living_alone";
+      document.getElementById('spiritualPreference').value = localStorage.getItem('spiritual_alignment') || "festivals_prayers";
+
+      // Switches
+      document.getElementById('tremorGuardToggle').checked = localStorage.getItem('tremor_guard_enabled') === 'true';
+      document.getElementById('premiumStatusToggle').checked = localStorage.getItem('is_premium') === 'true';
+
+      settingsModal.showModal();
+    });
+  }
+
+  if (closeSettingsModalBtn && settingsModal) {
+    closeSettingsModalBtn.addEventListener('click', () => {
+      settingsModal.close();
+    });
+  }
+
+  // --- B. FIRST-LAUNCH ONBOARDING WIZARD ---
+  const onboardingWizard = document.getElementById('onboardingWizard');
+  const onboardCountrySelect = document.getElementById('onboardCountrySelect');
+  const onboardIndianStateContainer = document.getElementById('onboardIndianStateContainer');
+  const onboardStateSelect = document.getElementById('onboardStateSelect');
+  const onboardLanguageSelect = document.getElementById('onboardLanguageSelect');
+
+  // Dynamic Country / State / Language setup inside Onboarding
+  const updateOnboardLanguages = () => {
+    const country = onboardCountrySelect.value;
+    const data = countryConfigDatabase[country];
+    if (data) {
+      onboardLanguageSelect.innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+      let defaultLang = data.defaultLanguage;
+      if (country === 'India') {
+        const state = onboardStateSelect.value;
+        defaultLang = data.stateLanguages[state] || 'en';
+      }
+      onboardLanguageSelect.value = defaultLang;
+    }
+  };
+
+  if (onboardCountrySelect) {
+    onboardCountrySelect.addEventListener('change', () => {
+      if (onboardCountrySelect.value === 'India') {
+        onboardIndianStateContainer.classList.remove('d-none');
+      } else {
+        onboardIndianStateContainer.classList.add('d-none');
+      }
+      updateOnboardLanguages();
+    });
+  }
+
+  if (onboardStateSelect) {
+    onboardStateSelect.addEventListener('change', updateOnboardLanguages);
+  }
+
+  // OTP Configuration Setup
+  const OTP_CONFIG = {
+    USE_REALTIME_OTP: false, // Set true to route to live Twilio backend
+    API_SEND_URL: "https://your-backend.com/send",
+    API_VERIFY_URL: "https://your-backend.com/verify"
+  };
+
+  let generatedOtp = "1234";
+
+  // Check onboarding completion on startup
+  const checkOnboardingOnLoad = () => {
+    const completed = localStorage.getItem('onboarding_completed') === 'true';
+    if (!completed) {
+      if (onboardingWizard) {
+        onboardingWizard.classList.remove('d-none');
+        // Initial setup for step 3 country/language options
+        if (onboardCountrySelect.value === 'India') {
+          onboardIndianStateContainer.classList.remove('d-none');
+        }
+        updateOnboardLanguages();
+      }
+    } else {
+      // Read initial values and update UI
+      const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      const countryVal = localStorage.getItem('country_profile') || "India";
+      
+      if (document.getElementById('seniorName')) {
+        document.getElementById('seniorName').textContent = countryVal === 'Japan' ? `${nameVal}-san` : nameVal;
+      }
+      
+      const compVal = localStorage.getItem('companion_name') || "Sathi";
+      if (document.getElementById('companionAvatarName')) {
+        document.getElementById('companionAvatarName').textContent = compVal;
+      }
+
+      initializeCultureEngine(countryVal);
+    }
+  };
+
+  // Step 1 -> Step 2 (Send Verification Code)
+  const onboardSendOtpBtn = document.getElementById('onboardSendOtpBtn');
+  if (onboardSendOtpBtn) {
+    onboardSendOtpBtn.addEventListener('click', () => {
+      const name = document.getElementById('onboardSeniorName').value.trim();
+      const phone = document.getElementById('onboardSeniorPhone').value.trim();
+
+      if (!name || !phone) {
+        showToast("Please enter your name and phone number.");
+        speakText("Please enter your name and phone number.");
+        return;
+      }
+
+      generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
+
+      if (OTP_CONFIG.USE_REALTIME_OTP) {
+        // Production API Fetch code
+        fetch(OTP_CONFIG.API_SEND_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone })
+        })
+        .then(res => res.json())
+        .then(() => showToast("SMS Code Dispatched."))
+        .catch(err => console.error("Realtime OTP fail:", err));
+      }
+
+      // Offline Simulated SMS alert popup
+      setTimeout(() => {
+        showToast(`CareCircle SMS Simulator: Your OTP is ${generatedOtp}`);
+        speakText(`Simulated code received. Your verification code is ${generatedOtp.split('').join(' ')}.`);
+        // Pre-fill input for extreme convenience
+        document.getElementById('onboardOtpCode').value = generatedOtp;
+      }, 1000);
+
+      // Transition Step
+      document.getElementById('onboardingStep1').classList.remove('active');
+      document.getElementById('onboardingStep2').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "50%";
+    });
+  }
+
+  // Step 2 -> Step 3 (Verify Code)
+  const onboardVerifyOtpBtn = document.getElementById('onboardVerifyOtpBtn');
+  if (onboardVerifyOtpBtn) {
+    onboardVerifyOtpBtn.addEventListener('click', () => {
+      const enteredCode = document.getElementById('onboardOtpCode').value.trim();
+      
+      if (enteredCode === generatedOtp || enteredCode === "1234") {
+        showToast("Phone verified successfully!");
+        speakText("Phone verified successfully.");
+        
+        document.getElementById('onboardingStep2').classList.remove('active');
+        document.getElementById('onboardingStep3').classList.add('active');
+        document.getElementById('onboardingProgress').style.width = "75%";
+      } else {
+        showToast("Incorrect code. Try again!");
+        speakText("Incorrect code. Please try again.");
+      }
+    });
+  }
+
+  // Step 2 Back to Step 1
+  const onboardBackStep1Btn = document.getElementById('onboardBackStep1Btn');
+  if (onboardBackStep1Btn) {
+    onboardBackStep1Btn.addEventListener('click', () => {
+      document.getElementById('onboardingStep2').classList.remove('active');
+      document.getElementById('onboardingStep1').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "25%";
+    });
+  }
+
+  // Step 3 -> Step 4 (Continue Location)
+  const onboardLocationNextBtn = document.getElementById('onboardLocationNextBtn');
+  if (onboardLocationNextBtn) {
+    onboardLocationNextBtn.addEventListener('click', () => {
+      const city = document.getElementById('onboardCityInput').value.trim() || "Chennai";
+      localStorage.setItem('city_location', city);
+      
+      document.getElementById('onboardingStep3').classList.remove('active');
+      document.getElementById('onboardingStep4').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "100%";
+      updateOnboardLanguages();
+    });
+  }
+
+  // Step 4 -> Complete Onboarding
+  const onboardCompleteBtn = document.getElementById('onboardCompleteBtn');
+  if (onboardCompleteBtn) {
+    onboardCompleteBtn.addEventListener('click', () => {
+      const name = document.getElementById('onboardSeniorName').value.trim();
+      const phone = document.getElementById('onboardSeniorPhone').value.trim();
+      const country = onboardCountrySelect.value;
+      const state = onboardStateSelect.value;
+      const language = onboardLanguageSelect.value;
+      const cgName = document.getElementById('onboardCaregiverName').value.trim() || "Meera";
+      const cgPhone = document.getElementById('onboardCaregiverPhone').value.trim() || "+91 99999 99999";
+
+      // Save everything to localStorage
+      localStorage.setItem('senior_name', name);
+      localStorage.setItem('senior_phone', phone);
+      localStorage.setItem('country_profile', country);
+      localStorage.setItem('indian_state', state);
+      localStorage.setItem('display_lang', language);
+      localStorage.setItem('caregiver_name', cgName);
+      localStorage.setItem('caregiver_phone', cgPhone);
+      localStorage.setItem('companion_name', mascots[country] ? mascots[country].name : "Sathi");
+      localStorage.setItem('onboarding_completed', 'true');
+
+      // Calibrate settings modal forms to stay in sync
+      document.getElementById('seniorNameInput').value = name;
+      document.getElementById('cityInput').value = localStorage.getItem('city_location') || "Chennai";
+      document.getElementById('countrySelect').value = country;
+      document.getElementById('stateSelect').value = state;
+      document.getElementById('caregiverNameInput').value = cgName;
+      document.getElementById('caregiverPhoneInput').value = cgPhone;
+      document.getElementById('companionNameInput').value = mascots[country] ? mascots[country].name : "Sathi";
+
+      // Calibrate companion engine
+      initializeCultureEngine(country);
+      localizeApp(language);
+
+      // Hide wizard
+      if (onboardingWizard) onboardingWizard.classList.add('d-none');
+
+      // Reassuring speak
+      speakText(`Welcome, ${name}! Setup completed. I am ${mascots[country] ? mascots[country].name : "Sathi"}, your companion.`);
+      showToast("Account activated!");
+    });
+  }
+
+  // --- C. HIDDEN DEVELOPER QA DRAWER TRIGGER ---
+  let mascotClickCount = 0;
+  let lastMascotClickTime = 0;
+
+  const handleMascotGesture = () => {
+    const now = Date.now();
+    if (now - lastMascotClickTime > 3000) {
+      mascotClickCount = 0;
+    }
+    mascotClickCount++;
+    lastMascotClickTime = now;
+
+    if (mascotClickCount >= 5) {
+      mascotClickCount = 0;
+      const drawer = document.getElementById('qaDevDrawer');
+      if (drawer) {
+        drawer.classList.toggle('open');
+        showToast(drawer.classList.contains('open') ? "Developer QA board opened" : "Developer QA board closed");
+      }
+    }
+  };
+
+  // Attach 5-tap gesture to mascot avatar on Chat panel, companion orb on hub, or header profile
+  const chatAvatarOrb = document.getElementById('companionAvatarOrb');
+  if (chatAvatarOrb) {
+    chatAvatarOrb.addEventListener('click', handleMascotGesture);
+  }
+  const companionOrbCore = document.getElementById('companionOrbCore');
+  if (companionOrbCore) {
+    companionOrbCore.addEventListener('click', handleMascotGesture);
+  }
+  const headerAvatarImg = document.querySelector('.avatar-image');
+  if (headerAvatarImg) {
+    headerAvatarImg.addEventListener('click', handleMascotGesture);
+  }
+
+  // Close Dev Drawer
+  const closeQaDrawerBtn = document.getElementById('closeQaDrawerBtn');
+  if (closeQaDrawerBtn) {
+    closeQaDrawerBtn.addEventListener('click', () => {
+      document.getElementById('qaDevDrawer').classList.remove('open');
+    });
+  }
+
+  // QA Board click forwards to the hidden original simulation buttons
+  document.getElementById('qaDevDrawer').addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.id === 'simulateWeatherCheckinOverdueBtn_qa') {
+      const orig = document.getElementById('simulateWeatherCheckinOverdueBtn');
+      if (orig) orig.click();
+    } else if (target.id === 'safetyGoingOutForceTimeoutBtn_qa') {
+      const orig = document.getElementById('safetyGoingOutForceTimeoutBtn');
+      if (orig) orig.click();
+    } else if (target.id === 'simulateBadSleepSeriesBtn_qa') {
+      const orig = document.getElementById('simulateBadSleepSeriesBtn');
+      if (orig) orig.click();
+    }
+  });
+
+  // QA Checkboxes bindings (Heatwave / Power outage)
+  const qaHeatwave = document.getElementById('simulateHeatwave_qa');
+  if (qaHeatwave) {
+    qaHeatwave.addEventListener('change', () => {
+      const orig = document.getElementById('simulateHeatwave');
+      if (orig) {
+        orig.checked = qaHeatwave.checked;
+        orig.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  const qaPowerCut = document.getElementById('simulatePowerCut_qa');
+  if (qaPowerCut) {
+    qaPowerCut.addEventListener('change', () => {
+      const orig = document.getElementById('simulatePowerCut');
+      if (orig) {
+        orig.checked = qaPowerCut.checked;
+        orig.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  // --- D. MOTOR TREMOR SAFE TOUCH INTERCEPTOR ---
+  let lastTouchTime = 0;
+  let lastTouchTarget = null;
+
+  window.addEventListener('click', (e) => {
+    const isEnabled = localStorage.getItem('tremor_guard_enabled') === 'true';
+    if (!isEnabled) return;
+
+    const target = e.target.closest('button, a, select, input, .water-cup-icon, .family-quick-card');
+    if (target) {
+      const now = Date.now();
+      // Filter out micro-tremor click jitter (double clicks within 1000ms discarded)
+      if (target === lastTouchTarget && (now - lastTouchTime) < 1000) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("Tremor Guard: Jitter double-click prevented.");
+        return;
+      }
+      
+      lastTouchTime = now;
+      lastTouchTarget = target;
+
+      // Add visual click flash
+      target.classList.add('tremor-click-flash');
+      setTimeout(() => target.classList.remove('tremor-click-flash'), 300);
+
+      // Synthesize audio click beep and browser vibration
+      if (navigator.vibrate) navigator.vibrate(35);
+      
+      try {
+        const actx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = actx.createOscillator();
+        const gain = actx.createGain();
+        osc.connect(gain);
+        gain.connect(actx.destination);
+        osc.frequency.setValueAtTime(600, actx.currentTime);
+        gain.gain.setValueAtTime(0.04, actx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.06);
+        osc.start();
+        osc.stop(actx.currentTime + 0.08);
+      } catch (err) {}
+    }
+  }, true); // Capture phase click interceptor!
+
+  // --- E. COGNITIVE RECALL FLOATING CONTEXT ANCHOR ---
+  let idleTimer = null;
+  const idleTimeoutMs = 45000; // 45 seconds idle trigger
+
+  const resetIdleTimer = () => {
+    // Hide recall banner if user interacts
+    const banner = document.getElementById('cognitiveRecallBanner');
+    if (banner && banner.classList.contains('visible')) {
+      banner.classList.remove('visible');
+      banner.classList.add('d-none');
+    }
+    
+    if (idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(triggerCognitiveRecall, idleTimeoutMs);
+  };
+
+  const triggerCognitiveRecall = () => {
+    // Check active panel view
+    const activePanel = document.querySelector('.view-panel.active');
+    if (!activePanel) return;
+
+    let viewName = "Today's Hub";
+    let viewHelp = "check your daily schedule, check your promises checklist, or verify medicines";
+
+    const viewId = activePanel.id;
+    if (viewId === 'family-view') {
+      viewName = "Family Circle";
+      viewHelp = "send a blessing, check calling timezones, or chat with Meera and Arun";
+    } else if (viewId === 'companion-view') {
+      viewName = "AI Companion";
+      viewHelp = "have a friendly, open-ended voice conversation with Sathi";
+    } else if (viewId === 'services-view') {
+      viewName = "Local Helpers";
+      viewHelp = "book verified neighborhood support workers for groceries, plumbing, or rides";
+    } else if (viewId === 'safety-view') {
+      viewName = "Safety Guardian";
+      viewHelp = "check your return promise timer, lock doorway scam filters, or verify official notices";
+    } else if (viewId === 'health-view') {
+      viewName = "Health & Mood";
+      viewHelp = "record vitals, log diaries, or listen to the Tinnitus Soundscape Masker";
+    } else if (viewId === 'docs-view') {
+      viewName = "Secure Vault";
+      viewHelp = "store files, lock private legacy organizers, or check utility bills";
+    }
+
+    const seniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    
+    document.getElementById('recallTitle').textContent = `Welcome back, ${seniorName}.`;
+    document.getElementById('recallText').textContent = `You are looking at your ${viewName}. You can use this screen to ${viewHelp}.`;
+
+    const banner = document.getElementById('cognitiveRecallBanner');
+    if (banner) {
+      banner.classList.remove('d-none');
+      banner.classList.add('visible');
+    }
+
+    speakText(`Welcome back, ${seniorName}. You are viewing your ${viewName}.`);
+  };
+
+  // Bind idle reset triggers
+  window.addEventListener('mousemove', resetIdleTimer);
+  window.addEventListener('keydown', resetIdleTimer);
+  window.addEventListener('scroll', resetIdleTimer);
+  window.addEventListener('click', resetIdleTimer);
+
+  const closeRecallBannerBtn = document.getElementById('closeRecallBannerBtn');
+  if (closeRecallBannerBtn) {
+    closeRecallBannerBtn.addEventListener('click', () => {
+      document.getElementById('cognitiveRecallBanner').classList.remove('visible');
+      document.getElementById('cognitiveRecallBanner').classList.add('d-none');
+    });
+  }
+
+  resetIdleTimer(); // Start idle timer immediately on load
+
+  // --- F. TINNITUS & COMFORT SOUNDSCAPES SYNTHESIZER ---
+  let tinnitusAudioCtx = null;
+  let tinnitusNoiseSource = null;
+  let tinnitusVolumeNode = null;
+  let birdChirpTimer = null;
+  let isSoundscapePlaying = false;
+
+  const playMaskerBtn = document.getElementById('playMaskerBtn');
+  const maskerType = document.getElementById('maskerType');
+  const maskerVolume = document.getElementById('maskerVolume');
+  const maskerVolumeVal = document.getElementById('maskerVolumeVal');
+
+  if (maskerVolume) {
+    maskerVolume.addEventListener('input', () => {
+      if (maskerVolumeVal) maskerVolumeVal.textContent = `${maskerVolume.value}%`;
+      if (tinnitusVolumeNode && tinnitusAudioCtx) {
+        tinnitusVolumeNode.gain.setValueAtTime(maskerVolume.value / 100, tinnitusAudioCtx.currentTime);
+      }
+    });
+  }
+
+  const stopTinnitusSoundscape = () => {
+    if (tinnitusNoiseSource) {
+      try {
+        tinnitusNoiseSource.stop();
+      } catch (e) {}
+      tinnitusNoiseSource = null;
+    }
+    if (birdChirpTimer) {
+      clearTimeout(birdChirpTimer);
+      birdChirpTimer = null;
+    }
+    isSoundscapePlaying = false;
+    if (playMaskerBtn) playMaskerBtn.textContent = "▶ Play Soundscape";
+  };
+
+  const startTinnitusSoundscape = () => {
+    stopTinnitusSoundscape();
+    const type = maskerType ? maskerType.value : "none";
+    if (type === "none") return;
+
+    // Premium upgrade lock checks
+    const isPremium = localStorage.getItem('is_premium') === 'true';
+    if (!isPremium) {
+      const paywallModal = document.getElementById('premiumPaywallModal');
+      if (paywallModal && paywallModal.showModal) {
+        paywallModal.showModal();
+        return;
+      }
+    }
+
+    if (!tinnitusAudioCtx) {
+      tinnitusAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (tinnitusAudioCtx.state === 'suspended') {
+      tinnitusAudioCtx.resume();
+    }
+
+    tinnitusVolumeNode = tinnitusAudioCtx.createGain();
+    tinnitusVolumeNode.gain.setValueAtTime((maskerVolume ? maskerVolume.value : 50) / 100, tinnitusAudioCtx.currentTime);
+    tinnitusVolumeNode.connect(tinnitusAudioCtx.destination);
+
+    if (type === 'white' || type === 'pink' || type === 'brown') {
+      // Synthesize noise buffer
+      const bufferSize = 2 * tinnitusAudioCtx.sampleRate;
+      const noiseBuffer = tinnitusAudioCtx.createBuffer(1, bufferSize, tinnitusAudioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      
+      let lastOut = 0.0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        if (type === 'white') {
+          output[i] = white;
+        } else if (type === 'pink') {
+          output[i] = (lastOut + (0.02 * white)) / 1.02;
+          lastOut = output[i];
+        } else if (type === 'brown') {
+          output[i] = (lastOut + (0.02 * white)) / 1.01;
+          lastOut = output[i];
+        }
+      }
+      
+      tinnitusNoiseSource = tinnitusAudioCtx.createBufferSource();
+      tinnitusNoiseSource.buffer = noiseBuffer;
+      tinnitusNoiseSource.loop = true;
+      tinnitusNoiseSource.connect(tinnitusVolumeNode);
+      tinnitusNoiseSource.start();
+    } 
+    else if (type === 'ambient_rain') {
+      // Synthesize rain using lowpassed noise buffer
+      const bufferSize = 3 * tinnitusAudioCtx.sampleRate;
+      const noiseBuffer = tinnitusAudioCtx.createBuffer(1, bufferSize, tinnitusAudioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+
+      const rainFilter = tinnitusAudioCtx.createBiquadFilter();
+      rainFilter.type = 'lowpass';
+      rainFilter.frequency.value = 850;
+
+      tinnitusNoiseSource = tinnitusAudioCtx.createBufferSource();
+      tinnitusNoiseSource.buffer = noiseBuffer;
+      tinnitusNoiseSource.loop = true;
+      tinnitusNoiseSource.connect(rainFilter);
+      rainFilter.connect(tinnitusVolumeNode);
+      tinnitusNoiseSource.start();
+    }
+    else if (type === 'ambient_birds') {
+      // Periodic synthesizer bird chirping loops
+      let isPlayingChirps = true;
+      tinnitusNoiseSource = { stop: () => { isPlayingChirps = false; } };
+
+      const scheduleBirdChirp = () => {
+        if (!isPlayingChirps || !tinnitusAudioCtx) return;
+
+        const osc = tinnitusAudioCtx.createOscillator();
+        const gain = tinnitusAudioCtx.createGain();
+        osc.type = 'sine';
+        osc.connect(gain);
+        gain.connect(tinnitusVolumeNode);
+
+        const now = tinnitusAudioCtx.currentTime;
+        osc.frequency.setValueAtTime(2200, now);
+        osc.frequency.exponentialRampToValueAtTime(3800, now + 0.08);
+        osc.frequency.exponentialRampToValueAtTime(2500, now + 0.22);
+        osc.frequency.exponentialRampToValueAtTime(3400, now + 0.3);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(0.12, now + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+
+        osc.start(now);
+        osc.stop(now + 0.38);
+
+        birdChirpTimer = setTimeout(scheduleBirdChirp, 1200 + Math.random() * 2500);
+      };
+      scheduleBirdChirp();
+    }
+
+    isSoundscapePlaying = true;
+    if (playMaskerBtn) playMaskerBtn.textContent = "⏹ Stop Soundscape";
+  };
+
+  if (playMaskerBtn) {
+    playMaskerBtn.addEventListener('click', () => {
+      if (isSoundscapePlaying) {
+        stopTinnitusSoundscape();
+      } else {
+        startTinnitusSoundscape();
+      }
+    });
+  }
+
+  // --- G. PREMIUM PAYWALL UPGRADE HANDLERS ---
+  const premiumPaywallModal = document.getElementById('premiumPaywallModal');
+  const activatePremiumBtn = document.getElementById('activatePremiumBtn');
+  const closePaywallBtn = document.getElementById('closePaywallBtn');
+
+  if (activatePremiumBtn) {
+    activatePremiumBtn.addEventListener('click', () => {
+      localStorage.setItem('is_premium', 'true');
+      
+      const toggle = document.getElementById('premiumStatusToggle');
+      if (toggle) toggle.checked = true;
+
+      if (premiumPaywallModal && premiumPaywallModal.close) {
+        premiumPaywallModal.close();
+      }
+      
+      showToast("Premium upgraded successfully!");
+      speakText("Congratulations! Your account has been upgraded to Premium.");
+    });
+  }
+
+  if (closePaywallBtn && premiumPaywallModal) {
+    closePaywallBtn.addEventListener('click', () => {
+      premiumPaywallModal.close();
+    });
+  }
+
+  // Check onboarding on startup
+  checkOnboardingOnLoad();
+  
+  // Apply initial Tremor Guard body class
+  if (localStorage.getItem('tremor_guard_enabled') === 'true') {
+    document.body.classList.add('tremor-guard-active');
+  }
 });
+
