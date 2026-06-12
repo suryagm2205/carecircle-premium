@@ -1862,34 +1862,15 @@ function initializeCultureEngine(countryName) {
   
   document.getElementById('localizedCountryHeader').textContent = `${countryName} Care Customizations`;
   
-  // 5. Populate services marketplace
-  const marketGrid = document.getElementById('servicesMarketplaceGrid');
-  marketGrid.innerHTML = localeData.services.map(srv => `
-    <div class="service-card-tile">
-      <div class="service-tile-icon ${srv.category}"><span data-icon="briefcase"></span></div>
-      <h3 class="service-tile-name">${srv.name}</h3>
-      <p class="service-tile-blurb">${srv.blurb}</p>
-      <span class="service-tile-pricing">${srv.price}</span>
-      <button class="primary-action-btn book-service-btn" data-name="${srv.name}">Book Helper</button>
-    </div>
-  `).join('');
-  
-  // Re-inject service icons
-  document.querySelectorAll('.service-card-tile [data-icon]').forEach(el => {
-    el.innerHTML = icons[el.dataset.icon] || '';
-  });
-  
-  // Attach marketplace actions
-  document.querySelectorAll('.book-service-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const name = e.target.dataset.name;
-      e.target.textContent = "Booking Requested";
-      e.target.disabled = true;
-      e.target.style.background = "var(--border-strong)";
-      showToast(`Booking request sent for ${name}`);
-      logFamilyChatSystem(`Service Helper Booking Requested: ${name}`);
-    });
-  });
+  // 5. Populate services marketplace dynamically
+  const allTabBtn = document.querySelector('.filter-tab-btn[data-filter="all"]');
+  if (allTabBtn) {
+    document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+    allTabBtn.classList.add('active');
+  }
+  if (typeof renderServicesMarketplace === 'function') {
+    renderServicesMarketplace('all');
+  }
 
   // Call translation of static UI
   localizeApp(langCode);
@@ -2354,33 +2335,12 @@ window.addEventListener('DOMContentLoaded', () => {
         </div>
       `).join('');
       
-      // Update services marketplace
-      const marketGrid = document.getElementById('servicesMarketplaceGrid');
-      marketGrid.innerHTML = localeData.services.map(srv => `
-        <div class="service-card-tile">
-          <div class="service-tile-icon ${srv.category}"><span data-icon="briefcase"></span></div>
-          <h3 class="service-tile-name">${srv.name}</h3>
-          <p class="service-tile-blurb">${srv.blurb}</p>
-          <span class="service-tile-pricing">${srv.price}</span>
-          <button class="primary-action-btn book-service-btn" data-name="${srv.name}">Book Helper</button>
-        </div>
-      `).join('');
-      
-      document.querySelectorAll('.service-card-tile [data-icon]').forEach(el => {
-        el.innerHTML = icons[el.dataset.icon] || '';
-      });
-      
-      // Re-attach marketplace actions
-      document.querySelectorAll('.book-service-btn').forEach(btn => {
-        btn.addEventListener('click', (ev) => {
-          const name = ev.target.dataset.name;
-          ev.target.textContent = langCode === 'ja' ? '予約済み' : (langCode === 'pt' ? 'Reserva Solicitada' : 'Booking Requested');
-          ev.target.disabled = true;
-          ev.target.style.background = "var(--border-strong)";
-          showToast(`Booking request sent for ${name}`);
-          logFamilyChatSystem(`Service Helper Booking Requested: ${name}`);
-        });
-      });
+      // Update services marketplace dynamically
+      const activeBtn = document.querySelector('.filter-tab-btn.active');
+      const activeFilter = activeBtn ? activeBtn.dataset.filter : 'all';
+      if (typeof renderServicesMarketplace === 'function') {
+        renderServicesMarketplace(activeFilter);
+      }
     }
 
     // Update quick phrases bar if it's currently open
@@ -2440,31 +2400,9 @@ window.addEventListener('DOMContentLoaded', () => {
           </div>
         `).join('');
 
-        const marketGrid = document.getElementById('servicesMarketplaceGrid');
-        marketGrid.innerHTML = localeData.services.map(srv => `
-          <div class="service-card-tile">
-            <div class="service-tile-icon ${srv.category}"><span data-icon="briefcase"></span></div>
-            <h3 class="service-tile-name">${srv.name}</h3>
-            <p class="service-tile-blurb">${srv.blurb}</p>
-            <span class="service-tile-pricing">${srv.price}</span>
-            <button class="primary-action-btn book-service-btn" data-name="${srv.name}">Book Helper</button>
-          </div>
-        `).join('');
-
-        document.querySelectorAll('.service-card-tile [data-icon]').forEach(el => {
-          el.innerHTML = icons[el.dataset.icon] || '';
-        });
-        
-        document.querySelectorAll('.book-service-btn').forEach(btn => {
-          btn.addEventListener('click', (ev) => {
-            const name = ev.target.dataset.name;
-            ev.target.textContent = "Booking Requested";
-            ev.target.disabled = true;
-            ev.target.style.background = "var(--border-strong)";
-            showToast(`Booking request sent for ${name}`);
-            logFamilyChatSystem(`Service Helper Booking Requested: ${name}`);
-          });
-        });
+        if (typeof renderServicesMarketplace === 'function') {
+          renderServicesMarketplace('all');
+        }
       }
     }
 
@@ -8664,6 +8602,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       localStorage.setItem('family_contacts', JSON.stringify(contacts));
 
       renderFamilyContacts();
+      if (typeof renderFamilyCirclePage === 'function') renderFamilyCirclePage();
       if (addFamilyContactModal && addFamilyContactModal.close) addFamilyContactModal.close();
       
       showToast(`${name} added to family contacts!`);
@@ -8671,8 +8610,79 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     });
   }
 
-  // Initial render of family contacts
+  // Initial render of family contacts & Family Circle page
   renderFamilyContacts();
+  if (typeof renderFamilyCirclePage === 'function') {
+    renderFamilyCirclePage();
+  }
+
+  // Add Contact button click listener in Family tab
+  const circleOpenAddContactBtn = document.getElementById('circleOpenAddContactBtn');
+  if (circleOpenAddContactBtn && addFamilyContactModal) {
+    circleOpenAddContactBtn.addEventListener('click', () => {
+      document.getElementById('famContactName').value = "";
+      document.getElementById('famContactPhone').value = "";
+      addFamilyContactModal.showModal();
+    });
+  }
+
+  // --- K. SERVICES MARKETPLACE CATEGORY FILTERS & CUSTOM ADD ---
+  const filterBtns = document.querySelectorAll('.filter-tab-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      if (typeof renderServicesMarketplace === 'function') {
+        renderServicesMarketplace(filter);
+      }
+    });
+  });
+
+  const addCustomServiceModal = document.getElementById('addCustomServiceModal');
+  const openAddCustomServiceBtn = document.getElementById('openAddCustomServiceBtn');
+  const closeAddCustomServiceBtn = document.getElementById('closeAddCustomServiceBtn');
+  const addCustomServiceForm = document.getElementById('addCustomServiceForm');
+
+  if (openAddCustomServiceBtn && addCustomServiceModal) {
+    openAddCustomServiceBtn.addEventListener('click', () => {
+      document.getElementById('srvName').value = "";
+      document.getElementById('srvBlurb').value = "";
+      document.getElementById('srvPrice').value = "";
+      addCustomServiceModal.showModal();
+    });
+  }
+
+  if (closeAddCustomServiceBtn && addCustomServiceModal) {
+    closeAddCustomServiceBtn.addEventListener('click', () => {
+      addCustomServiceModal.close();
+    });
+  }
+
+  if (addCustomServiceForm) {
+    addCustomServiceForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('srvName').value.trim();
+      const category = document.getElementById('srvCategory').value;
+      const blurb = document.getElementById('srvBlurb').value.trim();
+      const price = document.getElementById('srvPrice').value.trim();
+
+      const customServices = JSON.parse(localStorage.getItem('custom_local_services') || '[]');
+      customServices.push({ id: 'srv_' + Date.now(), name, category, blurb, price });
+      localStorage.setItem('custom_local_services', JSON.stringify(customServices));
+
+      const activeBtn = document.querySelector('.filter-tab-btn.active');
+      const activeFilter = activeBtn ? activeBtn.dataset.filter : 'all';
+
+      if (typeof renderServicesMarketplace === 'function') {
+        renderServicesMarketplace(activeFilter);
+      }
+      if (addCustomServiceModal && addCustomServiceModal.close) addCustomServiceModal.close();
+
+      showToast(`Custom helper ${name} added successfully!`);
+      speakText(`${name} added to your local services list.`);
+    });
+  }
 });
 
 
@@ -8878,4 +8888,157 @@ function dialFamilyContact(contactName) {
       logFamilyChatSystem(`Call connection established with ${c.name} (${c.relation})`);
     }
   }
+}
+
+
+// ==========================================================================
+// DYNAMIC LOCAL SERVICES MARKETPLACE & FAMILY CIRCLE LIST RENDERING
+// ==========================================================================
+function renderServicesMarketplace(categoryFilter = 'all') {
+  const container = document.getElementById('servicesMarketplaceGrid');
+  if (!container) return;
+
+  const country = document.getElementById('countrySelect').value;
+  const data = countryConfigDatabase[country];
+  if (!data) return;
+
+  const langSelect = document.getElementById('languageSelect');
+  const langCode = langSelect ? langSelect.value : (data.defaultLanguage || 'en');
+  const localeData = data.locales[langCode] || data.locales[data.defaultLanguage];
+  if (!localeData) return;
+
+  const standardServices = localeData.services || [];
+  const customServices = JSON.parse(localStorage.getItem('custom_local_services') || '[]');
+
+  let combined = [...standardServices, ...customServices];
+
+  if (categoryFilter !== 'all') {
+    combined = combined.filter(srv => srv.category === categoryFilter);
+  }
+
+  if (combined.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; display:flex; flex-direction:column; align-items:center; gap:12px; padding:30px; background:rgba(255,255,255,0.05); border:1px dashed var(--border-color); border-radius:16px; text-align:center; width:100%;">
+        <span style="font-size:36px;">🔧</span>
+        <div>
+          <strong style="display:block; font-size:var(--font-sm); color:var(--text-main); margin-bottom:4px;">No services in this category</strong>
+          <span style="font-size:var(--font-xs); color:var(--text-muted);">You can add your own local helper by clicking the '+ Add Custom Helper' button.</span>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = combined.map(srv => `
+    <div class="service-card-tile">
+      <div class="service-tile-icon ${srv.category}"><span data-icon="briefcase"></span></div>
+      <h3 class="service-tile-name">${srv.name}</h3>
+      <p class="service-tile-blurb">${srv.blurb}</p>
+      <span class="service-tile-pricing">${srv.price}</span>
+      <button class="primary-action-btn book-service-btn" data-name="${srv.name}">Book Helper</button>
+    </div>
+  `).join('');
+
+  // Re-inject service icons
+  document.querySelectorAll('.service-card-tile [data-icon]').forEach(el => {
+    el.innerHTML = icons[el.dataset.icon] || '';
+  });
+
+  // Attach marketplace actions
+  document.querySelectorAll('.book-service-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const name = e.target.dataset.name;
+      e.target.textContent = "Booking Requested";
+      e.target.disabled = true;
+      e.target.style.background = "var(--border-strong)";
+      showToast(`Booking request sent for ${name}`);
+      logFamilyChatSystem(`Service Helper Booking Requested: ${name}`);
+    });
+  });
+}
+
+function renderFamilyCirclePage() {
+  const grid = document.getElementById('familyContactsGrid');
+  if (!grid) return;
+  
+  const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+  const parentCountry = document.getElementById('countrySelect').value;
+  
+  // Also populate the consent grantee dropdown list dynamically
+  populateConsentGranteeDropdown();
+
+  if (contacts.length === 0) {
+    grid.innerHTML = `
+      <div style="grid-column: 1 / -1; display:flex; flex-direction:column; align-items:center; gap:12px; padding:30px; background:rgba(255,255,255,0.05); border:1px dashed var(--border-color); border-radius:16px; text-align:center;">
+        <span style="font-size:36px;">👪</span>
+        <div>
+          <strong style="display:block; font-size:var(--font-sm); color:var(--text-main); margin-bottom:4px;">No Family Circle Members</strong>
+          <span style="font-size:var(--font-xs); color:var(--text-muted);">Configure your family, grandchildren, or caregiver contacts to share safe-call timezones and emergency details.</span>
+        </div>
+        <button class="primary-action-btn" id="circleAddContactBtn" style="height:36px; padding:0 15px; border-radius:8px; background:var(--color-primary); color:white; border:none; cursor:pointer; font-weight:700;">+ Add Family Member</button>
+      </div>
+    `;
+    const circleAddContactBtn = document.getElementById('circleAddContactBtn');
+    if (circleAddContactBtn) {
+      circleAddContactBtn.addEventListener('click', () => {
+        document.getElementById('famContactName').value = "";
+        document.getElementById('famContactPhone').value = "";
+        const modal = document.getElementById('addFamilyContactModal');
+        if (modal) modal.showModal();
+      });
+    }
+    return;
+  }
+  
+  grid.innerHTML = contacts.map(c => {
+    let avatarUrl = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80";
+    if (c.relation === 'Daughter' || c.relation === 'Granddaughter' || c.name.toLowerCase() === 'meera') {
+      avatarUrl = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80";
+    }
+    const status = getExpatStatusForLocation(c.location, parentCountry);
+    
+    return `
+      <div class="family-person-card" style="display:flex; flex-direction:column; align-items:center;">
+        <img src="${avatarUrl}" alt="${c.name}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--border-color); margin-bottom:10px;">
+        <h3 style="font-size:var(--font-xs); font-weight:800; color:var(--text-main); margin:0 0 4px 0;">${c.name}</h3>
+        <p style="font-size:9px; color:var(--text-muted); margin:0 0 8px 0;">${c.relation} · ${c.location}</p>
+        <span class="safe-call-badge ${status.cssClass === 'status-free' ? 'safe' : (status.cssClass === 'status-work' ? 'work' : 'sleeping')}" style="font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; margin-bottom:12px;">${status.text}</span>
+        <div style="display:flex; gap:6px; width:100%;">
+          <button class="secondary-btn dial-circle-member" data-contact="${c.name}" style="flex:1; font-size:10px; height:28px; min-height:28px; padding:0; border-radius:6px; background:rgba(255,255,255,0.06); border:1px solid var(--border-color); color:var(--text-main); cursor:pointer;">📞 Call</button>
+          <button class="secondary-btn remove-circle-member" data-id="${c.id}" style="font-size:10px; height:28px; min-height:28px; padding:0 8px; border-radius:6px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.2); color:#ef4444; cursor:pointer;">Remove</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  grid.querySelectorAll('.dial-circle-member').forEach(btn => {
+    btn.addEventListener('click', () => {
+      dialFamilyContact(btn.dataset.contact);
+    });
+  });
+  
+  grid.querySelectorAll('.remove-circle-member').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      let contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+      contacts = contacts.filter(c => c.id !== id);
+      localStorage.setItem('family_contacts', JSON.stringify(contacts));
+      renderFamilyCirclePage();
+      renderFamilyContacts(); // update Hub too
+      showToast("Contact removed.");
+    });
+  });
+}
+
+function populateConsentGranteeDropdown() {
+  const select = document.getElementById('consentGrantee');
+  if (!select) return;
+  const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+  
+  if (contacts.length === 0) {
+    select.innerHTML = '<option value="">No contacts available</option>';
+    return;
+  }
+  
+  select.innerHTML = contacts.map(c => `<option value="${c.name}">${c.name} (${c.relation})</option>`).join('');
 }

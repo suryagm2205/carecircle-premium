@@ -703,7 +703,10 @@
           <div class="family-dashboard-layout">
             <!-- Family Members Grid -->
             <div class="family-members-panel">
-              <h2 class="sub-header-title">Active Contacts</h2>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <h2 class="sub-header-title" style="margin:0;">Active Contacts</h2>
+                <button class="primary-btn-mini" id="circleOpenAddContactBtn" style="font-size:11px; height:28px; min-height:28px; padding:0 10px; background:var(--color-primary); color:white; border:none; border-radius:6px; cursor:pointer;">+ Add Contact</button>
+              </div>
               <div class="family-contacts-grid" id="familyContactsGrid">
                 <!-- Populated dynamically -->
               </div>
@@ -901,15 +904,18 @@
             <p class="view-description">Book verified assistants in your city for pharmacy refills, grocery escorts, taxi clinic transport, home repairs, or government paperwork support.</p>
           </div>
 
-          <div class="services-filter-bar">
-            <strong>Categories:</strong>
-            <div class="filter-buttons-scroll">
-              <button class="filter-tab-btn active" data-filter="all">All Services</button>
-              <button class="filter-tab-btn" data-filter="medical">Medical & Health</button>
-              <button class="filter-tab-btn" data-filter="errand">Errands & Groceries</button>
-              <button class="filter-tab-btn" data-filter="assisted">Assisted Visits</button>
-              <button class="filter-tab-btn" data-filter="repair">Home Repair</button>
+          <div class="services-filter-bar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom: 20px;">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <strong>Categories:</strong>
+              <div class="filter-buttons-scroll">
+                <button class="filter-tab-btn active" data-filter="all">All Services</button>
+                <button class="filter-tab-btn" data-filter="medical">Medical & Health</button>
+                <button class="filter-tab-btn" data-filter="errand">Errands & Groceries</button>
+                <button class="filter-tab-btn" data-filter="assisted">Assisted Visits</button>
+                <button class="filter-tab-btn" data-filter="repair">Home Repair</button>
+              </div>
             </div>
+            <button class="primary-btn-mini" id="openAddCustomServiceBtn" style="height:32px; font-weight:700; background:var(--color-primary); color:white; border:none; border-radius:8px; padding:0 12px; cursor:pointer;">+ Add Custom Helper</button>
           </div>
 
           <div class="services-grid-list" id="servicesMarketplaceGrid">
@@ -2941,6 +2947,42 @@
       </div>
 
       <button type="submit" class="primary-action-btn" style="min-height:45px; border-radius:8px; background:var(--color-primary); color:white; border:none; cursor:pointer; font-weight:700; margin-top:10px;">Save Contact</button>
+    </form>
+  </dialog>
+
+  <!-- ADD CUSTOM SERVICE MODAL -->
+  <dialog id="addCustomServiceModal" class="custom-dialog-modal glassmorphic" style="width: 90%; max-width: 400px; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+    <div class="emergency-modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:15px;">
+      <h2 style="color:#1e1b4b; font-weight:800; font-size:var(--font-md); margin:0;">Add Custom Helper / Service</h2>
+      <button class="close-voice-btn" id="closeAddCustomServiceBtn" aria-label="Close dialog" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--text-muted);">×</button>
+    </div>
+    <form id="addCustomServiceForm" style="display:flex; flex-direction:column; gap:12px;">
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="srvName" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Helper / Service Name</label>
+        <input type="text" id="srvName" class="form-text-input" placeholder="e.g. Balu's Doorstep Grocery" required style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm);">
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="srvCategory" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Category</label>
+        <select id="srvCategory" class="form-select-box" style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm); background:var(--surface);">
+          <option value="medical">Medical & Health</option>
+          <option value="errand">Errands & Groceries</option>
+          <option value="assisted">Assisted Visits</option>
+          <option value="repair">Home Repair</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="srvBlurb" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Service Description</label>
+        <input type="text" id="srvBlurb" class="form-text-input" placeholder="e.g. Fresh organic milk & vegetables delivered by 7 AM." required style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm);">
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="srvPrice" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Pricing / Cost</label>
+        <input type="text" id="srvPrice" class="form-text-input" placeholder="e.g. ₹50 delivery fee or ₹100/hour" required style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm);">
+      </div>
+
+      <button type="submit" class="primary-action-btn" style="min-height:45px; border-radius:8px; background:var(--color-primary); color:white; border:none; cursor:pointer; font-weight:700; margin-top:10px;">Save Custom Helper</button>
     </form>
   </dialog>
 
