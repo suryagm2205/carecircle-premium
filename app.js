@@ -1132,6 +1132,21 @@ function speakText(text, context = 'advice') {
         te: "ఆంగ్ल భాషకు మార్చబడింది."
       };
       translatedText = switchMsg[langCode] || switchMsg['en'];
+    } else if (text.startsWith("Welcome, ") && text.includes("! Setup completed. I am ") && text.endsWith(", your companion.")) {
+      const match = text.match(/Welcome,\s*(.+?)!\s*Setup completed\.\s*I am\s*(.+?),\s*your companion\./i);
+      if (match) {
+        const sName = match[1];
+        const cName = match[2];
+        const welcomeTrans = {
+          en: `Welcome, ${sName}! Setup completed. I am ${cName}, your companion.`,
+          ja: `ようこそ、${sName}さん！セットアップが完了しました。私はあなたのコンパニオンの${cName}です。`,
+          pt: `Bem-vindo, ${sName}! Configuração concluída. Eu sou ${cName}, seu companheiro.`,
+          ta: `வரவேற்கிறோம், ${sName}! அமைப்பு முடிந்தது. நான் உங்கள் துணைவனான ${cName}.`,
+          hi: `स्वागत है, ${sName}! सेटअप पूरा हो गया है। मैं आपकी साथी ${cName} हूँ।`,
+          te: `స్వాగతం, ${sName}! సెటప్ పూర్తయింది. నేను మీ తోడుగా ఉన్న ${cName}.` 
+        };
+        translatedText = welcomeTrans[langCode] || welcomeTrans['en'];
+      }
     }
   }
 
@@ -1785,6 +1800,12 @@ function initializeCultureEngine(countryName) {
     langCode = data.stateLanguages[activeState] || 'en';
   }
 
+  // Check if there is a user-selected language saved in localStorage
+  const savedLang = localStorage.getItem('display_lang');
+  if (savedLang && data.languages.some(l => l.code === savedLang)) {
+    langCode = savedLang;
+  }
+
   // 3. Populate language selectors
   const langSelect = document.getElementById('languageSelect');
   langSelect.innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
@@ -1796,9 +1817,17 @@ function initializeCultureEngine(countryName) {
   const localeData = data.locales[langCode] || data.locales[data.defaultLanguage];
 
   // 2. Set headers and greetings
-  document.getElementById('seniorName').textContent = countryName === 'Japan' ? 'Lakshmi Raman-san' : 'Lakshmi Raman';
-  document.getElementById('headerLocationBadge').querySelector('span:last-child').textContent = `${data.cityName}, ${countryName}`;
-  document.getElementById('companionGreeting').textContent = localeData.greeting;
+  const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+  const currentCityLocation = localStorage.getItem('city_location') || data.cityName;
+
+  document.getElementById('seniorName').textContent = countryName === 'Japan' ? `${currentSeniorName}-san` : currentSeniorName;
+  document.getElementById('headerLocationBadge').querySelector('span:last-child').textContent = `${currentCityLocation}, ${countryName}`;
+
+  // Dynamically replace default name in greeting
+  let greetingText = localeData.greeting;
+  greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
+  greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+  document.getElementById('companionGreeting').textContent = greetingText;
   document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
   document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
   
@@ -1859,7 +1888,10 @@ function initializeCultureEngine(countryName) {
   }
 
   // 6. Speak out calibration
-  speakText(`Calibrated companion dashboard to ${countryName} guidelines.`);
+  const completed = localStorage.getItem('onboarding_completed') === 'true';
+  if (completed) {
+    speakText(`Calibrated companion dashboard to ${countryName} guidelines.`);
+  }
 
   // Update water reminder layout
   if (typeof updateWaterUI === 'function') {
@@ -1918,10 +1950,10 @@ function renderCompanionMascot(countryName) {
 
   // Use customized names if available, else defaults
   const compInput = document.getElementById('companionNameInput');
-  const activeCompName = (compInput && compInput.value.trim()) || data.name;
+  const activeCompName = localStorage.getItem('companion_name') || (compInput && compInput.value.trim()) || data.name;
   
   const seniorInput = document.getElementById('seniorNameInput');
-  const activeSeniorName = (seniorInput && seniorInput.value.trim()) || "Lakshmi Raman";
+  const activeSeniorName = localStorage.getItem('senior_name') || (seniorInput && seniorInput.value.trim()) || "Lakshmi Raman";
 
   document.getElementById('companionAvatarName').textContent = activeCompName;
   document.getElementById('companionAvatarDesc').textContent = data.avatarDesc;
@@ -2284,12 +2316,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const langCode = e.target.value;
     localizeApp(langCode);
     
+    // Save selected language to localStorage
+    localStorage.setItem('display_lang', langCode);
+    
     // Update dynamic welcome blurb from country database
     const country = document.getElementById('countrySelect').value;
     const data = countryConfigDatabase[country];
     if (data && data.locales[langCode]) {
       const localeData = data.locales[langCode];
-      document.getElementById('companionGreeting').textContent = localeData.greeting;
+      
+      const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      let greetingText = localeData.greeting;
+      greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
+      greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+      document.getElementById('companionGreeting').textContent = greetingText;
       document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
       document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
       
@@ -2372,7 +2412,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (data) {
       const localeData = data.locales['en'] || data.locales[data.defaultLanguage];
       if (localeData) {
-        document.getElementById('companionGreeting').textContent = localeData.greeting;
+        const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+        let greetingText = localeData.greeting;
+        greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
+        greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+        document.getElementById('companionGreeting').textContent = greetingText;
         document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
         document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
 
@@ -2439,9 +2483,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // Offline medical card modals
   const emergencyCardModalEl = document.getElementById('emergencyCardModal');
   document.getElementById('emergencyCardTrigger').addEventListener('click', () => {
+    const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    document.getElementById('modalMedicalName').textContent = `${nameVal} – Age 72`;
     emergencyCardModalEl.showModal();
   });
   document.getElementById('triggerQRModalMini').addEventListener('click', () => {
+    const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    document.getElementById('modalMedicalName').textContent = `${nameVal} – Age 72`;
     emergencyCardModalEl.showModal();
   });
   document.getElementById('closeEmergencyCardModal').addEventListener('click', () => {
@@ -4387,6 +4435,11 @@ Crucially:
       // Save Premium Status
       const isPrem = document.getElementById('premiumStatusToggle').checked;
       localStorage.setItem('is_premium', isPrem ? 'true' : 'false');
+
+      // Save display language and city location
+      const selectedLang = document.getElementById('languageSelect').value;
+      localStorage.setItem('display_lang', selectedLang);
+      localStorage.setItem('city_location', city);
       
       // Calibrate theme and locale
       initializeCultureEngine(country);
