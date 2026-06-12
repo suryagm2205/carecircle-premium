@@ -4410,6 +4410,12 @@ Crucially:
       // Save caregiver contacts
       const cgName = document.getElementById('caregiverNameInput').value.trim() || "Meera";
       const cgPhone = document.getElementById('caregiverPhoneInput').value.trim() || "+91 99999 99999";
+      const seniorPhone = localStorage.getItem('senior_phone') || "";
+      if (seniorPhone && cgPhone === seniorPhone) {
+        showToast("Error: Caregiver phone cannot be the same as your number.");
+        speakText("Error: Caregiver phone cannot be the same as your phone number.");
+        return;
+      }
       localStorage.setItem('caregiver_name', cgName);
       localStorage.setItem('caregiver_phone', cgPhone);
       
@@ -8139,6 +8145,11 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       const language = onboardLanguageSelect.value;
       const cgName = document.getElementById('onboardCaregiverName').value.trim() || "Meera";
       const cgPhone = document.getElementById('onboardCaregiverPhone').value.trim() || "+91 99999 99999";
+      if (phone === cgPhone) {
+        showToast("Error: Senior and Caregiver numbers cannot be the same.");
+        speakText("Error: Your phone number and your caregiver's phone number cannot be the same. Please enter a different contact for your caregiver.");
+        return;
+      }
 
       // Save everything to localStorage
       localStorage.setItem('senior_name', name);
