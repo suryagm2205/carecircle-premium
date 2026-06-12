@@ -674,7 +674,18 @@ const selectorTranslations = {
     '#strategy-view .view-title': 'Competitor Matrix',
     '#strategy-view .view-description': 'How CareCircle stands out against standard elder care competitors.',
     '#innovation-view .view-title': 'Platform Moat',
-    '#innovation-view .view-description': 'Our category-defining innovations that secure the business landscape.'
+    '#innovation-view .view-description': 'Our category-defining innovations that secure the business landscape.',
+    '#morningJoyFeedTitle': '🌅 Morning Joy Feed',
+    '#morningJoySpiritualNudgeHeader': '🕉️ Daily Spiritual Nudge',
+    '#morningJoySpiritualQuote': '"Meditation brings peace to the mind. Start your day with a smile."',
+    '#morningJoyCricketHeader': '🏏 Cricket Score',
+    '#morningJoyCricketScore': 'IND vs AUS: IND 342/5',
+    '#morningJoyCricketDetails': 'IND needs 3 runs off 4 balls! (Live)',
+    '#morningJoyCinemaHeader': '🎬 Local Cinema News',
+    '#morningJoyCinemaTitle': 'New teaser reaches 50 million views!',
+    '#morningJoyCinemaDetails': 'Grand release scheduled next month.',
+    '#startMyDayBtn': 'Start My Day & View Health Reminders'
+
   },
   ja: {
     '#home-view .badge-eyebrow': '信頼できる日常のアシスタント',
@@ -716,7 +727,17 @@ const selectorTranslations = {
     '#strategy-view .view-title': '競合マトリクス',
     '#strategy-view .view-description': 'ケアサークルが標準的な高齢者介護の競合他社とどのように異なるか。',
     '#innovation-view .view-title': 'プラットフォームの堀',
-    '#innovation-view .view-description': 'ビジネスの展望を確保する、カテゴリーを定義する革新的な製品。'
+    '#innovation-view .view-description': 'ビジネスの展望を確保する、カテゴリーを定義する革新的な製品。',
+    '#morningJoyFeedTitle': '🌅 モーニング・ジョイ・フィード',
+    '#morningJoySpiritualNudgeHeader': '🕉️ 本日の精神的ヒント',
+    '#morningJoySpiritualQuote': '"神を瞑想することは心に平安をもたらします。笑顔で一日を始めましょう。"',
+    '#morningJoyCricketHeader': '🏏 クリケットスコア',
+    '#morningJoyCricketScore': 'インド vs 豪州：インド 342/5',
+    '#morningJoyCricketDetails': 'インドはあと4球で3点必要！ (ライブ)',
+    '#morningJoyCinemaHeader': '🎬 映画ニュース',
+    '#morningJoyCinemaTitle': '新作映画のティーザーが5,000万回再生を突破！',
+    '#morningJoyCinemaDetails': '来月グランド公開予定。',
+    '#startMyDayBtn': '一日を始めて健康リマインダーを表示する'
   },
   pt: {
     '#home-view .badge-eyebrow': 'ASSISTENTE DIÁRIO DE CONFIANÇA',
@@ -758,7 +779,17 @@ const selectorTranslations = {
     '#strategy-view .view-title': 'Matriz de Concorrentes',
     '#strategy-view .view-description': 'Como o CareCircle se destaca das soluções comuns de cuidado a idosos.',
     '#innovation-view .view-title': 'Fosso de Inovação',
-    '#innovation-view .view-description': 'Nossas inovações exclusivas que asseguram nossa liderança no mercado.'
+    '#innovation-view .view-description': 'Nossas inovações exclusivas que asseguram nossa liderança no mercado.',
+    '#morningJoyFeedTitle': '🌅 Feed de Alegria Matinal',
+    '#morningJoySpiritualNudgeHeader': '🕉️ Incentivo Espiritual Diário',
+    '#morningJoySpiritualQuote': '"A meditação traz paz à mente. Comece o seu dia com um sorriso."',
+    '#morningJoyCricketHeader': '🏏 Placar de Críquete',
+    '#morningJoyCricketScore': 'IND vs AUS: IND 342/5',
+    '#morningJoyCricketDetails': 'IND precisa de 3 corridas em 4 bolas! (Ao vivo)',
+    '#morningJoyCinemaHeader': '🎬 Notícias de Cinema',
+    '#morningJoyCinemaTitle': 'O novo teaser do filme atinge 50M de visualizações!',
+    '#morningJoyCinemaDetails': 'Grande lançamento agendado para o próximo mês.',
+    '#startMyDayBtn': 'Iniciar o meu dia e ver lembretes de saúde'
   },
   ta: {
     '#home-view .badge-eyebrow': 'தினசரி நம்பிக்கை உதவியாளர்',
@@ -800,7 +831,18 @@ const selectorTranslations = {
     '#strategy-view .view-title': 'போட்டியாளர் அணி',
     '#strategy-view .view-description': 'நிலையான முதியோர் பராமரிப்பு போட்டியாளர்களுக்கு எதிராக கேர்கர்சிகிள் எவ்வாறு தனித்து நிற்கிறது.',
     '#innovation-view .view-title': 'தள அகழி (புதுமைப் பாதுகாப்பு)',
-    '#innovation-view .view-description': 'வணிக நிலப்பரப்பைப் பாதுகாக்கும் எங்களின் புதுமையான அம்சங்கள்.'
+    '#innovation-view .view-description': 'வணிக நிலப்பரப்பைப் பாதுகாக்கும் எங்களின் புதுமையான அம்சங்கள்.',
+    '#morningJoyFeedTitle': '🌅 காலை மகிழ்ச்சி செய்திகள்',
+    '#morningJoySpiritualNudgeHeader': '🕉️ தினசரி ஆன்மிக ஊக்கம்',
+    '#morningJoySpiritualQuote': '"தியானம் மனதில் அமைதியை கொண்டுவருகிறது. ஒரு புன்னகையுடன் உங்கள் நாளைத் தொடங்குங்கள்."',
+    '#morningJoyCricketHeader': '🏏 கிரிக்கெட் மதிப்பெண்',
+    '#morningJoyCricketScore': 'IND எதிர் AUS: IND 342/5',
+    '#morningJoyCricketDetails': 'IND 4 பந்துகளில் 3 ரன்கள் தேவை! (நேரடி)',
+    '#morningJoyCinemaHeader': '🎬 உள்ளூர் திரைப்பட செய்திகள்',
+    '#morningJoyCinemaTitle': 'புதிய டீசர் 5 கோடி பார்வைகளை எட்டியது!',
+    '#morningJoyCinemaDetails': 'அடுத்த மாதம் பிரம்மாண்ட வெளியீடு திட்டமிடப்பட்டுள்ளது.',
+    '#startMyDayBtn': 'என் நாளைத் தொடங்கு மற்றும் சுகாதார நினைவூட்டல்களை காண்க'
+
   },
   hi: {
     '#home-view .badge-eyebrow': 'दैनिक आत्मविश्वास सहायक',
@@ -842,7 +884,18 @@ const selectorTranslations = {
     '#strategy-view .view-title': 'प्रतिस्पर्धी मैट्रिक्स',
     '#strategy-view .view-description': 'मानक बुजुर्ग देखभाल प्रतिस्पर्धियों के मुकाबले केयरसर्किल कैसे बेहतर है।',
     '#innovation-view .view-title': 'प्लेटफ़ॉर्म सुरक्षा खाई',
-    '#innovation-view .view-description': 'हमारी श्रेणि-परिभाषित नवाचार जो व्यावसायिक भविष्य को सुरक्षित करते हैं।'
+    '#innovation-view .view-description': 'हमारी श्रेणि-परिभाषित नवाचार जो व्यावसायिक भविष्य को सुरक्षित करते हैं।',
+    '#morningJoyFeedTitle': '🌅 प्रभात आनंद फीड',
+    '#morningJoySpiritualNudgeHeader': '🕉️ दैनिक आध्यात्मिक प्रेरणा',
+    '#morningJoySpiritualQuote': '"परमात्मा का ध्यान करने से मन को शांति मिलती है। अपने दिन की शुरुआत एक मुस्कान के साथ करें।"',
+    '#morningJoyCricketHeader': '🏏 क्रिकेट स्कोर',
+    '#morningJoyCricketScore': 'भारत बनाम ऑस्ट्रेलिया: भारत 342/5',
+    '#morningJoyCricketDetails': 'भारत को 4 गेंदों में 3 रन चाहिए! (लाइव)',
+    '#morningJoyCinemaHeader': '🎬 सिनेमा समाचार',
+    '#morningJoyCinemaTitle': 'नया फिल्म टीज़र 50M व्यूज को पार कर गया!',
+    '#morningJoyCinemaDetails': 'अगले महीने भव्य रिलीज होने वाली है।',
+    '#startMyDayBtn': 'अपने दिन की शुरुआत करें और स्वास्थ्य अनुस्मारक देखें'
+
   },
   te: {
     '#home-view .badge-eyebrow': 'రోజువారీ నిశ్చయ సహాయకుడు',
@@ -884,7 +937,18 @@ const selectorTranslations = {
     '#strategy-view .view-title': 'పోటీదారుల పట్టిక',
     '#strategy-view .view-description': 'సాధారణ సీనియర్ కేర్ సేవల కంటే కేర్ సర్కిల్ ఎలా భిన్నంగా ఉంటుంది.',
     '#innovation-view .view-title': 'రక్షణ కవచం',
-    '#innovation-view .view-description': 'మా ప్రత్యేక ఆవిష్కరణలు మా వ్యాపారాన్ని స్థిరపరుస్తాయి.'
+    '#innovation-view .view-description': 'మా ప్రత్యేక ఆవిష్కరణలు మా వ్యాపారాన్ని స్థిరపరుస్తాయి.',
+    '#morningJoyFeedTitle': '🌅 ఉదయం ఆనంద ఫీడ్',
+    '#morningJoySpiritualNudgeHeader': '🕉️ రోజువారీ ఆధ్యాత్మిక స్ఫూర్తి',
+    '#morningJoySpiritualQuote': '"పరమాత్మను ధ్యానించడం వలన మనస్సు ప్రశాంతంగా ఉంటుంది. ఈ రోజును చిరునవ్వుతో ప్రారంభించండి."',
+    '#morningJoyCricketHeader': '🏏 క్రికెట్ స్కోర్',
+    '#morningJoyCricketScore': 'భారత్ vs ఆస్ట్రేలియా: భారత్ 342/5',
+    '#morningJoyCricketDetails': 'భారత్‌కు 4 బంతుల్లో 3 పరుగులు కావాలి! (లైవ్)',
+    '#morningJoyCinemaHeader': '🎬 తెలుగు సినిమా వార్తలు',
+    '#morningJoyCinemaTitle': 'కొత్త టీజర్ 5 కోట్ల వ్యూస్‌ని చేరుకుంది!',
+    '#morningJoyCinemaDetails': 'వచ్చే నెల గ్రాండ్ రిలీజ్ ప్లాన్ చేయబడింది.',
+    '#startMyDayBtn': 'నా రోజు ప్రారంభించండి మరియు ఆరోగ్య రిమైండర్లు చూడండి'
+
   }
 };
 
@@ -1673,9 +1737,19 @@ function markMedicationTaken() {
   
   medicinesTakenCount = 1;
   localStorage.setItem('meds_taken_today_timestamp', Date.now().toString());
-  document.getElementById('adherenceIndicator').textContent = "Adherence for today: 1/1 Taken (Complete)";
-  document.getElementById('adherenceProgress').style.width = "100%";
-  document.getElementById('chkMeds').checked = true;
+  if (document.getElementById('adherenceIndicator')) {
+    document.getElementById('adherenceIndicator').textContent = "Adherence for today: 1/1 Taken (Complete)";
+  }
+  if (document.getElementById('adherenceProgress')) {
+    document.getElementById('adherenceProgress').style.width = "100%";
+  }
+  const chkMeds = document.getElementById('chkMeds');
+  if (chkMeds) chkMeds.checked = true;
+  
+  if (typeof window.recordPillTaken === 'function') {
+    window.recordPillTaken("Metformin (500mg)");
+    window.recordPillTaken("Amlodipine (5mg)");
+  }
   
   showToast("Medicine marked as taken. Family notified.");
   speakText("Medicine recorded as taken. I will let your daughter Meera know.");
@@ -1790,6 +1864,12 @@ function initializeCultureEngine(countryName) {
   // Update water reminder layout
   if (typeof updateWaterUI === 'function') {
     updateWaterUI();
+  }
+
+  // Sync Power Cut toggle for India-only feature
+  if (typeof window.checkPowerCutVisibility === 'function') {
+    window.checkPowerCutVisibility();
+    if (typeof window.applyPowerCutState === 'function') window.applyPowerCutState();
   }
 }
 
@@ -4786,9 +4866,9 @@ Crucially:
           matchLabel.style.background = "var(--color-teal-soft)";
           matchLabel.style.color = "var(--color-teal)";
           badgeRow.style.borderColor = "var(--color-teal)";
-          confirmBtn.classList.add('d-none'); // Hide confirm since it's not time yet
-          speakText("Pill identified as Amlodipine 5mg. This dose is scheduled for later in the evening at 8:00 PM. Please do not take it now.");
-          showToast("Amlodipine detected (Scheduled for 8:00 PM)");
+          confirmBtn.classList.remove('d-none'); // Show confirm to allow taking for testing!
+          speakText("Pill identified as Amlodipine 5mg. Tap green button to confirm.");
+          showToast("Amlodipine detected.");
         } else {
           matchName.textContent = "Unrecognized Pill";
           matchStatus.textContent = "Warning: This pill does not match any of your prescribed care schedules. Do not consume.";
@@ -4821,7 +4901,13 @@ Crucially:
   const confirmPillTakenBtn = document.getElementById('confirmPillTakenBtn');
   if (confirmPillTakenBtn) {
     confirmPillTakenBtn.addEventListener('click', () => {
+      const matchNameEl = document.getElementById('pillScannerMatchName');
+      const pillName = matchNameEl ? matchNameEl.textContent : "Metformin (500mg)";
+      
       pillScannerModal.close();
+      if (typeof window.recordPillTaken === 'function') {
+        window.recordPillTaken(pillName);
+      }
       markMedicationTaken(); // Triggers the base mark medication taken handler
     });
   }
@@ -5725,15 +5811,75 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     }
   }
 
+  let privateCheckInInterval = null;
+
   function triggerGoingOutTimeout() {
+    const modal = document.getElementById('goingOutPrivateCheckInModal');
+    if (!modal) {
+      originalTimeoutAlert();
+      return;
+    }
+
+    const seniorName = getActiveSeniorName();
+    speakText(`${seniorName}, your promised return time has passed. Are you okay? Tap 'I'm Safe' to let us know. We will wait 2 minutes before contacting your family.`);
+    
+    modal.showModal();
+
+    let timeLeft = 120; // 2 minutes in seconds
+    const timerDisplay = document.getElementById('privateCheckInTimer');
+    if (timerDisplay) timerDisplay.textContent = "02:00";
+
+    if (privateCheckInInterval) clearInterval(privateCheckInInterval);
+    
+    privateCheckInInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(privateCheckInInterval);
+        modal.close();
+        originalTimeoutAlert();
+      } else {
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        if (timerDisplay) {
+          timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+      }
+    }, 1000);
+  }
+
+  function originalTimeoutAlert() {
     localStorage.setItem('going_out_state', 'home');
     updateGoingOutUI();
-    
     speakText(`Attention, this is a safety alert. You have not checked back in from your outing. I am notifying Meera immediately.`);
     logFamilyChatSystem(`🚨 Emergency Alert: ${getActiveSeniorName()} went out and has not checked back in within the promised duration. Please check on them.`);
     setTimeout(() => {
       logFamilyChatResponse("Meera", "Mom! The app says you are overdue from your walk. Please let me know if you are okay, I am worried.");
     }, 1200);
+  }
+
+  // Bind buttons in Private Check-in Modal
+  const privateCheckInSafeBtn = document.getElementById('privateCheckInSafeBtn');
+  const privateCheckInExtendBtn = document.getElementById('privateCheckInExtendBtn');
+
+  if (privateCheckInSafeBtn) {
+    privateCheckInSafeBtn.addEventListener('click', () => {
+      if (privateCheckInInterval) clearInterval(privateCheckInInterval);
+      const modal = document.getElementById('goingOutPrivateCheckInModal');
+      if (modal) modal.close();
+      endGoingOut();
+    });
+  }
+
+  if (privateCheckInExtendBtn) {
+    privateCheckInExtendBtn.addEventListener('click', () => {
+      if (privateCheckInInterval) clearInterval(privateCheckInInterval);
+      const modal = document.getElementById('goingOutPrivateCheckInModal');
+      if (modal) modal.close();
+      
+      startGoingOut(15);
+      logFamilyChatSystem(`${getActiveSeniorName()} extended return promise by 15 minutes.`);
+      speakText(`Promise extended by 15 minutes. Safe travels!`);
+    });
   }
 
   function startGoingOut(mins) {
@@ -6360,18 +6506,23 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       const cb = document.getElementById(id);
       if (cb) {
         cb.checked = localStorage.getItem('state_' + id) === 'true';
-        cb.addEventListener('change', () => {
+        cb.onchange = () => {
           localStorage.setItem('state_' + id, cb.checked.toString());
-          const nameEl = cb.parentNode.querySelector('strong');
-          const name = nameEl ? nameEl.textContent : "Ritual task";
+          const labelSpan = cb.parentNode.querySelector('span');
+          const name = labelSpan ? labelSpan.textContent : "Ritual task";
           if (cb.checked) {
             speakText(`${name} completed.`);
           } else {
             speakText(`${name} unchecked.`);
           }
-        });
+          checkRitualCompletion();
+        };
       }
     });
+    
+    renderCustomRituals();
+    updateStreakUI();
+    checkRitualCompletion();
   }
   
   // 4. DND Prayer Hours
@@ -6722,6 +6873,73 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     }
   }
   
+  // Bind Prompt Starters
+  const promptStarterBtns = document.querySelectorAll('.prompt-starter-btn');
+  promptStarterBtns.forEach(btn => {
+    btn.onclick = () => {
+      const starterText = btn.dataset.starter;
+      const originalValue = medicalDirectiveInput.value.trim();
+      medicalDirectiveInput.value = originalValue ? `${originalValue}\n${starterText}` : starterText;
+      medicalDirectiveInput.focus();
+      speakText("Prompt starter added. You can type or record to complete the instruction.");
+    };
+  });
+
+  // Bind Microphone Recording
+  const recordDirectiveVoiceBtn = document.getElementById('recordDirectiveVoiceBtn');
+  let directiveListening = false;
+  let directiveSpeechRecognizer = null;
+
+  if (SpeechRecognition && recordDirectiveVoiceBtn && medicalDirectiveInput) {
+    directiveSpeechRecognizer = new SpeechRecognition();
+    directiveSpeechRecognizer.continuous = false;
+    directiveSpeechRecognizer.interimResults = false;
+
+    directiveSpeechRecognizer.onstart = () => {
+      directiveListening = true;
+      recordDirectiveVoiceBtn.classList.add('active-listening');
+      recordDirectiveVoiceBtn.style.background = 'var(--color-red, #ef4444)';
+      showToast("Listening to your voice...");
+    };
+
+    directiveSpeechRecognizer.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      const originalValue = medicalDirectiveInput.value.trim();
+      medicalDirectiveInput.value = originalValue ? `${originalValue} ${transcript}` : transcript;
+      showToast("Voice input transcribed!");
+      speakText("Got it. Transcribed your instruction.");
+    };
+
+    directiveSpeechRecognizer.onerror = (event) => {
+      console.warn("Speech recognition error in medical directive", event);
+      recordDirectiveVoiceBtn.classList.remove('active-listening');
+      recordDirectiveVoiceBtn.style.background = 'var(--color-purple)';
+    };
+
+    directiveSpeechRecognizer.onend = () => {
+      directiveListening = false;
+      recordDirectiveVoiceBtn.classList.remove('active-listening');
+      recordDirectiveVoiceBtn.style.background = 'var(--color-purple)';
+    };
+
+    recordDirectiveVoiceBtn.onclick = () => {
+      if (directiveListening) {
+        directiveSpeechRecognizer.stop();
+      } else {
+        const lang = document.documentElement.lang || 'en';
+        let recognitionLang = 'en-US';
+        if (lang === 'te') recognitionLang = 'te-IN';
+        else if (lang === 'ta') recognitionLang = 'ta-IN';
+        else if (lang === 'hi') recognitionLang = 'hi-IN';
+        else if (lang === 'ja') recognitionLang = 'ja-JP';
+        else if (lang === 'pt') recognitionLang = 'pt-BR';
+        
+        directiveSpeechRecognizer.lang = recognitionLang;
+        directiveSpeechRecognizer.start();
+      }
+    };
+  }
+
   if (saveDirectiveBtn) {
     saveDirectiveBtn.addEventListener('click', () => {
       const directiveText = medicalDirectiveInput ? medicalDirectiveInput.value : "";
@@ -6730,9 +6948,23 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       localStorage.setItem('values_directive', directiveText);
       localStorage.setItem('values_contact', contactText);
       
-      speakText("Medical preferences directive saved.");
+      // Post to family chat system
       logFamilyChatSystem(`🔒 Vault Update: ${getActiveSeniorName()} updated their Medical Values & Preferences Directive in the Secure Vault.`);
-      alert("Medical Preferences Directive saved securely!");
+      
+      // Save confirmation animation
+      const originalText = saveDirectiveBtn.textContent;
+      saveDirectiveBtn.innerHTML = "🕊️ Your voice has been preserved 🕊️";
+      saveDirectiveBtn.style.background = "#22c55e";
+      saveDirectiveBtn.style.borderColor = "#22c55e";
+      
+      speakText("Your medical preferences directive has been safely saved and encrypted in the vault. Your voice has been preserved.");
+      showToast("Directive saved. Voice preserved! 🕊️");
+
+      setTimeout(() => {
+        saveDirectiveBtn.innerHTML = originalText;
+        saveDirectiveBtn.style.background = "var(--color-purple)";
+        saveDirectiveBtn.style.borderColor = "var(--color-purple)";
+      }, 4000);
     });
   }
   
@@ -6891,30 +7123,108 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
         if (letterTranslationResult) {
           letterTranslationResult.classList.remove('d-none');
           
+          const letterType = document.getElementById('letterTypeSelect') ? document.getElementById('letterTypeSelect').value : "incomeTax";
+          let docName = "GHMC Tax Notice";
+          let origText = "";
+          let subject = "";
+          let details = "";
+          let actionsHTML = "";
+          
+          if (letterType === 'incomeTax') {
+            docName = "Income Tax Notice";
+            origText = "Income Tax Department, Government of India. Notice under Section 143(1) for assessment year 2025-26. Action required: Please review the tax computation statement and verify if any tax refund is due or if there is outstanding demand.";
+            subject = "ఐటి నోటీసు (ఆదాయపు పన్ను రిటర్నుల పరిశీలన)";
+            details = "మీ ఆదాయపు పన్ను రిటర్నులను ఆదాయపు పన్ను శాఖ వారు విజయవంతంగా ప్రాసెస్ చేశారు. దీనికి సంబంధించిన వివరాలను ఈ నోటీసులో పేర్కొన్నారు.";
+            actionsHTML = `
+              <li>మీ పన్ను లెక్కలు సరిగ్గా ఉన్నాయో లేదో మీ ఆడిటర్ ద్వారా చెక్ చేయించండి.</li>
+              <li>మీకు పన్ను రీఫండ్ రావాల్సి ఉంటే అది మీ బ్యాంకు ఖాతాలో పడిందో లేదో చూసుకోండి.</li>
+              <li>పన్ను ఇంకా కట్టాల్సి ఉంటే వెంటనే చెల్లించండి.</li>
+            `;
+          } else if (letterType === 'bankLetter') {
+            docName = "SBI KYC Notice";
+            origText = "State Bank of India. KYC renewal request. Dear Customer, as per RBI regulations, you are required to submit updated KYC documents (Aadhaar and PAN) at your home branch or online within 30 days to avoid account suspension.";
+            subject = "బ్యాంకు ఖాతా కేవైసీ (KYC) అప్డేట్ నోటీసు";
+            details = "మీ ఎస్బీఐ బ్యాంకు ఖాతాకు సంబంధించిన కేవైసీ వివరాలను అప్డేట్ చేయవలసి ఉంది. ఇది నిబంధనల ప్రకారం తప్పనిసరి.";
+            actionsHTML = `
+              <li>ఆధార్ కార్డు మరియు పాన్ కార్డు జిరాక్స్ కాపీలు సిద్ధం చేసుకోండి.</li>
+              <li>వాటిని బ్యాంకు బ్రాంచిలో సమర్పించండి లేదా నెట్ బ్యాంకింగ్ ద్వారా అప్లోడ్ చేయండి.</li>
+              <li>వచ్చే 30 రోజులలోగా ఇది పూర్తి చేయకుంటే మీ ఖాతా తాత్కాలికంగా ఆగిపోవచ్చు.</li>
+            `;
+          } else if (letterType === 'societyNotice') {
+            docName = "Society Maintenance Notice";
+            origText = "Sree Mayuri Heights Owners Association. Maintenance dues notice. All residents are requested to pay the monthly maintenance charges of ₹4,500 along with any pending corpus fund contributions by June 15 to facilitate generator repair works.";
+            subject = "హౌసింగ్ సొసైటీ మెయింటెనెన్స్ చార్జీల నోటీసు";
+            details = "మన అపార్ట్మెంట్ సొసైటీ మెయింటెనెన్స్ మరియు జనరేటర్ మరమ్మతు కొరకు ప్రతి నెల చెల్లించే ₹4,500 ని జూన్ 15 లోగా కట్టాలి.";
+            actionsHTML = `
+              <li>జూన్ 15 లోగా మెయింటెనెన్స్ చార్జీలు ₹4,500 ఆన్‌లైన్ లేదా అసోసియేషన్ ఆఫీసులో కట్టండి.</li>
+              <li>జనరేటర్ రిపేరు కోసం పనుల వివరాలు అడిగి తెలుసుకోండి.</li>
+            `;
+          } else if (letterType === 'govtOrder') {
+            docName = "Pension Life Certificate Order";
+            origText = "Department of Pensions and Pensioners' Welfare. Annual Life Certificate submission window. All central government pensioners must submit their Jeevan Pramaan digital life certificate between November 1 and November 30 to ensure uninterrupted pension disbursement.";
+            subject = "పెన్షన్ బ్రతుకు ధృవీకరణ పత్రం (లైఫ్ సర్టిఫికేట్) సమర్పణ ఉత్తర్వు";
+            details = "పెన్షన్ నిరంతరాయంగా అందాలంటే నవంబర్ నెలలోగా మీ లైఫ్ సర్టిఫికేట్ (బ్రతుకు ధృవీకరణ పత్రం) సబ్మిట్ చేయాలి.";
+            actionsHTML = `
+              <li>నవంబర్ 1 నుండి 30 లోపు జీవన్ ప్రమాణ్ యాప్ లేదా మీ సేవా కేంద్రం ద్వారా లైఫ్ సర్టిఫికేట్ ఇవ్వాలి.</li>
+              <li>మీ ఆధార్ కార్డు, పిపిఓ నెంబర్ సిద్ధంగా ఉంచుకోండి.</li>
+            `;
+          } else if (letterType === 'medicalBill') {
+            docName = "Apollo Medical Bill Summary";
+            origText = "Apollo Hospitals, Hyderabad. Final bill summary. Patient: Lakshmi Raman. Total bill amount: ₹1,12,450. Outstanding payable amount: ₹12,450 after TPA insurance approval of ₹1,00,000. Please clear the balance before discharge.";
+            subject = "అపోలో ఆసుపత్రి వైద్య బిల్లు మరియు చెల్లింపు వివరాలు";
+            details = "మొత్తం హాస్పిటల్ బిల్లు ₹1,12,450 కాగా, ఇన్సూరెన్స్ ద్వారా ₹1,00,000 మంజూరైంది. మిగిలిన మొత్తం మీ సొంతంగా కట్టాలి.";
+            actionsHTML = `
+              <li>మిగిలిన ₹12,450 బిల్లింగ్ కౌంటర్ వద్ద చెల్లించి డిశ్చార్జ్ పేపర్లు తీసుకోండి.</li>
+              <li>ఇన్సూరెన్స్ అప్రూవల్ లెటర్ కాపీలను జాగ్రత్తగా దాచుకోండి.</li>
+            `;
+          } else {
+            docName = "Star Health Insurance Renewal Notice";
+            origText = "Star Health Insurance. Policy Renewal Notice. Your Senior Citizen Red Carpet Health Insurance policy is expiring on July 10. The renewal premium is ₹24,800 to maintain continuous coverage without break.";
+            subject = "హెల్త్ ఇన్సూరెన్స్ పాలసీ రిన్యూవల్ (నవీకరణ) నోటీసు";
+            details = "మీ స్టార్ హెల్త్ ఇన్సూరెన్స్ పాలసీ జూలై 10 తో ముగుస్తుంది. నిరంతరాయంగా వైద్య ఖర్చులు అందాలంటే ప్రీమియం చెల్లించాలి.";
+            actionsHTML = `
+              <li>జూలై 10 లోపు రిన్యూవల్ ప్రీమియం ₹24,800 ఆన్‌లైన్ లో గానీ ఏజెంట్ ద్వారా గానీ కట్టండి.</li>
+              <li>మీ ఆరోగ్య మార్పుల వివరాలు ఏమైనా ఉంటే ఫారంలో తెలియజేయండి.</li>
+            `;
+          }
+
           letterTranslationResult.innerHTML = `
             <strong style="color: var(--color-gold); font-size: var(--font-sm); display:block; margin-bottom: 6px;">📄 OCR Translation Result</strong>
+            
             <div style="background: white; padding: 10px; border-radius: 8px; border-left: 4px solid var(--color-gold); margin-bottom: 8px;">
               <span style="font-size: var(--font-xs); font-weight:700; color: var(--text-muted); display:block; margin-bottom:2px;">Original English Document:</span>
               <p style="font-size: var(--font-xs); margin:0; line-height:1.3; font-style:italic;">
-                "GHMC Property Tax Assessment Department. Final notice for online clearance of pending municipal taxes. Failure to clear by June 30 will attract interest penalties."
+                "${origText}"
               </p>
             </div>
-            <div style="background: var(--color-primary-soft); padding: 10px; border-radius: 8px; border-left: 4px solid var(--color-primary); color: var(--color-primary-dark);">
-              <span style="font-size: var(--font-xs); font-weight:700; display:block; margin-bottom:2px;">సరళమైన తెలుగు అనువాదం (Simple Telugu Summary):</span>
-              <p style="font-size: var(--font-sm); margin:0; line-height:1.4; font-weight:700;">
-                "ఇది జీహెచ్ఎంసీ (GHMC) ఆస్తి పన్ను పత్రం. ఆస్తి పన్ను చెల్లించడానికి జూన్ 30 చివరి తేదీ. జరిమానా పడకుండా ఉండాలంటే ఆ తేదీ లోగా చెల్లించాలి."
-              </p>
+            
+            <div style="background: var(--color-primary-soft); padding: 12px; border-radius: 8px; border-left: 4px solid var(--color-primary); color: var(--color-primary-dark); display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <strong style="display:block; font-size: var(--font-xs); text-transform: uppercase; color: var(--color-primary-dark); opacity: 0.8;">📋 విషయం (Subject):</strong>
+                <span style="font-size: var(--font-sm); font-weight:700;">${subject}</span>
+              </div>
+              <div>
+                <strong style="display:block; font-size: var(--font-xs); text-transform: uppercase; color: var(--color-primary-dark); opacity: 0.8;">📝 వివరాలు (Details):</strong>
+                <p style="font-size: var(--font-sm); margin:0; line-height:1.4; font-weight: 500;">${details}</p>
+              </div>
+              <div>
+                <strong style="display:block; font-size: var(--font-xs); text-transform: uppercase; color: var(--color-primary-dark); opacity: 0.8;">✅ మీరు చేయవలసింది (What you need to do):</strong>
+                <ol style="font-size: var(--font-sm); margin: 0 0 0 15px; padding:0; line-height:1.4; font-weight: 600;">
+                  ${actionsHTML}
+                </ol>
+              </div>
             </div>
+            
             <button type="button" class="primary-btn-mini w-100 mt-10" id="shareTranslationWithFamilyBtn" style="background:var(--color-primary); color:white; border:none; min-height:30px;">Forward to Meera</button>
           `;
           
           const shareBtn = document.getElementById('shareTranslationWithFamilyBtn');
           if (shareBtn) {
             shareBtn.onclick = () => {
-              speakText("Document translation forwarded to Meera.");
-              logFamilyChatSystem(`📩 Forwarded Document: ${getActiveSeniorName()} shared a scanned GHMC Tax Notice and Telugu translation with Meera.`);
+              speakText(`Document translation for ${docName} forwarded to Meera.`);
+              logFamilyChatSystem(`📩 Forwarded Document: ${getActiveSeniorName()} shared a scanned ${docName} and Telugu translation with Meera.`);
               setTimeout(() => {
-                logFamilyChatResponse("Meera", "Got the GHMC tax notice, Mom. I will pay it online tonight. Don't worry!");
+                logFamilyChatResponse("Meera", `Got the ${docName}, Mom. I will check it tonight. Don't worry!`);
               }, 1200);
               shareBtn.textContent = "Forwarded to Meera ✓";
               shareBtn.disabled = true;
@@ -6922,7 +7232,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
           }
           
           speakText("Scanning complete. Document translated to Telugu.");
-          logFamilyChatSystem(`📄 OCR Check: ${getActiveSeniorName()} scanned an English letter (GHMC Tax Notice) and translated it to Telugu.`);
+          logFamilyChatSystem(`📄 OCR Check: ${getActiveSeniorName()} scanned an English letter (${docName}) and translated it to Telugu.`);
         }
       }, 2500);
     });
@@ -7004,7 +7314,425 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     });
   }
   
+  // ==========================================================================
+  // PREMIUM EXPANSION: POWER CUT, SIDE EFFECTS, AND RITUALS CHECKS
+  // ==========================================================================
+
+  // --- POWER CUT SAFETY MODE ---
+  const simulatePowerCutChk = document.getElementById('simulatePowerCut');
+  const powerOutageBanner = document.getElementById('powerOutageBanner');
+  const powerOutageAcknowledgeBtn = document.getElementById('powerOutageAcknowledgeBtn');
+  const powerOutageMessage = document.getElementById('powerOutageMessage');
+  let powerOutageSpoken = false;
+
+  window.checkPowerCutVisibility = function() {
+    const country = getActiveCountry();
+    const powerCutGroup = document.getElementById('powerCutSimGroup');
+    if (powerCutGroup) {
+      if (country.toLowerCase() === 'india') {
+        powerCutGroup.style.display = 'flex';
+      } else {
+        powerCutGroup.style.display = 'none';
+        if (simulatePowerCutChk && simulatePowerCutChk.checked) {
+          simulatePowerCutChk.checked = false;
+          localStorage.setItem('simulate_power_cut', 'false');
+          window.applyPowerCutState();
+        }
+      }
+    }
+  };
+
+  window.applyPowerCutState = function() {
+    const isPowerCutSimulated = simulatePowerCutChk && simulatePowerCutChk.checked;
+    const country = getActiveCountry();
+    const city = getActiveCity();
+    const seniorName = getActiveSeniorName();
+
+    if (isPowerCutSimulated && country.toLowerCase() === 'india' && city.toLowerCase().includes('hyderabad')) {
+      if (powerOutageBanner) {
+        powerOutageBanner.classList.remove('d-none');
+        if (powerOutageMessage) {
+          powerOutageMessage.textContent = `Don't worry, ${seniorName}, this is a planned outage. Power will return by 11:00 PM. We have notified Arun.`;
+        }
+      }
+      if (!powerOutageSpoken) {
+        powerOutageSpoken = true;
+        speakText(`Don't worry, ${seniorName}, this is a planned outage. Power will be back by 11 PM. We have notified Arun automatically.`);
+        logFamilyChatSystem(`🚨 Power Outage Alert: Hyderabad grid failure detected. ${seniorName}'s home is without power. Backup systems active.`);
+        setTimeout(() => {
+          logFamilyChatResponse("Arun", `Mom, I got the power cut alert. Don't worry, it's a planned maintenance, back by 11 PM. Please stay safe and keep a torch handy!`);
+        }, 1500);
+      }
+    } else {
+      if (powerOutageBanner) {
+        powerOutageBanner.classList.add('d-none');
+      }
+      powerOutageSpoken = false;
+    }
+  };
+
+  if (simulatePowerCutChk) {
+    simulatePowerCutChk.checked = localStorage.getItem('simulate_power_cut') === 'true';
+    simulatePowerCutChk.addEventListener('change', (e) => {
+      localStorage.setItem('simulate_power_cut', e.target.checked);
+      powerOutageSpoken = false;
+      window.applyPowerCutState();
+    });
+  }
+
+  if (powerOutageAcknowledgeBtn) {
+    powerOutageAcknowledgeBtn.addEventListener('click', () => {
+      if (simulatePowerCutChk) {
+        simulatePowerCutChk.checked = false;
+        localStorage.setItem('simulate_power_cut', 'false');
+      }
+      window.applyPowerCutState();
+      logFamilyChatSystem(`${getActiveSeniorName()} checked in: Power outage alert acknowledged and muted.`);
+      speakText("Glad to hear you are okay. The power outage banner is now muted.");
+    });
+  }
+
+  // --- MEDICATION SIDE-EFFECT CORRELATION ENGINE ---
+  window.recordPillTaken = function(pillName, timestamp = Date.now()) {
+    let pills = JSON.parse(localStorage.getItem('taken_pills') || '[]');
+    pills.push({ pillName, timestamp });
+    pills = pills.filter(p => Date.now() - p.timestamp < 10 * 24 * 60 * 60 * 1000); // 10 days max
+    localStorage.setItem('taken_pills', JSON.stringify(pills));
+    analyzeSideEffectCorrelations();
+  };
+
+  window.logSideEffect = function(symptom, customText = "") {
+    const now = Date.now();
+    let pills = JSON.parse(localStorage.getItem('taken_pills') || '[]');
+    const windowMs = 90 * 60 * 1000; // 90 mins
+    
+    const pillsInWindow = pills.filter(p => (now - p.timestamp) > 0 && (now - p.timestamp) <= windowMs).map(p => ({
+      pillName: p.pillName,
+      timeDiffMins: Math.round((now - p.timestamp) / (60 * 1000))
+    }));
+
+    let logs = JSON.parse(localStorage.getItem('side_effect_logs') || '[]');
+    logs.push({
+      symptom,
+      timestamp: now,
+      pillsInWindow,
+      customText
+    });
+    
+    logs = logs.filter(l => now - l.timestamp < 30 * 24 * 60 * 60 * 1000); // 30 days max
+    localStorage.setItem('side_effect_logs', JSON.stringify(logs));
+    
+    renderSideEffectLogs();
+    analyzeSideEffectCorrelations();
+    showToast(`Logged symptom: ${symptom}`);
+    speakText(`Logged ${symptom} in your side-effect diary.`);
+  };
+
+  function renderSideEffectLogs() {
+    const container = document.getElementById('sideEffectLogsHistory');
+    if (!container) return;
+    
+    const logs = JSON.parse(localStorage.getItem('side_effect_logs') || '[]');
+    if (logs.length === 0) {
+      container.innerHTML = `<div style="text-align:center; padding:10px; color:var(--text-muted);">No symptoms logged yet.</div>`;
+      return;
+    }
+    
+    container.innerHTML = logs.slice(-5).reverse().map(l => {
+      const dateStr = new Date(l.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+      const pillDetails = l.pillsInWindow.length > 0 
+        ? ` (Taken after: ${l.pillsInWindow.map(p => `${p.pillName} ~${p.timeDiffMins}m ago`).join(', ')})` 
+        : '';
+      return `<div style="padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.05);">
+        <strong>${dateStr}</strong>: ${l.symptom} ${l.customText ? ` - ${l.customText}` : ''} <span style="color:var(--color-primary);">${pillDetails}</span>
+      </div>`;
+    }).join('');
+  }
+
+  window.analyzeSideEffectCorrelations = function() {
+    const logs = JSON.parse(localStorage.getItem('side_effect_logs') || '[]');
+    const now = Date.now();
+    const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+    
+    const recentLogs = logs.filter(l => now - l.timestamp <= sevenDaysMs);
+    const counts = {};
+    
+    recentLogs.forEach(log => {
+      log.pillsInWindow.forEach(p => {
+        const key = `${log.symptom}||${p.pillName}`;
+        if (!counts[key]) {
+          counts[key] = {
+            symptom: log.symptom,
+            pillName: p.pillName,
+            occurrences: 0,
+            delays: []
+          };
+        }
+        counts[key].occurrences++;
+        counts[key].delays.push(p.timeDiffMins);
+      });
+    });
+    
+    const correlations = [];
+    for (const key in counts) {
+      const data = counts[key];
+      if (data.occurrences >= 3) {
+        const avgDelay = Math.round(data.delays.reduce((a, b) => a + b, 0) / data.delays.length);
+        correlations.push({
+          symptom: data.symptom,
+          pillName: data.pillName,
+          occurrences: data.occurrences,
+          avgDelay,
+          strength: data.occurrences >= 5 ? 'Strong' : 'Medium'
+        });
+      }
+    }
+    
+    renderCorrelationReport(correlations);
+    return correlations;
+  };
+
+  function renderCorrelationReport(correlations) {
+    const box = document.getElementById('correlationResultsBox');
+    if (!box) return;
+    
+    if (correlations.length === 0) {
+      box.innerHTML = `
+        <div style="background:var(--surface-soft); border: 1px dashed var(--border-color); border-radius:10px; padding:15px; text-align:center; color:var(--text-muted);">
+          <span style="font-size:1.5rem; display:block; margin-bottom:5px;">✅</span>
+          No correlation patterns detected. Vitals & symptoms are normal.
+        </div>
+      `;
+      return;
+    }
+    
+    box.innerHTML = correlations.map(c => {
+      const color = c.strength === 'Strong' ? 'var(--color-red, #ef4444)' : 'var(--color-orange, #f97316)';
+      return `
+        <div style="background:var(--surface-soft); border-left: 5px solid ${color}; border-radius:8px; padding:12px; margin-bottom:8px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <div>
+            <strong style="display:block; color:var(--text-main); font-size:var(--font-sm);">
+              ⚠️ ${c.strength} Correlation Detected
+            </strong>
+            <span style="font-size:var(--font-xs); color:var(--text-muted);">
+              Your <strong>${c.symptom}</strong> occurs approximately <strong>${c.avgDelay} minutes</strong> after taking <strong>${c.pillName}</strong> (	ext{${c.occurrences}} out of 7 days this week).
+            </span>
+          </div>
+          <span class="badge" style="background:${color}15; color:${color}; font-weight:700; font-size:10px; padding:4px 8px; border-radius:6px; flex-shrink:0;">
+            ${c.strength.toUpperCase()}
+          </span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  window.generateDoctorSummary = function() {
+    const correlations = window.analyzeSideEffectCorrelations();
+    const seniorName = getActiveSeniorName();
+    let text = `CareCircle Premium - Health Correlation Summary for ${seniorName}\n`;
+    text += `Generated on: ${new Date().toLocaleDateString()}\n`;
+    text += `==============================================\n\n`;
+    
+    if (correlations.length === 0) {
+      text += `No significant symptom-medication correlation patterns detected over the last 7 days.\n`;
+    } else {
+      text += `The following symptom-medication patterns were detected over the last 7 days:\n\n`;
+      correlations.forEach((c, idx) => {
+        text += `${idx + 1}. 	ext{${c.strength}} Pattern:\n`;
+        text += `   - Symptom: ${c.symptom}\n`;
+        text += `   - Medication: ${c.pillName}\n`;
+        text += `   - Pattern: Occurred ${c.occurrences} times this week, typically ${c.avgDelay} minutes after taking.\n`;
+        text += `   - Recommendation: Share this summary with your cardiologist or primary care physician.\n\n`;
+      });
+    }
+    
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("Doctor summary copied to clipboard!");
+      speakText("Your medical symptom correlation summary has been copied to your clipboard. You can share this with your doctor.");
+    }).catch(err => {
+      console.error("Failed to copy summary", err);
+      showToast("Failed to copy summary to clipboard.");
+    });
+  };
+
+  // Bind side effect buttons
+  document.querySelectorAll('.symptom-quick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sym = btn.dataset.symptom;
+      window.logSideEffect(sym);
+    });
+  });
+
+  const logCustomSymptomBtn = document.getElementById('logCustomSymptomBtn');
+  const customSymptomInput = document.getElementById('customSymptomInput');
+  if (logCustomSymptomBtn && customSymptomInput) {
+    logCustomSymptomBtn.addEventListener('click', () => {
+      const text = customSymptomInput.value.trim();
+      if (!text) return;
+      window.logSideEffect(text);
+      customSymptomInput.value = '';
+    });
+  }
+
+  const shareWithDoctorBtn = document.getElementById('shareWithDoctorBtn');
+  if (shareWithDoctorBtn) {
+    shareWithDoctorBtn.addEventListener('click', window.generateDoctorSummary);
+  }
+
+  // --- MORNING/EVENING PROMISES CHECKLIST ---
+  function updateStreakUI() {
+    let streak = parseInt(localStorage.getItem('ritual_streak') || '5');
+    const display = document.getElementById('ritualStreakDisplay');
+    if (display) {
+      display.textContent = `🔥 You've completed your promises ${streak} days in a row!`;
+    }
+  }
+
+  function renderCustomRituals() {
+    const morningList = document.getElementById('morningCustomRitualsList');
+    const eveningList = document.getElementById('eveningCustomRitualsList');
+    if (!morningList || !eveningList) return;
+
+    morningList.innerHTML = '';
+    eveningList.innerHTML = '';
+
+    const customs = JSON.parse(localStorage.getItem('custom_rituals') || '[]');
+    customs.forEach(task => {
+      const checked = localStorage.getItem('state_' + task.id) === 'true';
+      const li = document.createElement('li');
+      li.className = 'checklist-item';
+      li.style.padding = '8px 0';
+      li.style.borderBottom = '1px solid var(--border-color)';
+      li.innerHTML = `
+        <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm); width: 100%;">
+          <input type="checkbox" class="large-checkbox custom-ritual-cb" id="${task.id}" style="width:20px; height:20px; margin:0;" ${checked ? 'checked' : ''}>
+          <span>${task.text}</span>
+          <button type="button" class="delete-custom-ritual-btn" data-id="${task.id}" style="background:none; border:none; color:var(--color-red, #ef4444); cursor:pointer; margin-left:auto; font-size:12px; padding:0 5px;">✕</button>
+        </label>
+      `;
+      if (task.type === 'morning') {
+        morningList.appendChild(li);
+      } else {
+        eveningList.appendChild(li);
+      }
+    });
+
+    document.querySelectorAll('.custom-ritual-cb').forEach(cb => {
+      cb.onchange = () => {
+        localStorage.setItem('state_' + cb.id, cb.checked.toString());
+        const labelSpan = cb.parentNode.querySelector('span');
+        const text = labelSpan ? labelSpan.textContent : "Ritual task";
+        if (cb.checked) {
+          speakText(`${text} completed.`);
+        } else {
+          speakText(`${text} unchecked.`);
+        }
+        checkRitualCompletion();
+      };
+    });
+
+    document.querySelectorAll('.delete-custom-ritual-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const taskId = btn.dataset.id;
+        deleteCustomRitual(taskId);
+      };
+    });
+  }
+
+  function deleteCustomRitual(id) {
+    let customs = JSON.parse(localStorage.getItem('custom_rituals') || '[]');
+    customs = customs.filter(t => t.id !== id);
+    localStorage.setItem('custom_rituals', JSON.stringify(customs));
+    localStorage.removeItem('state_' + id);
+    renderCustomRituals();
+    checkRitualCompletion();
+  }
+
+  const addCustomRitualBtn = document.getElementById('addCustomRitualBtn');
+  const customRitualInput = document.getElementById('customRitualInput');
+  if (addCustomRitualBtn && customRitualInput) {
+    addCustomRitualBtn.addEventListener('click', () => {
+      const text = customRitualInput.value.trim();
+      if (!text) return;
+      
+      const activeTab = document.getElementById('ritualTabMorning').classList.contains('active') ? 'morning' : 'evening';
+      const id = 'custom_ritual_' + Date.now();
+      
+      const customs = JSON.parse(localStorage.getItem('custom_rituals') || '[]');
+      customs.push({ id, text, type: activeTab });
+      localStorage.setItem('custom_rituals', JSON.stringify(customs));
+      
+      customRitualInput.value = '';
+      renderCustomRituals();
+      speakText(`Added custom promise: ${text}`);
+      showToast("Custom promise added.");
+      checkRitualCompletion();
+    });
+  }
+
+  window.checkRitualCompletion = function() {
+    const morningTabActive = document.getElementById('ritualTabMorning').classList.contains('active');
+    const activeTab = morningTabActive ? 'morning' : 'evening';
+    
+    const standardIds = activeTab === 'morning' 
+      ? ['ritual_geyser', 'ritual_backdoor', 'ritual_umbrella']
+      : ['ritual_maingate', 'ritual_kitchenwindow', 'ritual_torch'];
+      
+    const customs = JSON.parse(localStorage.getItem('custom_rituals') || '[]');
+    const customIds = customs.filter(t => t.type === activeTab).map(t => t.id);
+    
+    const allIds = [...standardIds, ...customIds];
+    if (allIds.length === 0) return;
+    
+    const allChecked = allIds.every(id => {
+      const cb = document.getElementById(id);
+      return cb && cb.checked;
+    });
+
+    const display = document.getElementById('ritualStreakDisplay');
+    const checklistCard = display ? display.closest('.dashboard-card') : null;
+    
+    if (allChecked) {
+      if (checklistCard) {
+        checklistCard.style.background = 'linear-gradient(135deg, #fef3c7, #fde68a)';
+        checklistCard.style.borderColor = 'var(--color-gold, #f59e0b)';
+        checklistCard.style.boxShadow = '0 0 20px rgba(245, 158, 11, 0.4)';
+        checklistCard.classList.add('border-gold');
+      }
+      
+      const today = new Date().toDateString();
+      const lastCelebrated = localStorage.getItem('last_celebrated_date_' + activeTab);
+      
+      if (lastCelebrated !== today) {
+        localStorage.setItem('last_celebrated_date_' + activeTab, today);
+        
+        let streak = parseInt(localStorage.getItem('ritual_streak') || '5');
+        streak++;
+        localStorage.setItem('ritual_streak', streak.toString());
+        updateStreakUI();
+        
+        const seniorName = getActiveSeniorName();
+        speakText(`All done, ${seniorName}! Your home is safe and your family will rest easy.`);
+        logFamilyChatSystem(`✅ ${seniorName} completed her ${activeTab} promises checklist.`);
+        
+        setTimeout(() => {
+          logFamilyChatResponse("Meera", `Wonderful job keeping your ${activeTab} promises, Mom! Proud of you. ❤️`);
+        }, 1500);
+      }
+    } else {
+      if (checklistCard) {
+        checklistCard.style.background = '';
+        checklistCard.style.borderColor = '';
+        checklistCard.style.boxShadow = '';
+        checklistCard.classList.remove('border-gold');
+      }
+    }
+  };
+
   // Call initial renders for Phase 3 features
+  renderSideEffectLogs();
+  analyzeSideEffectCorrelations();
   initJoyFeed();
   loadRitualsState();
   updateDndBanner();
