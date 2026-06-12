@@ -201,18 +201,12 @@
               <p class="welcome-sub" id="companionStatusText">Your 8:00 AM Metformin medicine is scheduled. I recommend a glass of warm water before breakfast.</p>
               
               <div class="quick-family-hub">
-                <h3 class="section-sub-title">Quick Call Family</h3>
-                <div class="family-quick-grid">
-                  <button class="family-quick-card dial-family" data-contact="Meera">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Meera">
-                    <strong>Meera (Daughter)</strong>
-                    <span class="safe-call-badge" id="meeraSafeCallBadge">🟢 Checking time...</span>
-                  </button>
-                  <button class="family-quick-card dial-family" data-contact="Arun">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Arun">
-                    <strong>Arun (Son)</strong>
-                    <span class="safe-call-badge" id="arunSafeCallBadge">🟢 Checking time...</span>
-                  </button>
+                <h3 class="section-sub-title" style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Quick Call Family</span>
+                  <button class="primary-btn-mini" id="openAddFamilyContactBtn" style="font-size:10px; height:24px; min-height:24px; padding:0 8px; background:var(--color-primary); color:white; border:none; border-radius:6px; cursor:pointer;">+ Add Contact</button>
+                </h3>
+                <div class="family-quick-grid" id="familyQuickGrid">
+                  <!-- Rendered dynamically from localStorage -->
                 </div>
               </div>
 
@@ -2905,6 +2899,49 @@
         <button class="secondary-action-btn" id="cancelCertaintyBtn" style="min-height:48px; border-radius:10px; font-weight:700; background:none; border:1px solid var(--border-color); color:var(--text-color); width:100%; cursor:pointer;">Cancel</button>
       </div>
     </div>
+  </dialog>
+
+  <!-- ADD FAMILY CONTACT DIALOG -->
+  <dialog id="addFamilyContactModal" class="custom-dialog-modal glassmorphic" style="width: 90%; max-width: 400px; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+    <div class="emergency-modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:15px;">
+      <h2 style="color:#1e1b4b; font-weight:800; font-size:var(--font-md); margin:0;">Add Family Contact</h2>
+      <button class="close-voice-btn" id="closeAddFamilyContactBtn" aria-label="Close dialog" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--text-muted);">×</button>
+    </div>
+    <form id="addFamilyContactForm" style="display:flex; flex-direction:column; gap:12px;">
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="famContactName" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Contact Name</label>
+        <input type="text" id="famContactName" class="form-text-input" placeholder="e.g. Arun" required style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm);">
+      </div>
+      
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="famContactRelation" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Relationship</label>
+        <select id="famContactRelation" class="form-select-box" style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm); background:var(--surface);">
+          <option value="Daughter">Daughter</option>
+          <option value="Son">Son</option>
+          <option value="Granddaughter">Granddaughter</option>
+          <option value="Grandson">Grandson</option>
+          <option value="Caregiver">Caregiver</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="famContactPhone" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Phone Number</label>
+        <input type="tel" id="famContactPhone" class="form-text-input" placeholder="e.g. +91 99999 99999" required style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm);">
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="famContactLocation" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Timezone Location</label>
+        <select id="famContactLocation" class="form-select-box" style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm); background:var(--surface);">
+          <option value="India">India (IST)</option>
+          <option value="United States">United States (EST)</option>
+          <option value="Japan">Japan (JST)</option>
+          <option value="Brazil">Brazil (BRT)</option>
+          <option value="United Arab Emirates">United Arab Emirates (GST)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="primary-action-btn" style="min-height:45px; border-radius:8px; background:var(--color-primary); color:white; border:none; cursor:pointer; font-weight:700; margin-top:10px;">Save Contact</button>
+    </form>
   </dialog>
 
   <!-- ONBOARDING SETUP WIZARD OVERLAY -->

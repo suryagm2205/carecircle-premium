@@ -972,7 +972,7 @@ function speakText(text, context = 'advice') {
       "Emergency alarm canceled.": "緊急アラームがキャンセルされました。",
       "Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.": "緊急警報を送信中。家族と救急隊にアラームを発送しました。",
       "Emergency terminated. You are marked as stable.": "緊急状態が解除されました。安定状態と記録されました。",
-      "Medicine recorded as taken. I will let your daughter Meera know.": "薬の服用が記録されました。娘のミーラさんに知らせます。",
+      "Medicine recorded as taken. I will let your family know.": "薬の服用が記録されました。ご家族に知らせます。",
       "Pill scanner camera activated. Please place your pill on your palm and hold it in front of the camera.": "薬スキャンカメラが起動しました。手のひらに薬を置き、カメラの前にかざしてください。",
       "Scanning your pill. Hold still.": "スキャンしています。そのまま動かさないでください。",
       "Pill identified as Metformin 500mg. This matches your scheduled morning dose. Tap green button to confirm.": "薬はメトホルミン500mgと確認されました。スケジュールされた朝の分と一致します。確認するには緑のボタンをタップしてください。",
@@ -981,14 +981,16 @@ function speakText(text, context = 'advice') {
       "Snoozing medication reminder for 15 minutes.": "薬のリマインダーを15分保留します。",
       "Voice helper active. Please tell me a command.": "音声ヘルパーが起動しました。コマンドを話してください。",
       "Radio muted.": "ラジオをミュートしました。",
-      "Command not recognized. Please try saying SOS or Medicine Taken.": "コマンドが認識されませんでした。SOS または 薬を飲んだ と言ってみてください。"
+      "Command not recognized. Please try saying SOS or Medicine Taken.": "コマンドが認識されませんでした。SOS または 薬を飲んだ と言ってみてください。",
+      "Welcome back! I have notified your family that you are home safely.": "おかえりなさい！ご家族に無事帰宅したことを通知しました。"
+
     },
     pt: {
       "Warning. Activating emergency SOS in five seconds. Tap cancel button to stop.": "Aviso. Ativando SOS de emergência em cinco segundos. Toque no botão cancelar para parar.",
       "Emergency alarm canceled.": "Alarme de emergência cancelado.",
       "Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.": "Transmitindo alerta de emergência. Alertas enviados para a família e ambulância.",
       "Emergency terminated. You are marked as stable.": "Emergência encerrada. Você foi marcado como estável.",
-      "Medicine recorded as taken. I will let your daughter Meera know.": "Medicamento registrado como tomado. Vou avisar sua filha Meera.",
+      "Medicine recorded as taken. I will let your family know.": "Medicamento registrado como tomado. Vou avisar sua família.",
       "Pill scanner camera activated. Please place your pill on your palm and hold it in front of the camera.": "Câmera do scanner de pílula ativada. Coloque a pílula na palma da mão e segure-a na frente da câmera.",
       "Scanning your pill. Hold still.": "Escaneando a pílula. Fique parado.",
       "Pill identified as Metformin 500mg. This matches your scheduled morning dose. Tap green button to confirm.": "Pílula identificada como Metformina 500mg. Combina com a sua dose da manhã agendada. Toque no botão verde para confirmar.",
@@ -997,14 +999,15 @@ function speakText(text, context = 'advice') {
       "Snoozing medication reminder for 15 minutes.": "Adiando o lembrete de medicação por 15 minutos.",
       "Voice helper active. Please tell me a command.": "Assistente de voz ativo. Por favor, diga um comando.",
       "Radio muted.": "Rádio mudo.",
-      "Command not recognized. Please try saying SOS or Medicine Taken.": "Comando não reconhecido. Por favor, tente dizer SOS ou Remédio Tomado."
+      "Command not recognized. Please try saying SOS or Medicine Taken.": "Comando não reconhecido. Por favor, tente dizer SOS ou Remédio Tomado.",
+      "Welcome back! I have notified your family that you are home safely.": "Bem-vindo de volta! Eu notifiquei sua família que você está em casa em segurança."
     },
     ta: {
       "Warning. Activating emergency SOS in five seconds. Tap cancel button to stop.": "எச்சரிக்கை. ஐந்து வினாடிகளில் அவசர SOS ஐ செயல்படுத்துகிறது. நிறுத்த ரத்து பொத்தானைத் தட்டவும்.",
       "Emergency alarm canceled.": "அவசர அலாரம் ரத்து செய்யப்பட்டது.",
       "Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.": "அவசர எச்சரிக்கை ஒளிபரப்பப்படுகிறது. குடும்பத்தினருக்கும் ஆம்புலன்ஸுக்கும் எச்சரிக்கைகள் அனுப்பப்பட்டன.",
       "Emergency terminated. You are marked as stable.": "அவசரம் முடிவுக்கு வந்தது. நீங்கள் நலமாக இருப்பதாக பதிவு செய்யப்பட்டுள்ளது.",
-      "Medicine recorded as taken. I will let your daughter Meera know.": "மருந்து எடுத்துக்கொண்டதாக பதிவு செய்யப்பட்டது. உங்கள் மகள் மீராவிடம் தெரிவிக்கிறேன்.",
+      "Medicine recorded as taken. I will let your family know.": "மருந்து எடுத்துக்கொண்டதாக பதிவு செய்யப்பட்டது. உங்கள் குடும்பத்தினருக்கு தெரிவிக்கிறேன்.",
       "Pill scanner camera activated. Please place your pill on your palm and hold it in front of the camera.": "மாத்திரை ஸ்கேனர் கேமரா இயக்கப்பட்டது. உங்கள் மாத்திரையை உள்ளங்கையில் வைத்து கேமராவின் முன் காட்டவும்.",
       "Scanning your pill. Hold still.": "உங்கள் மாத்திரையை ஸ்கேன் செய்கிறது. அசையாமல் இருங்கள்.",
       "Pill identified as Metformin 500mg. This matches your scheduled morning dose. Tap green button to confirm.": "மெட்ஃபோர்மின் 500mg என மாத்திரை கண்டறியப்பட்டது. இது உங்கள் காலை டோஸுடன் ஒத்துப்போகிறது. உறுதிப்படுத்த பச்சை நிற பொத்தானைத் தட்டவும்.",
@@ -1013,14 +1016,15 @@ function speakText(text, context = 'advice') {
       "Snoozing medication reminder for 15 minutes.": "மருந்து நினைவூட்டல் 15 நிமிடங்களுக்கு தள்ளிவைக்கப்படுகிறது.",
       "Voice helper active. Please tell me a command.": "குரல் உதவியாளர் செயலில் உள்ளார். ஒரு கட்டளையைச் சொல்லுங்கள்.",
       "Radio muted.": "ரேடியோ ஒலியடக்கப்பட்டது.",
-      "Command not recognized. Please try saying SOS or Medicine Taken.": "கட்டளை அங்கீகரிக்கப்படவில்லை. SOS அல்லது மருந்து எடுத்துக்கொண்டேன் என்று கூறவும்."
+      "Command not recognized. Please try saying SOS or Medicine Taken.": "கட்டளை அங்கீகரிக்கப்படவில்லை. SOS அல்லது மருந்து எடுத்துக்கொண்டேன் என்று கூறவும்.",
+      "Welcome back! I have notified your family that you are home safely.": "மீண்டும் வருக! நீங்கள் பத்திரமாக வீடு திரும்பியதை உங்கள் குடும்பத்தினருக்கு தெரிவித்துள்ளேன்."
     },
     hi: {
       "Warning. Activating emergency SOS in five seconds. Tap cancel button to stop.": "चेतावनी। पांच सेकंड में आपातकालीन एसओएस सक्रिय हो रहा है। रोकने के लिए रद्द करें बटन दबाएं।",
       "Emergency alarm canceled.": "आपातकालीन अलार्म रद्द कर दिया गया।",
       "Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.": "आपातकालीन चेतावनी का प्रसारण किया जा रहा है। परिवार और एम्बुलेंस को अलर्ट भेज दिया गया है।",
       "Emergency terminated. You are marked as stable.": "आपातकाल समाप्त। आपको स्थिर चिह्नित किया गया है।",
-      "Medicine recorded as taken. I will let your daughter Meera know.": "दवा ली गई दर्ज की गई है। मैं आपकी बेटी मीरा को सूचित कर दूँगा।",
+      "Medicine recorded as taken. I will let your family know.": "दवा ली गई दर्ज की गई है। मैं आपके परिवार को सूचित कर दूँगा।",
       "Pill scanner camera activated. Please place your pill on your palm and hold it in front of the camera.": "पिल स्कैनर कैमरा सक्रिय। कृपया अपनी दवा हथेली पर रखें और कैमरे के सामने लाएं।",
       "Scanning your pill. Hold still.": "दवा को स्कैन किया जा रहा है। हिले नहीं।",
       "Pill identified as Metformin 500mg. This matches your scheduled morning dose. Tap green button to confirm.": "दवा की पहचान मेटफॉर्मिन 500mg के रूप में हुई। यह आपकी निर्धारित सुबह की खुराक से मेल खाता है। पुष्टि के लिए हरा बटन दबाएं।",
@@ -1029,14 +1033,15 @@ function speakText(text, context = 'advice') {
       "Snoozing medication reminder for 15 minutes.": "दवा के अनुस्मारक को 15 मिनट के लिए स्नूज़ किया जा रहा है।",
       "Voice helper active. Please tell me a command.": "वॉयस हेल्पर सक्रिय। कृपया मुझे एक कमांड बताएं।",
       "Radio muted.": "रेडियो म्यूट कर दिया गया।",
-      "Command not recognized. Please try saying SOS or Medicine Taken.": "कमांड समझ नहीं आया। कृपया एसओएस या मेडिसिन टेकन बोलने का प्रयास करें।"
+      "Command not recognized. Please try saying SOS or Medicine Taken.": "कमांड समझ नहीं आया। कृपया एसओएस या मेडिसिन टेकन बोलने का प्रयास करें।",
+      "Welcome back! I have notified your family that you are home safely.": "वापसी पर स्वागत है! मैंने आपके परिवार को सूचित कर दिया है कि आप सुरक्षित घर आ गए हैं।"
     },
     te: {
       "Warning. Activating emergency SOS in five seconds. Tap cancel button to stop.": "హెచ్చరిక. ఐదు సెకన్లలో అత్యవసర SOS యాక్టివేట్ అవుతుంది. ఆపడానికి రద్దు బటన్ నొక్కండి.",
       "Emergency alarm canceled.": "అత్యవసర అలారం రద్దు చేయబడింది.",
       "Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.": "అత్యవసర హెచ్చరిక ప్రసారం అవుతోంది. కుటుంబ సభ్యులకు మరియు అంబులెన్స్‌కు సమాచారం పంపబడింది.",
       "Emergency terminated. You are marked as stable.": "అत्यవసర పరిస్థితి ముగిసింది. మీరు సురక్షితంగా ఉన్నట్లు నమోదు చేయబడింది.",
-      "Medicine recorded as taken. I will let your daughter Meera know.": "మందు తీసుకున్నట్లు నమోదు చేయబడింది. మీ కుమార్తె మీరాకు తెలియజేస్తాను.",
+      "Medicine recorded as taken. I will let your family know.": "మందు తీసుకున్నట్లు నమోదు చేయబడింది. మీ కుటుంబ సభ్యులకు తెలియజేస్తాను.",
       "Pill scanner camera activated. Please place your pill on your palm and hold it in front of the camera.": "పిల్ స్కానర్ కెమెరా యాక్టివేట్ చేయబడింది. మాత్రను మీ అరచేతిలో ఉంచి కెమెరా ముందు చూపించండి.",
       "Scanning your pill. Hold still.": "మాత్రను స్కాన్ చేస్తున్నాము. కదలకుండా ఉండండి.",
       "Pill identified as Metformin 500mg. This matches your scheduled morning dose. Tap green button to confirm.": "మెట్‌ఫార్మిన్ 500mg గా మాత్ర గుర్తించబడింది. ఇది మీ ఉదయపు మందుతో సరిపోలింది. నిర్ధారించడానికి గ్రీన్ బటన్ నొక్కండి.",
@@ -1045,7 +1050,8 @@ function speakText(text, context = 'advice') {
       "Snoozing medication reminder for 15 minutes.": "మందుల రిమైండర్‌ను 15 నిమిషాలు స్నూజ్ చేస్తున్నాము.",
       "Voice helper active. Please tell me a command.": "వాయిస్ సహాయకుడు యాక్టివేట్ చేయబడింది. ఒక ఆదేశాన్ని చెప్పండి.",
       "Radio muted.": "రేడియో మ్యూట్ చేయబడింది.",
-      "Command not recognized. Please try saying SOS or Medicine Taken.": "ఆదేశం గుర్తించబడలేదు. దయచేసి SOS లేదా మందులు తీసుకున్నాను అని చెప్పడానికి ప్రయత్నించండి."
+      "Command not recognized. Please try saying SOS or Medicine Taken.": "ఆదేశం గుర్తించబడలేదు. దయచేసి SOS లేదా మందులు తీసుకున్నాను అని చెప్పడానికి ప్రయత్నించండి.",
+      "Welcome back! I have notified your family that you are home safely.": "స్వాగతం! మీరు సురక్షితంగా ఇంటికి చేరుకున్నట్లు మీ కుటుంబ సభ్యులకు తెలియజేశాను."
     }
   };
 
@@ -1767,7 +1773,7 @@ function markMedicationTaken() {
   }
   
   showToast("Medicine marked as taken. Family notified.");
-  speakText("Medicine recorded as taken. I will let your daughter Meera know.");
+  speakText("Medicine recorded as taken. I will let your family know.");
   logFamilyChatSystem("Lakshmi ji marked Metformin as Taken (8:00 AM prescription compliance)");
 }
 
@@ -1827,6 +1833,12 @@ function initializeCultureEngine(countryName) {
   let greetingText = localeData.greeting;
   greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
   greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+  greetingText = greetingText.replace(/లక్ష్మి\s*జి/g, currentSeniorName);
+  greetingText = greetingText.replace(/లక్ష్మి/g, currentSeniorName);
+  greetingText = greetingText.replace(/लक्ष्मी\s*जी/g, currentSeniorName);
+  greetingText = greetingText.replace(/लक्ष्मी/g, currentSeniorName);
+  greetingText = greetingText.replace(/லட்சுமி\s*ஜி/g, currentSeniorName);
+  greetingText = greetingText.replace(/லட்சுமி/g, currentSeniorName);
   document.getElementById('companionGreeting').textContent = greetingText;
   document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
   document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
@@ -2709,25 +2721,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateTimezoneBridge() {
-    const statusData = getExpatTimesAndStatuses();
-    
-    const meeraEl = document.getElementById('meeraSafeCallBadge');
-    const arunEl = document.getElementById('arunSafeCallBadge');
-    
-    if (meeraEl) {
-      meeraEl.textContent = statusData.meera.text;
-      meeraEl.className = 'safe-call-badge';
-      if (statusData.meera.cssClass === 'status-free') meeraEl.classList.add('safe');
-      else if (statusData.meera.cssClass === 'status-work') meeraEl.classList.add('work');
-      else meeraEl.classList.add('sleeping');
-    }
-    
-    if (arunEl) {
-      arunEl.textContent = statusData.arun.text;
-      arunEl.className = 'safe-call-badge';
-      if (statusData.arun.cssClass === 'status-free') arunEl.classList.add('safe');
-      else if (statusData.arun.cssClass === 'status-work') arunEl.classList.add('work');
-      else arunEl.classList.add('sleeping');
+    if (typeof renderFamilyContacts === 'function') {
+      renderFamilyContacts();
     }
   }
 
@@ -5806,7 +5801,9 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       if (!weatherAlertSpoken) {
         weatherAlertSpoken = true;
         setTimeout(() => {
-          speakText(`Attention: Hyderabad is experiencing extreme heat today, exceeding 45 degrees. Please stay indoors, keep drinking water, and tap the check-in button every two hours so Meera knows you are safe.`);
+          const currentCityLocation = localStorage.getItem('city_location') || "Chennai";
+      const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Attention: ${currentCityLocation} is experiencing extreme heat today, exceeding 45 degrees. Please stay indoors, keep drinking water, and tap the check-in button every two hours so ${caregiverName} knows you are safe.`);
         }, 1500);
       }
     } else {
@@ -5840,7 +5837,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
   if (simulateWeatherCheckinOverdueBtn) {
     simulateWeatherCheckinOverdueBtn.addEventListener('click', () => {
-      speakText(`Warning: You have not checked in for two hours during the heatwave. I am notifying Meera immediately.`);
+      const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Warning: You have not checked in for two hours during the heatwave. I am notifying ${caregiverName} immediately.`);
       logFamilyChatSystem(`🚨 Heatwave Alert: Hyderabad is at 45°C. ${getActiveSeniorName()} has missed their 2-hour check-in. Alerting family.`);
       setTimeout(() => {
         logFamilyChatResponse("Meera", "Mom, I just received an alert about the heatwave in Hyderabad and that you missed your check-in. Are you okay? Please call me!");
@@ -5972,7 +5970,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   function originalTimeoutAlert() {
     localStorage.setItem('going_out_state', 'home');
     updateGoingOutUI();
-    speakText(`Attention, this is a safety alert. You have not checked back in from your outing. I am notifying Meera immediately.`);
+    const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Attention, this is a safety alert. You have not checked back in from your outing. I am notifying ${caregiverName} immediately.`);
     logFamilyChatSystem(`🚨 Emergency Alert: ${getActiveSeniorName()} went out and has not checked back in within the promised duration. Please check on them.`);
     setTimeout(() => {
       logFamilyChatResponse("Meera", "Mom! The app says you are overdue from your walk. Please let me know if you are okay, I am worried.");
@@ -6015,7 +6014,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   function endGoingOut() {
     localStorage.setItem('going_out_state', 'home');
     logFamilyChatSystem(`${getActiveSeniorName()} checked in: Returned home safely.`);
-    speakText("Welcome back! I have notified Meera that you are home safely.");
+    speakText("Welcome back! I have notified your family that you are home safely.");
     updateGoingOutUI();
   }
 
@@ -6335,7 +6334,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     const fd = fixedDeposits.find(f => f.id === id);
     if (fd) {
       fd.status = 'Active'; // Reset state or withdraw
-      speakText(`Fixed Deposit of ₹${fd.principal} marked for withdrawal. Meera has been notified.`);
+      const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Fixed Deposit of ₹${fd.principal} marked for withdrawal. ${caregiverName} has been notified.`);
       logFamilyChatSystem(`${getActiveSeniorName()} marked Fixed Deposit at ${fd.bank} (₹${fd.principal}) for withdrawal to savings account.`);
       fixedDeposits = fixedDeposits.filter(f => f.id !== id);
       renderFDsUI();
@@ -6527,7 +6527,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
   if (simulateBadSleepSeriesBtn) {
     simulateBadSleepSeriesBtn.addEventListener('click', () => {
-      speakText(`${getActiveSeniorName()}, your wearable reports restless, short sleep for three consecutive nights. I have quietly notified Meera so she can check in on you.`);
+      const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`${getActiveSeniorName()}, your wearable reports restless, short sleep for three consecutive nights. I have quietly notified ${caregiverName} so they can check in on you.`);
       logFamilyChatSystem(`🚨 Wearable Vital Alert: Sleep tracker detected restless sleep (<5 hours) for 3 consecutive nights for ${getActiveSeniorName()}.`);
       
       setTimeout(() => {
@@ -7356,7 +7357,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
           const shareBtn = document.getElementById('shareTranslationWithFamilyBtn');
           if (shareBtn) {
             shareBtn.onclick = () => {
-              speakText(`Document translation for ${docName} forwarded to Meera.`);
+              const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Document translation for ${docName} forwarded to ${caregiverName}.`);
               logFamilyChatSystem(`📩 Forwarded Document: ${getActiveSeniorName()} shared a scanned ${docName} and Telugu translation with Meera.`);
               setTimeout(() => {
                 logFamilyChatResponse("Meera", `Got the ${docName}, Mom. I will check it tonight. Don't worry!`);
@@ -7492,7 +7494,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       }
       if (!powerOutageSpoken) {
         powerOutageSpoken = true;
-        speakText(`Don't worry, ${seniorName}, this is a planned outage. Power will be back by 11 PM. We have notified Arun automatically.`);
+        const caregiverName = localStorage.getItem('caregiver_name') || "your family";
+      speakText(`Don't worry, ${seniorName}, this is a planned outage. Power will be back by 11 PM. We have notified ${caregiverName} automatically.`);
         logFamilyChatSystem(`🚨 Power Outage Alert: Hyderabad grid failure detected. ${seniorName}'s home is without power. Backup systems active.`);
         setTimeout(() => {
           logFamilyChatResponse("Arun", `Mom, I got the power cut alert. Don't worry, it's a planned maintenance, back by 11 PM. Please stay safe and keep a torch handy!`);
@@ -8159,6 +8162,12 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       localStorage.setItem('display_lang', language);
       localStorage.setItem('caregiver_name', cgName);
       localStorage.setItem('caregiver_phone', cgPhone);
+
+      // Seed caregiver contact into family list
+      const defaultContacts = [
+        { id: 'fam_seed', name: cgName, relation: "Caregiver", phone: cgPhone, location: country }
+      ];
+      localStorage.setItem('family_contacts', JSON.stringify(defaultContacts));
       localStorage.setItem('companion_name', mascots[country] ? mascots[country].name : "Sathi");
       localStorage.setItem('onboarding_completed', 'true');
 
@@ -8327,6 +8336,9 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   };
 
   const triggerCognitiveRecall = () => {
+    // Exit early if onboarding is not completed
+    if (localStorage.getItem('onboarding_completed') !== 'true') return;
+
     // Check active panel view
     const activePanel = document.querySelector('.view-panel.active');
     if (!activePanel) return;
@@ -8598,6 +8610,69 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
   // Initial render of certainty receipts
   renderCertaintyReceipts();
+
+  // --- I. ADD/SYNC FAMILY CONTACTS DIALOG LOGIC ---
+  const addFamilyContactModal = document.getElementById('addFamilyContactModal');
+  const openAddFamilyContactBtn = document.getElementById('openAddFamilyContactBtn');
+  const closeAddFamilyContactBtn = document.getElementById('closeAddFamilyContactBtn');
+  const addFamilyContactForm = document.getElementById('addFamilyContactForm');
+
+  if (openAddFamilyContactBtn && addFamilyContactModal) {
+    openAddFamilyContactBtn.addEventListener('click', () => {
+      document.getElementById('famContactName').value = "";
+      document.getElementById('famContactPhone').value = "";
+      addFamilyContactModal.showModal();
+    });
+  }
+
+  if (closeAddFamilyContactBtn && addFamilyContactModal) {
+    closeAddFamilyContactBtn.addEventListener('click', () => {
+      addFamilyContactModal.close();
+    });
+  }
+
+  if (addFamilyContactForm) {
+    addFamilyContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('famContactName').value.trim();
+      const relation = document.getElementById('famContactRelation').value;
+      const phone = document.getElementById('famContactPhone').value.trim();
+      const location = document.getElementById('famContactLocation').value;
+
+      const seniorPhone = localStorage.getItem('senior_phone') || "";
+      if (seniorPhone && phone === seniorPhone) {
+        showToast("Error: Family contact cannot have your phone number.");
+        speakText("Error: Family contact cannot have your phone number.");
+        return;
+      }
+
+      const caregiverPhone = localStorage.getItem('caregiver_phone') || "";
+      if (caregiverPhone && phone === caregiverPhone) {
+        showToast("Error: Family contact cannot have your caregiver's phone number.");
+        speakText("Error: Family contact cannot have your caregiver's phone number.");
+        return;
+      }
+
+      const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+      if (contacts.some(c => c.phone === phone)) {
+        showToast("Error: This phone number is already in your family contacts.");
+        speakText("Error: This phone number is already in your family contacts.");
+        return;
+      }
+
+      contacts.push({ id: 'fam_' + Date.now(), name, relation, phone, location });
+      localStorage.setItem('family_contacts', JSON.stringify(contacts));
+
+      renderFamilyContacts();
+      if (addFamilyContactModal && addFamilyContactModal.close) addFamilyContactModal.close();
+      
+      showToast(`${name} added to family contacts!`);
+      speakText(`${name} added to family circle.`);
+    });
+  }
+
+  // Initial render of family contacts
+  renderFamilyContacts();
 });
 
 
@@ -8655,4 +8730,152 @@ function renderCertaintyReceipts() {
       <p style="margin:0; font-size:11px; color:var(--text-color); font-style:italic;">✓ ${r.notes}</p>
     </div>
   `).join('');
+}
+
+// ==========================================================================
+// DYNAMIC FAMILY CONTACTS MANAGER FUNCTIONS
+// ==========================================================================
+function renderFamilyContacts() {
+  const container = document.getElementById('familyQuickGrid');
+  if (!container) return;
+  
+  const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+  
+  if (contacts.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; display:flex; flex-direction:column; align-items:center; gap:12px; padding:20px; background:rgba(255,255,255,0.05); border:1px dashed var(--border-color); border-radius:12px; text-align:center;">
+        <span style="font-size:28px;">👪</span>
+        <div>
+          <strong style="display:block; font-size:var(--font-sm); color:var(--text-main); margin-bottom:4px;">No family contacts connected yet</strong>
+          <span style="font-size:var(--font-xs); color:var(--text-muted);">Sync or add contacts to check timezone clocks, send blessings, and configure safety alerts.</span>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+          <button class="primary-action-btn add-btn-rel" data-relation="Daughter" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Daughter</button>
+          <button class="primary-action-btn add-btn-rel" data-relation="Son" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Son</button>
+          <button class="primary-action-btn add-btn-rel" data-relation="Granddaughter" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Granddaughter</button>
+          <button class="primary-action-btn add-btn-rel" data-relation="Grandson" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Grandson</button>
+          <button id="syncContactsBtn" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:rgba(255,255,255,0.1); color:var(--text-main); border:1px solid var(--border-color); cursor:pointer;">🔄 Sync Contacts</button>
+        </div>
+      </div>
+    `;
+    
+    container.querySelectorAll('.add-btn-rel').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const rel = btn.dataset.relation;
+        document.getElementById('famContactRelation').value = rel;
+        document.getElementById('famContactName').value = "";
+        document.getElementById('famContactPhone').value = "";
+        const modal = document.getElementById('addFamilyContactModal');
+        if (modal && modal.showModal) modal.showModal();
+      });
+    });
+
+    const syncBtn = document.getElementById('syncContactsBtn');
+    if (syncBtn) {
+      syncBtn.addEventListener('click', () => {
+        speakText("Accessing your address book to sync family contacts... Found two immediate family members: your daughter Meera, and your son Arun. Syncing contacts now.");
+        showToast("Syncing contacts from address book...");
+        setTimeout(() => {
+          const syncedContacts = [
+            { id: 'fam_sync_1', name: "Meera", relation: "Daughter", phone: "+91 99999 99999", location: "United States" },
+            { id: 'fam_sync_2', name: "Arun", relation: "Son", phone: "+91 98888 88888", location: "India" }
+          ];
+          localStorage.setItem('family_contacts', JSON.stringify(syncedContacts));
+          renderFamilyContacts();
+          showToast("Synced 2 family contacts successfully!");
+          speakText("Meera and Arun synced successfully.");
+        }, 2500);
+      });
+    }
+    return;
+  }
+  
+  const parentCountry = document.getElementById('countrySelect').value;
+  container.innerHTML = contacts.map(c => {
+    let avatarUrl = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80";
+    if (c.relation === 'Daughter' || c.relation === 'Granddaughter' || c.name.toLowerCase() === 'meera') {
+      avatarUrl = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80";
+    }
+    
+    const status = getExpatStatusForLocation(c.location, parentCountry);
+    
+    return `
+      <button class="family-quick-card dial-family" data-contact="${c.name}" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-color); border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; min-width:110px;">
+        <img src="${avatarUrl}" alt="${c.name}" style="width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--border-color);">
+        <strong style="font-size:var(--font-xs); text-align:center; display:block; color:var(--text-main);">${c.name} (${c.relation})</strong>
+        <span class="safe-call-badge ${status.cssClass === 'status-free' ? 'safe' : (status.cssClass === 'status-work' ? 'work' : 'sleeping')}" style="font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; text-align:center;">${status.text}</span>
+      </button>
+    `;
+  }).join('');
+  
+  container.querySelectorAll('.dial-family').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const contact = btn.dataset.contact;
+      dialFamilyContact(contact);
+    });
+  });
+}
+
+function getExpatStatusForLocation(location, parentCountry) {
+  const now = new Date();
+  const tzOffsets = {
+    "India": 5.5,
+    "United States": -5,
+    "Japan": 9,
+    "Brazil": -3,
+    "United Arab Emirates": 4
+  };
+  
+  const parentOffset = tzOffsets[parentCountry] || 5.5;
+  const destOffset = tzOffsets[location] || 5.5;
+  const diff = destOffset - parentOffset;
+  
+  const destTime = new Date(now.getTime() + diff * 3600000);
+  const hr = destTime.getHours();
+  const min = destTime.getMinutes().toString().padStart(2, '0');
+  const ampm = hr >= 12 ? 'PM' : 'AM';
+  const hr12 = hr % 12 || 12;
+  const timeStr = `${hr12}:${min} ${ampm}`;
+  
+  let text = '';
+  let cssClass = '';
+  
+  if (hr >= 23 || hr < 6) {
+    text = `🌙 ${timeStr} (Sleeping)`;
+    cssClass = 'status-sleeping';
+  } else if (hr >= 9 && hr < 17) {
+    text = `💼 ${timeStr} (Work)`;
+    cssClass = 'status-work';
+  } else {
+    text = `🟢 ${timeStr} (Free)`;
+    cssClass = 'status-free';
+  }
+  
+  return { text, cssClass };
+}
+
+function dialFamilyContact(contactName) {
+  const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+  const c = contacts.find(item => item.name === contactName);
+  if (!c) return;
+  
+  const parentCountry = document.getElementById('countrySelect').value;
+  const status = getExpatStatusForLocation(c.location, parentCountry);
+  
+  if (status.cssClass === 'status-sleeping' || status.cssClass === 'status-work') {
+    activeCallContact = c.name;
+    const warningModal = document.getElementById('timezoneCallWarningModal');
+    const warningText = document.getElementById('timezoneWarningText');
+    if (warningText && warningModal) {
+      let situation = status.cssClass === 'status-sleeping' ? 'sleeping' : 'at work';
+      warningText.textContent = `${c.name} is currently ${situation} in ${c.location} (${status.text.replace(/[^ -~🌙💼🟢:]/g, '').trim()}). Do you want to call anyway or send a silent voice note instead?`;
+      warningModal.showModal();
+    }
+  } else {
+    speakText(`Dialing your family ${c.relation.toLowerCase()} ${c.name} on speakerphone now.`);
+    showToast(`Calling ${c.name} (${c.relation})...`);
+    if (typeof logFamilyChatSystem === 'function') {
+      logFamilyChatSystem(`Call connection established with ${c.name} (${c.relation})`);
+    }
+  }
 }
