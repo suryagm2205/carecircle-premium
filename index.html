@@ -672,6 +672,18 @@
                 </div>
               </div>
             </article>
+
+            <!-- Widget: Certainty Receipts History -->
+            <article class="dashboard-card" id="certaintyReceiptsCard" style="margin-top:20px;">
+              <div class="card-header">
+                <span class="card-icon color-indigo"><span data-icon="shield"></span></span>
+                <h2 class="card-title">Certainty Receipts Vault</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom: 12px; font-size: var(--font-xs);">Verify your physical confirmations here whenever you second-guess your actions.</p>
+              <div class="certainty-receipts-list" id="certaintyReceiptsList" style="display:flex; flex-direction:column; gap:8px; max-height:220px; overflow-y:auto; padding-right:4px;">
+                <p class="text-muted text-center" style="font-size: var(--font-xs); margin: 15px 0;">No physical confirmations logged today.</p>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -2878,6 +2890,20 @@
           Save Settings & Calibrate
         </button>
       </form>
+    </div>
+  </dialog>
+
+  <!-- CERTAINTY CHECK-IN DIALOG -->
+  <dialog id="certaintyDialogModal" class="custom-dialog-modal glassmorphic" style="width: 90%; max-width: 400px; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px;">
+      <div style="font-size: 48px; animation: pulse 1.5s infinite;">🧘</div>
+      <h3 style="color:var(--color-indigo); font-weight:800; font-size:var(--font-md); margin:0;" id="certaintyModalTitle">Physical Certainty Check</h3>
+      <p style="font-size:var(--font-sm); color:var(--text-color); margin:0; line-height:1.4; font-weight: 500;" id="certaintyModalPrompt">Take a deep breath and confirm: did you perform this action?</p>
+      
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%; margin-top:10px;">
+        <button class="primary-action-btn" id="confirmCertaintyBtn" style="min-height:48px; border-radius:10px; font-weight:700; background:var(--color-primary); color:white; border:none; width:100%; cursor:pointer;">Yes, I am certain I did it</button>
+        <button class="secondary-action-btn" id="cancelCertaintyBtn" style="min-height:48px; border-radius:10px; font-weight:700; background:none; border:1px solid var(--border-color); color:var(--text-color); width:100%; cursor:pointer;">Cancel</button>
+      </div>
     </div>
   </dialog>
 

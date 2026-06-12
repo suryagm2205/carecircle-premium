@@ -2812,7 +2812,13 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(updateTimezoneBridge, 10000);
 
   // Pillbox Logger
-  document.getElementById('markPillTaken').addEventListener('click', markMedicationTaken);
+  document.getElementById('markPillTaken').addEventListener('click', () => {
+    const seniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    triggerCertaintyCheck(`Take a deep breath and confirm: is the Metformin pill physically in your mouth, ${seniorName}?`, () => {
+      markMedicationTaken();
+      createCertaintyReceipt("Metformin (500mg) Pill", "Swallowed morning Metformin.");
+    });
+  });
   
   // Gratitude Blessings Card Publisher
   document.getElementById('sendBlessingBtn').addEventListener('click', () => {
@@ -6617,15 +6623,28 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       if (cb) {
         cb.checked = localStorage.getItem('state_' + id) === 'true';
         cb.onchange = () => {
-          localStorage.setItem('state_' + id, cb.checked.toString());
           const labelSpan = cb.parentNode.querySelector('span');
           const name = labelSpan ? labelSpan.textContent : "Ritual task";
           if (cb.checked) {
-            speakText(`${name} completed.`);
+            cb.checked = false; // Uncheck temporarily
+            let promptMsg = `Take a deep breath and confirm: did you physically complete the action for "${name}"?`;
+            if (id === 'ritual_geyser') promptMsg = "Did you physically click the bathroom geyser switch to the OFF position?";
+            else if (id === 'ritual_backdoor') promptMsg = "Did you hear the click of the balcony lock and verify it is locked?";
+            else if (id === 'ritual_maingate') promptMsg = "Did you slide the latch and lock the main entrance gate?";
+            else if (id === 'ritual_kitchenwindow') promptMsg = "Did you physically verify the kitchen window latch is secured?";
+            
+            triggerCertaintyCheck(promptMsg, () => {
+              cb.checked = true;
+              localStorage.setItem('state_' + id, 'true');
+              speakText(`${name} completed.`);
+              createCertaintyReceipt(name, `Verified: ${promptMsg.replace("Take a deep breath and confirm: ", "").replace("Did you ", "Physically verified: ")}`);
+              checkRitualCompletion();
+            });
           } else {
+            localStorage.setItem('state_' + id, 'false');
             speakText(`${name} unchecked.`);
+            checkRitualCompletion();
           }
-          checkRitualCompletion();
         };
       }
     });
@@ -8543,5 +8562,86 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   if (localStorage.getItem('tremor_guard_enabled') === 'true') {
     document.body.classList.add('tremor-guard-active');
   }
+
+  // --- H. CERTAINTY RECEIPTS VAULT LOGIC ---
+  const certaintyDialogModal = document.getElementById('certaintyDialogModal');
+  const confirmCertaintyBtn = document.getElementById('confirmCertaintyBtn');
+  const cancelCertaintyBtn = document.getElementById('cancelCertaintyBtn');
+
+  if (confirmCertaintyBtn) {
+    confirmCertaintyBtn.addEventListener('click', () => {
+      if (typeof pendingCertaintyAction === 'function') {
+        pendingCertaintyAction();
+        pendingCertaintyAction = null;
+      }
+      if (certaintyDialogModal && certaintyDialogModal.close) certaintyDialogModal.close();
+    });
+  }
+
+  if (cancelCertaintyBtn && certaintyDialogModal) {
+    cancelCertaintyBtn.addEventListener('click', () => {
+      pendingCertaintyAction = null;
+      certaintyDialogModal.close();
+    });
+  }
+
+  // Initial render of certainty receipts
+  renderCertaintyReceipts();
 });
 
+
+// ==========================================================================
+// CERTAINTY RECEIPTS VAULT GLOBAL FUNCTIONS
+// ==========================================================================
+let pendingCertaintyAction = null;
+
+function triggerCertaintyCheck(promptText, onConfirm) {
+  const modal = document.getElementById('certaintyDialogModal');
+  const prompt = document.getElementById('certaintyModalPrompt');
+  if (modal && prompt) {
+    prompt.textContent = promptText;
+    speakText(promptText);
+    pendingCertaintyAction = onConfirm;
+    modal.showModal();
+  } else {
+    onConfirm();
+  }
+}
+
+function createCertaintyReceipt(taskName, notes) {
+  const receipts = JSON.parse(localStorage.getItem('certainty_receipts') || '[]');
+  const newReceipt = {
+    id: 'rec_' + Date.now(),
+    taskName: taskName,
+    timestamp: new Date().toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+    notes: notes
+  };
+  receipts.unshift(newReceipt);
+  localStorage.setItem('certainty_receipts', JSON.stringify(receipts));
+  renderCertaintyReceipts();
+  
+  if (typeof logFamilyChatSystem === 'function') {
+    logFamilyChatSystem(`Certainty Check: ${taskName} verified. Notes: "${notes}"`);
+  }
+}
+
+function renderCertaintyReceipts() {
+  const container = document.getElementById('certaintyReceiptsList');
+  if (!container) return;
+  
+  const receipts = JSON.parse(localStorage.getItem('certainty_receipts') || '[]');
+  if (receipts.length === 0) {
+    container.innerHTML = '<p class="text-muted text-center" style="font-size: var(--font-xs); margin: 15px 0;">No physical confirmations logged today.</p>';
+    return;
+  }
+  
+  container.innerHTML = receipts.map(r => `
+    <div class="receipt-item-card" style="background:var(--surface-soft); border:1px solid var(--border-color); border-radius:10px; padding:10px; display:flex; flex-direction:column; gap:4px; margin-bottom: 4px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="font-size:var(--font-xs); color:var(--color-indigo);">${r.taskName}</strong>
+        <span style="font-size:10px; color:var(--text-muted);">${r.timestamp}</span>
+      </div>
+      <p style="margin:0; font-size:11px; color:var(--text-color); font-style:italic;">✓ ${r.notes}</p>
+    </div>
+  `).join('');
+}
