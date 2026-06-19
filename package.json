@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "Premium Senior-First Daily Confidence Companion Platform",
   "main": "index.html",
+  "type": "module",
   "scripts": {
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "build": "vite build",
+    "dev:backend": "vite build && node dev-server.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.19.2"
+  },
   "devDependencies": {
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "vite": "^5.4.11",
+    "javascript-obfuscator": "^4.1.1"
   }
 }

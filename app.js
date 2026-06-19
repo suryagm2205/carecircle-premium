@@ -129,6 +129,80 @@ const mascots = {
       <circle cx="28" cy="52" r="2.5" fill="#fca5a5" opacity="0.6"/>
       <circle cx="72" cy="52" r="2.5" fill="#fca5a5" opacity="0.6"/>
     </svg>`
+  },
+  France: {
+    name: 'Chouquette',
+    avatarDesc: 'An elegant white French poodle who loves croissants, morning walks along the Seine, and keeping you safe.',
+    svg: `<svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="28" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <!-- Fluffy Poodle Ears -->
+      <ellipse cx="20" cy="48" rx="8" ry="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="18" cy="40" r="3" fill="#cbd5e1" />
+      <circle cx="18" cy="46" r="3" fill="#cbd5e1" />
+      <circle cx="22" cy="42" r="3.5" fill="#cbd5e1" />
+      <ellipse cx="80" cy="48" rx="8" ry="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="82" cy="40" r="3" fill="#cbd5e1" />
+      <circle cx="82" cy="46" r="3" fill="#cbd5e1" />
+      <circle cx="78" cy="42" r="3.5" fill="#cbd5e1" />
+      <!-- Face -->
+      <circle cx="38" cy="44" r="3.5" fill="#1e293b" />
+      <circle cx="62" cy="44" r="3.5" fill="#1e293b" />
+      <ellipse cx="50" cy="50" rx="5" ry="3.5" fill="#1e293b" />
+      <!-- Pink bow -->
+      <path d="M44 26 L56 26 L50 32 Z" fill="#ef4444" />
+      <path d="M50 32 L44 38 L56 38 Z" fill="#ef4444" />
+      <circle cx="50" cy="32" r="2.5" fill="#ffffff" />
+      <!-- Cheeks -->
+      <circle cx="32" cy="50" r="3.5" fill="#fda4af" opacity="0.6"/>
+      <circle cx="68" cy="50" r="3.5" fill="#fda4af" opacity="0.6"/>
+    </svg>`
+  },
+  Germany: {
+    name: 'Waldi',
+    avatarDesc: 'A friendly, punctual brown Dachshund who loves forest walks, pretzel treats, and keeping your schedule on time.',
+    svg: `<svg viewBox="0 0 100 100">
+      <ellipse cx="50" cy="52" rx="30" ry="24" fill="#b45309" />
+      <!-- Long Dachshund Ears -->
+      <ellipse cx="22" cy="52" rx="7" ry="16" fill="#78350f" />
+      <ellipse cx="78" cy="52" rx="7" ry="16" fill="#78350f" />
+      <!-- Eyes -->
+      <circle cx="40" cy="46" r="3" fill="#1e293b" />
+      <circle cx="39" cy="44.5" r="0.8" fill="#ffffff" />
+      <circle cx="60" cy="46" r="3" fill="#1e293b" />
+      <circle cx="59" cy="44.5" r="0.8" fill="#ffffff" />
+      <!-- Snout -->
+      <ellipse cx="50" cy="58" rx="8" ry="6" fill="#78350f" />
+      <circle cx="50" cy="56" r="3" fill="#1e293b" />
+      <!-- Cheeks -->
+      <circle cx="34" cy="54" r="3" fill="#fca5a5" opacity="0.5" />
+      <circle cx="66" cy="54" r="3" fill="#fca5a5" opacity="0.5" />
+    </svg>`
+  },
+  'United Kingdom': {
+    name: 'Buster',
+    avatarDesc: 'A warm, fire-side loving English Bulldog who chats about UK nostalgia.',
+    svg: `<svg viewBox="0 0 100 100">
+      <!-- Bulldog Body/Head -->
+      <circle cx="50" cy="50" r="32" fill="#d97706" /> <!-- Brown body/head -->
+      <!-- Muzzle / Jowls -->
+      <ellipse cx="50" cy="62" rx="18" ry="14" fill="#fef3c7" /> <!-- Cream muzzle -->
+      <!-- Nose -->
+      <polygon points="45,56 55,56 50,63" fill="#1e293b" />
+      <!-- Eyes -->
+      <circle cx="38" cy="42" r="5" fill="#1e293b" />
+      <circle cx="36" cy="40" r="1.5" fill="#ffffff" />
+      <circle cx="62" cy="42" r="5" fill="#1e293b" />
+      <circle cx="60" cy="40" r="1.5" fill="#ffffff" />
+      <!-- Wrinkles/Cheeks -->
+      <path d="M 32 58 Q 50 68 68 58" fill="none" stroke="#d97706" stroke-width="2" />
+      <!-- Folded Ears -->
+      <path d="M 22 28 Q 14 36 24 44 Z" fill="#b45309" />
+      <path d="M 78 28 Q 86 36 76 44 Z" fill="#b45309" />
+      <!-- Bulldog collar -->
+      <path d="M 24 76 Q 50 86 76 76" fill="none" stroke="#dc2626" stroke-width="6" stroke-linecap="round" />
+      <!-- Spike on collar -->
+      <polygon points="50,78 48,84 52,84" fill="#cbd5e1" />
+    </svg>`
   }
 };
 
@@ -136,6 +210,7 @@ const mascots = {
 const countryConfigDatabase = {
   India: {
     themeClass: 'theme-india',
+    allowedViews: ['services', 'earn', 'docs', 'planner'],
     cityName: 'Chennai',
     defaultLanguage: 'en',
     languages: [
@@ -212,7 +287,7 @@ const countryConfigDatabase = {
         ]
       },
       en: {
-        greeting: 'Good morning, Lakshmi ji.',
+        greeting: 'Good morning, Saraswathi ji.',
         companionBlurb: 'Your 8:00 AM Metformin medicine is ready. I recommend warm water with turmeric before breakfast.',
         localHelpline: 'Ambulance: 108 · National Emergency: 112',
         scamList: 'Aadhaar verification request, fake electricity cut threats, SMS luck lottery claims',
@@ -235,6 +310,7 @@ const countryConfigDatabase = {
   },
   Japan: {
     themeClass: 'theme-japan',
+    allowedViews: ['services', 'docs'],
     cityName: 'Kyoto',
     defaultLanguage: 'ja',
     languages: [
@@ -284,6 +360,7 @@ const countryConfigDatabase = {
   },
   'United States': {
     themeClass: 'theme-us',
+    allowedViews: ['services', 'docs', 'planner'],
     cityName: 'Boston',
     defaultLanguage: 'en',
     languages: [
@@ -333,6 +410,7 @@ const countryConfigDatabase = {
   },
   'United Arab Emirates': {
     themeClass: 'theme-uae',
+    allowedViews: ['services', 'docs', 'planner'],
     cityName: 'Dubai',
     defaultLanguage: 'en',
     languages: [
@@ -342,7 +420,7 @@ const countryConfigDatabase = {
     ],
     locales: {
       en: {
-        greeting: 'Sabah al-khair, Lakshmi ji.',
+        greeting: 'Sabah al-khair, Saraswathi ji.',
         companionBlurb: 'Hydration checks are active today due to high heat. Next family Majlis video call is scheduled at 4 PM.',
         localHelpline: 'Ambulance: 998 · Police: 999',
         scamList: 'AC maintenance deposit frauds, visa balance notifications',
@@ -402,49 +480,179 @@ const countryConfigDatabase = {
   },
   Brazil: {
     themeClass: 'theme-brazil',
-    cityName: 'Rio de Janeiro',
+    allowedViews: ['services', 'docs', 'planner', 'earn'],
+    cityName: 'São Paulo',
     defaultLanguage: 'pt',
     languages: [
-      { code: 'pt', label: 'Portuguese voice, warm tone' },
-      { code: 'en', label: 'English voice, joyful rhythm' }
+      { code: 'pt', label: 'Português (Brasil)' },
+      { code: 'en', label: 'English (US)' }
     ],
     locales: {
       pt: {
         greeting: 'Bom dia, Lakshmi.',
-        companionBlurb: 'Tenha uma linda manhã. Seus amigos do grupo de caminhada da praia vão se reunir às 9h hoje.',
-        localHelpline: 'Ambulância de Emergência: 192 · Bombeiros: 193',
-        scamList: 'Alertas falsos de renovação do INSS, pedidos de dinheiro falsos no WhatsApp',
-        norms: 'Apoio comunitário local, visitas da igreja, suporte familiar próximo',
+        companionBlurb: 'Tenha um lindo dia. O Zeca está pronto para te acompanhar.',
+        localHelpline: 'SAMU (Ambulância): 192 · Polícia Militar: 190 · Defesa Civil: 199',
+        scamList: 'Golpe do PIX falso no WhatsApp, link de SMS do INSS, falsa vistoria de gás',
+        norms: 'Bate-papo na calçada ao entardecer, café comunitário, redes de vizinhança',
         services: [
-          { id: 'pharmacy', name: 'Drogaria Rio Entrega Sênior', category: 'medical', blurb: 'Entregas de farmácia local com cartões de desconto', price: 'R$ 5 taxa de entrega' },
-          { id: 'groceries', name: 'Feira Orgânica Assistente', category: 'errand', blurb: 'Ajudante semanal para comprar frutas e vegetais frescos', price: 'R$ 15/hora' },
-          { id: 'transport', name: 'Carona Segura Rio Sênior', category: 'assisted', blurb: 'Motoristas confiáveis do bairro para consultas hospitalares', price: 'R$ 20 fixo' },
-          { id: 'pension', name: 'Consultor de Benefícios INSS', category: 'assisted', blurb: 'Ajuda para dar entrada em benefícios e prova de vida', price: 'R$ 40/sessão' },
-          { id: 'repairs', name: 'Comunidade Reparos Seguros', category: 'repair', blurb: 'Ajudantes do bairro verificados para vazamentos e travas', price: 'R$ 50 visita' }
+          { id: 'pharmacy', name: 'Drogaria SP Entrega Expressa', category: 'medical', blurb: 'Entrega rápida de medicamentos de uso contínuo', price: 'Grátis' },
+          { id: 'groceries', name: 'Ajudante de Feira Livre', category: 'errand', blurb: 'Compra semanal de legumes e frutas frescas na feira do bairro', price: 'R$ 15/visita' },
+          { id: 'transport', name: 'Acompanhante de Táxi Sênior', category: 'assisted', blurb: 'Motoristas credenciados para consultas médicas', price: 'R$ 25 fixo' },
+          { id: 'pension', name: 'Despachante INSS & Prova de Vida', category: 'assisted', blurb: 'Assessoria para aposentadoria e agendamentos no Gov.br', price: 'R$ 50/consulta' }
         ],
         features: [
-          ['Socialização Ativa', 'Lembretes para aulas de alongamento, café no bairro e eventos comunitários.'],
-          ['Rede de Apoio Familiar', 'Atualizações de status de bem-estar automáticas enviadas para os filhos pelo celular.'],
-          ['Conexão com Posto de Saúde', 'Integração e agendamento de consultas com a unidade de saúde da família local.']
+          ['Segurança Integrada', 'Planejador de rotas seguras contra furtos e botão de check-in rápido no elevador.'],
+          ['Horta de Quintal', 'Verificador de interações de chás e remédios tradicionais com fórmulas médicas.'],
+          ['Acompanhamento SUS', 'Organizador de guias de encaminhamento, consultas e retornos em postos de saúde (UBS/CAPS).']
         ]
       },
       en: {
-        greeting: 'Bom dia, Lakshmi.',
-        companionBlurb: 'Have a beautiful morning. Your friends at the beach walking circle are meeting at 9:00 AM today.',
-        localHelpline: 'Emergency Ambulance: 192 · Fire: 193',
-        scamList: 'INSS benefits renewal alerts, fake family WhatsApp cash checks',
-        norms: 'Neighborhood network checks, church circle, joint family support',
+        greeting: 'Good morning, Lakshmi.',
+        companionBlurb: 'Have a wonderful day. Zeca is ready to keep you company.',
+        localHelpline: 'SAMU (Ambulance): 192 · Military Police: 190 · Civil Defense: 199',
+        scamList: 'Fake WhatsApp PIX clone scams, fraud INSS SMS links, fake gas inspector visits',
+        norms: 'Late afternoon sidewalk chats, neighborhood coffee circles, family support',
         services: [
-          { id: 'pharmacy', name: 'Drogaria Rio Senior Delivery', category: 'medical', blurb: 'Local pharmacy deliveries with discount cards', price: 'R$ 5 delivery' },
-          { id: 'groceries', name: 'Feira Organic Basket Assistant', category: 'errand', blurb: 'Weekly errand helper booking fresh fruits & vegetables', price: 'R$ 15/hour' },
-          { id: 'transport', name: 'Safe Ride Rio Senior Auto', category: 'assisted', blurb: 'Trusted neighborhood drivers providing hospital visits', price: 'R$ 20 fixed' },
-          { id: 'pension', name: 'INSS Benefits Advisor', category: 'assisted', blurb: 'Assistance filing government benefits and life proof', price: 'R$ 40/session' },
-          { id: 'repairs', name: 'Local Community Safe Repairs', category: 'repair', blurb: 'Safety-vetted repair helpers for leaks and locks', price: 'R$ 50 callout' }
+          { id: 'pharmacy', name: 'SP Senior Express Pharmacy Delivery', category: 'medical', blurb: 'Fast shipping of daily prescriptions and hygiene items', price: 'Free' },
+          { id: 'groceries', name: 'Weekly Feira Assistant', category: 'errand', blurb: 'Helper to carry fresh produce from local street market', price: 'R$ 15/trip' },
+          { id: 'transport', name: 'Safe Ride SP Assisted Cab', category: 'assisted', blurb: 'Vetted drivers to assist you to medical consultations', price: 'R$ 25 flat' },
+          { id: 'pension', name: 'INSS & Prova de Vida Representative', category: 'assisted', blurb: 'Help completing Gov.br life validation and digital procedures', price: 'R$ 50/consult' }
         ],
         features: [
-          ['Vibrant Social Pacing', 'Reminders for samba fitness sessions, neighborhood coffee chats, and church festivals.'],
-          ['Warm Family Network', 'Simple check-ins sharing activity status to children in a warm, collaborative way.'],
-          ['Community Group Logs', 'Connecting to neighborhood senior groups, health centers, and beach clubs.']
+          ['Safety Shield', 'Safe route planning to avoid theft areas and quick elevator checkout timer.'],
+          ['Backyard Apothecary', 'Traditional herbal teas safety checker against active drug prescriptions.'],
+          ['SUS Health Tracker', 'Monitor referral queue milestones, specialist consults, and UBS appointments.']
+        ]
+      }
+    }
+  },
+  France: {
+    themeClass: 'theme-france',
+    allowedViews: ['services', 'earn', 'docs', 'planner'],
+    cityName: 'Paris',
+    defaultLanguage: 'fr',
+    languages: [
+      { code: 'fr', label: 'Voix française, ton chaleureux' },
+      { code: 'en', label: 'English voice, clear tone' }
+    ],
+    locales: {
+      fr: {
+        greeting: 'Bonjour, Françoise.',
+        companionBlurb: 'Votre suivi de santé est à jour. N\'oubliez pas votre passage quotidien à la boulangerie pour votre baguette fraîche.',
+        localHelpline: 'Urgences médicales (SAMU) : 15 · Numéro européen : 112',
+        scamList: 'Arnaque au Compte Personnel de Formation (CPF), faux conseillers bancaires, fraudes aux rénovations énergétiques',
+        norms: 'Vie autonome, enfants à distance, contact quotidien avec la gardienne/le concierge',
+        services: [
+          { id: 'pharmacy', name: 'Pharmacie de Paris Centre', category: 'medical', blurb: 'Livraison de médicaments à domicile et mise à jour de Carte Vitale', price: 'Gratuit (Tiers Payant)' },
+          { id: 'groceries', name: 'Livraison Boulangerie & Marché', category: 'errand', blurb: 'Sélection de pain frais, viennoiseries et produits locaux du marché', price: '5 € livraison' },
+          { id: 'transport', name: 'Service VTC Senior G7', category: 'assisted', blurb: 'Chauffeurs formés pour accompagner les rendez-vous médicaux', price: '15 € fixe' },
+          { id: 'pension', name: 'Conseiller Administratif CPAM', category: 'assisted', blurb: 'Aide aux déclarations Ameli, mutuelle et retraite', price: '20 €/heure' },
+          { id: 'repairs', name: 'Dépannage Sécurisé Paris', category: 'repair', blurb: 'Plomberie, électricité et installation de barres d\'appui par serruriers agréés', price: 'Évaluation gratuite' }
+        ],
+        features: [
+          ['Bonjour Concierge', 'Rappel quotidien pour faire un signe à votre concierge de l\'immeuble pour votre sécurité.'],
+          ['Vigilance Canicule', 'Surveillance des alertes canicule météo, conseils sur la fermeture des volets et hydratation.'],
+          ['Suivi Carte Vitale', 'Rappels réguliers pour mettre à jour vos droits sur les bornes de pharmacie.']
+        ]
+      },
+      en: {
+        greeting: 'Bonjour, Françoise.',
+        companionBlurb: 'Your health schedule is up to date. Remember your daily walk to the local bakery for fresh bread.',
+        localHelpline: 'Medical Emergency (SAMU): 15 · European Emergency: 112',
+        scamList: 'CPF training account fraud, fake bank advisors, energy insulation scams',
+        norms: 'Independent living, remote family check-ins, daily greeting with the concierge',
+        services: [
+          { id: 'pharmacy', name: 'Paris Centre Apothecary', category: 'medical', blurb: 'Prescription refills, delivery, and Carte Vitale checkups', price: 'Free (Tiers Payant)' },
+          { id: 'groceries', name: 'Boulangerie & Market Delivery', category: 'errand', blurb: 'Fresh baguettes, croissants, and local market grocery baskets', price: '€5 delivery' },
+          { id: 'transport', name: 'G7 Senior Transit Assistant', category: 'assisted', blurb: 'Accompanying rides to medical appointments with senior-trained drivers', price: '€15 flat rate' },
+          { id: 'pension', name: 'CPAM / Ameli Admin Helper', category: 'assisted', blurb: 'Support filling insurance claims, retirement paperwork, and mutuelle forms', price: '€25/hour' },
+          { id: 'repairs', name: 'Paris Safe Handyman Services', category: 'repair', blurb: 'Vetted locksmiths, plumbers, and grab-bar installers for senior safety', price: 'Free quote' }
+        ],
+        features: [
+          ['Bonjour Concierge Check', 'Daily prompt to check in with your building concierge, keeping you connected and safe.'],
+          ['Canicule Heatwave Safety', 'Monitors French summer heat waves, reminding you to close window shutters and stay hydrated.'],
+          ['Carte Vitale Claims', 'Rappels to scan your green card at local pharmacy terminals to keep coverage active.']
+        ]
+      }
+    }
+  },
+  Germany: {
+    themeClass: 'theme-germany',
+    allowedViews: ['services', 'earn', 'docs', 'planner'],
+    cityName: 'Munich',
+    defaultLanguage: 'de',
+    languages: [
+      { code: 'de', label: 'Deutsche Stimme, präziser Ton' },
+      { code: 'en', label: 'English voice, clear tone' }
+    ],
+    locales: {
+      de: {
+        greeting: 'Guten Morgen, Hans.',
+        companionBlurb: 'Ihr Tagesplan steht bereit. Denken Sie heute an das Lüften der Räume (Stoßlüften) für frische Luft.',
+        localHelpline: 'Feuerwehr & Rettungsdienst: 112 · Polizei: 110',
+        scamList: 'Enkeltrick-Telefonate, falsche Sparkassen-SMS, gefälschte GEZ-Rundfunkbeitrag Schreiben',
+        norms: 'Selbstständiges Wohnen, Kinder wohnen in einer anderen Stadt, Sonntagsruhe einhalten',
+        services: [
+          { id: 'pharmacy', name: 'Marienplatz Apotheke Lieferservice', category: 'medical', blurb: 'Medikamenten-Lieferung am selben Tag und Rezeptverwaltung', price: 'Kostenlos bei Rezept' },
+          { id: 'groceries', name: 'Frische-Korb vom Bauernmarkt', category: 'errand', blurb: 'Lokale Spezialitäten, Vollkornbrot und frische Äpfel geliefert', price: '4 € Liefergebühr' },
+          { id: 'transport', name: 'Münchner Senioren-Taxi', category: 'assisted', blurb: 'Hilfe beim Ein- und Aussteigen für Klinik- und Arztbesuche', price: '12 € Pauschale' },
+          { id: 'pension', name: 'Krankenkassen & Rentenhelfer', category: 'assisted', blurb: 'Unterstützung bei Anträgen zur Zuzahlungsbefreiung und Pflegegraden', price: '25 €/Stunde' },
+          { id: 'repairs', name: 'Senioren-Handwerksservice München', category: 'repair', blurb: 'Sicherheits-Haltegriffe im Bad montieren und rutschfeste Beläge legen', price: 'Kostenlose Beratung' }
+        ],
+        features: [
+          ['Sonntagsruhe Leitfaden', 'Automatische Erinnerung an den Schutz der Sonntagsruhe und gemütliche Kaffee-und-Kuchen-Zeiten.'],
+          ['Zweimal Stoßlüften', 'Erinnerungen morgens und abends an das Stoßlüften (Fenster ganz auf für 5–10 Min.) zur Vermeidung von Schimmel.'],
+          ['Pfand & Recycling', 'Übersichtliches Sortieren nach Altglas, Papier und Plastik sowie Sammeln der Pfandflaschen.']
+        ]
+      },
+      en: {
+        greeting: 'Guten Morgen, Hans.',
+        companionBlurb: 'Your daily routine is updated. Remember to ventilate your rooms today (Stoßlüften) for fresh air.',
+        localHelpline: 'Fire & Rescue: 112 · Police: 110',
+        scamList: 'Grandchild-in-distress (Enkeltrick) scams, fake bank SMS, fraudulent TV license (GEZ) invoices',
+        norms: 'Independent living, adult children in another city, respect for Sunday quiet rules',
+        services: [
+          { id: 'pharmacy', name: 'Marienplatz Apotheke Delivery', category: 'medical', blurb: 'Same-day prescription delivery and medicine cupboard checks', price: 'Free with prescription' },
+          { id: 'groceries', name: 'Farmer Market Basket Delivery', category: 'errand', blurb: 'Bavarian local produce, rye bread, and seasonal baskets', price: '€4 delivery' },
+          { id: 'transport', name: 'Munich CareRide Taxi Service', category: 'assisted', blurb: 'Assisted boarding & wheelchair support for hospital appointments', price: '€12 flat rate' },
+          { id: 'pension', name: 'Krankenkasse & Insurance Advisor', category: 'assisted', blurb: 'Help with copayment exemption applications and care level assessments', price: '€25/hour' },
+          { id: 'repairs', name: 'Munich Safe Senior Handyman', category: 'repair', blurb: 'Installation of bathroom grab-bars and non-slip mats', price: 'Free consult' }
+        ],
+        features: [
+          ['Sonntagsruhe Quiet Hours', 'Reminders to protect Sunday quiet hours (avoid vacuuming/mowing) and prepare coffee & cake.'],
+          ['Stoßlüften Air Guides', 'Reminders morning and evening to wide-open windows for 5–10 mins to prevent mold and clean air.'],
+          ['Pfand & Bottle Returns', 'Assistance keeping a checklist for separating plastic/glass bottles and returning them for Pfand deposits.']
+        ]
+      }
+    }
+  },
+  'United Kingdom': {
+    themeClass: 'theme-uk',
+    allowedViews: ['services', 'earn', 'docs', 'planner'],
+    cityName: 'Sheffield',
+    defaultLanguage: 'en',
+    languages: [
+      { code: 'en', label: 'English voice, clear tone' }
+    ],
+    locales: {
+      en: {
+        greeting: 'Good morning, Margaret.',
+        companionBlurb: 'Your 4:00 PM Tea Check-in and Vitamin D3 daily checklist are active. Ensure the geyser is off, and stay cozy inside Sheffield this winter.',
+        localHelpline: 'Emergency: 999 · NHS Non-Emergency: 111',
+        scamList: 'DWP Winter Fuel phishing emails, fake NHS vaccine booking texts, Pension Credit telephone scams',
+        norms: 'NHS medical care, Winter fuel allowance coordination, Independent living support',
+        services: [
+          { id: 'pharmacy', name: 'Sheffield Community Pharmacy', category: 'medical', blurb: 'NHS prescription collection & free home delivery', price: 'Free' },
+          { id: 'groceries', name: 'Tesco Senior Home Shopper', category: 'errand', blurb: 'Weekly grocery delivery with large-print receipts', price: '£3.00 delivery' },
+          { id: 'transport', name: 'Sheffield Senior Travel Assist', category: 'assisted', blurb: 'Escorted transport for medical and social trips', price: '£5.00 flat-rate' },
+          { id: 'support', name: 'Age UK Home Companion', category: 'assisted', blurb: 'Home visits and companionship for seniors', price: 'Voluntary' },
+          { id: 'repairs', name: 'Sheffield Trusted Handyman', category: 'repair', blurb: 'CRB-checked home safety repairs and modifications', price: '£15/hour' }
+        ],
+        features: [
+          ['NHS & Safety Hub', 'Access NHS Pharmacy First symptom triage, GP 7-minute prep sheet compiler, and waitlist progress tracker.'],
+          ['Cold Home Energy Reassurance', 'Ensure heating safety with real-time room temperature alerts and daily thermostat cost translation.'],
+          ['Immigration Share-Code Vault', 'Store and copy digital Home Office Share Codes securely to easily share with advocates.'],
+          ['SAD Sunlight walk tracker', 'Midday sunlight walking logs and daily Vitamin D3 logs for Sheffield winter wellness.']
         ]
       }
     }
@@ -1392,6 +1600,67 @@ function switchAppView(viewId) {
   document.querySelectorAll('.view-panel').forEach(panel => {
     panel.classList.toggle('active', panel.id === `${viewId}-view`);
   });
+
+  // India Localization - Report Missed Pill Click Handler
+  const reportMissedBtn = document.getElementById('reportMissedPill');
+  if (reportMissedBtn) {
+    reportMissedBtn.addEventListener('click', () => {
+      const seniorName = getActiveSeniorName();
+      const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+      
+      // Filter for Physical Custodian
+      const custodian = contacts.find(c => c.role === 'Custodian');
+      const custodianName = custodian ? custodian.name : "Primary Caregiver";
+      
+      showToast(`Missed Metformin reported to ${custodianName}`);
+      speakText(`Reporting skipped medication to your physical custodian, ${custodianName}.`);
+      
+      if (custodian) {
+        logFamilyChatSystem(`⚠️ Medication Missed Alert: ${seniorName} reported skipping morning Metformin. Routed to Physical Custodian ${custodian.name} (${custodian.phone}).`);
+        setTimeout(() => {
+          logFamilyChatResponse(custodian.name, `Mom, I saw you missed your morning Metformin dose. Is everything okay? I am checking in with you now!`);
+        }, 2000);
+      } else {
+        logFamilyChatSystem(`⚠️ Medication Missed Alert: ${seniorName} reported skipping morning Metformin. No physical custodian contact set.`);
+      }
+    });
+  }
+
+  // India Localization - Request Emergency Consent Routing Click Handler
+  const emgConsentBtn = document.getElementById('triggerEmergencyConsentBtn');
+  if (emgConsentBtn) {
+    emgConsentBtn.addEventListener('click', () => {
+      const seniorName = getActiveSeniorName();
+      const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+      
+      // Find Medical Decision Maker and Financial Sponsor
+      const medContact = contacts.find(c => c.role === 'Medical');
+      const finContact = contacts.find(c => c.role === 'Financial');
+      
+      if (medContact) {
+        speakText(`Emergency consent authorization request sent to medical decision maker ${medContact.name}.`);
+        showToast(`Consent authorization sent to ${medContact.name}.`);
+        logFamilyChatSystem(`🚨 Emergency Consent Requested: Dispatched digital signature/OTP prompt to Medical Decision Maker ${medContact.name} (${medContact.phone}) to authorize immediate clinic scan.`);
+        
+        if (finContact) {
+          logFamilyChatSystem(`ℹ️ Financial Sponsor Notified: Copy sent to Financial Sponsor ${finContact.name} (${finContact.phone}) for billing records.`);
+          setTimeout(() => {
+            logFamilyChatResponse(medContact.name, `Mom, I got the emergency consent request. I have digitally signed and approved it. Dr. Reddy can access the vault now!`);
+          }, 2500);
+          setTimeout(() => {
+            logFamilyChatResponse(finContact.name, `Mom, Meera let me know about the clinic check. I've approved the digital payment for the taxi and doctor fee. Let me know what she says.`);
+          }, 4500);
+        } else {
+          setTimeout(() => {
+            logFamilyChatResponse(medContact.name, `Mom, I've approved the consent request. Access has been opened.`);
+          }, 2500);
+        }
+      } else {
+        speakText("No Medical Decision Maker is configured in your family contacts. Please assign this role in the active contacts list first.");
+        showToast("Error: No Medical Decision Maker contact found!");
+      }
+    });
+  }
   
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.view === viewId);
@@ -1470,7 +1739,7 @@ function forwardScamToFamily() {
   showToast("Scam forwarded to Meera & Arun for double-checking!");
   
   // Post system log to family chat feed
-  logFamilyChatSystem(`Lakshmi ji forwarded message to review: "${scamText.slice(0,35)}..."`);
+  logFamilyChatSystem(`${getActiveSeniorName()} ji forwarded message to review: "${scamText.slice(0,35)}..."`);
   
   // Simulate Meera responding to the forward check
   setTimeout(() => {
@@ -1581,30 +1850,270 @@ function simulateDocumentUpload() {
   }, 350);
 }
 
-// 8. CANVAS LEGACY VOICE WAVEFORM DRAWING
-let recordingSimulated = false;
+// --- LEGACY JOURNAL ENGINE ---
+function loadAndRenderLegacyStories() {
+  const storiesListContainer = document.getElementById('legacyStoriesList');
+  if (!storiesListContainer) return;
+  
+  let stories = [];
+  try {
+    const stored = localStorage.getItem('legacy_stories');
+    if (stored) {
+      stories = JSON.parse(stored);
+    }
+  } catch (e) {
+    console.error("Failed to parse legacy stories", e);
+  }
+  
+  // Seed initial story content if empty
+  if (stories.length === 0) {
+    stories = [
+      {
+        id: "leg_seed_1",
+        title: "🍳 The traditional family kitchen recipe",
+        content: "My mother taught me to prepare the family sambhar with freshly roasted coriander, fenugreek, and dry red chillies. The secret is to slow-cook the dal with a pinch of asafoetida and add fresh curry leaves right at the end. I want my grandchildren to always remember the warm aroma of our Sunday lunches.",
+        date: "06/10/2026"
+      },
+      {
+        id: "leg_seed_2",
+        title: "👵 Life advice for my grandchildren",
+        content: "Always stay curious and never be afraid to make mistakes. In my 75 years, I have learned that success is not measured by wealth, but by how many lives you touch with kindness. Treat everyone with respect, and remember that family is your anchor in any storm.",
+        date: "06/08/2026"
+      }
+    ];
+    localStorage.setItem('legacy_stories', JSON.stringify(stories));
+  }
+  
+  storiesListContainer.innerHTML = "";
+  
+  stories.forEach(story => {
+    const card = document.createElement('div');
+    card.className = 'legacy-journal-card';
+    card.setAttribute('data-id', story.id);
+    
+    card.innerHTML = `
+      <div class="legacy-journal-card-header">
+        <strong>${story.title}</strong>
+        <span>Date: ${story.date}</span>
+      </div>
+      <p class="legacy-journal-body">"${story.content}"</p>
+      <div class="legacy-journal-card-footer" style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+        <button class="delete-story-btn" data-id="${story.id}">
+          🗑️ Delete
+        </button>
+        <button class="whatsapp-share-btn" data-id="${story.id}">
+          <span>🎁</span> Gift via WhatsApp
+        </button>
+      </div>
+    `;
+    storiesListContainer.appendChild(card);
+  });
+  
+  // Attach event listeners safely
+  storiesListContainer.querySelectorAll('.delete-story-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.getAttribute('data-id');
+      deleteLegacyStory(id);
+    });
+  });
+  
+  storiesListContainer.querySelectorAll('.whatsapp-share-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.getAttribute('data-id');
+      shareStoryViaWhatsApp(id);
+    });
+  });
+}
+
+function shareStoryViaWhatsApp(storyId) {
+  let stories = [];
+  try {
+    const stored = localStorage.getItem('legacy_stories');
+    if (stored) stories = JSON.parse(stored);
+  } catch (e) {
+    console.error(e);
+  }
+  
+  const story = stories.find(s => s.id === storyId);
+  if (!story) {
+    showToast("Story not found.");
+    return;
+  }
+  
+  const parentName = getActiveSeniorName();
+  
+  let passportToken = localStorage.getItem('caregiver_passport_token');
+  if (!passportToken) {
+    passportToken = 'pass_' + Math.random().toString(36).substring(2, 12);
+    localStorage.setItem('caregiver_passport_token', passportToken);
+  }
+  
+  const passportUrl = window.location.origin + '/?passport=' + passportToken;
+  const titleText = story.title.replace(/^["'🍳👵❤️📖🌐\s]+|["'\s]+$/g, '').trim();
+  
+  const textMessage = `🎁 *A Legacy Gift of Love & Memory* 🎁\n\n` +
+                      `Dear family, *${parentName}* has recorded a beautiful life memory for us in their private CareCircle vault:\n\n` +
+                      `📌 *Prompt:* ${titleText}\n` +
+                      `✍️ *Memory:* "${story.content}"\n\n` +
+                      `🔗 *Click below to view the Caregiver Passport & audio stories:*\n${passportUrl}`;
+                      
+  const encodedText = encodeURIComponent(textMessage);
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
+  
+  window.open(whatsappUrl, '_blank');
+  showToast("WhatsApp share screen opened!");
+  logFamilyChatSystem(`Shared Story Gift: "${story.title}" via WhatsApp`);
+  speakText("Opening WhatsApp to share your life memory with your family.");
+}
+
+function deleteLegacyStory(storyId) {
+  let stories = [];
+  try {
+    const stored = localStorage.getItem('legacy_stories');
+    if (stored) stories = JSON.parse(stored);
+  } catch (e) {
+    console.error(e);
+  }
+  
+  const updatedStories = stories.filter(s => s.id !== storyId);
+  localStorage.setItem('legacy_stories', JSON.stringify(updatedStories));
+  loadAndRenderLegacyStories();
+  showToast("Memory story deleted from vault.");
+  speakText("Story deleted.");
+}
+
+// 8. CANVAS REAL VOICE WAVEFORM & AUDIO RECORDER
+let isVoiceRecording = false;
 let waveAnimationFrame = null;
+let mediaRecorder = null;
+let audioChunks = [];
+let audioStream = null;
+let voiceRecorderAudioContext = null;
+let analyserNode = null;
+let dataArray = null;
+let legacySpeechRecognizer = null;
+let recordedAudioUrl = "";
 
 function toggleLegacyVoiceRecording() {
   const recordBtn = document.getElementById('micRecordBtn');
   const statusLabel = document.getElementById('micRecordLabel');
+  const audioPlayer = document.getElementById('storyAudioPlayback');
+  const textEl = document.getElementById('writtenStoryText');
   
-  recordingSimulated = !recordingSimulated;
+  isVoiceRecording = !isVoiceRecording;
   
-  if (recordingSimulated) {
-    recordBtn.classList.add('recording');
-    statusLabel.textContent = "Recording story... Speak now.";
-    speakText("Recording your memory story. Go ahead, speak.");
-    animateWaveformCanvas();
+  if (isVoiceRecording) {
+    // Reset state
+    audioChunks = [];
+    audioPlayer.classList.add('d-none');
+    audioPlayer.src = "";
+    textEl.value = ""; // clear previous text
+
+    // Request microphone access
+    navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+      audioStream = stream;
+      recordBtn.classList.add('recording');
+      statusLabel.textContent = "Listening to your voice... Speak now.";
+      speakText("I am listening. Speak your story now.");
+
+      // Setup MediaRecorder for audio saving
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.ondataavailable = event => {
+        if (event.data.size > 0) audioChunks.push(event.data);
+      };
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        recordedAudioUrl = URL.createObjectURL(audioBlob);
+        audioPlayer.src = recordedAudioUrl;
+        audioPlayer.classList.remove('d-none');
+      };
+      mediaRecorder.start();
+
+      // Setup Web Audio API Analyser for real-time visualizer
+      voiceRecorderAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = voiceRecorderAudioContext.createMediaStreamSource(stream);
+      analyserNode = voiceRecorderAudioContext.createAnalyser();
+      analyserNode.fftSize = 256;
+      const bufferLength = analyserNode.frequencyBinCount;
+      dataArray = new Uint8Array(bufferLength);
+      source.connect(analyserNode);
+
+      animateWaveformCanvas();
+
+      // Setup Web Speech API for real-time localized transcription
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        legacySpeechRecognizer = new SpeechRecognition();
+        legacySpeechRecognizer.continuous = true;
+        legacySpeechRecognizer.interimResults = true;
+        
+        // Match language code dynamically from active display_lang
+        const activeLang = localStorage.getItem('display_lang') || 'en';
+        const langMap = {
+          ta: 'ta-IN',
+          hi: 'hi-IN',
+          te: 'te-IN',
+          ja: 'ja-JP',
+          en: 'en-US'
+        };
+        legacySpeechRecognizer.lang = langMap[activeLang] || 'en-US';
+
+        legacySpeechRecognizer.onresult = event => {
+          let interimTranscript = '';
+          let finalTranscript = '';
+          for (let i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+              finalTranscript += event.results[i][0].transcript;
+            } else {
+              interimTranscript += event.results[i][0].transcript;
+            }
+          }
+          if (finalTranscript || interimTranscript) {
+            textEl.value = finalTranscript + interimTranscript;
+          }
+        };
+
+        legacySpeechRecognizer.onerror = err => console.error("Speech recognizer error:", err);
+        legacySpeechRecognizer.start();
+      }
+    })
+    .catch(err => {
+      console.error("Microphone access denied:", err);
+      showToast("Microphone access is required to record voice stories.");
+      speakText("Microphone access was denied. Please check your settings.");
+      isVoiceRecording = false;
+    });
+
   } else {
+    // Stop recording and clean up
     recordBtn.classList.remove('recording');
-    statusLabel.textContent = "Voice message compiled. Click mic to re-record.";
+    statusLabel.textContent = "Voice message compiled. Tap to re-record.";
+    speakText("Recording complete. You can play it back below.");
+
+    // Stop MediaRecorder
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+      mediaRecorder.stop();
+    }
+
+    // Stop Speech Recognition
+    if (legacySpeechRecognizer) {
+      legacySpeechRecognizer.stop();
+    }
+
+    // Stop all audio tracks in stream
+    if (audioStream) {
+      audioStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Stop visualizer animation
     cancelAnimationFrame(waveAnimationFrame);
     clearWaveformCanvas();
-    
-    // Auto-transcribe placeholder memory story text
-    document.getElementById('writtenStoryText').value = "In 1974, I took my first job as a software junior. Our computing frames filled entire air-cooled basements, and we cards typed out programs step by step. That taught me patience and values...";
-    showToast("Transcribing voice recording completed!");
+
+    // Close AudioContext
+    if (voiceRecorderAudioContext) {
+      voiceRecorderAudioContext.close();
+    }
   }
 }
 
@@ -1612,7 +2121,8 @@ function clearWaveformCanvas() {
   const canvas = document.getElementById('waveformCanvas');
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = '#cbd5e1';
+  ctx.strokeStyle = 'var(--border-color, #cbd5e1)';
+  ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(0, canvas.height / 2);
   ctx.lineTo(canvas.width, canvas.height / 2);
@@ -1622,29 +2132,42 @@ function clearWaveformCanvas() {
 function animateWaveformCanvas() {
   const canvas = document.getElementById('waveformCanvas');
   const ctx = canvas.getContext('2d');
-  let offset = 0;
   
   function draw() {
+    if (!isVoiceRecording) return;
+    
+    waveAnimationFrame = requestAnimationFrame(draw);
+    analyserNode.getByteFrequencyData(dataArray);
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = '#0d9488';
+    ctx.strokeStyle = 'var(--color-primary, #0d9488)';
     ctx.lineWidth = 3;
     ctx.beginPath();
-    
-    for (let x = 0; x < canvas.width; x++) {
-      // Create a smooth composite wave function representing voice signals
-      const y = (canvas.height / 2) + 
-                Math.sin(x * 0.05 + offset) * 12 * Math.sin(x * 0.01) + 
-                Math.cos(x * 0.1 - offset) * 4;
-      if (x === 0) {
-        ctx.moveTo(x, y);
+
+    const sliceWidth = canvas.width / dataArray.length;
+    let x = 0;
+
+    for (let i = 0; i < dataArray.length; i++) {
+      const v = dataArray[i] / 128.0; // scale frequency data
+      const y = (v * canvas.height) / 2;
+
+      // Draw mirrored wave frequency bars
+      if (i === 0) {
+        ctx.moveTo(x, canvas.height / 2 + (y - canvas.height / 2));
       } else {
-        ctx.lineTo(x, y);
+        ctx.lineTo(x, canvas.height / 2 + (y - canvas.height / 2));
       }
+
+      x += sliceWidth;
+    }
+
+    // fallback line drawing if silent
+    if (dataArray.reduce((a, b) => a + b, 0) === 0) {
+      ctx.moveTo(0, canvas.height / 2);
+      ctx.lineTo(canvas.width, canvas.height / 2);
     }
     
     ctx.stroke();
-    offset += 0.15;
-    waveAnimationFrame = requestAnimationFrame(draw);
   }
   
   draw();
@@ -1760,6 +2283,8 @@ function markMedicationTaken() {
     </div>
   `;
   
+  
+
   medicinesTakenCount = 1;
   localStorage.setItem('meds_taken_today_timestamp', Date.now().toString());
   if (document.getElementById('adherenceIndicator')) {
@@ -1778,20 +2303,745 @@ function markMedicationTaken() {
   
   showToast("Medicine marked as taken. Family notified.");
   speakText("Medicine recorded as taken. I will let your family know.");
-  logFamilyChatSystem("Lakshmi ji marked Metformin as Taken (8:00 AM prescription compliance)");
+  logFamilyChatSystem(`${getActiveSeniorName()} ji marked Metformin as Taken (8:00 AM prescription compliance)`);
+}
+
+// 10b. DYNAMIC NAVIGATION VIEW FILTER
+function updateNavigationVisibility(countryName) {
+  const isDevMode = localStorage.getItem('dev_mode') === 'true';
+  const data = countryConfigDatabase[countryName];
+  
+  // Core/Common views visible to all seniors
+  const commonViews = ['home', 'family', 'companion', 'safety', 'health', 'legacy'];
+  // Developer/B2B views
+  const devViews = ['business', 'strategy', 'innovation'];
+  
+  const allowedViews = (data && data.allowedViews) || [];
+  
+  document.querySelectorAll('.nav-menu .nav-btn').forEach(btn => {
+    const view = btn.getAttribute('data-view');
+    const isCommon = commonViews.includes(view);
+    const isAllowed = allowedViews.includes(view);
+    const isDev = devViews.includes(view);
+    
+    if (isCommon || isAllowed || (isDev && isDevMode)) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  
+  // If the active tab gets hidden due to a country change, fallback to the Home tab
+  const activeBtn = document.querySelector('.nav-menu .nav-btn.active');
+  if (activeBtn) {
+    const activeView = activeBtn.getAttribute('data-view');
+    const isCommon = commonViews.includes(activeView);
+    const isAllowed = allowedViews.includes(activeView);
+    const isDev = devViews.includes(activeView);
+    
+    if (!isCommon && !isAllowed && (!isDev || !isDevMode)) {
+      const homeBtn = document.querySelector('.nav-menu .nav-btn[data-view="home"]');
+      if (homeBtn) homeBtn.click();
+    }
+  }
+}
+
+let lastSpokenWeatherMessage = "";
+function triggerVoiceWeatherAlert(message) {
+  if (lastSpokenWeatherMessage !== message) {
+    lastSpokenWeatherMessage = message;
+    speakText(message);
+  }
+}
+
+// 10c. REAL-TIME GLOBAL WEATHER TELEMETRY ENGINE
+function fetchLiveWeatherForCity(city) {
+  const weatherAlertBanner = document.getElementById('weatherAlertBanner');
+  const weatherAlertMessage = document.getElementById('weatherAlertMessage');
+  if (!weatherAlertBanner || !weatherAlertMessage) return;
+
+  const isHeatwaveSimulated = localStorage.getItem('simulate_heatwave') === 'true';
+  const isColdwaveSimulated = localStorage.getItem('simulate_coldwave') === 'true';
+  const isFloodSimulated = localStorage.getItem('simulate_flood') === 'true';
+  const isUsHeatwaveSimulated = localStorage.getItem('simulate_us_heatwave') === 'true';
+  const isWildfireSimulated = localStorage.getItem('simulate_wildfire') === 'true';
+
+  const country = getActiveCountry();
+  const lang = localStorage.getItem('display_lang') || 'en';
+  const seniorName = getActiveSeniorName();
+
+  // US Extreme Heat / Power Outage Warning
+  if (country === 'United States' && isUsHeatwaveSimulated) {
+    weatherAlertBanner.classList.remove('d-none');
+    weatherAlertBanner.style.border = "2px solid #ef4444";
+    weatherAlertBanner.style.backgroundColor = "#fef2f2";
+    let msg = `⚠️ Extreme Heat & Power Outage Alert in Tucson: Heat index is 110°F. Power grid load is high. If power fails, keep your medication cooler sealed. Insulin remains stable at room temperature (<86°F) for 28 days, but do not freeze it or expose it to direct sunlight.`;
+    if (lang === 'es') {
+      msg = `⚠️ Alerta de Calor Extremo y Apagón en Tucson: El índice de calor es de 110°F. La carga de la red eléctrica es alta. Si la energía falla, mantenga sellado su enfriador de medicamentos. La insulina permanece estable a temperatura ambiente (<30°C) durante 28 días, pero no la congele ni la exponga a la luz solar directa.`;
+    }
+    weatherAlertMessage.innerHTML = `<span style="color:#ef4444; font-weight:800;">${msg}</span>`;
+    triggerVoiceWeatherAlert(msg);
+    return;
+  }
+
+  // US Wildfire Smoke Alert
+  if (country === 'United States' && isWildfireSimulated) {
+    weatherAlertBanner.classList.remove('d-none');
+    weatherAlertBanner.style.border = "2px solid #f97316";
+    weatherAlertBanner.style.backgroundColor = "#fff7ed";
+    let msg = `⚠️ Wildfire Smoke Alert in Tucson: Air Quality Index (AQI) is 153 (Unhealthy). ${seniorName}, please stay indoors, run your air purifier, and wear a mask if you must go outside.`;
+    if (lang === 'es') {
+      msg = `⚠️ Alerta de Humo de Incendio Forestal en Tucson: El índice de calidad del aire (ICA) es de 153 (Insalubre). ${seniorName}, por favor quédese en casa, encienda su purificador de aire y use mascarilla si debe salir.`;
+    }
+    weatherAlertMessage.innerHTML = `<span style="color:#c2410c; font-weight:800;">${msg}</span>`;
+    triggerVoiceWeatherAlert(msg);
+    return;
+  }
+
+  // 1. Handle Developer Simulator Overrides
+  if (isHeatwaveSimulated) {
+    weatherAlertBanner.classList.remove('d-none');
+    let msg = `Today is dangerously hot in ${city}, exceeding 43°C. ${seniorName}, please stay indoors, keep hydrated, and check in every 2 hours.`;
+    if (country === 'Japan') {
+      msg = `【熱中症警告】${city}の気温が38°Cを超えています。${seniorName}さん、エアコンをつけ、水分補給を行い、外出を避けてください。`;
+    }
+    weatherAlertMessage.textContent = msg;
+    triggerVoiceWeatherAlert(msg);
+    return;
+  }
+  if (isColdwaveSimulated) {
+    weatherAlertBanner.classList.remove('d-none');
+    let msg = `Severe cold warning in ${city}. Temperatures are below 8°C. ${seniorName}, please stay warm, keep indoor heating on, and avoid cold drafts.`;
+    if (country === 'Japan') {
+      msg = `【低温警告】${city}は冷え込んでおり、室温が低下しています。${seniorName}さん、暖房をつけ、こたつや毛布で温かくしてお過ごしください。`;
+    }
+    weatherAlertMessage.textContent = msg;
+    triggerVoiceWeatherAlert(msg);
+    return;
+  }
+  if (isFloodSimulated) {
+    weatherAlertBanner.classList.remove('d-none');
+    let msg = `Heavy rain and flood warning in ${city}. Please stay indoors, watch for local alerts, and avoid travel.`;
+    if (country === 'Japan') {
+      msg = `【大雨・土砂災害警告】${city}に大雨警報が発令されています。避難指示に注意し、安全な場所でお過ごしください。`;
+    }
+    weatherAlertMessage.textContent = msg;
+    triggerVoiceWeatherAlert(msg);
+    return;
+  }
+
+  // 2. Fetch Live Telemetry via Geocoding + Weather API
+  let lat = localStorage.getItem('user_latitude');
+  let lon = localStorage.getItem('user_longitude');
+
+  if (lat && lon) {
+    queryOpenMeteo(lat, lon, city);
+  } else {
+    // Geocode city name using Open-Meteo Geocoding Search API
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.results && data.results.length > 0) {
+          const result = data.results[0];
+          lat = result.latitude.toString();
+          lon = result.longitude.toString();
+          queryOpenMeteo(lat, lon, city);
+        } else {
+          weatherAlertBanner.classList.add('d-none');
+        }
+      })
+      .catch(err => {
+        console.warn("Geocoding fetch failed", err);
+        weatherAlertBanner.classList.add('d-none');
+      });
+  }
+}
+
+function queryOpenMeteo(lat, lon, city) {
+  const weatherAlertBanner = document.getElementById('weatherAlertBanner');
+  const weatherAlertMessage = document.getElementById('weatherAlertMessage');
+  const country = getActiveCountry();
+  const seniorName = getActiveSeniorName();
+  
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code&precipitation=true`)
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.current) {
+        const temp = data.current.temperature_2m;
+        const humidity = data.current.relative_humidity_2m;
+        const code = data.current.weather_code;
+        
+        let alertTriggered = false;
+        let alertMsg = "";
+        
+        // Evaluates microclimate alerts
+        if (temp >= 38) {
+          alertTriggered = true;
+          if (country === 'Japan') {
+            alertMsg = `【熱中症注意】現在${city}は${temp}°Cと非常に高温です。${seniorName}さん、涼しい部屋で水分補給を行い、エアコンをつけてください。`;
+          } else {
+            alertMsg = `Extreme heatwave alert in ${city}: ${temp}°C. ${seniorName}, please stay hydrated, stay indoors, and check in.`;
+          }
+        } else if (temp <= 14) {
+          alertTriggered = true;
+          if (country === 'Japan') {
+            alertMsg = `【低温注意】現在${city}は${temp}°Cと冷え込んでいます。${seniorName}さん、暖房器具を使い、重ね着をして体温を保ってください。`;
+          } else {
+            alertMsg = `Winter cold warning in ${city}: ${temp}°C. ${seniorName}, please keep warm and maintain indoor heating.`;
+          }
+        } else if (humidity >= 85 && (code === 51 || code === 53 || code === 55 || code === 61 || code === 63 || code === 65 || code === 80 || code === 81 || code === 82)) {
+          alertTriggered = true;
+          if (country === 'Japan') {
+            alertMsg = `【雨天・高湿度】現在${city}は降雨があり、湿度が${humidity}%に達しています。足元と関節痛にご注意ください。部屋干しをおすすめします。`;
+          } else {
+            alertMsg = `Monsoon damp alert in ${city}: Humidity ${humidity}%. ${seniorName}, arthritis precautions recommended. Carry an umbrella.`;
+          }
+        }
+        
+        // Render Dressing & Laundry Guide for Japan
+        if (country === 'Japan') {
+          let dressingGuide = "";
+          if (temp < 10) {
+            dressingGuide = "服装：厚手のコート、マフラー、手袋が必要です。";
+          } else if (temp >= 10 && temp < 20) {
+            dressingGuide = "服装：トレンチコートやカーディガンなど、脱ぎ着しやすい上着が便利です。";
+          } else {
+            dressingGuide = "服装：涼しい長袖または半袖 of 綿素材が適しています。";
+          }
+          
+          let laundryGuide = "";
+          if (humidity > 75 || code >= 50) {
+            laundryGuide = "洗濯：本日は雨または高湿度の恐れがあるため、部屋干し（へやぼし）をおすすめします。";
+          } else {
+            laundryGuide = "洗濯：本日は晴れ間が期待できます。外干し（せんたくびより）に適しています。";
+          }
+          
+          weatherAlertBanner.classList.remove('d-none');
+          if (alertTriggered) {
+            weatherAlertMessage.innerHTML = `<div style="font-weight:700; color:var(--color-danger); margin-bottom:5px;">${alertMsg}</div><div>${dressingGuide} ${laundryGuide}</div>`;
+            triggerVoiceWeatherAlert(alertMsg);
+          } else {
+            weatherAlertMessage.innerHTML = `<div style="font-weight:600; margin-bottom:5px;">今日の天気：${city} ${temp}°C · 湿度${humidity}%</div><div>${dressingGuide} ${laundryGuide}</div>`;
+          }
+        } else {
+          // Non-Japan: Render standard alerts
+          if (alertTriggered) {
+            weatherAlertBanner.classList.remove('d-none');
+            weatherAlertMessage.textContent = alertMsg;
+            triggerVoiceWeatherAlert(alertMsg);
+          } else {
+            weatherAlertBanner.classList.add('d-none');
+          }
+        }
+      }
+    })
+    .catch(err => {
+      console.warn("Weather telemetry fetch failed", err);
+    });
+}
+
+// 10d. JAPANESE JMA EARTHQUAKE ALERT & SAFETY CONFIRMATION (KIKIKANRI)
+let isEarthquakeActive = false;
+let lastEarthquakeTime = "";
+
+function checkJapanDisasters() {
+  const country = getActiveCountry();
+  if (country !== 'Japan') return;
+
+  const isEarthquakeSimulated = localStorage.getItem('simulate_earthquake') === 'true';
+  const weatherAlertBanner = document.getElementById('weatherAlertBanner');
+  const weatherAlertMessage = document.getElementById('weatherAlertMessage');
+  const seniorName = getActiveSeniorName();
+  
+  if (!weatherAlertBanner || !weatherAlertMessage) return;
+
+  // 1. Handle Simulator
+  if (isEarthquakeSimulated) {
+    isEarthquakeActive = true;
+    weatherAlertBanner.classList.remove('d-none');
+    weatherAlertBanner.style.border = "2px solid red";
+    weatherAlertBanner.style.backgroundColor = "#ffebeb";
+    
+    const city = getActiveCity();
+    let shelterPark = "光が丘公園 (Hikarigaoka Park)";
+    if (city.toLowerCase().includes('kyoto')) {
+      shelterPark = "円山公園 (Maruyama Park)";
+    } else if (city.toLowerCase().includes('okinawa')) {
+      shelterPark = "奥武山公園 (Onoyama Park)";
+    }
+    
+    const alertMsg = `【緊急地震速報】最大震度5強の地震が検知されました。${seniorName}さん、頭を守り頑丈な机の下に避難してください。避難場所：${shelterPark}`;
+    
+    weatherAlertMessage.innerHTML = `
+      <div style="font-weight:800; color:red; font-size:18px; margin-bottom:10px;">🚨 緊急地震速報 / Disaster Warning</div>
+      <p style="font-weight:700; color:red; margin-bottom:12px;">${alertMsg}</p>
+      <button type="button" id="anpinConfirmBtn" style="min-height:48px; min-width:180px; padding:0 24px; font-weight:700; font-size:16px; border-radius:24px; border:none; background-color:#22c55e; color:white; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.15); transition:all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        安否確認：無事です (Confirm Safe)
+      </button>
+    `;
+    
+    triggerVoiceWeatherAlert(alertMsg);
+    
+    setTimeout(() => {
+      const btn = document.getElementById('anpinConfirmBtn');
+      if (btn) {
+        btn.addEventListener('click', handleAnpinConfirmation);
+      }
+    }, 200);
+    return;
+  }
+
+  // 2. Fetch Live JMA Earthquakes from P2PQuake API
+  fetch(`https://api.p2pquake.net/v2/jma/earthquake?limit=1`)
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.length > 0) {
+        const eq = data[0];
+        const time = eq.time;
+        const epicenter = eq.earthquake.epicenter.name || "不明";
+        const maxScale = eq.earthquake.maxScale || 0;
+        
+        if (maxScale >= 30 && time !== lastEarthquakeTime) {
+          const eqDate = new Date(time.replace(/\//g, '-'));
+          const diffMins = (new Date() - eqDate) / 60000;
+          
+          if (diffMins <= 15) {
+            isEarthquakeActive = true;
+            lastEarthquakeTime = time;
+            weatherAlertBanner.classList.remove('d-none');
+            weatherAlertBanner.style.border = "2px solid red";
+            weatherAlertBanner.style.backgroundColor = "#ffebeb";
+            
+            const city = getActiveCity();
+            let shelterPark = "光が丘公園 (Hikarigaoka Park)";
+            if (city.toLowerCase().includes('kyoto')) {
+              shelterPark = "円山公園 (Maruyama Park)";
+            } else if (city.toLowerCase().includes('okinawa')) {
+              shelterPark = "奥武山公園 (Onoyama Park)";
+            }
+            
+            let shindoStr = "3";
+            if (maxScale === 40) shindoStr = "4";
+            else if (maxScale === 45) shindoStr = "5弱";
+            else if (maxScale === 50) shindoStr = "5強";
+            else if (maxScale === 55) shindoStr = "6弱";
+            else if (maxScale === 60) shindoStr = "6強";
+            else if (maxScale >= 70) shindoStr = "7";
+            
+            const alertMsg = `【地震情報】最大震度${shindoStr}の地震が発生しました（震源地：${epicenter}）。${seniorName}さん、足元に注意し、安全を確認してください。避難場所：${shelterPark}`;
+            
+            weatherAlertMessage.innerHTML = `
+              <div style="font-weight:800; color:red; font-size:18px; margin-bottom:10px;">🚨 地震発生 / Earthquake Alert</div>
+              <p style="font-weight:700; color:red; margin-bottom:12px;">${alertMsg}</p>
+              <button type="button" id="anpinConfirmBtn" style="min-height:48px; min-width:180px; padding:0 24px; font-weight:700; font-size:16px; border-radius:24px; border:none; background-color:#22c55e; color:white; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.15); transition:all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                安否確認：無事です (Confirm Safe)
+              </button>
+            `;
+            
+            triggerVoiceWeatherAlert(alertMsg);
+            
+            setTimeout(() => {
+              const btn = document.getElementById('anpinConfirmBtn');
+              if (btn) {
+                btn.addEventListener('click', handleAnpinConfirmation);
+              }
+            }, 200);
+          }
+        }
+      }
+    })
+    .catch(err => {
+      console.warn("JMA Earthquake API fetch failed", err);
+    });
+}
+
+function handleAnpinConfirmation() {
+  isEarthquakeActive = false;
+  localStorage.setItem('simulate_earthquake', 'false');
+  const qaEarthquake = document.getElementById('simulateEarthquake_qa');
+  if (qaEarthquake) qaEarthquake.checked = false;
+  
+  const weatherAlertBanner = document.getElementById('weatherAlertBanner');
+  if (weatherAlertBanner) {
+    weatherAlertBanner.style.border = "";
+    weatherAlertBanner.style.backgroundColor = "";
+  }
+  
+  showToast("Safety broadcast sent to family! (安否確認送信)");
+  speakText("Safety confirmation sent. Your family has been notified that you are safe.");
+  logFamilyChatSystem(`Anpin-kakunin: ${getActiveSeniorName()} marked herself as SAFE (無事です) following seismic alert.`);
+  
+  const activeCity = getActiveCity();
+  fetchLiveWeatherForCity(activeCity);
+}
+
+// 10e. LOCAL PREFECTURE MATSURI & SAKURA TRACKER
+function updateJapanSeasonalEvents(city) {
+  const country = getActiveCountry();
+  const grid = document.getElementById('homeWidgetsGrid');
+  let card = document.getElementById('japanSeasonalCard');
+  
+  if (country !== 'Japan') {
+    if (card) card.remove();
+    return;
+  }
+  
+  if (!grid) return;
+  
+  if (!card) {
+    card = document.createElement('article');
+    card.id = 'japanSeasonalCard';
+    card.className = 'dashboard-card border-gold';
+    grid.appendChild(card);
+  }
+  
+  let title = "季節の催し・年中行事 / Seasonal Matsuri";
+  let content = "";
+  let icon = "🌸";
+  
+  if (city.toLowerCase().includes('kyoto')) {
+    icon = "🏮";
+    title = "京都の歳時記 / Kyoto Seasonal Traditions";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>7月の催し：祇園祭 (Gion Matsuri)</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">日本三大祭りの一つです。山鉾巡行を見に、水分補給用の水筒を持って出かけませんか？</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>春のさくら前線：</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">京都の桜は4月上旬が見頃です。円山公園のしだれ桜を鑑賞し、Nature Notebookに俳句を一句記録しましょう。</p>
+      </div>
+    `;
+  } else if (city.toLowerCase().includes('okinawa')) {
+    icon = "🌺";
+    title = "沖縄の伝統行事 / Okinawa Cultural Matsuri";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>8月の行事：エイサー祭り (Eisa Matsuri)</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">祖先の霊を送る伝統舞踊です。近所のコザ運動公園で開催されます。太鼓の響きを楽しみましょう。</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>日本一早い桜：</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">沖縄では1月下旬にカンヒザクラが開花します。八重岳桜まつりに出かけ、暖かい潮風を感じてみてください。</p>
+      </div>
+    `;
+  } else {
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>春の歳時記：お花見 (Hanami Season)</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">さくら前線が進行中。満開の桜の下でお茶を楽しみましょう。Chonaikaiの散歩グループが明日結成されます。</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>夏の伝統：お盆 (Obon Festival)</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">8月中旬は先祖を迎えるお盆です。ご家族へ思い出（Legacy Stories）を録音して贈りましょう。</p>
+      </div>
+    `;
+  }
+  
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="card-icon color-gold">${icon}</span>
+      <h2 class="card-title">${title}</h2>
+    </div>
+    <div style="padding: 10px 0;">
+      ${content}
+      <button type="button" id="recordHaikuBtn" class="secondary-action-btn w-100" style="margin-top:12px; min-height:36px; font-size:var(--font-xs); display:flex; align-items:center; justify-content:center; gap:6px;">
+        <span>📝</span> 俳句・思い出をノートに書く (Log Memory)
+      </button>
+    </div>
+  `;
+  
+  setTimeout(() => {
+    const btn = document.getElementById('recordHaikuBtn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const legacyTabBtn = document.querySelector('.nav-menu .nav-btn[data-view="legacy"]');
+        if (legacyTabBtn) legacyTabBtn.click();
+        const promptTitle = document.getElementById('storyPromptTitle');
+        if (promptTitle) {
+          promptTitle.textContent = "「今日の庭の花や、季節の移り変わりについて」";
+        }
+        showToast("Memory Vault tab opened (日記を開きました)");
+      });
+    }
+  }, 200);
+}
+
+// 10f. UAE REGIONAL SEASONAL AND CLIMATE EVENTS
+function updateUaeSeasonalEvents(city) {
+  const country = getActiveCountry();
+  const grid = document.getElementById('homeWidgetsGrid');
+  let card = document.getElementById('uaeSeasonalCard');
+  
+  if (country !== 'United Arab Emirates') {
+    if (card) card.remove();
+    return;
+  }
+  
+  if (!grid) return;
+  
+  if (!card) {
+    card = document.createElement('article');
+    card.id = 'uaeSeasonalCard';
+    card.className = 'dashboard-card border-gold';
+    grid.appendChild(card);
+  }
+  
+  let title = "الفعاليات الموسمية / UAE Seasonal Updates";
+  let content = "";
+  let icon = "☀️";
+  
+  const currentMonth = new Date().getMonth();
+  const isSummer = currentMonth >= 5 && currentMonth <= 8;
+  
+  if (isSummer) {
+    icon = "☀️";
+    title = "صيف الإمارات / UAE Summer Advisor";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>Extreme Summer Heat (June - Sept):</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">Midday temperatures can exceed 45°C. Avoid outdoor activity between 12:00 PM and 4:00 PM. Keep hydrated with cool water or electrolyte drinks.</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>Indoor Well-being:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">Ensure your home air conditioning is set to a comfortable 24°C. Check the indoor humidity levels and log your daily water intake.</p>
+      </div>
+    `;
+  } else {
+    icon = "🌴";
+    title = "شتاء دافئ / UAE Winter & Outdoor Activities";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>Pleasant Winter Season (Oct - April):</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">Perfect weather for outdoor walks! Enjoy the fresh breeze at Dubai Miracle Garden, Corniche parks, or community outdoor majlis gatherings.</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>Community Majlis & Heritage:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">Connect with peers at local cultural events. Share wisdom and local folklore with family or write your legacy stories down.</p>
+      </div>
+    `;
+  }
+  
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="card-icon color-gold">${icon}</span>
+      <h2 class="card-title">${title}</h2>
+    </div>
+    <div style="padding: 10px 0;">
+      ${content}
+      <button type="button" id="logUaeMemoryBtn" class="secondary-action-btn w-100" style="margin-top:12px; min-height:36px; font-size:var(--font-xs); display:flex; align-items:center; justify-content:center; gap:6px;">
+        <span>📝</span> Log Outdoor Activity / Memory
+      </button>
+    </div>
+  `;
+  
+  setTimeout(() => {
+    const btn = document.getElementById('logUaeMemoryBtn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const legacyTabBtn = document.querySelector('.nav-menu .nav-btn[data-view="legacy"]');
+        if (legacyTabBtn) legacyTabBtn.click();
+        showToast("Memory Stories tab opened.");
+      });
+    }
+  }, 200);
+}
+
+// 10g. EU (FRANCE & GERMANY) SEASONAL CLIMATE EVENTS
+function updateEuSeasonalEvents(city) {
+  const country = getActiveCountry();
+  const grid = document.getElementById('homeWidgetsGrid');
+  let card = document.getElementById('euSeasonalCard');
+  
+  if (country !== 'France' && country !== 'Germany') {
+    if (card) card.remove();
+    return;
+  }
+  
+  if (!grid) return;
+  
+  if (!card) {
+    card = document.createElement('article');
+    card.id = 'euSeasonalCard';
+    card.className = 'dashboard-card border-gold';
+    grid.appendChild(card);
+  }
+  
+  let title = "Saisonale Ereignisse / Seasonal Events";
+  let content = "";
+  let icon = "🍂";
+  
+  const currentMonth = new Date().getMonth();
+  const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1;
+  const isSummer = currentMonth >= 5 && currentMonth <= 7;
+  
+  if (isWinter) {
+    icon = "❄️";
+    title = country === 'Germany' ? "Winterzeit & Vorsorge" : "Saison Hivernale & Vigilance";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>Winter Warmth & Mobility:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">Be aware of cold draft and early sunset. Watch out for slippery pavements (Black Ice / Glatteis). Use footwear with proper grip.</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>Seasonal Vitality:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">Ensure adequate indoor heating and Vitamin D intake. Register your daily mood score to monitor seasonal wellness.</p>
+      </div>
+    `;
+  } else if (isSummer) {
+    icon = "☀️";
+    title = country === 'Germany' ? "Sommer- & Hitzewarnung" : "Alerte Canicule & Hydratation";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>Summer Hydration:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">Summer heat waves (Canicule) can be demanding. Sip water regularly, keep windows closed during peak hot hours, and open them at night to cool down.</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>Local Community Walks:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">Enjoy early morning or late evening walks in shaded parks. Connect with family to confirm you are safe at home.</p>
+      </div>
+    `;
+  } else {
+    icon = "🍂";
+    title = country === 'Germany' ? "Saisonaler Kalender" : "Agenda Saisonnier";
+    content = `
+      <div style="font-size: var(--font-sm); margin-bottom: 8px;">
+        <strong>Autumn & Spring Walks:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 8px 0;">Beautiful transition season. A 15-minute daily walk helps maintain muscle tone and emotional balance. Bring a light coat.</p>
+      </div>
+      <div style="font-size: var(--font-sm); border-top:1px dashed var(--border-color); padding-top:8px;">
+        <strong>Cultural Connection:</strong>
+        <p style="color:var(--text-muted); margin: 2px 0 0 0;">Perfect time to log your memories or record a voice letter to children and grandchildren.</p>
+      </div>
+    `;
+  }
+  
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="card-icon color-gold">${icon}</span>
+      <h2 class="card-title">${title}</h2>
+    </div>
+    <div style="padding: 10px 0;">
+      ${content}
+      <button type="button" id="logEuMemoryBtn" class="secondary-action-btn w-100" style="margin-top:12px; min-height:36px; font-size:var(--font-xs); display:flex; align-items:center; justify-content:center; gap:6px;">
+        <span>📝</span> Log Memory / Note
+      </button>
+    </div>
+  `;
+  
+  setTimeout(() => {
+    const btn = document.getElementById('logEuMemoryBtn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const legacyTabBtn = document.querySelector('.nav-menu .nav-btn[data-view="legacy"]');
+        if (legacyTabBtn) legacyTabBtn.click();
+        showToast("Memory Stories tab opened.");
+      });
+    }
+  }, 200);
+}
+
+// Helper to dynamically format and replace the default placeholder names in regional greetings
+function formatLocalizedGreeting(greeting, currentSeniorName) {
+  if (!greeting) return '';
+  let greetingText = greeting;
+  const namesToReplace = [
+    /Saraswathi\s*ji/gi, /Saraswathi/gi,
+    /Lakshmi\s*ji/gi, /Lakshmi/gi,
+    /Raman-san/gi, /Raman/gi,
+    /Françoise/gi, /Francoise/gi,
+    /Hans/gi,
+    /Margaret/gi,
+    /లక్ష్మి\s*ஜி/g, /లక్ష్మి/g,
+    /लक्ष्मी\s*जी/g, /लक्ष्मी/g,
+    /லட்சுமி\s*ஜி/g, /லட்சுமி/g,
+    /சரஸ்வதி\s*ஜி/g, /சரஸ்வதி/g,
+    /सरस्वती\s*जी/g, /सरस्वती/g
+  ];
+  for (const pattern of namesToReplace) {
+    greetingText = greetingText.replace(pattern, currentSeniorName);
+  }
+  return greetingText;
 }
 
 // 11. DYNAMIC COUNTRY/CULTURE ENGINE INITIALIZATION
 function initializeCultureEngine(countryName) {
-  const data = countryConfigDatabase[countryName];
-  if (!data) return;
+  try {
+    const data = countryConfigDatabase[countryName];
+    if (!data) return;
   
-  // Show/Hide Indian State Selector
-  const stateContainer = document.getElementById('indianStateContainer');
-  if (countryName === 'India') {
-    stateContainer.classList.remove('d-none');
+  // Update navigation visibility dynamically and clean up menu clutter
+  updateNavigationVisibility(countryName);
+
+  // Run dynamic weather telemetry & regional disaster/event checks
+  const activeCityName = localStorage.getItem('city_location') || data.cityName;
+  fetchLiveWeatherForCity(activeCityName);
+  if (countryName === 'Japan') {
+    checkJapanDisasters();
+    updateJapanSeasonalEvents(activeCityName);
+    updateUaeSeasonalEvents(activeCityName); // will exit early for non-UAE
+  } else if (countryName === 'United Arab Emirates') {
+    updateUaeSeasonalEvents(activeCityName);
+    updateJapanSeasonalEvents(activeCityName); // will exit early for non-Japan
+    // Trigger Gulf Climate Advisor display
+    if (typeof window.initUaeClimateShock === 'function') {
+      setTimeout(() => window.initUaeClimateShock(), 300);
+    }
+    // Trigger the correct Earn view layout
+    if (typeof window.updateEarnViewLayout === 'function') {
+      setTimeout(() => window.updateEarnViewLayout(), 300);
+    }
+    // Rename the nav label to reflect UAE persona
+    const uaePersonaVal = localStorage.getItem('uae_persona') || 'emirati';
+    const earnNavLabel = document.querySelector('.nav-menu .nav-btn[data-view="earn"] .nav-label');
+    if (earnNavLabel) {
+      earnNavLabel.textContent = uaePersonaVal === 'emirati' ? 'Majlis Council' : 'Expat Care Suite';
+    }
+  } else if (countryName === 'United Kingdom') {
+    updateJapanSeasonalEvents(activeCityName);
+    updateUaeSeasonalEvents(activeCityName);
+    if (typeof window.updateEarnViewLayout === 'function') {
+      setTimeout(() => window.updateEarnViewLayout(), 300);
+    }
+    const earnNavLabel = document.querySelector('.nav-menu .nav-btn[data-view="earn"] .nav-label');
+    if (earnNavLabel) {
+      earnNavLabel.textContent = 'NHS & Safety Hub';
+    }
+  } else if (countryName === 'Brazil') {
+    updateJapanSeasonalEvents(activeCityName);
+    updateUaeSeasonalEvents(activeCityName);
+    if (typeof window.updateEarnViewLayout === 'function') {
+      setTimeout(() => window.updateEarnViewLayout(), 300);
+    }
+    const earnNavLabel = document.querySelector('.nav-menu .nav-btn[data-view="earn"] .nav-label');
+    if (earnNavLabel) {
+      earnNavLabel.textContent = 'Safety & SUS Hub';
+    }
   } else {
-    stateContainer.classList.add('d-none');
+    updateJapanSeasonalEvents(activeCityName);
+    updateUaeSeasonalEvents(activeCityName);
+    if (countryName === 'France' || countryName === 'Germany') {
+      if (typeof updateEuSeasonalEvents === 'function') {
+        updateEuSeasonalEvents(activeCityName);
+      }
+    }
+    // Restore earn nav label for non-UAE countries
+    const earnNavLabel = document.querySelector('.nav-menu .nav-btn[data-view="earn"] .nav-label');
+    if (earnNavLabel) earnNavLabel.textContent = 'Wisdom Income';
+  }
+  
+  // Show/Hide Indian State Selector & Care Suite
+  const stateContainer = document.getElementById('indianStateContainer');
+  const indiaCareWidget = document.getElementById('indiaCareWidget');
+  const ritualPujaItem = document.getElementById('ritual_puja_item');
+  if (countryName === 'India') {
+    if (stateContainer) stateContainer.classList.remove('d-none');
+    if (indiaCareWidget) indiaCareWidget.classList.remove('d-none');
+    if (ritualPujaItem) ritualPujaItem.classList.remove('d-none');
+  } else {
+    if (stateContainer) stateContainer.classList.add('d-none');
+    if (indiaCareWidget) indiaCareWidget.classList.add('d-none');
+    if (ritualPujaItem) ritualPujaItem.classList.add('d-none');
   }
   
   // 1. Swap theme class on body
@@ -1802,6 +3052,12 @@ function initializeCultureEngine(countryName) {
   if (localStorage.getItem('hc-mode') === 'true') document.body.classList.add('high-contrast');
   if (localStorage.getItem('lt-mode') === 'true') document.body.classList.add('large-text');
   if (localStorage.getItem('dm-mode') === 'true') document.body.classList.add('dark-mode');
+
+  // Apply arthritis/tremor overrides
+  if (countryName === 'United Kingdom' || localStorage.getItem('tremor_guard_enabled') === 'true') {
+    document.body.classList.add('arthritis-mode');
+    document.body.classList.add('tremor-guard-active');
+  }
 
   // Determine active language code
   let langCode = data.defaultLanguage;
@@ -1827,22 +3083,24 @@ function initializeCultureEngine(countryName) {
   const localeData = data.locales[langCode] || data.locales[data.defaultLanguage];
 
   // 2. Set headers and greetings
-  const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+  const currentSeniorName = getActiveSeniorName();
   const currentCityLocation = localStorage.getItem('city_location') || data.cityName;
 
   document.getElementById('seniorName').textContent = countryName === 'Japan' ? `${currentSeniorName}-san` : currentSeniorName;
-  document.getElementById('headerLocationBadge').querySelector('span:last-child').textContent = `${currentCityLocation}, ${countryName}`;
+  // Update location badge — supports both old and new HTML structure
+  const locationTextEl = document.getElementById('headerLocationText') || document.getElementById('headerLocationBadgeText');
+  if (locationTextEl) {
+    locationTextEl.textContent = `${currentCityLocation}, ${countryName}`;
+  } else {
+    const fallbackEl = document.getElementById('headerLocationBadge');
+    if (fallbackEl) {
+      const spanEl = fallbackEl.querySelector('span:last-child');
+      if (spanEl) spanEl.textContent = `${currentCityLocation}, ${countryName}`;
+    }
+  }
 
-  // Dynamically replace default name in greeting
-  let greetingText = localeData.greeting;
-  greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
-  greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
-  greetingText = greetingText.replace(/లక్ష్మి\s*జి/g, currentSeniorName);
-  greetingText = greetingText.replace(/లక్ష్మి/g, currentSeniorName);
-  greetingText = greetingText.replace(/लक्ष्मी\s*जी/g, currentSeniorName);
-  greetingText = greetingText.replace(/लक्ष्मी/g, currentSeniorName);
-  greetingText = greetingText.replace(/லட்சுமி\s*ஜி/g, currentSeniorName);
-  greetingText = greetingText.replace(/லட்சுமி/g, currentSeniorName);
+    // Dynamically replace default name in greeting
+  const greetingText = formatLocalizedGreeting(localeData.greeting, currentSeniorName);
   document.getElementById('companionGreeting').textContent = greetingText;
   document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
   document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
@@ -1900,6 +3158,145 @@ function initializeCultureEngine(countryName) {
     window.checkPowerCutVisibility();
     if (typeof window.applyPowerCutState === 'function') window.applyPowerCutState();
   }
+
+  // Dynamic Tab Renaming for France, Germany, United States, United Kingdom, and UAE
+  const earnNavLabel = document.querySelector('.nav-menu .nav-btn[data-view="earn"] .nav-label');
+  if (earnNavLabel) {
+    const lang = localStorage.getItem('display_lang') || 'en';
+    if (countryName === 'France') {
+      earnNavLabel.textContent = lang === 'fr' ? 'Mobilité & Vie Privée' : 'Schengen & Privacy';
+    } else if (countryName === 'Germany') {
+      earnNavLabel.textContent = lang === 'de' ? 'Schengen & Datenschutz' : 'Schengen & Privacy';
+    } else if (countryName === 'United States') {
+      earnNavLabel.textContent = lang === 'es' ? 'Control de Independencia' : 'Independence Hub';
+    } else if (countryName === 'United Kingdom') {
+      earnNavLabel.textContent = 'NHS & Safety Hub';
+    } else if (countryName === 'United Arab Emirates') {
+      const uaePersonaVal = localStorage.getItem('uae_persona') || 'emirati';
+      earnNavLabel.textContent = uaePersonaVal === 'emirati' ? 'Majlis Council' : 'Expat Care Suite';
+    } else {
+      // Restore default label if other countries
+      const pageTrans = translations[lang] || translations['en'];
+      earnNavLabel.textContent = pageTrans['nav_earn'] || 'Wisdom Income';
+    }
+  }
+  } catch (err) {
+    console.error('[CareCircle] Error in initializeCultureEngine:', err);
+    if (typeof showToast === 'function') showToast('Engine Error: ' + err.message);
+  }
+}
+
+// 10c. Dynamic Earn View Layout Switcher
+window.updateEarnViewLayout = function() {
+  const country = getActiveCountry();
+  const uaePersona = localStorage.getItem('uae_persona') || 'emirati';
+  
+  const eyebrowEl = document.getElementById('earn-view-eyebrow');
+  const titleEl = document.getElementById('earn-view-title');
+  const descEl = document.getElementById('earn-view-desc');
+  
+  const defaultMarketplace = document.getElementById('default-wisdom-marketplace');
+  const uaeMajlis = document.getElementById('uae-majlis-container');
+  const uaeExpat = document.getElementById('uae-expat-container');
+  const euCare = document.getElementById('eu-care-container');
+  const usCare = document.getElementById('us-care-container');
+  const ukCare = document.getElementById('uk-care-container');
+
+  if (country === 'United Arab Emirates') {
+    if (usCare) usCare.classList.add('d-none');
+    if (euCare) euCare.classList.add('d-none');
+    if (ukCare) ukCare.classList.add('d-none');
+    if (uaePersona === 'emirati') {
+      if (eyebrowEl) eyebrowEl.textContent = 'TRADITIONAL WISDOM & COMMUNITY';
+      if (titleEl) titleEl.textContent = "Grandfather's Majlis Council";
+      if (descEl) descEl.textContent = 'Convene virtual majlis gathering with your family and extended community. Discuss local history, traditions, and share your advice. Post your wise proclamations directly to the family chat.';
+      
+      if (defaultMarketplace) defaultMarketplace.classList.add('d-none');
+      if (uaeExpat) uaeExpat.classList.add('d-none');
+      if (uaeMajlis) uaeMajlis.classList.remove('d-none');
+      
+      if (typeof initMajlisCouncil === 'function') initMajlisCouncil();
+    } else {
+      if (eyebrowEl) eyebrowEl.textContent = 'EXPAT RESIDENCE & CARE TOOLS';
+      if (titleEl) titleEl.textContent = 'Expat Care Suite';
+      if (descEl) descEl.textContent = 'Manage visa renewal timelines, coordinate medical tourism pre/post-op doctor visits across countries, track Chennai pharmacy remittance logs, and access the emergency repatriation decision tree.';
+      
+      if (defaultMarketplace) defaultMarketplace.classList.add('d-none');
+      if (uaeMajlis) uaeMajlis.classList.add('d-none');
+      if (uaeExpat) uaeExpat.classList.remove('d-none');
+      
+      if (typeof initExpatCareSuite === 'function') initExpatCareSuite();
+    }
+  } else if (country === 'France' || country === 'Germany') {
+    if (usCare) usCare.classList.add('d-none');
+    if (ukCare) ukCare.classList.add('d-none');
+    if (uaeMajlis) uaeMajlis.classList.add('d-none');
+    if (uaeExpat) uaeExpat.classList.add('d-none');
+    if (defaultMarketplace) defaultMarketplace.classList.add('d-none');
+    if (euCare) euCare.classList.remove('d-none');
+    
+    const lang = localStorage.getItem('display_lang') || 'en';
+    
+    if (country === 'France') {
+      if (eyebrowEl) eyebrowEl.textContent = 'MOBILITÉ & VIE PRIVÉE (RGPD)';
+      if (titleEl) titleEl.textContent = lang === 'fr' ? 'Espace Schengen & Vie Privée' : 'Schengen & Privacy Hub';
+      if (descEl) descEl.textContent = lang === 'fr' ? 'Gerez vos consentements de confidentialite RGPD, sauvegardez vos donnees personnelles et planifiez vos deplacements securises au sein de l\'espace Schengen.' : 'Manage your GDPR privacy consents, download data backups, and plan your travels safely in the Schengen zone.';
+      
+      const frHealth = document.getElementById('france-health-panel');
+      const deHealth = document.getElementById('germany-health-panel');
+      if (frHealth) frHealth.classList.remove('d-none');
+      if (deHealth) deHealth.classList.add('d-none');
+    } else {
+      if (eyebrowEl) eyebrowEl.textContent = 'SCHENGEN & DATENSCHUTZ (DSGVO)';
+      if (titleEl) titleEl.textContent = lang === 'de' ? 'Schengen & Datenschutz-Center' : 'Schengen & Privacy Hub';
+      if (descEl) descEl.textContent = lang === 'de' ? 'Verwalten Sie Ihre DSGVO-Datenschutzeinstellungen, laden Sie Backups herunter und organisieren Sie Ihre Reisen im Schengen-Raum.' : 'Manage your GDPR/DSGVO privacy settings, download data backups, and organize your travels safely in the Schengen zone.';
+      
+      const frHealth = document.getElementById('france-health-panel');
+      const deHealth = document.getElementById('germany-health-panel');
+      if (frHealth) frHealth.classList.add('d-none');
+      if (deHealth) deHealth.classList.remove('d-none');
+    }
+    
+    if (typeof initEuCareSuite === 'function') initEuCareSuite();
+  } else if (country === 'United States') {
+    if (defaultMarketplace) defaultMarketplace.classList.add('d-none');
+    if (uaeMajlis) uaeMajlis.classList.add('d-none');
+    if (uaeExpat) uaeExpat.classList.add('d-none');
+    if (euCare) euCare.classList.add('d-none');
+    if (ukCare) ukCare.classList.add('d-none');
+    if (usCare) usCare.classList.remove('d-none');
+    
+    const lang = localStorage.getItem('display_lang') || 'en';
+    if (eyebrowEl) eyebrowEl.textContent = 'SAFETY & INDEPENDENCE HUB';
+    if (titleEl) titleEl.textContent = lang === 'es' ? 'Control de Independencia' : 'Independence Hub';
+    if (descEl) descEl.textContent = lang === 'es' ? 'Herramientas personalizadas para la seguridad, transporte, salud y toma de decisiones de Medicare.' : 'Tailored independence tools for transportation, multi-doctor coordination, Medicare decisions, and daily safety.';
+    
+    if (typeof initUsCareSuite === 'function') initUsCareSuite();
+  } else if (country === 'United Kingdom') {
+    if (defaultMarketplace) defaultMarketplace.classList.add('d-none');
+    if (uaeMajlis) uaeMajlis.classList.add('d-none');
+    if (uaeExpat) uaeExpat.classList.add('d-none');
+    if (euCare) euCare.classList.add('d-none');
+    if (usCare) usCare.classList.add('d-none');
+    if (ukCare) ukCare.classList.remove('d-none');
+
+    if (eyebrowEl) eyebrowEl.textContent = 'NHS SERVICES & ENVIRONMENT SHIELD';
+    if (titleEl) titleEl.textContent = 'NHS & Safety Hub';
+    if (descEl) descEl.textContent = 'Navigate your GP and urgent care pathways, prepare for consultation sheets, ensure thermal safety against the cold, and manage your DWP benefits checklist.';
+
+    if (typeof initUkCareSuite === 'function') initUkCareSuite();
+  } else {
+    if (eyebrowEl) eyebrowEl.textContent = 'SENIOR EMPOWERMENT MARKETPLACE';
+    if (titleEl) titleEl.textContent = 'Wisdom Income & Royalties';
+    if (descEl) descEl.textContent = 'Age is wisdom. Monetize your knowledge of cooking, traditional crafts, language tutoring, or history storytelling. We manage booking schedules, payments, and safety.';
+    
+    if (uaeMajlis) uaeMajlis.classList.add('d-none');
+    if (uaeExpat) uaeExpat.classList.add('d-none');
+    if (defaultMarketplace) defaultMarketplace.classList.remove('d-none');
+    if (euCare) euCare.classList.add('d-none');
+    if (usCare) usCare.classList.add('d-none');
+    if (ukCare) ukCare.classList.add('d-none');
+  }
 }
 
 // 11b. LOCALIZATION ENGINE FOR STATIC UI TEXT
@@ -1933,6 +3330,11 @@ function localizeApp(langCode) {
 
   // 3. Update active language class on body
   document.body.setAttribute('data-lang', langCode);
+
+  // 4. Auto-detect platform and apply native-feeling theme
+  if (typeof detectPlatformTheme === 'function') {
+    detectPlatformTheme();
+  }
 }
 
 // 11c. CULTURALLY ADAPTIVE MASCOT RENDERING
@@ -1950,7 +3352,7 @@ function renderCompanionMascot(countryName) {
   const activeCompName = localStorage.getItem('companion_name') || (compInput && compInput.value.trim()) || data.name;
   
   const seniorInput = document.getElementById('seniorNameInput');
-  const activeSeniorName = localStorage.getItem('senior_name') || (seniorInput && seniorInput.value.trim()) || "Lakshmi Raman";
+  const activeSeniorName = getActiveSeniorName();
 
   document.getElementById('companionAvatarName').textContent = activeCompName;
   document.getElementById('companionAvatarDesc').textContent = data.avatarDesc;
@@ -2070,9 +3472,9 @@ function fireSosBroadcaster() {
   document.getElementById('sosBroadcastBox').classList.remove('d-none');
   
   speakText("Emergency alert broadcasting. Alerts dispatched to family and ambulance rails.");
-  logFamilyChatSystem("CRITICAL SOS BROADCAST ALARM ACTIVATED BY LAKSHMI JI");
+  logFamilyChatSystem(`CRITICAL SOS BROADCAST ALARM ACTIVATED BY ${getActiveSeniorName().toUpperCase()} JI`);
   
-  // Simulating Meera calling immediately
+  // Simulating primary caregiver calling immediately
   setTimeout(() => {
     logFamilyChatResponse("Meera", "MUM! I saw the SOS alert! Are you okay? Calling you now!");
   }, 2000);
@@ -2080,7 +3482,7 @@ function fireSosBroadcaster() {
 
 function closeActiveSosEmergency() {
   document.getElementById('emergencyOverlay').classList.add('d-none');
-  logFamilyChatSystem("SOS alarm cleared: Lakshmi ji checked in as stable");
+  logFamilyChatSystem(`SOS alarm cleared: ${getActiveSeniorName()} ji checked in as stable`);
   showToast("SOS terminated. Family updated.");
   speakText("Emergency terminated. You are marked as stable.");
 }
@@ -2187,14 +3589,198 @@ function closeVoiceDrawerPanel() {
   document.getElementById('voiceDrawer').close();
 }
 
+// Helpers to get current active settings globally
+function getActiveSeniorName() {
+  const stored = localStorage.getItem('senior_name');
+  if (stored && stored.trim()) return stored.trim();
+  const nameInput = document.getElementById('seniorNameInput');
+  if (nameInput && nameInput.value.trim()) return nameInput.value.trim();
+  return 'Saraswathi'; // final fallback
+}
+
+function getActiveCompanionName() {
+  const compInput = document.getElementById('companionNameInput');
+  return localStorage.getItem('companion_name') || (compInput && compInput.value.trim()) || "Sathi";
+}
+
+function getActiveCity() {
+  const stored = localStorage.getItem('city_location');
+  if (stored && stored.trim()) return stored.trim();
+  const cityInput = document.getElementById('cityInput');
+  if (cityInput && cityInput.value.trim()) return cityInput.value.trim();
+  return 'Chennai'; // final fallback
+}
+
+function getActiveLanguage() {
+  const langSelect = document.getElementById('languageSelect');
+  return (langSelect && langSelect.value) || "en";
+}
+
+function getActiveCountry() {
+  const stored = localStorage.getItem('country_profile');
+  if (stored && stored.trim()) return stored.trim();
+  const countrySelect = document.getElementById('countrySelect');
+  return (countrySelect && countrySelect.value) || 'India';
+}
+
 // 17. CORE EVENT BINDINGS (ON LOAD)
 window.addEventListener('DOMContentLoaded', () => {
+  const countryDefaults = {
+    'India':               { seniorName: 'Saraswathi',       seniorPhone: '+91 99999 99999',   city: 'Chennai',    cgName: 'Meera',          cgPhone: '+91 99999 99998' },
+    'Japan':               { seniorName: 'Akiko Sato',       seniorPhone: '+81 80 1234 5678',  city: 'Kyoto',      cgName: 'Kenji Sato',     cgPhone: '+81 90 1234 5678' },
+    'United States':       { seniorName: 'Dorothy Collins',  seniorPhone: '+1 617 555 0199',   city: 'Boston',     cgName: 'David Collins',  cgPhone: '+1 617 555 0144' },
+    'United Arab Emirates':{ seniorName: 'Amira Al-Hassan',  seniorPhone: '+971 50 123 4567',  city: 'Dubai',      cgName: 'Fatima Hassan',  cgPhone: '+971 55 987 6543' },
+    'Brazil':              { seniorName: 'Maria das Graças', seniorPhone: '+55 11 98765-4321', city: 'São Paulo',  cgName: 'Carlos Souza',   cgPhone: '+55 11 91234-5678' },
+    'France':              { seniorName: 'Françoise Dupont', seniorPhone: '+33 6 1234 5678',   city: 'Paris',      cgName: 'Pierre Dupont',  cgPhone: '+33 6 9876 5432' },
+    'Germany':             { seniorName: 'Ingrid Fischer',   seniorPhone: '+49 170 1234567',   city: 'Munich',     cgName: 'Thomas Fischer', cgPhone: '+49 176 9876543' },
+    'United Kingdom':      { seniorName: 'Margaret Thornton',seniorPhone: '+44 7700 900077',   city: 'Sheffield',  cgName: 'Sarah Thornton', cgPhone: '+44 7700 900088' }
+  };
+
+
+  function getAutoDetectedCountry() {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz) {
+        if (tz.includes('Kolkata') || tz.includes('Calcutta')) return 'India';
+        if (tz.includes('Tokyo')) return 'Japan';
+        if (tz.includes('Berlin') || tz.includes('Busingen')) return 'Germany';
+        if (tz.includes('London') || tz.includes('Belfast')) return 'United Kingdom';
+        if (tz.includes('Paris')) return 'France';
+        if (tz.includes('Dubai') || tz.includes('Abu_Dhabi')) return 'United Arab Emirates';
+        if (tz.includes('Sao_Paulo') || tz.includes('Rio_Branco') || tz.includes('Bahia') || tz.includes('Recife') || tz.includes('Manaus') || tz.includes('Fortaleza')) return 'Brazil';
+        if (tz.includes('New_York') || tz.includes('Chicago') || tz.includes('Denver') || tz.includes('Los_Angeles') || tz.includes('Phoenix') || tz.includes('Anchorage') || tz.includes('Honolulu')) return 'United States';
+      }
+    } catch (e) {
+      console.warn("Timezone detection failed", e);
+    }
+
+    const langs = navigator.languages || [navigator.language];
+    for (const lang of langs) {
+      if (!lang) continue;
+      const l = lang.toLowerCase();
+      if (l.startsWith('de')) return 'Germany';
+      if (l.startsWith('ja')) return 'Japan';
+      if (l.startsWith('fr')) return 'France';
+      if (l.startsWith('pt')) return 'Brazil';
+      if (l.startsWith('ar')) return 'United Arab Emirates';
+      if (l.startsWith('ta') || l.startsWith('hi') || l.startsWith('te') || l.endsWith('-in')) return 'India';
+      if (l.startsWith('en-gb')) return 'United Kingdom';
+      if (l.startsWith('en-us') || l.startsWith('en')) return 'United States';
+    }
+
+    return 'United States';
+  }
+
+  function applyOnboardCountryDefaults(country) {
+    const defaults = countryDefaults[country];
+    if (!defaults) return;
+    
+    const onboardSeniorName = document.getElementById('onboardSeniorName');
+    const onboardSeniorPhone = document.getElementById('onboardSeniorPhone');
+    const onboardCityInput = document.getElementById('onboardCityInput');
+    const onboardCaregiverName = document.getElementById('onboardCaregiverName');
+    const onboardCaregiverPhone = document.getElementById('onboardCaregiverPhone');
+    const onboardIndianStateContainer = document.getElementById('onboardIndianStateContainer');
+    const onboardUaeProfileContainer = document.getElementById('onboardUaeProfileContainer');
+    
+    if (onboardSeniorName) {
+      onboardSeniorName.placeholder = `e.g. ${defaults.seniorName}`;
+      const val = onboardSeniorName.value.trim();
+      if (!val || Object.values(countryDefaults).some(d => d.seniorName === val)) {
+        onboardSeniorName.value = defaults.seniorName;
+      }
+    }
+    
+    if (onboardSeniorPhone) {
+      onboardSeniorPhone.placeholder = `e.g. ${defaults.seniorPhone}`;
+    }
+    
+    if (onboardCityInput) {
+      onboardCityInput.placeholder = `e.g. ${defaults.city}`;
+      const val = onboardCityInput.value.trim();
+      if (!val || Object.values(countryDefaults).some(d => d.city === val)) {
+        onboardCityInput.value = defaults.city;
+      }
+    }
+    
+    if (onboardCaregiverName) {
+      onboardCaregiverName.placeholder = `e.g. ${defaults.cgName}`;
+      const val = onboardCaregiverName.value.trim();
+      if (!val || Object.values(countryDefaults).some(d => d.cgName === val)) {
+        onboardCaregiverName.value = defaults.cgName;
+      }
+    }
+    
+    if (onboardCaregiverPhone) {
+      onboardCaregiverPhone.placeholder = `e.g. ${defaults.cgPhone}`;
+      const val = onboardCaregiverPhone.value.trim();
+      if (!val || Object.values(countryDefaults).some(d => d.cgPhone === val)) {
+        onboardCaregiverPhone.value = defaults.cgPhone;
+      }
+    }
+
+    if (onboardIndianStateContainer) {
+      if (country === 'India') {
+        onboardIndianStateContainer.classList.remove('d-none');
+      } else {
+        onboardIndianStateContainer.classList.add('d-none');
+      }
+    }
+
+    if (onboardUaeProfileContainer) {
+      if (country === 'United Arab Emirates') {
+        onboardUaeProfileContainer.classList.remove('d-none');
+      } else {
+        onboardUaeProfileContainer.classList.add('d-none');
+      }
+    }
+
+    // ✅ Persist detected defaults to localStorage so startup reads are correct
+    if (!localStorage.getItem('country_profile')) {
+      localStorage.setItem('country_profile', country);
+    }
+    if (!localStorage.getItem('senior_name')) {
+      localStorage.setItem('senior_name', defaults.seniorName);
+    }
+    if (!localStorage.getItem('city_location')) {
+      localStorage.setItem('city_location', defaults.city);
+    }
+    if (!localStorage.getItem('caregiver_name')) {
+      localStorage.setItem('caregiver_name', defaults.cgName);
+    }
+    if (!localStorage.getItem('caregiver_phone')) {
+      localStorage.setItem('caregiver_phone', defaults.cgPhone);
+    }
+  }
+
+
+  function updateOnboardLanguages() {
+    const onboardCountrySelect = document.getElementById('onboardCountrySelect');
+    const onboardLanguageSelect = document.getElementById('onboardLanguageSelect');
+    const onboardStateSelect = document.getElementById('onboardStateSelect');
+    if (!onboardCountrySelect || !onboardLanguageSelect) return;
+    
+    const country = onboardCountrySelect.value;
+    const data = countryConfigDatabase[country];
+    if (data) {
+      onboardLanguageSelect.innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+      let defaultLang = data.defaultLanguage;
+      if (country === 'India' && onboardStateSelect) {
+        const state = onboardStateSelect.value;
+        defaultLang = data.stateLanguages[state] || 'en';
+      }
+      onboardLanguageSelect.value = defaultLang;
+    }
+  }
+
   // Live Geolocation Tracking for City Location
   function detectLiveLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
+        localStorage.setItem('user_latitude', lat.toString());
+        localStorage.setItem('user_longitude', lon.toString());
         
         // Use free, public OpenStreetMap Nominatim API for reverse geocoding
         fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`)
@@ -2202,14 +3788,52 @@ window.addEventListener('DOMContentLoaded', () => {
           .then(data => {
             if (data && data.address) {
               const city = data.address.city || data.address.town || data.address.suburb || data.address.village || data.address.state || 'Chennai';
+              const countryNameRaw = data.address.country || '';
+              
+              // Map raw country name to our supported keys
+              let detectedCountryKey = null;
+              const countryLower = countryNameRaw.toLowerCase();
+              if (countryLower.includes('india') || countryLower.includes('بھارت') || countryLower.includes('भारत')) detectedCountryKey = 'India';
+              else if (countryLower.includes('japan') || countryLower.includes('日本')) detectedCountryKey = 'Japan';
+              else if (countryLower.includes('germany') || countryLower.includes('deutschland')) detectedCountryKey = 'Germany';
+              else if (countryLower.includes('united kingdom') || countryLower.includes('uk') || countryLower.includes('britain') || countryLower.includes('england')) detectedCountryKey = 'United Kingdom';
+              else if (countryLower.includes('united states') || countryLower.includes('usa') || countryLower.includes('america')) detectedCountryKey = 'United States';
+              else if (countryLower.includes('emirates') || countryLower.includes('uae') || countryLower.includes('الإمارات')) detectedCountryKey = 'United Arab Emirates';
+              else if (countryLower.includes('brazil') || countryLower.includes('brasil')) detectedCountryKey = 'Brazil';
+              else if (countryLower.includes('france')) detectedCountryKey = 'France';
+
               const cityInput = document.getElementById('cityInput');
               if (cityInput) {
                 cityInput.value = city;
               }
+              const onboardCityInput = document.getElementById('onboardCityInput');
+              if (onboardCityInput) {
+                onboardCityInput.value = city;
+              }
               
-              // Re-calibrate culture engine with the newly detected city location
-              const country = document.getElementById('countrySelect').value;
-              initializeCultureEngine(country);
+              if (detectedCountryKey) {
+                const completed = localStorage.getItem('onboarding_completed') === 'true';
+                if (!completed) {
+                  const onboardCountrySelect = document.getElementById('onboardCountrySelect');
+                  if (onboardCountrySelect && onboardCountrySelect.value !== detectedCountryKey) {
+                    onboardCountrySelect.value = detectedCountryKey;
+                    applyOnboardCountryDefaults(detectedCountryKey);
+                    updateOnboardLanguages();
+                  }
+                } else {
+                  const countrySelect = document.getElementById('countrySelect');
+                  if (countrySelect && countrySelect.value !== detectedCountryKey) {
+                    countrySelect.value = detectedCountryKey;
+                    countrySelect.dispatchEvent(new Event('change'));
+                  }
+                }
+                
+                initializeCultureEngine(detectedCountryKey);
+              } else {
+                // Re-calibrate culture engine with the newly detected city location
+                const country = document.getElementById('countrySelect').value;
+                initializeCultureEngine(country);
+              }
               
               showToast(`Location auto-detected: ${city}`);
             }
@@ -2225,6 +3849,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Trigger live location tracking automatically on load
   detectLiveLocation();
+
 
   // Populate inline SVG icons dynamically
   document.querySelectorAll('[data-icon]').forEach(el => {
@@ -2245,7 +3870,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initialize Name Personalization states
-  let seniorName = "Lakshmi Raman";
+  let seniorName = getActiveSeniorName();
   let companionName = "Sathi";
   let geminiApiKey = localStorage.getItem('gemini_api_key') || '';
 
@@ -2262,7 +3887,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const city = document.getElementById('cityInput').value;
     
     // Save names
-    seniorName = document.getElementById('seniorNameInput').value.trim() || "Lakshmi Raman";
+    seniorName = document.getElementById('seniorNameInput').value.trim() || getActiveSeniorName();
     companionName = document.getElementById('companionNameInput').value.trim() || "Sathi";
     
     // Save Gemini API key
@@ -2294,6 +3919,21 @@ window.addEventListener('DOMContentLoaded', () => {
       companionInput.value = mascots[country].name;
     }
 
+    if (country === 'United Kingdom') {
+      const seniorInput = document.getElementById('seniorNameInput');
+      const cityInput = document.getElementById('cityInput');
+      if (seniorInput) seniorInput.value = "Margaret Thornton";
+      if (cityInput) cityInput.value = "Sheffield";
+      
+      const tremorToggle = document.getElementById('tremorGuardToggle');
+      if (tremorToggle) {
+        tremorToggle.checked = true;
+        localStorage.setItem('tremor_guard_enabled', 'true');
+        document.body.classList.add('tremor-guard-active');
+        document.body.classList.add('arthritis-mode');
+      }
+    }
+
     initializeCultureEngine(country);
     if (typeof updateTimezoneBridge === 'function') {
       updateTimezoneBridge();
@@ -2322,10 +3962,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (data && data.locales[langCode]) {
       const localeData = data.locales[langCode];
       
-      const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
-      let greetingText = localeData.greeting;
-      greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
-      greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+      const currentSeniorName = getActiveSeniorName();
+      const greetingText = formatLocalizedGreeting(localeData.greeting, currentSeniorName);
       document.getElementById('companionGreeting').textContent = greetingText;
       document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
       document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
@@ -2388,10 +4026,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (data) {
       const localeData = data.locales['en'] || data.locales[data.defaultLanguage];
       if (localeData) {
-        const currentSeniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
-        let greetingText = localeData.greeting;
-        greetingText = greetingText.replace(/Lakshmi\s*ji/gi, currentSeniorName);
-        greetingText = greetingText.replace(/Lakshmi/gi, currentSeniorName);
+        const currentSeniorName = getActiveSeniorName();
+        const greetingText = formatLocalizedGreeting(localeData.greeting, currentSeniorName);
         document.getElementById('companionGreeting').textContent = greetingText;
         document.getElementById('companionStatusText').textContent = localeData.companionBlurb;
         document.getElementById('localServicesDisplay').textContent = localeData.localHelpline;
@@ -2456,12 +4092,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // Offline medical card modals
   const emergencyCardModalEl = document.getElementById('emergencyCardModal');
   document.getElementById('emergencyCardTrigger').addEventListener('click', () => {
-    const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    const nameVal = getActiveSeniorName();
     document.getElementById('modalMedicalName').textContent = `${nameVal} – Age 72`;
     emergencyCardModalEl.showModal();
   });
   document.getElementById('triggerQRModalMini').addEventListener('click', () => {
-    const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    const nameVal = getActiveSeniorName();
     document.getElementById('modalMedicalName').textContent = `${nameVal} – Age 72`;
     emergencyCardModalEl.showModal();
   });
@@ -2536,7 +4172,7 @@ window.addEventListener('DOMContentLoaded', () => {
       te: `${contact} కు స్పీకర్‌ఫోన్‌లో కాల్ చేస్తున్నాము. కనెక్షన్ యాక్టివ్.`
     };
     speakText(speakCall[lang] || speakCall['en']);
-    logFamilyChatSystem(`Quick-Dial Action: Lakshmi ji initiated call with ${contact}`);
+    logFamilyChatSystem(`Quick-Dial Action: ${getActiveSeniorName()} ji initiated call with ${contact}`);
   }
 
   // Timezone dialog buttons hooks
@@ -2638,7 +4274,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
         speakText(speakSuccess[lang] || speakSuccess['en']);
         showToast(`Helper ${helperName} dispatched!`);
-        logFamilyChatSystem(`Secure Vault Action: Lakshmi ji requested an in-person Document Helper. ${helperName} (Verified) dispatched to house.`);
+        logFamilyChatSystem(`Secure Vault Action: ${getActiveSeniorName()} ji requested an in-person Document Helper. ${helperName} (Verified) dispatched to house.`);
       }, 3500);
     });
   }
@@ -2769,7 +4405,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Pillbox Logger
   document.getElementById('markPillTaken').addEventListener('click', () => {
-    const seniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    const seniorName = getActiveSeniorName();
     triggerCertaintyCheck(`Take a deep breath and confirm: is the Metformin pill physically in your mouth, ${seniorName}?`, () => {
       markMedicationTaken();
       createCertaintyReceipt("Metformin (500mg) Pill", "Swallowed morning Metformin.");
@@ -2784,7 +4420,7 @@ window.addEventListener('DOMContentLoaded', () => {
       showToast("Please write a blessing first.");
       return;
     }
-    logFamilyChatSystem(`Lakshmi ji sent a blessing card: "${blessing}"`);
+    logFamilyChatSystem(`${getActiveSeniorName()} ji sent a blessing card: "${blessing}"`);
     txtEl.value = '';
     showToast("Blessing sent to family circle!");
     speakText("Blessing successfully broadcasted to your children's feeds.");
@@ -2820,7 +4456,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const note = document.getElementById('moodJournalNote').value.trim();
     
     showToast(`Mood logged as ${mood}`);
-    logFamilyChatSystem(`Mood Checkin: Lakshmi ji logged feeling ${mood}`);
+    logFamilyChatSystem(`Mood Checkin: ${getActiveSeniorName()} ji logged feeling ${mood}`);
     
     if (mood === 'Lonely' || mood === 'Anxious') {
       document.getElementById('relaxationAudioCard').classList.remove('d-none');
@@ -2857,6 +4493,14 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
+    let stories = [];
+    try {
+      const stored = localStorage.getItem('legacy_stories');
+      if (stored) stories = JSON.parse(stored);
+    } catch (e) {
+      console.error(e);
+    }
+    
     const newStory = {
       id: `leg_${Date.now()}`,
       title: document.getElementById('storyPromptTitle').textContent,
@@ -2864,20 +4508,21 @@ window.addEventListener('DOMContentLoaded', () => {
       date: new Date().toLocaleDateString()
     };
     
-    // Add to list
-    const storiesList = document.getElementById('legacyStoriesList');
-    const card = document.createElement('div');
-    card.className = 'legacy-journal-card';
-    card.innerHTML = `
-      <div class="legacy-journal-card-header">
-        <strong>${newStory.title}</strong>
-        <span>Date: ${newStory.date}</span>
-      </div>
-      <p class="legacy-journal-body">"${newStory.content}"</p>
-    `;
-    storiesList.insertBefore(card, storiesList.firstChild);
+    stories.unshift(newStory);
+    localStorage.setItem('legacy_stories', JSON.stringify(stories));
     
+    // Reset inputs
     textEl.value = '';
+    const audioPlayer = document.getElementById('storyAudioPlayback');
+    if (audioPlayer) {
+      audioPlayer.src = "";
+      audioPlayer.classList.add('d-none');
+    }
+    recordedAudioUrl = "";
+    audioChunks = [];
+    
+    loadAndRenderLegacyStories();
+    
     showToast("Story saved to private family legacy vault!");
     logFamilyChatSystem(`Legacy Memory Added: ${newStory.title}`);
     speakText("Memory saved and transcribed into your family history journal.");
@@ -3496,7 +5141,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const lang = document.documentElement.lang || 'en';
     const text = msg.toLowerCase();
     const seniorInput = document.getElementById('seniorNameInput');
-    const senior = (seniorInput && seniorInput.value.trim()) || "Lakshmi Raman";
+    const senior = getActiveSeniorName();
     const compInput = document.getElementById('companionNameInput');
     const companion = (compInput && compInput.value.trim()) || "Sathi";
     const cityInput = document.getElementById('cityInput');
@@ -4234,7 +5879,7 @@ Crucially:
   // Family Repair Nudge Cycler & Sender
   document.getElementById('cycleNudgePromptBtn').addEventListener('click', () => {
     activeNudgeIdx = (activeNudgeIdx + 1) % familyNudgeScripts.length;
-    document.getElementById('nudgeScriptText').textContent = `"${familyNudgeScripts[activeNudgeIdx]}"`;
+    document.getElementById('nudgeScriptText').textContent = `"${familyNudgeScripts[activeNudgeIdx].replace('{city}', getActiveCity())}"`;
   });
   
   document.getElementById('sendNudgeToChatBtn').addEventListener('click', sendActiveNudgeToFamilyChat);
@@ -4250,7 +5895,7 @@ Crucially:
     balance.textContent = "₹0";
     showToast("₹1,996 payout transferred to your registered bank account!");
     speakText("Payout of one thousand nine hundred ninety six rupees transferred to your bank account successfully.");
-    logFamilyChatSystem("Wisdom Royalties claimed: Lakshmi ji transferred ₹1,996");
+    logFamilyChatSystem(`Wisdom Royalties claimed: ${getActiveSeniorName()} ji transferred ₹1,996`);
     e.target.disabled = true;
     e.target.style.background = "var(--border-strong)";
   });
@@ -4260,16 +5905,109 @@ Crucially:
     showToast("Silent wellness check paged to building guard Vikram!");
     logFamilyChatSystem("Micro-Circle wellness pager paged building guard Vikram.");
     setTimeout(() => {
-      logFamilyChatSystem("Building guard Vikram checked in: 'Lakshmi ji is active in the study.'");
+      logFamilyChatSystem(`Building guard Vikram checked in: '${getActiveSeniorName()} ji is active in the study.'`);
       showToast("Vikram checked in: 'Stable and active.'");
     }, 2500);
   });
+
+  // India Localization - Helper Voice Logger Events & STT Binding
+  const helperVoiceRecordBtn = document.getElementById('helperVoiceRecordBtn');
+  const helperLangSelect = document.getElementById('helperLangSelect');
+  const helperVoiceLogStatus = document.getElementById('helperVoiceLogStatus');
+
+  if (helperVoiceRecordBtn) {
+    let recognition = null;
+    let isRecording = false;
+
+    helperVoiceRecordBtn.addEventListener('click', () => {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        showToast("Web Speech API is not supported in this browser. Please use the Quick Logging buttons.");
+        speakText("Web Speech is not supported. Please use the quick buttons below.");
+        return;
+      }
+
+      if (isRecording) {
+        if (recognition) recognition.stop();
+        return;
+      }
+
+      const activeLang = helperLangSelect.value;
+      recognition = new SpeechRecognition();
+      recognition.lang = activeLang;
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        isRecording = true;
+        helperVoiceRecordBtn.innerHTML = "<span>🛑</span> Stop Recording";
+        helperVoiceRecordBtn.style.background = "#dc2626";
+        helperVoiceLogStatus.textContent = "Listening in " + helperLangSelect.options[helperLangSelect.selectedIndex].text + "...";
+        speakText("Listening now. Please speak your update.");
+      };
+
+      recognition.onresult = (e) => {
+        const transcript = e.results[0][0].transcript;
+        helperVoiceLogStatus.textContent = `Transcribed: "${transcript}"`;
+        submitHelperLog(transcript, activeLang);
+      };
+
+      recognition.onerror = (e) => {
+        helperVoiceLogStatus.textContent = `Error: ${e.error}`;
+        showToast(`Speech recognition error: ${e.error}`);
+        isRecording = false;
+        helperVoiceRecordBtn.innerHTML = "<span>🎤</span> Tap to Speak";
+        helperVoiceRecordBtn.style.background = "#ea580c";
+      };
+
+      recognition.onend = () => {
+        isRecording = false;
+        helperVoiceRecordBtn.innerHTML = "<span>🎤</span> Tap to Speak";
+        helperVoiceRecordBtn.style.background = "#ea580c";
+        if (helperVoiceLogStatus.textContent.startsWith("Listening")) {
+          helperVoiceLogStatus.textContent = "Status: Idle";
+        }
+      };
+
+      recognition.start();
+    });
+  }
+
+  // Handle Quick phrase buttons click
+  document.querySelectorAll('.quick-phrase-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const phrase = e.target.getAttribute('data-phrase');
+      const lang = e.target.getAttribute('data-lang');
+      if (helperVoiceLogStatus) {
+        helperVoiceLogStatus.textContent = `Mocked Voice: "${phrase}"`;
+      }
+      submitHelperLog(phrase, lang);
+    });
+  });
+
+  function submitHelperLog(text, lang) {
+    const seniorName = localStorage.getItem('senior_name') || "Saraswathi";
+    showToast("Logger successfully parsed input!");
+    
+    logFamilyChatSystem(`📢 Spoken status: "${text}"`);
+    
+    // Auto-generate reassuring family replies after a delay
+    setTimeout(() => {
+      if (lang === 'te-IN') {
+        logFamilyChatResponse("Arun (Dubai)", `Lakshmi, thank you for checking. నేను విన్నాను, అమ్మ కి టైం కి మెడిసిన్ వేయండి. (Lakshmi, thank you for checking. I heard you, please give medicines to mom on time.)`);
+      } else if (lang === 'ta-IN') {
+        logFamilyChatResponse("Meera (US)", `நன்றி லட்சுமி. அம்மாவுக்கு மதிய உணவு கொடுத்தீர்களா? (Thank you Lakshmi. Did you give lunch to mom?)`);
+      } else {
+        logFamilyChatResponse("Arun (Dubai)", `धन्यवाद लक्ष्मी। माता जी का ध्यान रखना और समय पर दवाई देना। (Thank you Lakshmi. Please take care of mother and give medicines on time.)`);
+      }
+    }, 2500);
+  }
 
   // End-of-Life Organizer Modals and passcode verification
   const eolModal = document.getElementById('eolOrganizerModal');
   document.getElementById('openEolVaultBtn').addEventListener('click', () => {
     // Reset inputs
-    document.getElementById('eolPasscode').value = '';
+    document.getElementById('eolModalPasscode').value = '';
     document.getElementById('eolAuthSection').classList.remove('d-none');
     document.getElementById('eolVaultContents').classList.add('d-none');
     eolModal.showModal();
@@ -4286,7 +6024,7 @@ Crucially:
   });
   
   document.getElementById('verifyEolPinBtn').addEventListener('click', () => {
-    const pin = document.getElementById('eolPasscode').value;
+    const pin = document.getElementById('eolModalPasscode').value;
     if (pin === "1234") {
       document.getElementById('eolAuthSection').classList.add('d-none');
       document.getElementById('eolVaultContents').classList.remove('d-none');
@@ -4298,7 +6036,7 @@ Crucially:
     }
   });
 
-  document.getElementById('lockEolVaultBtn').addEventListener('click', () => {
+  document.getElementById('lockEolModalBtn').addEventListener('click', () => {
     eolModal.close();
     showToast("Organizer vault locked and re-encrypted.");
     speakText("Sensitive vault locked.");
@@ -4345,12 +6083,12 @@ Crucially:
   if (saveCultureSettings) {
     saveCultureSettings.addEventListener('click', (e) => {
       e.preventDefault();
-      
-      const country = document.getElementById('countrySelect').value;
+      try {
+        const country = document.getElementById('countrySelect').value;
       const city = document.getElementById('cityInput').value || "your city";
       
       // Save profile name
-      const nameVal = document.getElementById('seniorNameInput').value.trim() || "Lakshmi Raman";
+      const nameVal = document.getElementById('seniorNameInput').value.trim() || getActiveSeniorName();
       localStorage.setItem('senior_name', nameVal);
       if (document.getElementById('seniorName')) {
         document.getElementById('seniorName').textContent = country === 'Japan' ? `${nameVal}-san` : nameVal;
@@ -4420,8 +6158,13 @@ Crucially:
       const settingsModal = document.getElementById('settingsModal');
       if (settingsModal && settingsModal.close) settingsModal.close();
       
+      localStorage.setItem('country_profile', country);
       speakText(`Settings updated, ${nameVal}.`);
       showToast("Settings saved successfully!");
+      } catch (err) {
+        console.error('[CareCircle] Error saving settings:', err);
+        showToast('Save Error: ' + err.message);
+      }
     });
   }
 
@@ -4476,7 +6219,7 @@ Crucially:
         requestHumanBackupBtn.style.backgroundColor = "var(--color-orange)";
         requestHumanBackupBtn.style.color = "white";
         showToast("Vikram dispatched. Arriving in 15m.");
-        addFamilyFeedItem("Safety Guardian", "Backup representative Vikram dispatched to Lakshmi's residence.");
+        addFamilyFeedItem("Safety Guardian", `Backup representative Vikram dispatched to ${getActiveSeniorName()}'s residence.`);
       }, 2000);
     });
   }
@@ -4780,6 +6523,13 @@ Crucially:
   if (cancelStoryBtn) {
     cancelStoryBtn.addEventListener('click', () => {
       document.getElementById('writtenStoryText').value = "";
+      const audioPlayer = document.getElementById('storyAudioPlayback');
+      if (audioPlayer) {
+        audioPlayer.src = "";
+        audioPlayer.classList.add('d-none');
+      }
+      recordedAudioUrl = "";
+      audioChunks = [];
       showToast("Memory text cleared.");
       speakText("Memory log cleared.");
     });
@@ -5050,6 +6800,11 @@ Crucially:
       '1960s': 'https://stream.zeno.fm/f9w72wzsu68uv', // MPB & Bossa Nova
       '1970s': 'https://stream.zeno.fm/f9w72wzsu68uv',
       '1980s': 'https://stream.zeno.fm/f9w72wzsu68uv'
+    },
+    'United Kingdom': {
+      '1960s': 'https://80sexitos.stream.laut.fm/80sexitos', // Retro British Hits
+      '1970s': 'https://80sexitos.stream.laut.fm/80sexitos',
+      '1980s': 'https://80sexitos.stream.laut.fm/80sexitos'
     }
   };
 
@@ -5275,7 +7030,7 @@ Crucially:
       let statusMsg = "";
       const lang = document.documentElement.lang || 'en';
       const nameInput = document.getElementById('seniorNameInput');
-      const activeSenior = (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
+      const activeSenior = getActiveSeniorName();
 
       if (isMedsTakenToday) {
         const count = weeklyLogs.length;
@@ -5358,7 +7113,7 @@ Crucially:
 
     const lang = document.documentElement.lang || 'en';
     const nameInput = document.getElementById('seniorNameInput');
-    const name = (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
+    const name = getActiveSeniorName();
     const formattedName = getSeniorLocalizedNameWithHonorific(name, lang);
 
     const prompts = {
@@ -5450,7 +7205,7 @@ Crucially:
 
         const lang = document.documentElement.lang || 'en';
         const nameInput = document.getElementById('seniorNameInput');
-        const activeSenior = (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
+        const activeSenior = getActiveSeniorName();
 
         const lastThree = sleepLogs.slice(-3);
         const threeBadSleeps = lastThree.length === 3 && lastThree.every(log => log.quality === 'bad');
@@ -5578,7 +7333,7 @@ Crucially:
 
       const lang = document.documentElement.lang || 'en';
       const nameInput = document.getElementById('seniorNameInput');
-      const activeSenior = (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
+      const activeSenior = getActiveSeniorName();
       
       if (triageResultBlock) triageResultBlock.classList.remove('d-none');
       if (triageTranslationText) triageTranslationText.textContent = "Analyzing symptom text...";
@@ -5743,31 +7498,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   // PREMIUM EXPANSION: HEALTH, SAFETY, AND FINANCIAL ADVOCACY MODULES
   // ==========================================================================
 
-  // Helpers to get current active settings
-  function getActiveSeniorName() {
-    const nameInput = document.getElementById('seniorNameInput');
-    return localStorage.getItem('senior_name') || (nameInput && nameInput.value.trim()) || "Lakshmi Raman";
-  }
-
-  function getActiveCompanionName() {
-    const compInput = document.getElementById('companionNameInput');
-    return localStorage.getItem('companion_name') || (compInput && compInput.value.trim()) || "Sathi";
-  }
-
-  function getActiveCity() {
-    const cityInput = document.getElementById('cityInput');
-    return localStorage.getItem('city_location') || (cityInput && cityInput.value.trim()) || "Chennai";
-  }
-
-  function getActiveLanguage() {
-    const langSelect = document.getElementById('languageSelect');
-    return (langSelect && langSelect.value) || "en";
-  }
-
-  function getActiveCountry() {
-    const countrySelect = document.getElementById('countrySelect');
-    return (countrySelect && countrySelect.value) || "India";
-  }
+  // Helpers to get current active settings are now defined globally
 
   // A. EXTREME WEATHER ALERT (HEATWAVE MONITORING)
   const simulateHeatwaveChk = document.getElementById('simulateHeatwave');
@@ -5778,35 +7509,89 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
   let weatherAlertSpoken = false;
 
-  function checkWeatherAlert() {
-    const isHeatwaveSimulated = simulateHeatwaveChk && simulateHeatwaveChk.checked;
-    const city = getActiveCity();
-    const seniorName = getActiveSeniorName();
+  function checkFastingConflicts() {
+    const country = getActiveCountry();
+    const isFastingSimulated = localStorage.getItem('simulate_fasting') === 'true';
     
-    // Check if Hyderabad city + heatwave checkbox is active
-    if (isHeatwaveSimulated && city.toLowerCase().includes('hyderabad')) {
-      if (weatherAlertBanner) {
-        weatherAlertBanner.classList.remove('d-none');
-        if (weatherAlertMessage) {
-          weatherAlertMessage.textContent = `Today is dangerously hot in Hyderabad, exceeding 45°C. ${seniorName}, please stay indoors, keep hydrated, and check in every 2 hours.`;
-        }
-      }
+    // We trigger this for India
+    if (country === 'India') {
+      const activePill = document.getElementById('activePillItem');
+      if (!activePill) return;
       
-      // Speak alert once on load/enable
-      if (!weatherAlertSpoken) {
-        weatherAlertSpoken = true;
-        setTimeout(() => {
-          const currentCityLocation = localStorage.getItem('city_location') || "Chennai";
-      const caregiverName = localStorage.getItem('caregiver_name') || "your family";
-      speakText(`Attention: ${currentCityLocation} is experiencing extreme heat today, exceeding 45 degrees. Please stay indoors, keep drinking water, and tap the check-in button every two hours so ${caregiverName} knows you are safe.`);
-        }, 1500);
+      const existingWarning = document.getElementById('fastingWarningBox');
+      if (existingWarning) existingWarning.remove();
+      
+      if (isFastingSimulated) {
+        const seniorName = localStorage.getItem('senior_name') || "Saraswathi";
+        const langSelect = document.getElementById('languageSelect');
+        const langCode = langSelect ? langSelect.value : 'en';
+        
+        let warningText = "";
+        let audioText = "";
+        
+        if (langCode === 'te') {
+          warningText = `${seniorName} గారు, రేపు ఏకాదశి వ్రత ఉపవాసం. మీరు ఉపవాసం ఉంటే, రక్తంలో చక్కెర శాతం పడిపోకుండా ఉండటానికి దயచేసి డాక్టర్ రెడ్డిగారితో మీ మెట్‌ఫార్మిన్ మందుల మోతాదును సరిచூసుకోండి.`;
+          audioText = warningText;
+        } else if (langCode === 'hi') {
+          warningText = `${seniorName} जी, कल एकादशी का उपवास है। यदि आप उपवास कर रही हैं, तो कृपया खून में शुगर कम होने से बचाने के लिए डॉ. रेड्डी से अपनी मेटफॉर्मिन दवा की खुराक की जांच कर लें।`;
+          audioText = warningText;
+        } else if (langCode === 'ta') {
+          warningText = `${seniorName} ஜி, நாளை ஏகாதசி விரதம். நீங்கள் விரதம் இருந்தால், குறைந்த இரத்த சர்க்கரையைத் தடுக்க உங்கள் மெட்ஃபோர்மின் மருந்து அளவை டாக்டர் ரெட்டியுடன் சரிபார்க்கவும்.`;
+          audioText = warningText;
+        } else {
+          warningText = `${seniorName} garu, tomorrow is Ekadashi fasting. If you are fasting, please verify your Metformin medicine dosage with Dr. Reddy to prevent low blood sugar.`;
+          audioText = warningText;
+        }
+        
+        // Prepend warning box to activePillItem
+        const warningNode = document.createElement('div');
+        warningNode.id = 'fastingWarningBox';
+        warningNode.style.cssText = 'background:#fffbeb; border:2px solid #d97706; border-radius:12px; padding:12px; margin-bottom:12px; display:flex; flex-direction:column; gap:6px; box-shadow:0 4px 6px rgba(0,0,0,0.05);';
+        warningNode.innerHTML = `
+          <strong style="font-size:12px; color:#b45309; display:flex; align-items:center; gap:6px;">
+            ⚠️ Fasting & Medication Conflict Alert
+          </strong>
+          <p style="margin:0; font-size:11px; color:#78350f; line-height:1.4; font-weight:600;">
+            ${warningText}
+          </p>
+          <button type="button" class="primary-action-btn" id="speakFastingWarningBtn" style="height:32px; min-height:32px; font-size:11px; background:#d97706; border:none; padding:0 12px; border-radius:6px; margin-top:4px; color:white; cursor:pointer; width:fit-content; font-weight:700;">
+            🔊 Read Alert Out Loud
+          </button>
+        `;
+        activePill.prepend(warningNode);
+        
+        // Speak alert once on activation
+        if (localStorage.getItem('fasting_warning_spoken') !== 'true') {
+          localStorage.setItem('fasting_warning_spoken', 'true');
+          speakText(audioText);
+        }
+        
+        const btn = document.getElementById('speakFastingWarningBtn');
+        if (btn) {
+          btn.onclick = () => {
+            speakText(audioText);
+          };
+        }
+      } else {
+        localStorage.removeItem('fasting_warning_spoken');
       }
     } else {
-      if (weatherAlertBanner) {
-        weatherAlertBanner.classList.add('d-none');
-      }
-      weatherAlertSpoken = false;
+      const existingWarning = document.getElementById('fastingWarningBox');
+      if (existingWarning) existingWarning.remove();
     }
+  }
+
+  function checkWeatherAlert() {
+    const country = getActiveCountry();
+    const city = getActiveCity();
+    fetchLiveWeatherForCity(city);
+    if (country === 'Japan') {
+      checkJapanDisasters();
+      updateJapanSeasonalEvents(city);
+    } else {
+      updateJapanSeasonalEvents(city);
+    }
+    checkFastingConflicts();
   }
 
   if (simulateHeatwaveChk) {
@@ -6411,7 +8196,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
         if (eolSharePermission) eolSharePermission.checked = localStorage.getItem('eol_share') !== 'false';
         
         speakText("After-me organizer unlocked. Your sensitive records are decrypted.");
-        logFamilyChatSystem("Secure Vault Action: Sensitive After-Me Organizer unlocked by Lakshmi ji.");
+        logFamilyChatSystem(`Secure Vault Action: Sensitive After-Me Organizer unlocked by ${getActiveSeniorName()} ji.`);
       } else {
         if (eolErrorMsg) {
           eolErrorMsg.classList.remove('d-none');
@@ -6599,7 +8384,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   const eveningRitualsList = document.getElementById('eveningRitualsList');
   
   const ritualCheckboxes = [
-    'ritual_geyser', 'ritual_backdoor', 'ritual_umbrella',
+    'ritual_geyser', 'ritual_puja', 'ritual_backdoor', 'ritual_umbrella',
     'ritual_maingate', 'ritual_kitchenwindow', 'ritual_torch'
   ];
   
@@ -6631,6 +8416,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
             cb.checked = false; // Uncheck temporarily
             let promptMsg = `Take a deep breath and confirm: did you physically complete the action for "${name}"?`;
             if (id === 'ritual_geyser') promptMsg = "Did you physically click the bathroom geyser switch to the OFF position?";
+            else if (id === 'ritual_puja') promptMsg = "Have you completed your morning Puja prayers and lit the diya?";
             else if (id === 'ritual_backdoor') promptMsg = "Did you hear the click of the balcony lock and verify it is locked?";
             else if (id === 'ritual_maingate') promptMsg = "Did you slide the latch and lock the main entrance gate?";
             else if (id === 'ritual_kitchenwindow') promptMsg = "Did you physically verify the kitchen window latch is secured?";
@@ -7021,6 +8807,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   let directiveListening = false;
   let directiveSpeechRecognizer = null;
 
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (SpeechRecognition && recordDirectiveVoiceBtn && medicalDirectiveInput) {
     directiveSpeechRecognizer = new SpeechRecognition();
     directiveSpeechRecognizer.continuous = false;
@@ -7301,7 +9088,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
             `;
           } else if (letterType === 'medicalBill') {
             docName = "Apollo Medical Bill Summary";
-            origText = "Apollo Hospitals, Hyderabad. Final bill summary. Patient: Lakshmi Raman. Total bill amount: ₹1,12,450. Outstanding payable amount: ₹12,450 after TPA insurance approval of ₹1,00,000. Please clear the balance before discharge.";
+            origText = `Apollo Hospitals, Hyderabad. Final bill summary. Patient: ${getActiveSeniorName()}. Total bill amount: ₹1,12,450. Outstanding payable amount: ₹12,450 after TPA insurance approval of ₹1,00,000. Please clear the balance before discharge.`;
             subject = "అపోలో ఆసుపత్రి వైద్య బిల్లు మరియు చెల్లింపు వివరాలు";
             details = "మొత్తం హాస్పిటల్ బిల్లు ₹1,12,450 కాగా, ఇన్సూరెన్స్ ద్వారా ₹1,00,000 మంజూరైంది. మిగిలిన మొత్తం మీ సొంతంగా కట్టాలి.";
             actionsHTML = `
@@ -7808,9 +9595,13 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     const morningTabActive = document.getElementById('ritualTabMorning').classList.contains('active');
     const activeTab = morningTabActive ? 'morning' : 'evening';
     
-    const standardIds = activeTab === 'morning' 
+    let standardIds = activeTab === 'morning' 
       ? ['ritual_geyser', 'ritual_backdoor', 'ritual_umbrella']
       : ['ritual_maingate', 'ritual_kitchenwindow', 'ritual_torch'];
+      
+    if (getActiveCountry() === 'India' && activeTab === 'morning') {
+      standardIds.push('ritual_puja');
+    }
       
     const customs = JSON.parse(localStorage.getItem('custom_rituals') || '[]');
     const customIds = customs.filter(t => t.type === activeTab).map(t => t.id);
@@ -7903,12 +9694,58 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   }
 
   // Dynamic initialization
-  initializeCultureEngine('India');
+  const isCompletedOnboard = localStorage.getItem('onboarding_completed') === 'true';
+  let startupCountry = 'India';
+
+  // ── STALE DATA GUARD ──────────────────────────────────────────────────────
+  // If the stored name is one of our built-in demo defaults AND the auto-detected
+  // country is different from the stored country, the user has old hardcoded data.
+  // Clear it and show the onboarding wizard fresh.
+  if (isCompletedOnboard) {
+    const demoDefaults = ['Saraswathi','Hanako','Werner Schmidt','Margaret Thornton',
+                          'Martha Johnson','Fatima Al-Rashid','Maria da Silva','Geneviève Moreau'];
+    const storedName    = localStorage.getItem('senior_name') || '';
+    const storedCountry = localStorage.getItem('country_profile') || 'India';
+    const detectedNow   = getAutoDetectedCountry();
+    const isStaleDemo   = demoDefaults.includes(storedName.trim());
+    const countryMismatch = detectedNow !== storedCountry;
+
+    if (isStaleDemo && countryMismatch) {
+      // Auto-clear and restart so the user gets correct localisation
+      console.warn('[CareCircle] Stale demo profile detected. Clearing to re-run onboarding.');
+      localStorage.clear();
+      window.location.reload();
+      // (execution stops here after reload)
+    }
+  }
+  // ─────────────────────────────────────────────────────────────────────────
+
+  const isCompletedOnboard2 = localStorage.getItem('onboarding_completed') === 'true';
+  if (isCompletedOnboard2) {
+    startupCountry = localStorage.getItem('country_profile') || 'India';
+  } else {
+    startupCountry = getAutoDetectedCountry();
+    const onboardCountrySelect = document.getElementById('onboardCountrySelect');
+    if (onboardCountrySelect) {
+      onboardCountrySelect.value = startupCountry;
+      applyOnboardCountryDefaults(startupCountry);
+      updateOnboardLanguages();
+    }
+  }
+
+
+  const countrySelect = document.getElementById('countrySelect');
+  if (countrySelect) {
+    countrySelect.value = startupCountry;
+  }
+
+  initializeCultureEngine(startupCountry);
   renderDocumentVaultRegistry();
   renderWisdomListingRegistry();
   renderCarePlannerTimeline();
   renderHealthLogSVGChart('steps');
   clearWaveformCanvas();
+  loadAndRenderLegacyStories();
 
   // Load Speech Voices in background
   if (synthesisEngine) {
@@ -7926,11 +9763,13 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
   if (openSettingsBtn && settingsModal) {
     openSettingsBtn.addEventListener('click', () => {
-      // Pre-populate fields from localStorage
-      document.getElementById('seniorNameInput').value = localStorage.getItem('senior_name') || "Lakshmi Raman";
-      document.getElementById('cityInput').value = localStorage.getItem('city_location') || "Chennai";
-      
-      const savedCountry = localStorage.getItem('country_profile') || "India";
+      try {
+        const savedCountry = localStorage.getItem('country_profile') || getAutoDetectedCountry();
+      const countryData = countryConfigDatabase[savedCountry];
+      const countryDefaultsForSaved = countryDefaults[savedCountry] || countryDefaults['India'];
+
+      document.getElementById('seniorNameInput').value = localStorage.getItem('senior_name') || getActiveSeniorName();
+      document.getElementById('cityInput').value = localStorage.getItem('city_location') || countryDefaultsForSaved.city;
       document.getElementById('countrySelect').value = savedCountry;
       
       if (savedCountry === 'India') {
@@ -7940,16 +9779,15 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
         document.getElementById('indianStateContainer').classList.add('d-none');
       }
 
-      document.getElementById('caregiverNameInput').value = localStorage.getItem('caregiver_name') || "Meera";
-      document.getElementById('caregiverPhoneInput').value = localStorage.getItem('caregiver_phone') || "+91 99999 99999";
+      document.getElementById('caregiverNameInput').value = localStorage.getItem('caregiver_name') || countryDefaultsForSaved.cgName;
+      document.getElementById('caregiverPhoneInput').value = localStorage.getItem('caregiver_phone') || countryDefaultsForSaved.cgPhone;
       document.getElementById('companionNameInput').value = localStorage.getItem('companion_name') || "Sathi";
       document.getElementById('geminiApiKeyInput').value = localStorage.getItem('gemini_api_key') || "";
       
       // Update languages select dynamically
-      const data = countryConfigDatabase[savedCountry];
-      if (data) {
-        document.getElementById('languageSelect').innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
-        document.getElementById('languageSelect').value = localStorage.getItem('display_lang') || data.defaultLanguage;
+      if (countryData) {
+        document.getElementById('languageSelect').innerHTML = countryData.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+        document.getElementById('languageSelect').value = localStorage.getItem('display_lang') || countryData.defaultLanguage;
       }
 
       document.getElementById('dietPreference').value = localStorage.getItem('diet_preference') || "veg_diabetic";
@@ -7966,12 +9804,31 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       document.getElementById('premiumStatusToggle').checked = localStorage.getItem('is_premium') === 'true';
 
       settingsModal.showModal();
+      } catch (err) {
+        console.error('[CareCircle] Error opening settings:', err);
+        showToast('Settings Open Error: ' + err.message);
+      }
     });
   }
 
   if (closeSettingsModalBtn && settingsModal) {
     closeSettingsModalBtn.addEventListener('click', () => {
       settingsModal.close();
+    });
+  }
+
+  // Reset App button — clears all localStorage and reloads to show onboarding wizard
+  const resetAppBtn = document.getElementById('resetAppBtn');
+  if (resetAppBtn) {
+    resetAppBtn.addEventListener('click', () => {
+      const confirmed = window.confirm(
+        '🔄 Reset CareCircle?\n\nThis will clear all your saved data (name, contacts, country, medicine reminders) and show the setup wizard again.\n\nContinue?'
+      );
+      if (confirmed) {
+        localStorage.clear();
+        showToast('App reset. Restarting setup wizard...');
+        setTimeout(() => window.location.reload(), 800);
+      }
     });
   }
 
@@ -7982,28 +9839,10 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   const onboardStateSelect = document.getElementById('onboardStateSelect');
   const onboardLanguageSelect = document.getElementById('onboardLanguageSelect');
 
-  // Dynamic Country / State / Language setup inside Onboarding
-  const updateOnboardLanguages = () => {
-    const country = onboardCountrySelect.value;
-    const data = countryConfigDatabase[country];
-    if (data) {
-      onboardLanguageSelect.innerHTML = data.languages.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
-      let defaultLang = data.defaultLanguage;
-      if (country === 'India') {
-        const state = onboardStateSelect.value;
-        defaultLang = data.stateLanguages[state] || 'en';
-      }
-      onboardLanguageSelect.value = defaultLang;
-    }
-  };
-
   if (onboardCountrySelect) {
     onboardCountrySelect.addEventListener('change', () => {
-      if (onboardCountrySelect.value === 'India') {
-        onboardIndianStateContainer.classList.remove('d-none');
-      } else {
-        onboardIndianStateContainer.classList.add('d-none');
-      }
+      const country = onboardCountrySelect.value;
+      applyOnboardCountryDefaults(country);
       updateOnboardLanguages();
     });
   }
@@ -8035,7 +9874,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       }
     } else {
       // Read initial values and update UI
-      const nameVal = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      const nameVal = getActiveSeniorName();
       const countryVal = localStorage.getItem('country_profile') || "India";
       
       if (document.getElementById('seniorName')) {
@@ -8146,8 +9985,8 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       const country = onboardCountrySelect.value;
       const state = onboardStateSelect.value;
       const language = onboardLanguageSelect.value;
-      const cgName = document.getElementById('onboardCaregiverName').value.trim() || "Meera";
-      const cgPhone = document.getElementById('onboardCaregiverPhone').value.trim() || "+91 99999 99999";
+      const cgName = document.getElementById('onboardCaregiverName').value.trim() || (countryDefaults[country] && countryDefaults[country].cgName) || 'Meera';
+      const cgPhone = document.getElementById('onboardCaregiverPhone').value.trim() || (countryDefaults[country] && countryDefaults[country].cgPhone) || '+91 99999 99999';
       if (phone === cgPhone) {
         showToast("Error: Senior and Caregiver numbers cannot be the same.");
         speakText("Error: Your phone number and your caregiver's phone number cannot be the same. Please enter a different contact for your caregiver.");
@@ -8162,10 +10001,16 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       localStorage.setItem('display_lang', language);
       localStorage.setItem('caregiver_name', cgName);
       localStorage.setItem('caregiver_phone', cgPhone);
+      
+      if (country === 'United Kingdom') {
+        localStorage.setItem('tremor_guard_enabled', 'true');
+        const tremorToggle = document.getElementById('tremorGuardToggle');
+        if (tremorToggle) tremorToggle.checked = true;
+      }
 
       // Seed caregiver contact into family list
       const defaultContacts = [
-        { id: 'fam_seed', name: cgName, relation: "Caregiver", phone: cgPhone, location: country }
+        { id: 'fam_seed', name: cgName, relation: "Caregiver", phone: cgPhone, location: country, role: "Medical" }
       ];
       localStorage.setItem('family_contacts', JSON.stringify(defaultContacts));
       localStorage.setItem('companion_name', mascots[country] ? mascots[country].name : "Sathi");
@@ -8173,7 +10018,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
       // Calibrate settings modal forms to stay in sync
       document.getElementById('seniorNameInput').value = name;
-      document.getElementById('cityInput').value = localStorage.getItem('city_location') || "Chennai";
+      document.getElementById('cityInput').value = localStorage.getItem('city_location') || (countryDefaults[country] && countryDefaults[country].city) || '';
       document.getElementById('countrySelect').value = country;
       document.getElementById('stateSelect').value = state;
       document.getElementById('caregiverNameInput').value = cgName;
@@ -8210,7 +10055,14 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       const drawer = document.getElementById('qaDevDrawer');
       if (drawer) {
         drawer.classList.toggle('open');
-        showToast(drawer.classList.contains('open') ? "Developer QA board opened" : "Developer QA board closed");
+        const isOpen = drawer.classList.contains('open');
+        localStorage.setItem('dev_mode', isOpen ? 'true' : 'false');
+        
+        // Refresh sidebar navigation visibility immediately
+        const activeCountry = localStorage.getItem('country_profile') || 'India';
+        initializeCultureEngine(activeCountry);
+        
+        showToast(isOpen ? "Developer QA board opened (Demo tabs enabled)" : "Developer QA board closed (Demo tabs hidden)");
       }
     }
   };
@@ -8234,6 +10086,10 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   if (closeQaDrawerBtn) {
     closeQaDrawerBtn.addEventListener('click', () => {
       document.getElementById('qaDevDrawer').classList.remove('open');
+      localStorage.setItem('dev_mode', 'false');
+      const activeCountry = localStorage.getItem('country_profile') || 'India';
+      initializeCultureEngine(activeCountry);
+      showToast("Developer QA board closed (Demo tabs hidden)");
     });
   }
 
@@ -8252,25 +10108,253 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     }
   });
 
-  // QA Checkboxes bindings (Heatwave / Power outage)
+  // QA Checkboxes bindings (Heatwave / Power outage / Cold / Flood / Earthquake)
   const qaHeatwave = document.getElementById('simulateHeatwave_qa');
   if (qaHeatwave) {
+    qaHeatwave.checked = localStorage.getItem('simulate_heatwave') === 'true';
     qaHeatwave.addEventListener('change', () => {
+      localStorage.setItem('simulate_heatwave', qaHeatwave.checked ? 'true' : 'false');
       const orig = document.getElementById('simulateHeatwave');
-      if (orig) {
-        orig.checked = qaHeatwave.checked;
-        orig.dispatchEvent(new Event('change'));
-      }
+      if (orig) orig.checked = qaHeatwave.checked;
+      checkWeatherAlert();
+    });
+  }
+
+  const qaColdwave = document.getElementById('simulateColdwave_qa');
+  if (qaColdwave) {
+    qaColdwave.checked = localStorage.getItem('simulate_coldwave') === 'true';
+    qaColdwave.addEventListener('change', () => {
+      localStorage.setItem('simulate_coldwave', qaColdwave.checked ? 'true' : 'false');
+      checkWeatherAlert();
+    });
+  }
+
+  const qaFlood = document.getElementById('simulateFlood_qa');
+  if (qaFlood) {
+    qaFlood.checked = localStorage.getItem('simulate_flood') === 'true';
+    qaFlood.addEventListener('change', () => {
+      localStorage.setItem('simulate_flood', qaFlood.checked ? 'true' : 'false');
+      checkWeatherAlert();
+    });
+  }
+
+  const qaEarthquake = document.getElementById('simulateEarthquake_qa');
+  if (qaEarthquake) {
+    qaEarthquake.checked = localStorage.getItem('simulate_earthquake') === 'true';
+    qaEarthquake.addEventListener('change', () => {
+      localStorage.setItem('simulate_earthquake', qaEarthquake.checked ? 'true' : 'false');
+      checkWeatherAlert();
     });
   }
 
   const qaPowerCut = document.getElementById('simulatePowerCut_qa');
   if (qaPowerCut) {
+    qaPowerCut.checked = localStorage.getItem('simulate_power_cut') === 'true';
     qaPowerCut.addEventListener('change', () => {
+      localStorage.setItem('simulate_power_cut', qaPowerCut.checked ? 'true' : 'false');
       const orig = document.getElementById('simulatePowerCut');
       if (orig) {
         orig.checked = qaPowerCut.checked;
-        orig.dispatchEvent(new Event('change'));
+        if (typeof window.applyPowerCutState === 'function') window.applyPowerCutState();
+      }
+    });
+  }
+
+  const qaFasting = document.getElementById('simulateFasting_qa');
+  if (qaFasting) {
+    qaFasting.checked = localStorage.getItem('simulate_fasting') === 'true';
+    qaFasting.addEventListener('change', () => {
+      localStorage.setItem('simulate_fasting', qaFasting.checked ? 'true' : 'false');
+      checkWeatherAlert();
+    });
+  }
+
+  const qaLowBattery = document.getElementById('simulateLowBattery_qa');
+  if (qaLowBattery) {
+    qaLowBattery.checked = localStorage.getItem('simulate_low_battery') === 'true';
+    qaLowBattery.addEventListener('change', () => {
+      localStorage.setItem('simulate_low_battery', qaLowBattery.checked ? 'true' : 'false');
+      if (typeof checkBatteryStatus === 'function') checkBatteryStatus();
+    });
+  }
+
+  const qaTransit = document.getElementById('simulateTransitOverdue_qa');
+  if (qaTransit) {
+    qaTransit.checked = localStorage.getItem('simulate_transit_overdue') === 'true';
+    qaTransit.addEventListener('change', () => {
+      localStorage.setItem('simulate_transit_overdue', qaTransit.checked ? 'true' : 'false');
+      if (typeof checkTransitStatus === 'function') checkTransitStatus();
+    });
+  }
+
+  const qaPuja = document.getElementById('simulatePujaOverdue_qa');
+  if (qaPuja) {
+    qaPuja.checked = localStorage.getItem('simulate_puja_overdue') === 'true';
+    qaPuja.addEventListener('change', () => {
+      localStorage.setItem('simulate_puja_overdue', qaPuja.checked ? 'true' : 'false');
+      if (typeof checkPujaStatus === 'function') checkPujaStatus();
+    });
+  }
+
+  // --- USA QA Simulators ---
+  // 1. Arizona Heatwave
+  const qaUsHeatwaves = document.querySelectorAll('#simulateUsHeatwave_qa');
+  qaUsHeatwaves.forEach(el => {
+    el.checked = localStorage.getItem('simulate_us_heatwave') === 'true';
+    el.addEventListener('change', () => {
+      const isChecked = el.checked;
+      qaUsHeatwaves.forEach(x => x.checked = isChecked);
+      localStorage.setItem('simulate_us_heatwave', isChecked ? 'true' : 'false');
+      checkWeatherAlert();
+      showToast(isChecked ? '⚠️ Tucson Extreme Heat & Power Outage simulated!' : 'Tucson heat simulator deactivated.');
+    });
+  });
+
+  // 2. Wildfire Smoke
+  const qaWildfires = document.querySelectorAll('#simulateWildfire_qa, #simulateWildfireSmoke_qa');
+  qaWildfires.forEach(el => {
+    el.checked = localStorage.getItem('simulate_wildfire') === 'true';
+    el.addEventListener('change', () => {
+      const isChecked = el.checked;
+      qaWildfires.forEach(x => x.checked = isChecked);
+      localStorage.setItem('simulate_wildfire', isChecked ? 'true' : 'false');
+      checkWeatherAlert();
+      showToast(isChecked ? '⚠️ Wildfire Smoke AQI warning simulated!' : 'Wildfire simulator deactivated.');
+    });
+  });
+
+  // 3. Cognitive Pause
+  const qaCognitivePauses = document.querySelectorAll('#simulateCognitivePause_qa');
+  qaCognitivePauses.forEach(el => {
+    el.checked = localStorage.getItem('simulate_cognitive_pause') === 'true';
+    el.addEventListener('change', () => {
+      const isChecked = el.checked;
+      qaCognitivePauses.forEach(x => x.checked = isChecked);
+      localStorage.setItem('simulate_cognitive_pause', isChecked ? 'true' : 'false');
+      if (isChecked) {
+        logFamilyChatSystem("Buddy Companion: Dorothy has shown repetitive queries and increased response pauses today. Suggested action: schedule cognitive assessment with Dr. Evans.");
+        showToast("Cognitive pause warning sent to family feed.");
+      } else {
+        showToast("Cognitive simulator deactivated.");
+      }
+    });
+  });
+
+  // 4. US Depression
+  const qaUsDepression = document.getElementById('simulateUsDepression_qa');
+  if (qaUsDepression) {
+    qaUsDepression.checked = localStorage.getItem('simulate_us_depression') === 'true';
+    qaUsDepression.addEventListener('change', () => {
+      const isChecked = qaUsDepression.checked;
+      localStorage.setItem('simulate_us_depression', isChecked ? 'true' : 'false');
+      const banners = document.querySelectorAll('#us988Banner');
+      if (isChecked) {
+        banners.forEach(b => b.classList.remove('d-none'));
+        logFamilyChatSystem("Companion Notification: Dorothy completed the PHQ-2 screening with a score of 5/6, indicating severe low mood. We have shown her the 988 lifeline.");
+        speakText("Dorothy, if you are feeling down, please know that support is always available at the nine eighty-eight lifeline.");
+        showToast("Depression warning simulated.");
+      } else {
+        banners.forEach(b => b.classList.add('d-none'));
+        showToast("Depression simulator deactivated.");
+      }
+    });
+  }
+
+  // UAE QA: Wadi Flash Flood simulator
+  const qaWadiFlood = document.getElementById('simulateWadiFlood_qa');
+  if (qaWadiFlood) {
+    qaWadiFlood.checked = localStorage.getItem('simulate_wadi_flood') === 'true';
+    qaWadiFlood.addEventListener('change', () => {
+      localStorage.setItem('simulate_wadi_flood', qaWadiFlood.checked ? 'true' : 'false');
+      checkWeatherAlert();
+    });
+  }
+
+  // UAE QA: Extreme Heat / AC Shock simulator
+  const qaUaeHeat = document.getElementById('simulateUaeExtremeheat_qa');
+  if (qaUaeHeat) {
+    qaUaeHeat.checked = localStorage.getItem('simulate_uae_extreme_heat') === 'true';
+    qaUaeHeat.addEventListener('change', () => {
+      localStorage.setItem('simulate_uae_extreme_heat', qaUaeHeat.checked ? 'true' : 'false');
+      // Force UAE country and trigger climate shock card
+      const countrySelect = document.getElementById('countrySelect');
+      if (countrySelect && countrySelect.value !== 'United Arab Emirates') {
+        showToast('Switch to UAE in settings to test this simulator.');
+        return;
+      }
+      if (typeof window.initUaeClimateShock === 'function') {
+        window.initUaeClimateShock();
+      }
+      showToast(qaUaeHeat.checked ? '🌡️ UAE Extreme Heat (47°C) simulated!' : 'UAE heat simulator deactivated.');
+    });
+  }
+
+  // United Kingdom QA: Cold Home temp 13°C simulator
+  const qaUkColdHome = document.getElementById('simulateUkColdHome_qa');
+  if (qaUkColdHome) {
+    qaUkColdHome.checked = localStorage.getItem('simulate_uk_cold_home') === 'true';
+    qaUkColdHome.addEventListener('change', () => {
+      const isChecked = qaUkColdHome.checked;
+      localStorage.setItem('simulate_uk_cold_home', isChecked ? 'true' : 'false');
+      
+      const tempDisplayVal = document.getElementById('ukRoomTempDisplayVal');
+      const dangerAlert = document.getElementById('ukTempDangerAlert');
+      const alertVal = document.getElementById('ukTempAlertVal');
+      
+      if (isChecked) {
+        if (tempDisplayVal) tempDisplayVal.textContent = "13°C";
+        if (dangerAlert) dangerAlert.classList.remove('d-none');
+        if (alertVal) alertVal.textContent = "13";
+        speakText("Margaret, your living room is very cold at 13 degrees. Please turn on your heating to stay safe.");
+        logFamilyChatSystem("🚨 COLD HOME ALERT: Margaret's living room is at 13°C, which is below the safe threshold of 16°C.");
+        showToast("UK Cold Home (13°C) simulated.");
+      } else {
+        if (tempDisplayVal) tempDisplayVal.textContent = "18°C";
+        if (dangerAlert) dangerAlert.classList.add('d-none');
+        showToast("UK Cold Home simulator deactivated.");
+      }
+    });
+  }
+
+  // United Kingdom QA: Windrush audit status simulator
+  const qaWindrushQuery = document.getElementById('simulateWindrushQuery_qa');
+  if (qaWindrushQuery) {
+    qaWindrushQuery.checked = localStorage.getItem('simulate_windrush_query') === 'true';
+    qaWindrushQuery.addEventListener('change', () => {
+      const isChecked = qaWindrushQuery.checked;
+      localStorage.setItem('simulate_windrush_query', isChecked ? 'true' : 'false');
+      if (isChecked) {
+        speakText("Margaret, the DWP is auditing pension records. Please verify your Windrush generation status documents.");
+        logFamilyChatSystem("🚨 DWP STATUS AUDIT WARNING: Margaret received a DWP check request regarding her pension eligibility documents. Suggesting Windrush helpline verification.");
+        showToast("Windrush status query simulated.");
+      } else {
+        showToast("Windrush status simulator deactivated.");
+      }
+    });
+  }
+
+  // United Kingdom QA: Arthritis Touch Mode simulator
+  const qaArthritisMode = document.getElementById('simulateArthritisMode_qa');
+  if (qaArthritisMode) {
+    qaArthritisMode.checked = localStorage.getItem('simulate_arthritis_mode') === 'true';
+    qaArthritisMode.addEventListener('change', () => {
+      const isChecked = qaArthritisMode.checked;
+      localStorage.setItem('simulate_arthritis_mode', isChecked ? 'true' : 'false');
+      if (isChecked) {
+        document.body.classList.add('arthritis-mode');
+        document.body.classList.add('tremor-guard-active');
+        const tremorToggle = document.getElementById('tremorGuardToggle');
+        if (tremorToggle) tremorToggle.checked = true;
+        localStorage.setItem('tremor_guard_enabled', 'true');
+        speakText("Arthritis Touch Mode activated. Touch targets are now enlarged to sixty pixels, and double-clicks are filtered.");
+        showToast("Arthritis Touch Mode enabled.");
+      } else {
+        document.body.classList.remove('arthritis-mode');
+        document.body.classList.remove('tremor-guard-active');
+        const tremorToggle = document.getElementById('tremorGuardToggle');
+        if (tremorToggle) tremorToggle.checked = false;
+        localStorage.setItem('tremor_guard_enabled', 'false');
+        showToast("Arthritis Touch Mode disabled.");
       }
     });
   }
@@ -8367,7 +10451,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
       viewHelp = "store files, lock private legacy organizers, or check utility bills";
     }
 
-    const seniorName = localStorage.getItem('senior_name') || "Lakshmi Raman";
+    const seniorName = getActiveSeniorName();
     
     document.getElementById('recallTitle').textContent = `Welcome back, ${seniorName}.`;
     document.getElementById('recallText').textContent = `You are looking at your ${viewName}. You can use this screen to ${viewHelp}.`;
@@ -8660,7 +10744,10 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
         return;
       }
 
-      contacts.push({ id: 'fam_' + Date.now(), name, relation, phone, location });
+      const roleEl = document.getElementById('famContactRole');
+      const role = roleEl ? roleEl.value : 'General';
+
+      contacts.push({ id: 'fam_' + Date.now(), name, relation, phone, location, role });
       localStorage.setItem('family_contacts', JSON.stringify(contacts));
 
       renderFamilyContacts();
@@ -8691,7 +10778,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
   const generateCaregiverLinkBtn = document.getElementById('generateCaregiverLinkBtn');
   if (generateCaregiverLinkBtn) {
     generateCaregiverLinkBtn.addEventListener('click', () => {
-      const activeSenior = localStorage.getItem('senior_name') || "Lakshmi Raman";
+      const activeSenior = getActiveSeniorName();
       const randomToken = 'pass_' + Math.random().toString(36).substring(2, 12);
       const localUrl = window.location.origin + '/?passport=' + randomToken;
       
@@ -8770,6 +10857,51 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
 
       showToast(`Custom helper ${name} added successfully!`);
       speakText(`${name} added to your local services list.`);
+    });
+  }
+
+  // India Localization - Rickshaw Transit Event Bindings
+  const startTransitBtn = document.getElementById('startTransitBtn');
+  const arriveTransitBtn = document.getElementById('arriveTransitBtn');
+  const transitSetupView = document.getElementById('transitSetupView');
+  const transitActiveView = document.getElementById('transitActiveView');
+  const transitDestDisplay = document.getElementById('transitDestDisplay');
+  const transitTimerCountdown = document.getElementById('transitTimerCountdown');
+  const transitDestination = document.getElementById('transitDestination');
+  const transitDurationSelect = document.getElementById('transitDurationSelect');
+
+  if (startTransitBtn && arriveTransitBtn) {
+    startTransitBtn.addEventListener('click', () => {
+      transitDest = transitDestination.value.trim() || "Temple";
+      transitTimeRemaining = parseInt(transitDurationSelect.value, 10);
+      
+      transitDestDisplay.textContent = `Travelling to ${transitDest}`;
+      if (transitSetupView) transitSetupView.classList.add('d-none');
+      if (transitActiveView) transitActiveView.classList.remove('d-none');
+      
+      updateTransitDisplay();
+      
+      speakText(`Transit safety timer started to ${transitDest}. We will automatically notify your family if you do not check in.`);
+      logFamilyChatSystem(`🛺 Transit Started: ${getActiveSeniorName()} started unaccompanied trip to ${transitDest}. Safety timer active.`);
+      
+      transitTimer = setInterval(() => {
+        transitTimeRemaining--;
+        updateTransitDisplay();
+        
+        if (transitTimeRemaining <= 0) {
+          clearInterval(transitTimer);
+          triggerTransitOverdueAlert();
+        }
+      }, 1000);
+    });
+
+    arriveTransitBtn.addEventListener('click', () => {
+      if (transitTimer) clearInterval(transitTimer);
+      if (transitSetupView) transitSetupView.classList.remove('d-none');
+      if (transitActiveView) transitActiveView.classList.add('d-none');
+      
+      speakText(`Glad to hear you arrived safely at ${transitDest}. Transit check-in logged.`);
+      logFamilyChatSystem(`🟢 Transit Completed: ${getActiveSeniorName()} checked in safe at ${transitDest}.`);
     });
   }
 });
@@ -8852,6 +10984,7 @@ function renderFamilyContacts() {
         <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
           <button class="primary-action-btn add-btn-rel" data-relation="Daughter" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Daughter</button>
           <button class="primary-action-btn add-btn-rel" data-relation="Son" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Son</button>
+          <button class="primary-action-btn add-btn-rel" data-relation="Daughter-in-law" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Daughter-in-law</button>
           <button class="primary-action-btn add-btn-rel" data-relation="Granddaughter" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Granddaughter</button>
           <button class="primary-action-btn add-btn-rel" data-relation="Grandson" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:var(--color-primary); color:white; border:none; cursor:pointer;">+ Add Grandson</button>
           <button id="syncContactsBtn" style="height:32px; min-height:32px; font-size:var(--font-xs); padding:0 10px; border-radius:6px; background:rgba(255,255,255,0.1); color:var(--text-main); border:1px solid var(--border-color); cursor:pointer;">🔄 Sync Contacts</button>
@@ -8870,40 +11003,55 @@ function renderFamilyContacts() {
       });
     });
 
-    const syncBtn = document.getElementById('syncContactsBtn');
+    const syncBtn = container.querySelector('#syncContactsBtn');
     if (syncBtn) {
       syncBtn.addEventListener('click', () => {
-        speakText("Accessing your address book to sync family contacts... Found two immediate family members: your daughter Meera, and your son Arun. Syncing contacts now.");
+        speakText("Accessing your address book to sync family contacts... Found three immediate family members: your daughter-in-law Sita, your son Arun in Dubai, and your daughter Meera in the US. Syncing contacts now.");
         showToast("Syncing contacts from address book...");
         setTimeout(() => {
           const syncedContacts = [
-            { id: 'fam_sync_1', name: "Meera", relation: "Daughter", phone: "+91 99999 99999", location: "United States" },
-            { id: 'fam_sync_2', name: "Arun", relation: "Son", phone: "+91 98888 88888", location: "India" }
+            { id: 'fam_sync_1', name: "Sita", relation: "Daughter-in-law", phone: "+91 99999 99999", location: "India", role: "Custodian" },
+            { id: 'fam_sync_2', name: "Arun", relation: "Son", phone: "+971 50 123 4567", location: "United Arab Emirates", role: "Financial" },
+            { id: 'fam_sync_3', name: "Meera", relation: "Daughter", phone: "+1 415 555 2671", location: "United States", role: "Medical" }
           ];
           localStorage.setItem('family_contacts', JSON.stringify(syncedContacts));
           renderFamilyContacts();
-          showToast("Synced 2 family contacts successfully!");
-          speakText("Meera and Arun synced successfully.");
+          showToast("Synced 3 family contacts successfully!");
+          speakText("Sita, Arun, and Meera synced successfully.");
         }, 2500);
       });
     }
     return;
   }
   
-  const parentCountry = document.getElementById('countrySelect').value;
   container.innerHTML = contacts.map(c => {
     let avatarUrl = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80";
-    if (c.relation === 'Daughter' || c.relation === 'Granddaughter' || c.name.toLowerCase() === 'meera') {
+    if (c.relation === 'Daughter' || c.relation === 'Daughter-in-law' || c.relation === 'Granddaughter' || c.name.toLowerCase() === 'meera' || c.name.toLowerCase() === 'sita') {
       avatarUrl = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80";
     }
     
     const status = getExpatStatusForLocation(c.location, parentCountry);
+    const roleColors = {
+      Custodian: '#d97706',
+      Financial: '#059669',
+      Medical: '#dc2626',
+      General: '#4b5563'
+    };
+    const roleLabels = {
+      Custodian: 'Physical Custodian',
+      Financial: 'Financial Sponsor',
+      Medical: 'Medical Decision',
+      General: 'General Contact'
+    };
+    const roleVal = c.role || 'General';
+    const roleBadgeHtml = `<span style="font-size:8px; font-weight:800; background:${roleColors[roleVal] || '#4b5563'}; color:white; padding:2px 6px; border-radius:4px; margin-top:2px; text-transform:uppercase; text-align:center; display:inline-block; max-width:100px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${roleLabels[roleVal] || roleVal}</span>`;
     
     return `
       <button class="family-quick-card dial-family" data-contact="${c.name}" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-color); border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; min-width:110px;">
         <img src="${avatarUrl}" alt="${c.name}" style="width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--border-color);">
         <strong style="font-size:var(--font-xs); text-align:center; display:block; color:var(--text-main);">${c.name} (${c.relation})</strong>
         <span class="safe-call-badge ${status.cssClass === 'status-free' ? 'safe' : (status.cssClass === 'status-work' ? 'work' : 'sleeping')}" style="font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; text-align:center;">${status.text}</span>
+        ${roleBadgeHtml}
       </button>
     `;
   }).join('');
@@ -9086,13 +11234,28 @@ function renderFamilyCirclePage() {
       avatarUrl = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80";
     }
     const status = getExpatStatusForLocation(c.location, parentCountry);
+    const roleColors = {
+      Custodian: '#d97706',
+      Financial: '#059669',
+      Medical: '#dc2626',
+      General: '#4b5563'
+    };
+    const roleLabels = {
+      Custodian: 'Physical Custodian',
+      Financial: 'Financial Sponsor',
+      Medical: 'Medical Decision',
+      General: 'General Contact'
+    };
+    const roleVal = c.role || 'General';
+    const roleBadgeHtml = `<span style="font-size:8px; font-weight:800; background:${roleColors[roleVal] || '#4b5563'}; color:white; padding:2px 6px; border-radius:4px; margin-bottom:10px; text-transform:uppercase; text-align:center; display:inline-block; max-width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${roleLabels[roleVal] || roleVal}</span>`;
     
     return `
       <div class="family-person-card" style="display:flex; flex-direction:column; align-items:center;">
         <img src="${avatarUrl}" alt="${c.name}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--border-color); margin-bottom:10px;">
         <h3 style="font-size:var(--font-xs); font-weight:800; color:var(--text-main); margin:0 0 4px 0;">${c.name}</h3>
         <p style="font-size:9px; color:var(--text-muted); margin:0 0 8px 0;">${c.relation} · ${c.location}</p>
-        <span class="safe-call-badge ${status.cssClass === 'status-free' ? 'safe' : (status.cssClass === 'status-work' ? 'work' : 'sleeping')}" style="font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; margin-bottom:12px;">${status.text}</span>
+        <span class="safe-call-badge ${status.cssClass === 'status-free' ? 'safe' : (status.cssClass === 'status-work' ? 'work' : 'sleeping')}" style="font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; margin-bottom:6px;">${status.text}</span>
+        ${roleBadgeHtml}
         <div style="display:flex; gap:6px; width:100%;">
           <button class="secondary-btn dial-circle-member" data-contact="${c.name}" style="flex:1; font-size:10px; height:28px; min-height:28px; padding:0; border-radius:6px; background:rgba(255,255,255,0.06); border:1px solid var(--border-color); color:var(--text-main); cursor:pointer;">📞 Call</button>
           <button class="secondary-btn remove-circle-member" data-id="${c.id}" style="font-size:10px; height:28px; min-height:28px; padding:0 8px; border-radius:6px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.2); color:#ef4444; cursor:pointer;">Remove</button>
@@ -9132,3 +11295,960 @@ function populateConsentGranteeDropdown() {
   
   select.innerHTML = contacts.map(c => `<option value="${c.name}">${c.name} (${c.relation})</option>`).join('');
 }
+
+// ==========================================================================
+// 7 CROSS-COUNTRY WHITE SPACE FEATURES IMPLEMENTATION
+// ==========================================================================
+function initDignityEngine() {
+  console.log("Initializing Dignity Engine & Cross-Country features...");
+
+  // State initialization
+  let bereavementMode = localStorage.getItem('bereavement_mode') === 'true';
+  let functionalAgeStatus = localStorage.getItem('functional_age_status') || 'not_assessed';
+  let functionalAgeCategory = localStorage.getItem('functional_age_category') || 'Independent';
+  let functionalAgeScore = parseInt(localStorage.getItem('functional_age_score') || '12');
+
+  // --- Feature 1: Dignity Engine (Goals & Capability) ---
+  const initialGoals = [
+    { text: "Tend to back garden roses", completed: false },
+    { text: "Draft family spice blend recipe", completed: false }
+  ];
+  let dignityGoals = JSON.parse(localStorage.getItem('dignity_goals') || JSON.stringify(initialGoals));
+
+  function saveDignityGoals() {
+    localStorage.setItem('dignity_goals', JSON.stringify(dignityGoals));
+  }
+
+  function renderDignityGoals() {
+    const list1 = document.getElementById('dignityGoalsList');
+    const list2 = document.getElementById('homeDignityGoalsList');
+    if (!list1 || !list2) return;
+
+    const html = dignityGoals.map((g, index) => {
+      const isCompleted = g.completed ? 'checked' : '';
+      const styleText = g.completed ? 'text-decoration: line-through; color: var(--text-muted);' : 'font-weight: 600;';
+      return `
+        <li class="checklist-item" style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between;">
+          <label class="check-label" style="display:flex; align-items:center; gap:10px; cursor:pointer; flex: 1;">
+            <input type="checkbox" class="large-checkbox goal-chk" data-index="${index}" style="width:20px; height:20px; margin:0;" ${isCompleted}>
+            <span style="${styleText}">${g.text}</span>
+          </label>
+          <button type="button" class="remove-goal-btn" data-index="${index}" style="background:transparent; border:none; color:#ef4444; cursor:pointer; font-size:1.1rem; padding:0 8px;">✕</button>
+        </li>
+      `;
+    }).join('');
+
+    list1.innerHTML = html;
+    list2.innerHTML = html;
+
+    // Bind event listeners
+    const bindListEvents = (list) => {
+      list.querySelectorAll('.goal-chk').forEach(chk => {
+        chk.addEventListener('change', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          dignityGoals[index].completed = e.target.checked;
+          saveDignityGoals();
+          renderDignityGoals();
+
+          if (e.target.checked) {
+            const congrats = [
+              `Great job completing your goal: "${dignityGoals[index].text}". You are capable and amazing!`,
+              `Goal completed! "${dignityGoals[index].text}". Your contributions continue to make an impact.`,
+              `Awesome! You completed: "${dignityGoals[index].text}".`
+            ];
+            const msg = congrats[Math.floor(Math.random() * congrats.length)];
+            showToast(msg);
+            speakText(msg);
+          }
+        });
+      });
+
+      list.querySelectorAll('.remove-goal-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          dignityGoals.splice(index, 1);
+          saveDignityGoals();
+          renderDignityGoals();
+          showToast("Goal removed.");
+        });
+      });
+    };
+
+    bindListEvents(list1);
+    bindListEvents(list2);
+  }
+
+  // Bind Dignity Goal Inputs
+  const handleAddGoal = (inputEl) => {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    dignityGoals.push({ text: text, completed: false });
+    saveDignityGoals();
+    renderDignityGoals();
+    inputEl.value = '';
+    showToast("Goal added to list!");
+    speakText(`Goal added: ${text}`);
+  };
+
+  const dignityGoalInput = document.getElementById('dignityGoalInput');
+  const addDignityGoalBtn = document.getElementById('addDignityGoalBtn');
+  if (dignityGoalInput && addDignityGoalBtn) {
+    addDignityGoalBtn.addEventListener('click', () => handleAddGoal(dignityGoalInput));
+  }
+
+  const homeDignityGoalInput = document.getElementById('homeDignityGoalInput');
+  const homeAddDignityGoalBtn = document.getElementById('homeAddDignityGoalBtn');
+  if (homeDignityGoalInput && homeAddDignityGoalBtn) {
+    homeAddDignityGoalBtn.addEventListener('click', () => handleAddGoal(homeDignityGoalInput));
+  }
+
+  // Initialize Wisdom publishing
+  const homePublishWisdomBtn = document.getElementById('homePublishWisdomBtn');
+  const homeWisdomText = document.getElementById('homeWisdomText');
+  if (homePublishWisdomBtn && homeWisdomText) {
+    homePublishWisdomBtn.addEventListener('click', () => {
+      const text = homeWisdomText.value.trim();
+      if (!text) {
+        showToast("Please write some advice first.");
+        return;
+      }
+      
+      let wisdom = JSON.parse(localStorage.getItem('published_wisdom') || '[]');
+      wisdom.push({ id: Date.now(), text, timestamp: new Date().toISOString() });
+      localStorage.setItem('published_wisdom', JSON.stringify(wisdom));
+
+      // Royalties payout
+      const balanceEl = document.getElementById('royaltiesBalance');
+      if (balanceEl) {
+        let currentVal = parseFloat(balanceEl.textContent.replace(/[^0-9]/g, '')) || 0;
+        currentVal += 500;
+        const symbol = getActiveCountry() === "India" ? "₹" : "$";
+        balanceEl.textContent = symbol + currentVal.toLocaleString();
+        
+        // Enable withdraw button if it was disabled
+        const withdrawBtn = document.getElementById('withdrawRoyaltiesBtn');
+        if (withdrawBtn) {
+          withdrawBtn.disabled = false;
+          withdrawBtn.style.background = "var(--color-gold)";
+        }
+      }
+
+      homeWisdomText.value = '';
+      showToast("Wisdom published successfully! Earned 500 royalties.");
+      speakText("Thank you. Your advice has been recorded and published. You earned five hundred royalties.");
+      logFamilyChatSystem(`Wisdom contribution published by ${getActiveSeniorName()}`);
+    });
+  }
+
+  // --- Feature 2: Biological vs Chronological Personalization Assessment Wizard ---
+  const quizSteps = [
+    {
+      q: "How would you describe your daily physical activity level?",
+      options: [
+        { text: "Active / Walk 2+ miles daily", score: 4 },
+        { text: "Healthy Independent / Gentle local walks", score: 3 },
+        { text: "Light Support Needed / Walk with stick", score: 2 },
+        { text: "Limited Mobility / Mostly indoors", score: 1 }
+      ]
+    },
+    {
+      q: "How is your daily memory and focus?",
+      options: [
+        { text: "Sharp & Clear / Manage own accounts", score: 4 },
+        { text: "Good / Minor routine reminders help", score: 3 },
+        { text: "Needs Cues / Daily guidance required", score: 2 }
+      ]
+    },
+    {
+      q: "How often do you interact with family, peers, or community?",
+      options: [
+        { text: "Highly Engaged / Daily group chats", score: 4 },
+        { text: "Regular / Weekly social visits", score: 3 },
+        { text: "Quiet / Mostly family contact", score: 2 }
+      ]
+    },
+    {
+      q: "How self-sufficient are you with daily tasks?",
+      options: [
+        { text: "Fully Independent / Cook & shop myself", score: 4 },
+        { text: "Minimal Aid / Relatives help with heavy errands", score: 3 },
+        { text: "Daily Support Needed / Caregiver aids daily", score: 2 }
+      ]
+    }
+  ];
+
+  let currentWizardStep = 0;
+  let wizardAnswers = [];
+
+  const startAssessmentBtn = document.getElementById('startAssessmentBtn');
+  const functionalIntro = document.getElementById('functionalAssessmentIntro');
+  const functionalWizard = document.getElementById('functionalAssessmentWizard');
+  const functionalResult = document.getElementById('functionalAssessmentResult');
+  const wizardProgressFill = document.getElementById('wizardProgressFill');
+  const wizardStepContent = document.getElementById('wizardStepContent');
+  const prevWizardBtn = document.getElementById('prevWizardBtn');
+  const nextWizardBtn = document.getElementById('nextWizardBtn');
+  const reAssessBtn = document.getElementById('reAssessBtn');
+
+  function renderWizardStep() {
+    if (!wizardStepContent) return;
+    const step = quizSteps[currentWizardStep];
+    const progress = ((currentWizardStep + 1) / quizSteps.length) * 100;
+    if (wizardProgressFill) {
+      wizardProgressFill.style.width = `${progress}%`;
+    }
+
+    let optionsHtml = step.options.map((opt, i) => {
+      const isSelected = wizardAnswers[currentWizardStep] === i ? 'border: 2px solid var(--color-teal); background: var(--color-teal-soft);' : '';
+      return `
+        <button type="button" class="secondary-action-btn wizard-opt-btn w-100 mt-5" data-index="${i}" style="min-height:50px; text-align:left; padding:10px 15px; font-size:var(--font-sm); font-weight:600; border-radius:8px; display:block; cursor:pointer; ${isSelected}">
+          ${opt.text}
+        </button>
+      `;
+    }).join('');
+
+    wizardStepContent.innerHTML = `
+      <h3 style="font-size:var(--font-md); font-weight:800; margin:10px 0; color:var(--text-main);">${step.q}</h3>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        ${optionsHtml}
+      </div>
+    `;
+
+    // Bind option click
+    wizardStepContent.querySelectorAll('.wizard-opt-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const index = parseInt(e.currentTarget.dataset.index);
+        wizardAnswers[currentWizardStep] = index;
+        renderWizardStep(); // Refresh selected visual
+      });
+    });
+
+    // Prev/Next buttons state
+    prevWizardBtn.disabled = currentWizardStep === 0;
+  }
+
+  if (startAssessmentBtn) {
+    startAssessmentBtn.addEventListener('click', () => {
+      functionalIntro.classList.add('d-none');
+      functionalWizard.classList.remove('d-none');
+      currentWizardStep = 0;
+      wizardAnswers = [];
+      renderWizardStep();
+    });
+  }
+
+  if (prevWizardBtn) {
+    prevWizardBtn.addEventListener('click', () => {
+      if (currentWizardStep > 0) {
+        currentWizardStep--;
+        renderWizardStep();
+      }
+    });
+  }
+
+  if (nextWizardBtn) {
+    nextWizardBtn.addEventListener('click', () => {
+      if (wizardAnswers[currentWizardStep] === undefined) {
+        showToast("Please select an answer first.");
+        return;
+      }
+
+      if (currentWizardStep < quizSteps.length - 1) {
+        currentWizardStep++;
+        renderWizardStep();
+      } else {
+        // Calculate functional capability score
+        let totalScore = 0;
+        for (let i = 0; i < quizSteps.length; i++) {
+          const ansIndex = wizardAnswers[i];
+          totalScore += quizSteps[i].options[ansIndex].score;
+        }
+
+        functionalAgeScore = totalScore;
+        localStorage.setItem('functional_age_score', totalScore.toString());
+
+        // Calibrate Category
+        if (totalScore >= 13) {
+          functionalAgeCategory = "Active Marathoner";
+        } else if (totalScore >= 9) {
+          functionalAgeCategory = "Independent Senior";
+        } else {
+          functionalAgeCategory = "Assisted Support Needed";
+        }
+
+        functionalAgeStatus = "completed";
+        localStorage.setItem('functional_age_status', 'completed');
+        localStorage.setItem('functional_age_category', functionalAgeCategory);
+
+        functionalWizard.classList.add('d-none');
+        functionalResult.classList.remove('d-none');
+        updateFunctionalBadge();
+        calibrateUIBasedOnFunctionalAge(functionalAgeCategory);
+      }
+    });
+  }
+
+  if (reAssessBtn) {
+    reAssessBtn.addEventListener('click', () => {
+      functionalResult.classList.add('d-none');
+      functionalIntro.classList.remove('d-none');
+    });
+  }
+
+  function updateFunctionalBadge() {
+    const badge = document.getElementById('functionalAgeBadge');
+    const badgeText = document.getElementById('functionalAgeText');
+    const resultText = document.getElementById('assessmentResultText');
+    const resultCalib = document.getElementById('assessmentResultCalib');
+
+    if (!badge || !badgeText) return;
+
+    if (functionalAgeStatus === 'completed') {
+      badgeText.textContent = `Capability: ${functionalAgeCategory}`;
+      badge.className = "status-badge success";
+      badge.style.background = "var(--color-teal-soft)";
+      badge.style.color = "var(--color-teal)";
+      badge.style.borderColor = "var(--color-teal)";
+
+      if (resultText && resultCalib) {
+        resultText.textContent = `Your Category: ${functionalAgeCategory} (Score: ${functionalAgeScore}/16)`;
+        if (functionalAgeCategory === "Active Marathoner") {
+          resultCalib.textContent = "Calibrated for a highly capable user. Safety reminders moved to background. High tap precision.";
+        } else if (functionalAgeCategory === "Independent Senior") {
+          resultCalib.textContent = "Standard calibration. Balanced safety checklist. Mild supportive overlays.";
+        } else {
+          resultCalib.textContent = "Assisted Mode Calibrated. Double-sized tap targets, 64px button minimums, high-contrast layouts, and health widgets expanded automatically.";
+        }
+      }
+    } else {
+      badgeText.textContent = "Capability: Unassessed";
+      badge.className = "status-badge info";
+    }
+  }
+
+  function calibrateUIBasedOnFunctionalAge(category) {
+    const safetyPanel = document.getElementById('backgroundSafetyPanel');
+    if (category === "Assisted Support Needed") {
+      document.body.classList.add('assisted-mode');
+      if (safetyPanel) {
+        safetyPanel.setAttribute('open', '');
+      }
+      showToast("Assisted Touch & High-Visibility Mode Activated.");
+      speakText("Assessment completed. We have activated Assisted Touch and High Visibility Mode to make the app easier to navigate.");
+    } else {
+      document.body.classList.remove('assisted-mode');
+      if (safetyPanel) {
+        safetyPanel.removeAttribute('open');
+      }
+      showToast("Dignity capability calibrated. Active Dashboard online.");
+      speakText(`Dignity engine calibrated as ${category}. Standard interface restored.`);
+    }
+  }
+
+  // --- Feature 3: Bereavement Intelligence Layer ---
+  function updateBereavementLayer() {
+    const companionGreeting = document.getElementById('companionGreeting');
+    const companionStatusText = document.getElementById('companionStatusText');
+    const memoryBox = document.getElementById('bereavementMemoryBoxCard');
+    const name = getActiveSeniorName();
+
+    if (bereavementMode) {
+      if (companionGreeting) companionGreeting.textContent = `Thinking of you, ${name}.`;
+      if (companionStatusText) companionStatusText.textContent = "I am here in this quiet moment. We do not have to look at reminders or tasks today. I am here to support you.";
+      if (memoryBox) memoryBox.classList.remove('d-none');
+      
+      // Mute pillbox alerts and checkins silently
+      showToast("Silent Bereavement override active.");
+    } else {
+      if (companionGreeting) companionGreeting.textContent = `Good morning, ${name}.`;
+      if (memoryBox) memoryBox.classList.add('d-none');
+    }
+  }
+
+  // Candle Widget logic
+  const candleWidget = document.getElementById('candleWidget');
+  const candleFlame = document.getElementById('candleFlame');
+  const candleCaption = document.getElementById('candleCaption');
+  if (candleWidget && candleFlame && candleCaption) {
+    candleWidget.addEventListener('click', () => {
+      const isLit = candleFlame.style.display !== 'none';
+      if (isLit) {
+        candleFlame.style.display = 'none';
+        candleCaption.textContent = "Tap to light a memory candle";
+      } else {
+        candleFlame.style.display = 'block';
+        candleCaption.textContent = "Candle burning gently in memory of your loved one.";
+        speakText("Candle burning gently in memory of your loved one.");
+      }
+    });
+  }
+
+  const saveReflectionBtn = document.getElementById('saveReflectionBtn');
+  const bereavementReflectionText = document.getElementById('bereavementReflectionText');
+  if (saveReflectionBtn && bereavementReflectionText) {
+    saveReflectionBtn.addEventListener('click', () => {
+      const text = bereavementReflectionText.value.trim();
+      if (!text) return;
+      let diary = JSON.parse(localStorage.getItem('bereavement_reflections') || '[]');
+      diary.push({ id: Date.now(), text, timestamp: new Date().toISOString() });
+      localStorage.setItem('bereavement_reflections', JSON.stringify(diary));
+      bereavementReflectionText.value = '';
+      showToast("Thought saved in your private reflection journal.");
+      speakText("Thought saved in your private reflection journal.");
+    });
+  }
+
+  const connectPeerSupportBtn = document.getElementById('connectPeerSupportBtn');
+  if (connectPeerSupportBtn) {
+    connectPeerSupportBtn.addEventListener('click', () => {
+      showToast("Connecting you with a gentle, experienced peer grief advisor.");
+      speakText("We are connecting you with a peer supporter. You are not alone. A supportive call will be placed shortly.");
+      logFamilyChatSystem(`Support Escalation: ${getActiveSeniorName()} requested gentle peer grief support.`);
+    });
+  }
+
+  // --- Feature 4: The Grandchild Bridge ---
+  const bridgeTabVoice = document.getElementById('bridgeTabVoice');
+  const bridgeTabRecipe = document.getElementById('bridgeTabRecipe');
+  const bridgeVoicePanel = document.getElementById('bridgeVoicePanel');
+  const bridgeTextPanel = document.getElementById('bridgeTextPanel');
+  const recordBridgeBtn = document.getElementById('recordBridgeBtn');
+  const recordBridgeBtnText = document.getElementById('recordBridgeBtnText');
+  const voiceWaveform = document.getElementById('voiceWaveform');
+  const bridgeRecordStatus = document.getElementById('bridgeRecordStatus');
+  const bridgeTextContent = document.getElementById('bridgeTextContent');
+  const sendBridgeBtn = document.getElementById('sendBridgeBtn');
+  const grandchildPhoneMockup = document.getElementById('grandchildPhoneMockup');
+  const mockSentText = document.getElementById('mockSentText');
+  const mockGrandchildReply = document.getElementById('mockGrandchildReply');
+  const mockReplyText = document.getElementById('mockReplyText');
+  const mockReplyContent = document.getElementById('mockReplyContent');
+
+  let isRecordingBridge = false;
+  let recordTimer = null;
+
+  if (bridgeTabVoice && bridgeTabRecipe) {
+    bridgeTabVoice.addEventListener('click', () => {
+      bridgeTabVoice.classList.add('active');
+      bridgeTabRecipe.classList.remove('active');
+      bridgeVoicePanel.classList.remove('d-none');
+      bridgeTextPanel.classList.add('d-none');
+    });
+
+    bridgeTabRecipe.addEventListener('click', () => {
+      bridgeTabRecipe.classList.add('active');
+      bridgeTabVoice.classList.remove('active');
+      bridgeTextPanel.classList.remove('d-none');
+      bridgeVoicePanel.classList.add('d-none');
+    });
+  }
+
+  if (recordBridgeBtn) {
+    recordBridgeBtn.addEventListener('click', () => {
+      if (!isRecordingBridge) {
+        // Start recording
+        isRecordingBridge = true;
+        voiceWaveform.classList.remove('d-none');
+        bridgeRecordStatus.textContent = "Recording...";
+        let count = 0;
+        recordBridgeBtnText.textContent = "🛑 Stop (0s)";
+        
+        recordTimer = setInterval(() => {
+          count++;
+          recordBridgeBtnText.textContent = `🛑 Stop (${count}s)`;
+          if (count >= 15) {
+            stopRecording();
+          }
+        }, 1000);
+      } else {
+        stopRecording();
+      }
+    });
+  }
+
+  function stopRecording() {
+    isRecordingBridge = false;
+    clearInterval(recordTimer);
+    voiceWaveform.classList.add('d-none');
+    recordBridgeBtnText.textContent = "Record 30s Voice Card";
+    bridgeRecordStatus.textContent = "Voice note captured successfully (15s). Ready to send.";
+    showToast("Voice message recorded successfully!");
+  }
+
+  if (sendBridgeBtn) {
+    sendBridgeBtn.addEventListener('click', () => {
+      const gchild = document.getElementById('bridgeGrandchildSelect').value;
+      const activeTab = bridgeTabVoice.classList.contains('active') ? 'voice' : 'recipe';
+      let message = "";
+
+      if (activeTab === 'voice') {
+        message = `🎙️ [Voice Card from Grandma/Grandad] "Hi ${gchild.split(' ')[0]}, just sending you a little voice greeting. Love you!"`;
+      } else {
+        message = bridgeTextContent.value.trim();
+        if (!message) {
+          showToast("Please write down your recipe or tip first.");
+          return;
+        }
+        message = `🍳 [Recipe & Wisdom Share] "${message}"`;
+      }
+
+      // Simulate sending WhatsApp outbound
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+      console.log("Simulating outbound grandchild bridge message:", whatsappUrl);
+      
+      // Update phone mockup
+      grandchildPhoneMockup.classList.remove('d-none');
+      mockSentText.textContent = message;
+      mockGrandchildReply.classList.add('d-none'); // hide old reply
+
+      showToast("Message sent to WhatsApp bridge!");
+      speakText("Message sent to grandchild bridge.");
+
+      // Delay reply simulator
+      setTimeout(() => {
+        const replies = [
+          "Aww thanks Grandma! ❤️ I was literally just thinking of you! Hearing your voice made my day! Call you tonight after class.",
+          "Wow this is amazing, Grandad! I will try making this recipe tonight! Love you so much. Thanks for sending!",
+          "Thanks! ❤️ Hope you are doing great. Will call you this weekend!"
+        ];
+        const gchildName = gchild.split(' ')[0];
+        
+        mockGrandchildReply.classList.remove('d-none');
+        mockReplyText.textContent = gchildName + ":";
+        const replyText = replies[Math.floor(Math.random() * replies.length)];
+        mockReplyContent.textContent = replyText;
+
+        // Speak grandchild reply
+        speakText(`${gchildName} replies on WhatsApp: ${replyText}`);
+        showToast(`Reply received from ${gchildName}!`);
+      }, 5000);
+    });
+  }
+
+  // --- Feature 5: End of Life Planning Checkbox ---
+  const saveEolPlannerBtn = document.getElementById('saveEolPlannerBtn');
+  const eolSaveStatus = document.getElementById('eolSaveStatus');
+  const eolAccessKey = document.getElementById('eolAccessKey');
+  if (saveEolPlannerBtn) {
+    saveEolPlannerBtn.addEventListener('click', () => {
+      const will = document.getElementById('eolWillCheck').checked;
+      const willDet = document.getElementById('eolWillDetails').value;
+      const dir = document.getElementById('eolDirectivesCheck').checked;
+      const dirDet = document.getElementById('eolDirectivesDetails').value;
+      const dig = document.getElementById('eolDigitalCheck').checked;
+      const digDet = document.getElementById('eolDigitalDetails').value;
+      const ins = document.getElementById('eolInsuranceCheck').checked;
+      const insDet = document.getElementById('eolInsuranceDetails').value;
+
+      localStorage.setItem('eol_will_check', will);
+      localStorage.setItem('eol_will_details', willDet);
+      localStorage.setItem('eol_directives_check', dir);
+      localStorage.setItem('eol_directives_details', dirDet);
+      localStorage.setItem('eol_digital_check', dig);
+      localStorage.setItem('eol_digital_details', digDet);
+      localStorage.setItem('eol_insurance_check', ins);
+      localStorage.setItem('eol_insurance_details', insDet);
+
+      const secureKey = "CC-" + Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem('eol_family_access_key', secureKey);
+
+      if (eolSaveStatus && eolAccessKey) {
+        eolAccessKey.textContent = secureKey;
+        eolSaveStatus.classList.remove('d-none');
+      }
+
+      showToast("Legacy documents locked in vault.");
+      speakText("Your wishes have been locked and saved securely. A family access key was generated for your children.");
+    });
+  }
+
+  // --- Feature 6: Sleep Risk Signal Warning Banner ---
+  const sleepAlertAcknowledgeBtn = document.getElementById('sleepAlertAcknowledgeBtn');
+  const sleepFallRiskBanner = document.getElementById('sleepFallRiskBanner');
+  if (sleepAlertAcknowledgeBtn && sleepFallRiskBanner) {
+    sleepAlertAcknowledgeBtn.addEventListener('click', () => {
+      sleepFallRiskBanner.classList.add('d-none');
+      localStorage.setItem('sleep_alert_acknowledged_today', 'true');
+    });
+  }
+
+  function triggerSleepFallRiskWarning(isBadSleep) {
+    if (!sleepFallRiskBanner) return;
+    if (isBadSleep) {
+      sleepFallRiskBanner.classList.remove('d-none');
+      speakText("High fall risk warning. Fragmented sleep detected last night. Please use handrails on stairs today.");
+      showToast("⚠️ Fall Risk Banner triggered due to poor sleep.");
+    } else {
+      sleepFallRiskBanner.classList.add('d-none');
+    }
+  }
+
+  // --- Feature 7: Financial Dignity & Support Tracker ---
+  const calculateFinBudgetBtn = document.getElementById('calculateFinBudgetBtn');
+  const finPensionInput = document.getElementById('finPensionInput');
+  const finExpensesInput = document.getElementById('finExpensesInput');
+  const finBudgetResult = document.getElementById('finBudgetResult');
+
+  if (calculateFinBudgetBtn && finBudgetResult) {
+    calculateFinBudgetBtn.addEventListener('click', () => {
+      const income = parseFloat(finPensionInput.value) || 0;
+      const expenses = parseFloat(finExpensesInput.value) || 0;
+      const diff = income - expenses;
+
+      finBudgetResult.style.display = "block";
+      const symbol = getActiveCountry() === "India" ? "₹" : "$";
+      if (diff > 0) {
+        finBudgetResult.textContent = `Safe. Your net balance is ${symbol}${diff.toLocaleString()} surplus. Essential expenses are fully covered.`;
+        finBudgetResult.style.color = "var(--color-teal)";
+        speakText(`Budget analyzed. You have a surplus.`);
+      } else {
+        finBudgetResult.textContent = `Warning. Your expenses exceed fixed income by ${symbol}${Math.abs(diff).toLocaleString()}. Let's review medication prices or utility assistance to lower costs.`;
+        finBudgetResult.style.color = "#b45309";
+        speakText(`Budget analyzed. Monthly warning, expenses exceed fixed income.`);
+      }
+    });
+  }
+
+  // Medication Price Comparer
+  const searchFinMedBtn = document.getElementById('searchFinMedBtn');
+  const finMedSearchInput = document.getElementById('finMedSearchInput');
+  const finMedResult = document.getElementById('finMedResult');
+  const genericMedDatabase = {
+    lipitor: { brandPrice: "₹1,200 / $110", genericName: "Atorvastatin Calcium", genericPrice: "₹120 / $12", savings: "90%" },
+    metformin: { brandPrice: "₹340 / $35", genericName: "Metformin Hydrochloride", genericPrice: "₹45 / $5", savings: "85%" },
+    crestor: { brandPrice: "₹1,450 / $130", genericName: "Rosuvastatin Calcium", genericPrice: "₹150 / $15", savings: "89%" },
+    synthroid: { brandPrice: "₹650 / $45", genericName: "Levothyroxine Sodium", genericPrice: "₹80 / $8", savings: "82%" }
+  };
+
+  if (searchFinMedBtn && finMedResult && finMedSearchInput) {
+    searchFinMedBtn.addEventListener('click', () => {
+      const query = finMedSearchInput.value.trim().toLowerCase();
+      if (!query) return;
+
+      finMedResult.style.display = "block";
+      const match = genericMedDatabase[query];
+      if (match) {
+        finMedResult.innerHTML = `
+          <strong>Brand:</strong> ${query.toUpperCase()} (${match.brandPrice})<br>
+          <strong>Generic Alternative:</strong> ${match.genericName} (${match.genericPrice})<br>
+          <span style="color:var(--color-teal); font-weight:700;">Potential Savings: ${match.savings} less expensive!</span>
+        `;
+        speakText(`Generic alternative for ${query} is ${match.genericName}. You save ${match.savings}.`);
+      } else {
+        finMedResult.innerHTML = `No direct match found for "${query}". Ask your doctor if a generic alternative is available.`;
+      }
+    });
+  }
+
+  // Utility subsidy checker
+  const checkUtilityAssistanceBtn = document.getElementById('checkUtilityAssistanceBtn');
+  const utilityAssistanceResult = document.getElementById('utilityAssistanceResult');
+  if (checkUtilityAssistanceBtn && utilityAssistanceResult) {
+    checkUtilityAssistanceBtn.addEventListener('click', () => {
+      utilityAssistanceResult.style.display = "block";
+      const country = getActiveCountry();
+      if (country === "India") {
+        utilityAssistanceResult.textContent = "Qualified! Under state domestic subsidy guidelines, you qualify for 200 units of free power monthly. Tap to file auto-application with local DISCOM.";
+      } else if (country === "Brazil") {
+        utilityAssistanceResult.textContent = "Qualified! Eligible for 'Tarifa Social de Energia Elétrica' which grants up to 65% off utility bills. Tap to submit formal request.";
+      } else {
+        utilityAssistanceResult.textContent = "Qualified! Eligible for local energy assistance program (LIHEAP / Low Income Home Energy Assistance). Saves average of $350 annually.";
+      }
+      speakText("Utility assistance eligibility confirmed. Auto-filing has been initiated.");
+    });
+  }
+
+  // Money Talk Scripts
+  const talkBox = document.getElementById('moneyTalkScriptBox');
+  const scriptBtnWills = document.getElementById('scriptBtnWills');
+  const scriptBtnHelp = document.getElementById('scriptBtnHelp');
+  const scriptBtnIndependence = document.getElementById('scriptBtnIndependence');
+
+  const scripts = {
+    wills: "Will Script: \"Hey Tyler, I've organized my estate and files into a digital package in CareCircle. It generates an access key for you. Doing this brings me peace of mind knowing you won't have to guess later on.\"",
+    help: "Request Help Script: \"I am doing well but the utilities/home maintenance is becoming a bit hard to handle on a fixed pension. Let's look at assistance plans together so we can manage it easily.\"",
+    independence: "Independence Script: \"I value my independence in this house. Having these background safety sensors means I am protected and connected, allowing me to live my life on my own terms.\""
+  };
+
+  const bindScriptBtn = (btn, key) => {
+    if (btn) {
+      btn.addEventListener('click', () => {
+        talkBox.style.display = "block";
+        talkBox.textContent = scripts[key];
+        
+        // Mark active
+        [scriptBtnWills, scriptBtnHelp, scriptBtnIndependence].forEach(b => {
+          if (b) b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        speakText(scripts[key]);
+      });
+    }
+  };
+
+  bindScriptBtn(scriptBtnWills, 'wills');
+  bindScriptBtn(scriptBtnHelp, 'help');
+  bindScriptBtn(scriptBtnIndependence, 'independence');
+
+  // --- QA Simulator Bindings (Task 4) ---
+  const toggleBereavementQa = document.getElementById('toggleBereavement_qa');
+  if (toggleBereavementQa) {
+    toggleBereavementQa.addEventListener('click', () => {
+      bereavementMode = !bereavementMode;
+      localStorage.setItem('bereavement_mode', bereavementMode.toString());
+      updateBereavementLayer();
+      
+      const statusText = bereavementMode ? "Bereavement Mode Active" : "Standard Mode Active";
+      showToast(statusText);
+      
+      // Toggle button visual state
+      if (bereavementMode) {
+        toggleBereavementQa.style.background = "#ef4444";
+        toggleBereavementQa.textContent = "🕯️ Mute Bereavement Mode";
+      } else {
+        toggleBereavementQa.style.background = "var(--color-purple)";
+        toggleBereavementQa.textContent = "🕯️ Toggle Bereavement Mode";
+      }
+    });
+  }
+
+  const simulateGrandchildReplyQa = document.getElementById('simulateGrandchildReply_qa');
+  if (simulateGrandchildReplyQa) {
+    simulateGrandchildReplyQa.addEventListener('click', () => {
+      // Show phone simulator reply instantly
+      grandchildPhoneMockup.classList.remove('d-none');
+      mockGrandchildReply.classList.remove('d-none');
+      mockReplyText.textContent = "Tyler:";
+      mockReplyContent.textContent = "Hey Grandma! Just saw this. I love you! Hope to speak soon.";
+      showToast("WhatsApp reply simulated.");
+      speakText("Tyler replies on WhatsApp: Hey Grandma! Just saw this. I love you! Hope to speak soon.");
+    });
+  }
+
+  const simulateBadSleepQa = document.getElementById('simulateBadSleep_qa');
+  if (simulateBadSleepQa) {
+    simulateBadSleepQa.addEventListener('change', (e) => {
+      triggerSleepFallRiskWarning(e.target.checked);
+    });
+  }
+
+  // Set initial states
+  renderDignityGoals();
+  updateFunctionalBadge();
+  updateBereavementLayer();
+}
+
+function detectPlatformTheme() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const isAndroid = /android/i.test(ua);
+  
+  const body = document.body;
+  if (isAndroid) {
+    body.classList.add('platform-android');
+    body.classList.remove('platform-ios');
+    console.log("Android device detected. Applying Material 3 theme.");
+  } else {
+    // Default to iOS/Cupertino style for Apple products and general desktop browsers
+    body.classList.add('platform-ios');
+    body.classList.remove('platform-android');
+    console.log("Apple/iOS device or desktop detected. Applying Cupertino theme.");
+  }
+}
+
+// ==========================================================================
+// INDIA LOCALIZATION - transit safety & battery alerts
+// ==========================================================================
+let transitTimer = null;
+let transitTimeRemaining = 0;
+let transitDest = "";
+
+function updateTransitDisplay() {
+  const mins = Math.floor(transitTimeRemaining / 60);
+  const secs = transitTimeRemaining % 60;
+  const countdownEl = document.getElementById('transitTimerCountdown');
+  if (countdownEl) {
+    countdownEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+}
+
+function triggerTransitOverdueAlert() {
+  const lat = localStorage.getItem('user_latitude') || "17.3850";
+  const lon = localStorage.getItem('user_longitude') || "78.4867";
+  const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+  const custodian = contacts.find(c => c.role === 'Custodian') || contacts.find(c => c.role === 'Medical');
+  const custodianName = custodian ? custodian.name : "Caregiver";
+  const custodianPhone = custodian ? custodian.phone : "+91 98888 88888";
+  
+  speakText(`Warning: Transit check-in is overdue. Dispatching emergency GPS alert to ${custodianName}.`);
+  showToast("Transit check-in overdue! SMS alert dispatched.");
+  
+  logFamilyChatSystem(`🚨 Transit Overdue Alert: ${getActiveSeniorName()}'s journey to ${transitDest || "destination"} is overdue. Emergency SMS broadcasted with coordinates.`);
+  logFamilyChatSystem(`[MOCK SMS SEND] To ${custodianName} (${custodianPhone}): "CareCircle Alert: ${getActiveSeniorName()} is overdue for transit check-in to ${transitDest || "destination"}. Last coordinates: [${lat}, ${lon}]. Please check on her."`);
+  
+  if (custodian) {
+    setTimeout(() => {
+      logFamilyChatResponse(custodian.name, `Mom, I received an automatic SMS that your auto ride to ${transitDest || "destination"} is overdue! Are you okay? Answer my call!`);
+    }, 2000);
+  }
+  
+  const setupView = document.getElementById('transitSetupView');
+  const activeView = document.getElementById('transitActiveView');
+  if (setupView) setupView.classList.remove('d-none');
+  if (activeView) activeView.classList.add('d-none');
+}
+
+window.checkTransitStatus = function() {
+  const isOverdueSimulated = localStorage.getItem('simulate_transit_overdue') === 'true';
+  if (isOverdueSimulated) {
+    if (transitTimer) clearInterval(transitTimer);
+    transitDest = "Temple";
+    triggerTransitOverdueAlert();
+    const qaTransit = document.getElementById('simulateTransitOverdue_qa');
+    if (qaTransit) {
+      qaTransit.checked = false;
+      localStorage.setItem('simulate_transit_overdue', 'false');
+    }
+  }
+};
+
+window.checkBatteryStatus = function() {
+  const country = getActiveCountry();
+  const isLowBatterySimulated = localStorage.getItem('simulate_low_battery') === 'true';
+  const isPowerCutActive = localStorage.getItem('simulate_power_cut') === 'true';
+  
+  if (country === 'India') {
+    const runAlert = () => {
+      const seniorName = localStorage.getItem('senior_name') || "Saraswathi";
+      const lat = localStorage.getItem('user_latitude') || "17.3850";
+      const lon = localStorage.getItem('user_longitude') || "78.4867";
+      const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+      const custodian = contacts.find(c => c.role === 'Custodian') || contacts.find(c => c.role === 'Medical');
+      const caregiverName = custodian ? custodian.name : "Caregiver";
+      const caregiverPhone = custodian ? custodian.phone : "+91 98888 88888";
+      
+      speakText(`Warning: Critical battery level detected. Automatically broadcasting emergency location coordinates to ${caregiverName}.`);
+      showToast("Battery critical! Emergency SMS dispatched.");
+      
+      logFamilyChatSystem(`🚨 Emergency SMS Alert Sent: Phone battery critical. ${caregiverName} notified with GPS coordinates.`);
+      logFamilyChatSystem(`[MOCK SMS SEND] To ${caregiverName} (${caregiverPhone}): "CareCircle Alert: ${seniorName}'s phone battery is critical (3%). Last known coordinates: [${lat}, ${lon}]. Power cut in progress. Contact her landline or neighbors."`);
+      
+      if (custodian) {
+        setTimeout(() => {
+          logFamilyChatResponse(custodian.name, `Mom, I received the low battery alert and coordinates. I know there is a power cut there. I will call the neighboring flat to check on you, keep your torch ready!`);
+        }, 3000);
+      }
+    };
+
+    if (isLowBatterySimulated) {
+      runAlert();
+      const qaLowBattery = document.getElementById('simulateLowBattery_qa');
+      if (qaLowBattery) {
+        qaLowBattery.checked = false;
+        localStorage.setItem('simulate_low_battery', 'false');
+      }
+    } else {
+      if (navigator.getBattery) {
+        navigator.getBattery().then(battery => {
+          if (battery.level * 100 <= 5 && !battery.charging && isPowerCutActive) {
+            const lastSent = sessionStorage.getItem('last_battery_alert_sent');
+            const now = Date.now();
+            if (!lastSent || (now - parseInt(lastSent, 10)) > 15 * 60 * 1000) {
+              sessionStorage.setItem('last_battery_alert_sent', now.toString());
+              runAlert();
+            }
+          }
+        });
+      }
+    }
+  }
+};
+
+if (navigator.getBattery) {
+  navigator.getBattery().then(battery => {
+    const checkBatt = () => {
+      if (typeof window.checkBatteryStatus === 'function') window.checkBatteryStatus();
+    };
+    battery.addEventListener('levelchange', checkBatt);
+    battery.addEventListener('chargingchange', checkBatt);
+  });
+}
+
+window.checkPujaStatus = function() {
+  const country = getActiveCountry();
+  const isPujaOverdueSimulated = localStorage.getItem('simulate_puja_overdue') === 'true';
+  
+  if (country === 'India' && isPujaOverdueSimulated) {
+    const seniorName = localStorage.getItem('senior_name') || "Saraswathi";
+    const contacts = JSON.parse(localStorage.getItem('family_contacts') || '[]');
+    const custodian = contacts.find(c => c.role === 'Custodian') || contacts.find(c => c.role === 'Medical');
+    const custodianName = custodian ? custodian.name : "Caregiver";
+    const custodianPhone = custodian ? custodian.phone : "+91 98888 88888";
+    
+    speakText(`${seniorName} garu, have you completed your morning puja today? Your family wants to confirm everything is fine.`);
+    showToast("Puja overdue! Reassurance check sent.");
+    
+    logFamilyChatSystem(`🚨 Puja Incomplete Alert: ${seniorName} has not completed morning puja by 9:00 AM (deviation from cognitive stability routine).`);
+    logFamilyChatSystem(`[MOCK SMS SEND] To ${custodianName} (${custodianPhone}): "CareCircle Alert: ${seniorName}'s morning puja has not been logged. This deviates from her daily schedule. Please verify she is active."`);
+    
+    if (custodian) {
+      setTimeout(() => {
+        logFamilyChatResponse(custodian.name, `Mom, I received an alert that you didn't log your morning puja today. Is your knee pain keeping you down, or is everything okay? Please confirm you are safe!`);
+      }, 2500);
+    }
+    
+    const qaPuja = document.getElementById('simulatePujaOverdue_qa');
+    if (qaPuja) {
+      qaPuja.checked = false;
+      localStorage.setItem('simulate_puja_overdue', 'false');
+    }
+    
+    const modalHtml = `
+      <dialog id="pujaReassuranceModal" class="welfare-dialog" style="border: 2px solid var(--border-color); border-radius: 16px; padding: 24px; max-width: 400px; background: var(--bg-card); color: var(--text-main); font-family: inherit; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-color:#d97706;">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px;">
+          <div style="font-size:36px;">🕉️</div>
+          <h2 style="font-size:18px; font-weight:800; color:#d97706; margin:0;">Puja Check-In Nudge</h2>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.5; margin:0;">
+            ${seniorName} garu, did you complete your morning puja today? Your family noticed it wasn't marked and wants to make sure you are doing well.
+          </p>
+          <div style="display:flex; gap:12px; width:100%; margin-top:8px;">
+            <button id="pujaConfirmYes" class="primary-action-btn" style="flex:1; height:40px; background:#d97706; border:none; color:white; border-radius:8px; font-weight:700; cursor:pointer;">Yes, Done!</button>
+            <button id="pujaConfirmNo" class="secondary-action-btn" style="flex:1; height:40px; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); color:var(--text-main); border-radius:8px; font-weight:700; cursor:pointer;">Not Yet</button>
+          </div>
+        </div>
+      </dialog>
+    `;
+    
+    let modalEl = document.getElementById('pujaReassuranceModal');
+    if (modalEl) modalEl.remove();
+    
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    modalEl = document.getElementById('pujaReassuranceModal');
+    
+    if (modalEl && modalEl.showModal) {
+      modalEl.showModal();
+      
+      document.getElementById('pujaConfirmYes').onclick = () => {
+        const cb = document.getElementById('ritual_puja');
+        if (cb) {
+          cb.checked = true;
+          localStorage.setItem('state_ritual_puja', 'true');
+        }
+        modalEl.close();
+        speakText("Wonderful! I will notify your family that you completed your puja and are doing well.");
+        showToast("Welfare check-in logged.");
+        logFamilyChatSystem(`🟢 Welfare Reassurance: ${seniorName} confirmed morning puja completed. Cognitive stability verified.`);
+        if (custodian) {
+          setTimeout(() => {
+            logFamilyChatResponse(custodian.name, `Thanks for confirming, Mom! Happy to hear you finished your prayers. Have a great day!`);
+          }, 1500);
+        }
+        if (typeof checkRitualCompletion === 'function') checkRitualCompletion();
+      };
+      
+      document.getElementById('pujaConfirmNo').onclick = () => {
+        modalEl.close();
+        speakText("No problem. Please complete it when you can, and make sure to take your medicines.");
+      };
+    }
+  }
+};

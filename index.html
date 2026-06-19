@@ -30,6 +30,10 @@
           <span class="nav-icon" data-icon="home"></span>
           <span class="nav-label" data-i18n="nav_home">Today's Hub</span>
         </button>
+        <button class="nav-btn" data-view="dignity">
+          <span class="nav-icon" data-icon="sparkles"></span>
+          <span class="nav-label" data-i18n="nav_dignity">Dignity Hub</span>
+        </button>
         <button class="nav-btn" data-view="family">
           <span class="nav-icon" data-icon="users"></span>
           <span class="nav-label" data-i18n="nav_family">Family Circle</span>
@@ -101,7 +105,7 @@
             <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=160&q=80" alt="Senior Profile Pic" class="avatar-image">
             <div>
               <p class="avatar-role" data-i18n="header_role">Senior Companion</p>
-              <h3 class="avatar-name" id="seniorName">Lakshmi Raman</h3>
+              <h3 class="avatar-name" id="seniorName">...</h3>
             </div>
           </div>
         </div>
@@ -113,7 +117,7 @@
           </div>
           <div class="status-badge info" id="headerLocationBadge">
             <span data-icon="map-pin"></span>
-            <span>Chennai, India</span>
+            <span id="headerLocationText">...</span>
           </div>
         </div>
 
@@ -184,7 +188,7 @@
               <span style="font-size: 2rem; animation: pulse 1.5s infinite;">🔌</span>
               <div>
                 <strong style="display: block; font-size: var(--font-md); color: #e9d5ff;">⚠️ HYDERABAD GRID POWER OUTAGE ACTIVE</strong>
-                <span id="powerOutageMessage" style="font-size: var(--font-sm);">Don't worry, Lakshmi ji, this is a planned outage. Power will return by 11:00 PM. We have notified Arun.</span>
+                <span id="powerOutageMessage" style="font-size: var(--font-sm);">Don't worry, Saraswathi ji, this is a planned outage. Power will return by 11:00 PM. We have notified Arun.</span>
               </div>
             </div>
             <div>
@@ -197,7 +201,7 @@
           <div class="dashboard-hero">
             <div class="hero-welcome">
               <span class="badge-eyebrow">DAILY CONFIDENCE ASSISTANT</span>
-              <h1 class="welcome-heading" id="companionGreeting">Good morning, Lakshmi ji.</h1>
+              <h1 class="welcome-heading" id="companionGreeting">Good morning, Saraswathi ji.</h1>
               <p class="welcome-sub" id="companionStatusText">Your 8:00 AM Metformin medicine is scheduled. I recommend a glass of warm water before breakfast.</p>
               
               <div class="quick-family-hub">
@@ -311,6 +315,46 @@
 
           <!-- Main Home Dashboard Widgets Grid -->
           <div class="widgets-grid" id="homeWidgetsGrid">
+            <!-- 1. The Dignity Engine Foreground Focus Goals -->
+            <article class="dashboard-card border-gold" id="homeForegroundDignityCard" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 15px;">
+              <div class="card-header">
+                <span class="card-icon color-gold"><span data-icon="sparkles"></span></span>
+                <h2 class="card-title" data-i18n="dignity_daily_focus_title">My Daily Focus & Capability</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom: 0; font-size: var(--font-xs);" data-i18n="dignity_daily_focus_subtitle">We start from what you CAN and want to do today. Safety exists to support you in the background.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:8px;">
+                  <input type="text" id="homeDignityGoalInput" class="custom-input-box" placeholder="What would you like to focus on today?" style="margin:0; flex:1;">
+                  <button type="button" class="primary-action-btn" id="homeAddDignityGoalBtn" style="min-height:44px; padding:0 15px; font-size:var(--font-xs);">Add Goal</button>
+                </div>
+                <ul id="homeDignityGoalsList" class="routine-checklist" style="margin:0; padding:0; list-style:none;">
+                  <!-- Populate dynamically -->
+                </ul>
+              </div>
+            </article>
+
+            <!-- 2. Wisdom Contribution card in the foreground -->
+            <article class="dashboard-card border-purple" id="homeForegroundWisdomCard" style="grid-column: 1 / -1;">
+              <div class="card-header">
+                <span class="card-icon color-purple"><span data-icon="book"></span></span>
+                <h2 class="card-title" data-i18n="dignity_quick_wisdom_title">Log Daily Contribution</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom: 12px; font-size: var(--font-xs);" data-i18n="dignity_quick_wisdom_subtitle">Record a story, recipe, or piece of advice for your family and community.</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <textarea id="homeWisdomText" class="custom-input-box" placeholder="Write advice, a story, or a recipe..." style="height:80px; margin:0; font-size:var(--font-sm);"></textarea>
+                <button type="button" class="primary-action-btn w-100" id="homePublishWisdomBtn" style="background:var(--color-purple); border:none; min-height:40px; font-size:var(--font-xs);">
+                  Publish to Community
+                </button>
+              </div>
+            </article>
+
+            <!-- Collapse background safety features -->
+            <details class="background-safety-details" id="backgroundSafetyPanel" style="grid-column: 1 / -1; margin-top: 10px;" open>
+              <summary class="background-safety-summary" style="font-size: var(--font-md); font-weight: 700; cursor: pointer; padding: 18px 24px; background: var(--surface-soft); border: 1.5px solid var(--border-color); border-radius: var(--radius-card); display: flex; align-items: center; justify-content: space-between; user-select: none; box-shadow: var(--shadow-sm); outline: none;">
+                <span style="display:flex; align-items:center; gap:8px;">🛡️ <strong>Background Support & Health Reminders</strong></span>
+                <span class="expand-icon" style="font-size: 0.9rem; transition: transform 0.2s;">▼</span>
+              </summary>
+              <div class="widgets-grid" style="margin-top: 20px;">
             
             <!-- Widget: Pending Bill Alert Card (d-none by default) -->
             <article class="dashboard-card card-alert-left border-orange d-none" id="dashboardBillAlertCard">
@@ -345,6 +389,7 @@
                   <div class="pill-actions-grid">
                     <button class="pill-btn take-btn" id="markPillTaken">Mark Taken</button>
                     <button class="pill-btn snooze-btn" id="snoozePill">Snooze 15m</button>
+                    <button class="pill-btn snooze-btn" id="reportMissedPill" style="background:#fef2f2; color:#ef4444; border:1px solid #fee2e2; cursor:pointer;">Report Missed</button>
                     <button class="pill-btn verify-btn" id="triggerPillScanner" style="background:var(--color-primary-soft); color:var(--color-primary-dark); border:1px solid var(--border-color); grid-column:1 / -1; display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:10px; font-weight:700;">
                       <span>🔍</span> Verify Pill with Camera
                     </button>
@@ -354,6 +399,80 @@
                 <div class="pill-adherence-log">
                   <span class="log-indicator" id="adherenceIndicator">Adherence for today: 0/1 Taken</span>
                   <div class="adherence-bar-bg"><div class="adherence-bar-fill" id="adherenceProgress" style="width: 0%;"></div></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Widget: India Care & Safety Suite (Only visible when India is active) -->
+            <article class="dashboard-card border-orange d-none" id="indiaCareWidget">
+              <div class="card-header">
+                <span class="card-icon color-orange" data-icon="shield"></span>
+                <h2 class="card-title">India Care & Safety Suite</h2>
+              </div>
+              <div class="india-care-body" style="padding: 10px 0; display: flex; flex-direction: column; gap: 15px;">
+                <!-- Helper Voice Logger -->
+                <div style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+                  <h3 style="font-size: var(--font-xs); margin: 0; color: #c2410c; display: flex; align-items: center; gap: 6px;">
+                    <span>🎙️</span> Domestic Helper Logger (Lakshmi)
+                  </h3>
+                  <p style="font-size: 10px; color: var(--text-muted); margin: 0;">Lakshmi logs daily care status directly into the family feed in local languages.</p>
+                  
+                  <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px;">
+                    <select id="helperLangSelect" class="form-select-box" style="height: 36px; font-size: 11px; flex: 1; min-height: 36px; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px;">
+                      <option value="te-IN">Telugu (తెలుగు)</option>
+                      <option value="hi-IN">Hindi (हिन्दी)</option>
+                      <option value="ta-IN">Tamil (தமிழ்)</option>
+                    </select>
+                    <button type="button" class="primary-action-btn" id="helperVoiceRecordBtn" style="min-height: 36px; padding: 0 12px; background: #ea580c; border: none; font-size: 11px; font-weight: 700; border-radius: 8px; color: white; cursor: pointer;">
+                      🎤 Tap to Speak
+                    </button>
+                  </div>
+                  <div id="helperVoiceLogStatus" style="font-size: 10px; font-style: italic; color: var(--text-muted);">Status: Idle</div>
+                  
+                  <!-- Fallback options for testing/demo -->
+                  <div style="margin-top: 4px; display: flex; flex-direction: column; gap: 4px; border-top: 1px dashed rgba(249, 115, 22, 0.2); padding-top: 8px;">
+                    <span style="font-size: 9px; font-weight: 700; color: var(--text-muted);">Quick Logging (Demo Buttons):</span>
+                    <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                      <button type="button" class="quick-phrase-btn" data-phrase="అమ్మ గారు మందులు వేసుకున్నారు" data-lang="te-IN" style="font-size: 9px; padding: 4px 6px; border-radius: 4px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); cursor: pointer;">Telugu: Meds taken</button>
+                      <button type="button" class="quick-phrase-btn" data-phrase="அம்மா இன்று மதியம் உணவு சாப்பிடவில்லை" data-lang="ta-IN" style="font-size: 9px; padding: 4px 6px; border-radius: 4px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); cursor: pointer;">Tamil: Skipped lunch</button>
+                      <button type="button" class="quick-phrase-btn" data-phrase="दादी जी पार्क टहलने गई हैं" data-lang="hi-IN" style="font-size: 9px; padding: 4px 6px; border-radius: 4px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-main); cursor: pointer;">Hindi: Walking in park</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Rickshaw Transit Safety Timer -->
+                <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+                  <h3 style="font-size: var(--font-xs); margin: 0; color: #047857; display: flex; align-items: center; gap: 6px;">
+                    <span>🛺</span> Unaccompanied Rickshaw Transit
+                  </h3>
+                  <p style="font-size: 10px; color: var(--text-muted); margin: 0;">Countdown safety watch for auto trips. Overdue trip auto-notifies family with location.</p>
+                  
+                  <div id="transitSetupView" style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; gap: 8px;">
+                      <input type="text" id="transitDestination" class="form-text-input" placeholder="Destination (e.g. Temple)" style="height: 36px; font-size: var(--font-sm); flex: 2; padding: 0 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main);">
+                      <select id="transitDurationSelect" class="form-select-box" style="height: 36px; font-size: 11px; flex: 1; min-height: 36px; background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <option value="10">10s (Demo)</option>
+                        <option value="60">1m (Quick)</option>
+                        <option value="1200">20m (Temple)</option>
+                        <option value="1800">30m (Market)</option>
+                      </select>
+                    </div>
+                    <button type="button" class="primary-action-btn" id="startTransitBtn" style="min-height: 36px; background: #059669; border: none; font-size: 11px; font-weight: 700; border-radius: 8px; color: white; cursor: pointer;">
+                      🛺 Start Transit Safety Timer
+                    </button>
+                  </div>
+
+                  <div id="transitActiveView" class="d-none" style="text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center; padding: 8px 0;">
+                    <span style="font-size: 24px;">⏳</span>
+                    <div>
+                      <strong id="transitDestDisplay" style="font-size: var(--font-sm); color: var(--text-main); display: block;">Travelling to Temple</strong>
+                      <span style="font-size: 10px; color: var(--text-muted);">Family will be auto-notified if timer expires!</span>
+                    </div>
+                    <div id="transitTimerCountdown" style="font-size: 24px; font-weight: 800; color: #ea580c; font-family: monospace;">00:10</div>
+                    <button type="button" class="primary-action-btn" id="arriveTransitBtn" style="min-height: 36px; background: #10b981; border: none; font-size: 11px; font-weight: 700; border-radius: 8px; width: 100%; color: white; cursor: pointer;">
+                      🟢 I Have Arrived (Safe Check-in)
+                    </button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -620,6 +739,12 @@
                         <span>Switch off bathroom geyser</span>
                       </label>
                     </li>
+                    <li class="checklist-item" id="ritual_puja_item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
+                      <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
+                        <input type="checkbox" class="large-checkbox" id="ritual_puja" style="width:20px; height:20px; margin:0;">
+                        <span>Perform Puja & Morning Prayers</span>
+                      </label>
+                    </li>
                     <li class="checklist-item" style="padding:8px 0; border-bottom:1px solid var(--border-color);">
                       <label class="check-label" style="display:flex; align-items:center; gap:8px; font-size:var(--font-sm);">
                         <input type="checkbox" class="large-checkbox" id="ritual_backdoor" style="width:20px; height:20px; margin:0;">
@@ -679,6 +804,259 @@
               </div>
             </article>
           </div>
+          </details>
+          </div>
+        </section>
+
+        <!-- 1.5 Dignity & Legacy Hub View -->
+        <section class="view-panel" id="dignity-view" style="display:none;">
+          <header class="view-header">
+            <div>
+              <span class="badge-eyebrow">THE DIGNITY ENGINE</span>
+              <h1 class="view-title">My Dignity & Legacy Hub</h1>
+              <p class="view-subtitle">Celebrating your life contributions, capability, and legacy.</p>
+            </div>
+            <div id="functionalAgeBadge" class="status-badge info" style="background: var(--color-purple-soft); color: var(--color-purple); font-weight: bold; border: 1.5px solid var(--color-purple);">
+              <span>🌟</span> <span id="functionalAgeText">Functional Age: Not Assessed</span>
+            </div>
+          </header>
+
+          <div class="widgets-grid">
+            <!-- Part 1: What do you want to do today? (Dignity Action Planner) -->
+            <article class="dashboard-card border-gold">
+              <div class="card-header">
+                <span class="card-icon color-gold"><span data-icon="sparkles"></span></span>
+                <h2 class="card-title">Daily Focus & Accomplishments</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom: 12px; font-size: var(--font-xs);">We start from what you CAN and want to do today. Safety exists to support you in the background.</p>
+              
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:8px;">
+                  <input type="text" id="dignityGoalInput" class="custom-input-box" placeholder="What would you like to focus on or accomplish today?" style="margin:0; flex:1;">
+                  <button type="button" class="primary-action-btn" id="addDignityGoalBtn" style="min-height:44px; padding: 0 15px;">Add Goal</button>
+                </div>
+                <ul id="dignityGoalsList" class="routine-checklist" style="margin:0; padding:0; list-style:none;">
+                  <!-- Dynamically populated -->
+                </ul>
+              </div>
+            </article>
+
+            <!-- Part 2: Biological Age Assessment Wizard -->
+            <article class="dashboard-card border-teal">
+              <div class="card-header">
+                <span class="card-icon color-teal"><span data-icon="brain"></span></span>
+                <h2 class="card-title">Functional Capability Assessment</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom:12px; font-size:var(--font-xs);">Calibrate features and interface size based on actual physical, cognitive, and social capability rather than your chronological birth year.</p>
+              
+              <div id="functionalAssessmentIntro" class="assessment-section">
+                <div style="background: var(--color-teal-soft); padding: 12px; border-radius: 8px; margin-bottom: 12px; font-size: var(--font-sm); color: var(--color-primary-dark); line-height: 1.4;">
+                  Our interface, alert thresholds, and companion tone adapt to your functional metrics. Run this assessment quarterly to keep CareCircle calibrated.
+                </div>
+                <button type="button" class="primary-action-btn w-100" id="startAssessmentBtn">
+                  📋 Start Capability Assessment
+                </button>
+              </div>
+
+              <!-- Wizard Quiz Steps (hidden by default) -->
+              <div id="functionalAssessmentWizard" class="d-none" style="display:flex; flex-direction:column; gap:15px; margin-top:10px;">
+                <div class="wizard-progress-bar" style="height:6px; background:var(--border-color); border-radius:3px;">
+                  <div id="wizardProgressFill" style="height:100%; width:25%; background:var(--color-teal); border-radius:3px; transition:width 0.3s;"></div>
+                </div>
+                <div id="wizardStepContent">
+                  <!-- Step contents injected via JS -->
+                </div>
+                <div style="display:flex; justify-content:space-between; gap:10px; margin-top:10px;">
+                  <button type="button" class="secondary-action-btn" id="prevWizardBtn" style="min-height:38px; flex:1;">Previous</button>
+                  <button type="button" class="primary-action-btn" id="nextWizardBtn" style="min-height:38px; flex:1;">Next</button>
+                </div>
+              </div>
+
+              <!-- Assessment Result (hidden by default) -->
+              <div id="functionalAssessmentResult" class="d-none" style="margin-top:12px; padding:12px; background:var(--color-teal-soft); border:1px solid var(--color-teal); border-radius:8px;">
+                <h3 style="font-size:var(--font-sm); color:var(--color-primary-dark); margin:0 0 6px 0;">Assessment Completed!</h3>
+                <p id="assessmentResultText" style="font-size:var(--font-sm); margin:0 0 8px 0; font-weight:600;"></p>
+                <p id="assessmentResultCalib" style="font-size:var(--font-xs); color:var(--text-muted); margin:0;"></p>
+                <button type="button" class="secondary-action-btn w-100 mt-10" id="reAssessBtn" style="min-height:36px; font-size:var(--font-xs);">Re-Assess</button>
+              </div>
+            </article>
+
+            <!-- Part 3: The Grandchild Bridge (Zero App Install) -->
+            <article class="dashboard-card border-purple">
+              <div class="card-header">
+                <span class="card-icon color-purple"><span data-icon="users"></span></span>
+                <h2 class="card-title">The Grandchild Bridge</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom: 12px; font-size: var(--font-xs);">Record a message or recipe. It arrives on your grandchildren's phones as a standard WhatsApp/iMessage without them needing to install this app.</p>
+              
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div class="form-group-custom">
+                  <label for="bridgeGrandchildSelect" style="font-size:var(--font-xs); font-weight:700; color:var(--text-muted);">Select Grandchild:</label>
+                  <select id="bridgeGrandchildSelect" class="form-select-box" style="margin-bottom:8px;">
+                    <option value="Manoj (17 years)">Manoj (17 years)</option>
+                    <option value="Riya (14 years)">Riya (14 years)</option>
+                    <option value="Tyler (21 years)">Tyler (21 years)</option>
+                  </select>
+                </div>
+
+                <div class="form-group-custom">
+                  <label for="bridgeMessageType" style="font-size:var(--font-xs); font-weight:700; color:var(--text-muted);">What would you like to share?</label>
+                  <div style="display:flex; gap:8px; margin-bottom:8px;">
+                    <button type="button" class="filter-tab-btn active" id="bridgeTabVoice" style="flex:1; padding:6px; font-size:var(--font-xs);">🎙️ Voice Note</button>
+                    <button type="button" class="filter-tab-btn" id="bridgeTabRecipe" style="flex:1; padding:6px; font-size:var(--font-xs);">🍳 Recipe / Tip</button>
+                  </div>
+                </div>
+
+                <!-- Voice Note Panel -->
+                <div id="bridgeVoicePanel" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:15px; background:var(--surface-soft); border-radius:10px; border:1px dashed var(--border-color);">
+                  <div id="voiceWaveform" class="voice-waveform d-none" style="display:flex; gap:3px; height:30px; align-items:center; margin-bottom:12px;">
+                    <div class="bar" style="width:3px; height:10px; background:var(--color-purple); border-radius:1px; animation: bounce 0.6s infinite alternate;"></div>
+                    <div class="bar" style="width:3px; height:24px; background:var(--color-purple); border-radius:1px; animation: bounce 0.5s infinite alternate 0.1s;"></div>
+                    <div class="bar" style="width:3px; height:15px; background:var(--color-purple); border-radius:1px; animation: bounce 0.7s infinite alternate 0.2s;"></div>
+                    <div class="bar" style="width:3px; height:30px; background:var(--color-purple); border-radius:1px; animation: bounce 0.4s infinite alternate 0.15s;"></div>
+                    <div class="bar" style="width:3px; height:18px; background:var(--color-purple); border-radius:1px; animation: bounce 0.6s infinite alternate 0.05s;"></div>
+                  </div>
+                  <button type="button" class="primary-action-btn" id="recordBridgeBtn" style="background:var(--color-purple); border:none; display:flex; align-items:center; gap:8px;">
+                    <span>🎤</span> <span id="recordBridgeBtnText">Record 30s Voice Card</span>
+                  </button>
+                  <p id="bridgeRecordStatus" style="font-size:var(--font-xs); color:var(--text-muted); margin-top:8px;">Click to start recording</p>
+                </div>
+
+                <!-- Recipe / Text Panel -->
+                <div id="bridgeTextPanel" class="d-none">
+                  <textarea id="bridgeTextContent" class="custom-input-box" placeholder="Write down a recipe, family secret, or warm advice for your grandchild..." style="height:100px; margin-bottom:8px;"></textarea>
+                </div>
+
+                <button type="button" class="primary-action-btn w-100" id="sendBridgeBtn" style="background: linear-gradient(135deg, #25D366, #128C7E); border: none; color: white;">
+                  🟢 Send via WhatsApp (Zero-Install)
+                </button>
+
+                <!-- Phone Mockup Simulator -->
+                <div id="grandchildPhoneMockup" class="d-none" style="margin-top:15px; border:8px solid #334155; border-radius:24px; overflow:hidden; box-shadow:var(--shadow-md); background:#efeae2;">
+                  <div style="background:#075e54; color:white; padding:8px 12px; font-size:var(--font-xs); display:flex; align-items:center; justify-content:space-between;">
+                    <strong>💬 Grandchild's Phone (WhatsApp)</strong>
+                    <span>12:00 PM</span>
+                  </div>
+                  <div style="padding:12px; display:flex; flex-direction:column; gap:10px; font-size:var(--font-xs); max-height:200px; overflow-y:auto;">
+                    <!-- Sent Message -->
+                    <div style="align-self:flex-end; background:#dcf8c6; padding:8px; border-radius:8px; max-width:80%; box-shadow:0 1px 1px rgba(0,0,0,0.1);">
+                      <p id="mockSentText" style="margin:0; word-wrap:break-word;"></p>
+                      <span style="font-size:9px; color:#777; display:block; text-align:right; margin-top:4px;">Delivered ✓✓</span>
+                    </div>
+                    <!-- Reply Message (delayed trigger) -->
+                    <div id="mockGrandchildReply" class="d-none" style="align-self:flex-start; background:white; padding:8px; border-radius:8px; max-width:80%; box-shadow:0 1px 1px rgba(0,0,0,0.1);">
+                      <p id="mockReplyText" style="margin:0; font-weight:700; color:var(--color-purple);">Tyler:</p>
+                      <p id="mockReplyContent" style="margin:0;"></p>
+                      <span style="font-size:9px; color:#999; display:block; margin-top:4px;">Just now</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Part 4: End-of-Life Planning Without Fear -->
+            <article class="dashboard-card border-orange">
+              <div class="card-header">
+                <span class="card-icon color-orange"><span data-icon="lock"></span></span>
+                <h2 class="card-title">Legacy & Family Gifts Checklist</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom:12px; font-size:var(--font-xs);">A gentle, dignified way to organize your practical affairs. Framed as a precious gift of peace to your children, not as preparation for death.</p>
+              
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="background:var(--color-orange-soft); border-left:4px solid var(--color-orange); padding:10px; border-radius:8px; font-size:var(--font-xs); color:var(--color-orange); line-height:1.4;">
+                  Seniors often experience deep, unspoken anxieties about paperwork. Checking off these items gently over time offers peace of mind.
+                </div>
+
+                <div class="routine-checklist">
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    <!-- Will -->
+                    <div style="padding:10px; background:var(--surface-soft); border:1px solid var(--border-color); border-radius:8px;">
+                      <label style="display:flex; align-items:center; gap:10px; font-size:var(--font-sm); font-weight:700; cursor:pointer;">
+                        <input type="checkbox" id="eolWillCheck" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+                        <span>My Will is updated</span>
+                      </label>
+                      <div class="mt-5" style="padding-left:30px;">
+                        <input type="text" id="eolWillDetails" class="custom-input-box" placeholder="Where is the physical Will located? (e.g. Blue file in wardrobe)" style="height:32px; min-height:32px; font-size:var(--font-xs); margin:0;">
+                      </div>
+                    </div>
+
+                    <!-- Medical Directives -->
+                    <div style="padding:10px; background:var(--surface-soft); border:1px solid var(--border-color); border-radius:8px;">
+                      <label style="display:flex; align-items:center; gap:10px; font-size:var(--font-sm); font-weight:700; cursor:pointer;">
+                        <input type="checkbox" id="eolDirectivesCheck" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+                        <span>My Medical Directives / Wishes</span>
+                      </label>
+                      <div class="mt-5" style="padding-left:30px;">
+                        <input type="text" id="eolDirectivesDetails" class="custom-input-box" placeholder="Preferred decision maker or care wishes..." style="height:32px; min-height:32px; font-size:var(--font-xs); margin:0;">
+                      </div>
+                    </div>
+
+                    <!-- Digital Accounts -->
+                    <div style="padding:10px; background:var(--surface-soft); border:1px solid var(--border-color); border-radius:8px;">
+                      <label style="display:flex; align-items:center; gap:10px; font-size:var(--font-sm); font-weight:700; cursor:pointer;">
+                        <input type="checkbox" id="eolDigitalCheck" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+                        <span>My Digital Accounts Legacy</span>
+                      </label>
+                      <div class="mt-5" style="padding-left:30px;">
+                        <input type="text" id="eolDigitalDetails" class="custom-input-box" placeholder="Legacy contact set on Google/Apple? Details..." style="height:32px; min-height:32px; font-size:var(--font-xs); margin:0;">
+                      </div>
+                    </div>
+
+                    <!-- Insurance papers -->
+                    <div style="padding:10px; background:var(--surface-soft); border:1px solid var(--border-color); border-radius:8px;">
+                      <label style="display:flex; align-items:center; gap:10px; font-size:var(--font-sm); font-weight:700; cursor:pointer;">
+                        <input type="checkbox" id="eolInsuranceCheck" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+                        <span>My Insurance Documents</span>
+                      </label>
+                      <div class="mt-5" style="padding-left:30px;">
+                        <input type="text" id="eolInsuranceDetails" class="custom-input-box" placeholder="Policy number, insurer, or folder location..." style="height:32px; min-height:32px; font-size:var(--font-xs); margin:0;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="primary-action-btn w-100" id="saveEolPlannerBtn" style="background:var(--color-orange); border:none; color:white;">
+                  🔒 Lock & Save to Secure Vault
+                </button>
+                <div id="eolSaveStatus" class="d-none" style="padding:10px; background:var(--color-primary-soft); border:1px solid var(--color-primary); border-radius:8px; font-size:var(--font-xs); font-weight:700; color:var(--color-primary-dark); text-align:center;">
+                  Saved! Generated Family Access Key: <span id="eolAccessKey" style="font-family:monospace; background:#e0f2f1; padding:2px 6px; border-radius:4px;"></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Part 5: Grief & Bereavement Memory Box (shown only when Bereavement Layer is active) -->
+            <article class="dashboard-card border-purple d-none" id="bereavementMemoryBoxCard" style="grid-column: 1 / -1; background: linear-gradient(135deg, var(--color-purple-soft), #fdf4ff);">
+              <div class="card-header">
+                <span class="card-icon color-purple">🕯️</span>
+                <h2 class="card-title">Memory & Reflection Space</h2>
+              </div>
+              <p class="safety-card-subtitle" style="margin-bottom:12px; font-size:var(--font-xs);">A quiet space for reflection when mourning a spouse, friend, or relative.</p>
+              
+              <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+                <!-- Light a candle animation -->
+                <div class="candle-container" id="candleWidget" style="display:flex; flex-direction:column; align-items:center; margin:15px 0; cursor:pointer;">
+                  <div class="flame" id="candleFlame" style="width:14px; height:22px; background:#f59e0b; border-radius:50% 50% 20% 20%; box-shadow:0 0 10px #f59e0b; animation: flicker 1.5s infinite alternate; display:none;"></div>
+                  <div class="wick" style="width:2px; height:6px; background:#334155;"></div>
+                  <div class="wax-body" style="width:26px; height:45px; background:#cbd5e1; border-radius:3px 3px 0 0; box-shadow:inset 0 4px 6px rgba(0,0,0,0.1);"></div>
+                  <p id="candleCaption" style="font-size:var(--font-xs); font-weight:700; color:var(--color-purple); margin-top:8px;">Tap to light a memory candle</p>
+                </div>
+
+                <div style="width:100%;">
+                  <textarea id="bereavementReflectionText" class="custom-input-box" placeholder="Write down a memory or thought of your loved one..." style="height:80px; margin-bottom:8px;"></textarea>
+                  <button type="button" class="secondary-action-btn w-100" id="saveReflectionBtn" style="min-height:38px; border-color:var(--color-purple); color:var(--color-purple);">
+                    💾 Save in Quiet Diary
+                  </button>
+                </div>
+
+                <div style="width:100%; padding-top:10px; border-top:1px dashed var(--border-color); text-align:center;">
+                  <span style="font-size:var(--font-xs); color:var(--text-muted); display:block; margin-bottom:6px;">Would you like to speak to someone who understands?</span>
+                  <button type="button" class="primary-action-btn" id="connectPeerSupportBtn" style="background:var(--color-purple); border:none; min-height:36px; padding:0 12px; font-size:var(--font-xs);">
+                    📞 Connect with Gentle Peer Support
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
 
         <!-- 2. Culture Engine View (Removed in premium, settings are now in Settings Modal) -->
@@ -688,7 +1066,7 @@
             <div id="cultureTwinSnapshot"></div>
             <div id="localizedCountryHeader"></div>
             <div id="localizedFeaturesList"></div>
-            <button id="saveCultureSettings"></button>
+            <button id="saveCultureSettingsDummy" style="display:none;"></button>
           </div>
         </section>
 
@@ -785,8 +1163,11 @@
                 <button class="primary-action-btn w-100 mt-15" id="saveConsentPassportBtn">
                   Update Consent Access Credentials
                 </button>
-                <button class="secondary-action-btn w-100 mt-10" id="generateCaregiverLinkBtn" style="border:1px solid var(--border-color); background:none; color:var(--text-main); height:45px; border-radius:8px; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;">
+                 <button class="secondary-action-btn w-100 mt-10" id="generateCaregiverLinkBtn" style="border:1px solid var(--border-color); background:none; color:var(--text-main); height:45px; border-radius:8px; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;">
                   <span data-icon="link"></span> Generate Caregiver Shared View Link
+                </button>
+                <button class="secondary-action-btn w-100 mt-10" id="triggerEmergencyConsentBtn" style="border:1px solid #fee2e2; background:rgba(239,68,68,0.06); color:#ef4444; height:45px; border-radius:8px; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;">
+                  ⚠️ Request Emergency Medical Consent
                 </button>
               </div>
             </div>
@@ -850,12 +1231,12 @@
                         <span data-icon="volume"></span>
                       </button>
                     </div>
-                    <p class="chat-text">Hi Lakshmi ji! Did you complete your morning walk yet?</p>
+                    <p class="chat-text">Hi Saraswathi ji! Did you complete your morning walk yet?</p>
                   </div>
 
                   <div class="chat-log-event">
                     <span class="event-icon" data-icon="pill"></span>
-                    <span class="event-desc">Lakshmi ji marked morning Metformin as Taken</span>
+                    <span class="event-desc">Saraswathi ji marked morning Metformin as Taken</span>
                     <span class="event-time">8:05 AM</span>
                   </div>
                 </div>
@@ -1916,6 +2297,9 @@
                   <canvas id="waveformCanvas" class="waveform-canvas" width="300" height="60"></canvas>
                 </div>
 
+                <!-- HTML5 Audio Player (For recording playback preview) -->
+                <audio id="storyAudioPlayback" controls class="d-none w-100 mt-15" style="border-radius: 8px; outline: none;"></audio>
+
                 <div class="story-actions-row mt-15">
                   <button class="primary-action-btn flex-1" id="saveStoryBtn">Save & Transcribe</button>
                   <button class="secondary-action-btn flex-1" id="cancelStoryBtn">Clear</button>
@@ -2375,7 +2759,7 @@
                       <span data-icon="volume"></span>
                     </button>
                   </div>
-                  <p class="chat-text" id="companionInitialGreeting">Hello Lakshmi ji! I am Sathi, your daily companion. How are you feeling today?</p>
+                  <p class="chat-text" id="companionInitialGreeting">Hello Saraswathi ji! I am Sathi, your daily companion. How are you feeling today?</p>
                 </div>
               </div>
 
@@ -2529,7 +2913,7 @@
         </div>
         
         <div class="qr-details-block">
-          <h3 class="medical-senior-name" id="modalMedicalName">Lakshmi Raman · Age 72</h3>
+          <h3 class="medical-senior-name" id="modalMedicalName">Saraswathi · Age 72</h3>
           <p class="medical-disclaimer">First-responders scan QR code above with any mobile camera to fetch offline insurance, active medicines, drug warnings, and blood bank profiles.</p>
           
           <ul class="medical-specs-list" id="modalMedicalDetailsList">
@@ -2565,7 +2949,7 @@
       <div class="secure-auth-block" id="eolAuthSection">
         <p class="perm-desc">This is a highly restricted, encrypted private vault. Enter your companion PIN to unlock.</p>
         <div class="form-group mt-10" style="display:flex; gap:10px; justify-content:center;">
-          <input type="password" id="eolPasscode" class="form-text-input" style="max-width:180px; text-align:center;" placeholder="Enter PIN (e.g. 1234)">
+          <input type="password" id="eolModalPasscode" class="form-text-input" style="max-width:180px; text-align:center;" placeholder="Enter PIN (e.g. 1234)">
           <button class="primary-action-btn" id="verifyEolPinBtn" style="min-height:52px;">Unlock</button>
         </div>
       </div>
@@ -2602,7 +2986,7 @@
             <option>Unlock only by court-registered legal advisor</option>
           </select>
         </div>
-        <button class="primary-action-btn w-100" id="lockEolVaultBtn">Lock & Encrypt Organizer</button>
+        <button class="primary-action-btn w-100" id="lockEolModalBtn">Lock & Encrypt Organizer</button>
       </div>
     </div>
   </dialog>
@@ -2729,7 +3113,7 @@
       <span style="font-size: 3rem; display: block; margin-bottom: 15px; animation: pulse 1.5s infinite;">🚶</span>
       <h2 style="color: var(--color-orange, #ea580c); font-size: var(--font-lg); font-weight: 800; margin-bottom: 10px;">Promised Return Time Passed</h2>
       <p style="font-size: var(--font-sm); line-height: 1.5; color: var(--text-main); margin-bottom: 20px;">
-        Lakshmi ji, your promised return time has passed. Are you okay? Tap "I'm Safe" to let us know. We will wait 2 minutes before contacting your family.
+        Saraswathi ji, your promised return time has passed. Are you okay? Tap "I'm Safe" to let us know. We will wait 2 minutes before contacting your family.
       </p>
       
       <!-- Countdown timer inside modal -->
@@ -2755,7 +3139,7 @@
   <div id="cognitiveRecallBanner" class="cognitive-recall-banner d-none">
     <div class="recall-icon">💡</div>
     <div class="recall-content">
-      <h4 id="recallTitle">Welcome back, Lakshmi ji.</h4>
+      <h4 id="recallTitle">Welcome back, Saraswathi ji.</h4>
       <p id="recallText">You are looking at your Today's Hub. You can check off your medicine here.</p>
     </div>
     <button type="button" class="recall-close-btn" id="closeRecallBannerBtn">✕</button>
@@ -2774,12 +3158,12 @@
         
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
           <label for="seniorNameInput" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Senior Name</label>
-          <input type="text" id="seniorNameInput" class="form-text-input" value="Lakshmi Raman" style="height:40px; min-height:40px; font-size:var(--font-sm); border:1px solid var(--border-color); padding:0 12px; border-radius:8px;">
+          <input type="text" id="seniorNameInput" class="form-text-input" value="" style="height:40px; min-height:40px; font-size:var(--font-sm); border:1px solid var(--border-color); padding:0 12px; border-radius:8px;">
         </div>
 
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
           <label for="cityInput" class="form-label" style="font-weight:700; font-size:var(--font-xs);">City Location</label>
-          <input type="text" id="cityInput" class="form-text-input" value="Chennai" style="height:40px; min-height:40px; font-size:var(--font-sm); border:1px solid var(--border-color); padding:0 12px; border-radius:8px;">
+          <input type="text" id="cityInput" class="form-text-input" value="" style="height:40px; min-height:40px; font-size:var(--font-sm); border:1px solid var(--border-color); padding:0 12px; border-radius:8px;">
         </div>
 
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
@@ -2790,6 +3174,9 @@
             <option value="United States">United States (Active Aging & Self-reliant)</option>
             <option value="United Arab Emirates">United Arab Emirates (Hospitable & Climate Alert)</option>
             <option value="Brazil">Brazil (Vibrant & Socially Connected)</option>
+            <option value="France">France (GDPR Privacy & Mobility)</option>
+            <option value="Germany">Germany (Schengen & Punctual Care)</option>
+            <option value="United Kingdom">United Kingdom (NHS & Winter Care)</option>
           </select>
         </div>
 
@@ -2900,6 +3287,9 @@
         <button type="submit" class="primary-action-btn w-100 mt-15" id="saveCultureSettings" style="min-height:50px; background:var(--color-primary); color:white; font-weight:700;">
           Save Settings & Calibrate
         </button>
+        <button type="button" id="resetAppBtn" style="min-height:44px; border-radius:10px; font-weight:600; font-size:var(--font-xs); background:none; border:1px dashed #e05252; color:#e05252; width:100%; cursor:pointer; margin-top:10px; display:flex; align-items:center; justify-content:center; gap:6px;">
+          🔄 Reset App &amp; Start Over (Clears all saved data)
+        </button>
       </form>
     </div>
   </dialog>
@@ -2935,9 +3325,21 @@
         <select id="famContactRelation" class="form-select-box" style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm); background:var(--surface);">
           <option value="Daughter">Daughter</option>
           <option value="Son">Son</option>
+          <option value="Daughter-in-law">Daughter-in-law</option>
+          <option value="Son-in-law">Son-in-law</option>
           <option value="Granddaughter">Granddaughter</option>
           <option value="Grandson">Grandson</option>
           <option value="Caregiver">Caregiver</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label for="famContactRole" class="form-label" style="font-weight:700; font-size:var(--font-xs);">Household Role / Authority</label>
+        <select id="famContactRole" class="form-select-box" style="height:40px; padding:0 12px; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-sm); background:var(--surface);">
+          <option value="General">General Contact</option>
+          <option value="Custodian">Physical Custodian (Daily Care)</option>
+          <option value="Financial">Financial Sponsor / Decision Maker</option>
+          <option value="Medical">Medical Decision Maker</option>
         </select>
       </div>
 
@@ -3011,7 +3413,7 @@
         
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px; margin-bottom:12px;">
           <label class="form-label" style="font-weight:700; font-size:var(--font-xs);">What is your Name?</label>
-          <input type="text" id="onboardSeniorName" class="form-text-input" placeholder="e.g. Lakshmi Raman" style="height:44px; min-height:44px; font-size:var(--font-sm); padding:0 12px; border:1px solid var(--border-color); border-radius:8px;">
+          <input type="text" id="onboardSeniorName" class="form-text-input" placeholder="e.g. Saraswathi" style="height:44px; min-height:44px; font-size:var(--font-sm); padding:0 12px; border:1px solid var(--border-color); border-radius:8px;">
         </div>
         
         <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
@@ -3055,6 +3457,16 @@
             <option value="United States">United States (Active Aging & Self-reliant)</option>
             <option value="United Arab Emirates">United Arab Emirates (Climate alerts & Hospitality)</option>
             <option value="Brazil">Brazil (Vibrant & Socially Active)</option>
+            <option value="France">France (GDPR Privacy & Mobility)</option>
+            <option value="Germany">Germany (Schengen & Punctual Care)</option>
+            <option value="United Kingdom">United Kingdom (NHS & Winter Care)</option>
+          </select>
+        </div>
+        <div class="form-group d-none" id="onboardUaeProfileContainer" style="display:flex; flex-direction:column; gap:6px; margin-bottom:12px;">
+          <label class="form-label" style="font-weight:700; font-size:var(--font-xs);">UAE Senior Persona</label>
+          <select id="onboardUaeProfileSelect" class="form-select-box" style="height:44px; min-height:44px; font-size:var(--font-sm); border:1px solid var(--border-color); border-radius:8px; padding:0 10px;">
+            <option value="emirati">Local Emirati Senior (Ahmed - Majlis & Proclamations)</option>
+            <option value="expat">Indian Expat Senior (Sunita - Visa, Knee Surgery & Remittances)</option>
           </select>
         </div>
         
@@ -3162,19 +3574,92 @@
       <button type="button" class="qa-dev-btn" id="simulateWeatherCheckinOverdueBtn_qa">⚡ Check-in Overdue</button>
       <button type="button" class="qa-dev-btn" id="safetyGoingOutForceTimeoutBtn_qa">🚶 Promise Timeout</button>
       <button type="button" class="qa-dev-btn" id="simulateBadSleepSeriesBtn_qa">😴 3 Bad Sleep Nights</button>
+      <button type="button" class="qa-dev-btn" id="toggleBereavement_qa" style="background:var(--color-purple); color:white;">🕯️ Toggle Bereavement Mode</button>
+      <button type="button" class="qa-dev-btn" id="simulateGrandchildReply_qa" style="background:var(--color-teal); color:white;">💬 Grandchild WhatsApp Reply</button>
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateBadSleep_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateBadSleep_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">⚠️ Fragmented Sleep (Next-Day Fall Risk Banner)</label>
+      </div>
       
       <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1; padding-top: 10px; border-top:1px dashed rgba(255,255,255,0.15); margin-top:5px;">
         <input type="checkbox" id="simulateHeatwave_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
-        <label for="simulateHeatwave_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Hyderabad Summer (45°C) Active</label>
+        <label for="simulateHeatwave_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Extreme Heatwave (>43°C) Active</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateColdwave_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateColdwave_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Severe Coldwave (&lt;8°C) Active</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateFlood_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateFlood_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Heavy Rain / Flood Active</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1; padding-bottom: 10px; border-bottom:1px dashed rgba(255,255,255,0.15); margin-bottom:5px;">
+        <input type="checkbox" id="simulateEarthquake_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateEarthquake_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate JMA Shindo 5+ Earthquake Active</label>
       </div>
       
       <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
         <input type="checkbox" id="simulatePowerCut_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
-        <label for="simulatePowerCut_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Hyderabad Grid Power Outage Active</label>
+        <label for="simulatePowerCut_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Grid Power Outage Active</label>
+      </div>
+      
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateFasting_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateFasting_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Hindu Fasting (Ekadashi) Active</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateLowBattery_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateLowBattery_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Low Battery (&lt;5%) Trigger</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateTransitOverdue_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateTransitOverdue_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">Simulate Rickshaw Transit Overdue</label>
+      </div>
+
+
+
+      <!-- UAE-Specific Simulators -->
+      <div style="grid-column: 1 / -1; margin-top:8px; padding-top:10px; border-top:1px dashed rgba(212, 175, 55, 0.4);">
+        <span style="font-size:10px; font-weight:800; color:#d4af37; letter-spacing:1px; text-transform:uppercase;">🇦🇪 UAE / Dubai Simulators</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateSandstorm_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateSandstorm_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">🌪️ Simulate UAE Sandstorm / Dust Storm (العاصفة الترابية)</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateWadiFlood_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateWadiFlood_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">🌊 Simulate UAE Wadi Flash Flood Warning</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateUaeExtremeheat_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateUaeExtremeheat_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">🌡️ Simulate UAE Extreme Heat (47°C+ AC Shock Risk)</label>
+      </div>
+
+      <!-- EU-Specific Simulators -->
+      <div style="grid-column: 1 / -1; margin-top:8px; padding-top:10px; border-top:1px dashed rgba(59, 130, 246, 0.4);">
+        <span style="font-size:10px; font-weight:800; color:#3b82f6; letter-spacing:1px; text-transform:uppercase;">🇪🇺 EU / France & Germany Simulators</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateCanicule_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateCanicule_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">🌡️ Simulate France Canicule Heatwave Warning</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; grid-column: 1 / -1;">
+        <input type="checkbox" id="simulateGlatteis_qa" class="large-checkbox" style="width:20px; height:20px; margin:0;">
+        <label for="simulateGlatteis_qa" style="font-size:var(--font-xs); cursor:pointer; font-weight:700; color:white; margin:0;">❄️ Simulate Germany Glatteis (Black Ice) Warning</label>
       </div>
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
