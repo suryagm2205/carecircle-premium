@@ -3403,11 +3403,65 @@
   <div class="onboarding-wizard-overlay d-none" id="onboardingWizard">
     <div class="onboarding-wizard-card">
       <div class="onboarding-progress-bar-bg">
-        <div class="onboarding-progress-bar-fill" id="onboardingProgress"></div>
+        <div class="onboarding-progress-bar-fill" id="onboardingProgress" style="width: 15%;"></div>
+      </div>
+      
+      <!-- VISION SLIDE 1 -->
+      <div class="onboarding-step active" id="onboardingVision1">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px; margin: 10px 0;">
+          <div class="vision-emoji-header">🌅</div>
+          <h2 style="color:#1e1b4b; font-weight:800; font-size:var(--font-lg); margin:0;">You are not alone</h2>
+          <p class="perm-desc" style="font-size:var(--font-sm); color:var(--text-muted); line-height:1.5; margin:0;">You are not alone — Gaju is here every morning.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-top:20px; gap:10px;">
+          <button type="button" class="secondary-action-btn onboard-skip-story-btn" style="min-height:44px; padding:0 15px; font-size:var(--font-xs);">Skip</button>
+          <div style="display:flex; gap:6px;">
+            <span class="vision-dot active"></span>
+            <span class="vision-dot"></span>
+            <span class="vision-dot"></span>
+          </div>
+          <button type="button" class="primary-action-btn" id="onboardVision1NextBtn" style="min-height:44px; padding:0 24px; font-size:var(--font-xs); font-weight:700;">Next</button>
+        </div>
+      </div>
+
+      <!-- VISION SLIDE 2 -->
+      <div class="onboarding-step" id="onboardingVision2">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px; margin: 10px 0;">
+          <div class="vision-emoji-header">🏡</div>
+          <h2 style="color:#1e1b4b; font-weight:800; font-size:var(--font-lg); margin:0;">Your family stays close</h2>
+          <p class="perm-desc" style="font-size:var(--font-sm); color:var(--text-muted); line-height:1.5; margin:0;">Your family stays close, no matter the distance.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-top:20px; gap:10px;">
+          <button type="button" class="secondary-action-btn" id="onboardVision2BackBtn" style="min-height:44px; padding:0 15px; font-size:var(--font-xs);">Back</button>
+          <div style="display:flex; gap:6px;">
+            <span class="vision-dot"></span>
+            <span class="vision-dot active"></span>
+            <span class="vision-dot"></span>
+          </div>
+          <button type="button" class="primary-action-btn" id="onboardVision2NextBtn" style="min-height:44px; padding:0 24px; font-size:var(--font-xs); font-weight:700;">Next</button>
+        </div>
+      </div>
+
+      <!-- VISION SLIDE 3 -->
+      <div class="onboarding-step" id="onboardingVision3">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px; margin: 10px 0;">
+          <div class="vision-emoji-header">🛡️</div>
+          <h2 style="color:#1e1b4b; font-weight:800; font-size:var(--font-lg); margin:0;">All in one secure place</h2>
+          <p class="perm-desc" style="font-size:var(--font-sm); color:var(--text-muted); line-height:1.5; margin:0;">Your health, your safety, your memories — all in one place.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-top:20px; gap:10px;">
+          <button type="button" class="secondary-action-btn" id="onboardVision3BackBtn" style="min-height:44px; padding:0 15px; font-size:var(--font-xs);">Back</button>
+          <div style="display:flex; gap:6px;">
+            <span class="vision-dot"></span>
+            <span class="vision-dot"></span>
+            <span class="vision-dot active"></span>
+          </div>
+          <button type="button" class="primary-action-btn" id="onboardVision3NextBtn" style="min-height:44px; padding:0 20px; font-size:var(--font-xs); font-weight:700; background:var(--color-indigo); border-color:var(--color-indigo);">Get Started</button>
+        </div>
       </div>
       
       <!-- STEP 1: Welcome & Phone -->
-      <div class="onboarding-step active" id="onboardingStep1">
+      <div class="onboarding-step" id="onboardingStep1">
         <h2 style="color:#1e1b4b; font-weight:800; margin-bottom:5px; font-size:var(--font-lg);">Welcome to CareCircle Elite</h2>
         <p class="perm-desc" style="margin-bottom:15px; font-size:var(--font-sm); color:var(--text-muted);">Your private senior safety & daily companion. Let's calibrate your account for safe, independent aging.</p>
         
@@ -3423,6 +3477,9 @@
         
         <button type="button" class="primary-action-btn w-100 mt-15" id="onboardSendOtpBtn" style="min-height:48px; background:var(--color-primary); color:white; font-weight:700;">
           Send Verification SMS
+        </button>
+        <button type="button" class="secondary-action-btn w-100 mt-5" id="onboardStep1BackBtn" style="min-height:44px; font-size:var(--font-xs);">
+          Back to Story
         </button>
       </div>
 

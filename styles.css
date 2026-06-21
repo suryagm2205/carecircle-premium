@@ -4710,3 +4710,34 @@ body.dark-mode .sos-broadcast-box {
 }
 
 
+
+/* ==========================================================================
+   ONBOARDING PRODUCT VISION STORIES (PV-1)
+   ========================================================================== */
+
+@keyframes emojiBreathing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.vision-emoji-header {
+  font-size: 64px;
+  animation: emojiBreathing 3s ease-in-out infinite;
+  display: inline-block;
+  user-select: none;
+}
+
+.vision-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #cbd5e1;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vision-dot.active {
+  background: var(--color-primary);
+  width: 20px;
+}

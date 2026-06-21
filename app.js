@@ -9935,6 +9935,80 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     onboardStateSelect.addEventListener('change', updateOnboardLanguages);
   }
 
+  // --- VISION SLIDES NAVIGATION & ACCESSIBILITY VOICE ---
+  const onboardVision1NextBtn = document.getElementById('onboardVision1NextBtn');
+  const onboardVision2BackBtn = document.getElementById('onboardVision2BackBtn');
+  const onboardVision2NextBtn = document.getElementById('onboardVision2NextBtn');
+  const onboardVision3BackBtn = document.getElementById('onboardVision3BackBtn');
+  const onboardVision3NextBtn = document.getElementById('onboardVision3NextBtn');
+  const onboardStep1BackBtn = document.getElementById('onboardStep1BackBtn');
+  const skipStoryButtons = document.querySelectorAll('.onboard-skip-story-btn');
+
+  if (onboardVision1NextBtn) {
+    onboardVision1NextBtn.addEventListener('click', () => {
+      document.getElementById('onboardingVision1').classList.remove('active');
+      document.getElementById('onboardingVision2').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "20%";
+      speakText("Your family stays close, no matter the distance.");
+    });
+  }
+
+  if (onboardVision2NextBtn) {
+    onboardVision2NextBtn.addEventListener('click', () => {
+      document.getElementById('onboardingVision2').classList.remove('active');
+      document.getElementById('onboardingVision3').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "25%";
+      speakText("Your health, your safety, your memories — all in one place.");
+    });
+  }
+
+  if (onboardVision2BackBtn) {
+    onboardVision2BackBtn.addEventListener('click', () => {
+      document.getElementById('onboardingVision2').classList.remove('active');
+      document.getElementById('onboardingVision1').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "15%";
+      speakText("You are not alone — Gaju is here every morning.");
+    });
+  }
+
+  if (onboardVision3BackBtn) {
+    onboardVision3BackBtn.addEventListener('click', () => {
+      document.getElementById('onboardingVision3').classList.remove('active');
+      document.getElementById('onboardingVision2').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "20%";
+      speakText("Your family stays close, no matter the distance.");
+    });
+  }
+
+  if (onboardVision3NextBtn) {
+    onboardVision3NextBtn.addEventListener('click', () => {
+      document.getElementById('onboardingVision3').classList.remove('active');
+      document.getElementById('onboardingStep1').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "30%";
+      speakText("Welcome to CareCircle Elite. Let's calibrate your account for safe, independent aging.");
+    });
+  }
+
+  if (onboardStep1BackBtn) {
+    onboardStep1BackBtn.addEventListener('click', () => {
+      document.getElementById('onboardingStep1').classList.remove('active');
+      document.getElementById('onboardingVision3').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "25%";
+      speakText("Your health, your safety, your memories — all in one place.");
+    });
+  }
+
+  skipStoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('onboardingVision1').classList.remove('active');
+      document.getElementById('onboardingVision2').classList.remove('active');
+      document.getElementById('onboardingVision3').classList.remove('active');
+      document.getElementById('onboardingStep1').classList.add('active');
+      document.getElementById('onboardingProgress').style.width = "30%";
+      speakText("Welcome to CareCircle. Let's start the setup.");
+    });
+  });
+
   // OTP Configuration Setup
   const OTP_CONFIG = {
     USE_REALTIME_OTP: false, // Set true to route to live Twilio backend
@@ -9955,6 +10029,11 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
           onboardIndianStateContainer.classList.remove('d-none');
         }
         updateOnboardLanguages();
+
+        // Speak first vision screen text aloud
+        setTimeout(() => {
+          speakText("You are not alone — Gaju is here every morning.");
+        }, 800);
       }
     } else {
       // Read initial values and update UI
@@ -10042,7 +10121,7 @@ Format your response EXACTLY as a JSON object, with no markdown styling or wrapp
     onboardBackStep1Btn.addEventListener('click', () => {
       document.getElementById('onboardingStep2').classList.remove('active');
       document.getElementById('onboardingStep1').classList.add('active');
-      document.getElementById('onboardingProgress').style.width = "25%";
+      document.getElementById('onboardingProgress').style.width = "30%";
     });
   }
 
